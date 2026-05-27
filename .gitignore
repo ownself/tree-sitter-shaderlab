@@ -1,0 +1,9 @@
+node_modules/
+target/
+prebuilds/
+*.o
+*.a
+*.so
+*.dylib
+*.pc
+.DS_Store

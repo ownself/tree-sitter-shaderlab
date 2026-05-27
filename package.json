@@ -1,0 +1,41 @@
+{
+  "name": "tree-sitter-shaderlab",
+  "version": "0.1.0",
+  "description": "Unity ShaderLab grammar for tree-sitter",
+  "main": "bindings/node",
+  "types": "bindings/node",
+  "keywords": [
+    "parser",
+    "shaderlab",
+    "unity",
+    "shader"
+  ],
+  "files": [
+    "grammar.js",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "node-addon-api": "^8.2.1",
+    "node-gyp-build": "^4.8.2"
+  },
+  "devDependencies": {
+    "tree-sitter-hlsl": "git://github.com/tree-sitter-grammars/tree-sitter-hlsl.git",
+    "tree-sitter-cli": "^0.24.7",
+    "prebuildify": "^6.0.1"
+  },
+  "scripts": {
+    "test": "tree-sitter test",
+    "install": "node-gyp-build",
+    "prebuildify": "prebuildify --napi --strip"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}

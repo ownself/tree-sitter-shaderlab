@@ -1,0 +1,29 @@
+{
+  "grammars": [
+    {
+      "name": "shaderlab",
+      "camelcase": "ShaderLab",
+      "scope": "source.shaderlab",
+      "path": ".",
+      "file-types": [
+        "shader"
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Unity ShaderLab grammar for tree-sitter",
+    "links": {
+      "repository": ""
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}

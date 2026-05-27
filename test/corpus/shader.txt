@@ -1,0 +1,531 @@
+================================================================================
+Minimal Shader
+================================================================================
+Shader "Custom/Test" { }
+--------------------------------------------------------------------------------
+
+(source_file
+  (shader_definition
+    name: (string_literal
+      content: (string_content))
+    body: (shader_body)))
+
+================================================================================
+Shader with Properties and SubShader
+================================================================================
+Shader "Custom/MyShader" {
+  Properties {
+    _MainTex ("Texture", 2D) = "white" {}
+    _Color ("Color", Color) = (1,1,1,1)
+    _Value ("Value", Float) = 1.0
+    _Range ("Range", Range(0, 1)) = 0.5
+  }
+
+  SubShader {
+    Tags { "RenderType" = "Opaque" }
+    LOD 200
+
+    Pass {
+      Name "ForwardBase"
+      Tags { "LightMode" = "ForwardBase" }
+      Cull Back
+      ZWrite On
+      ZTest LEqual
+
+      CGPROGRAM
+      #pragma vertex vert
+      #pragma fragment frag
+      float4 vert(float4 v : POSITION) : SV_POSITION { return v; }
+      half4 frag() : SV_Target { return half4(1,1,1,1); }
+      ENDCG
+    }
+  }
+
+  FallBack "Diffuse"
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (shader_definition
+    name: (string_literal
+      content: (string_content))
+    body: (shader_body
+      (properties_block
+        (property_declaration
+          name: (identifier)
+          display: (string_literal
+            content: (string_content))
+          type: (property_type)
+          default: (texture_default
+            (string_literal
+              content: (string_content))))
+        (property_declaration
+          name: (identifier)
+          display: (string_literal
+            content: (string_content))
+          type: (property_type)
+          default: (color_default
+            (number_literal)
+            (number_literal)
+            (number_literal)
+            (number_literal)))
+        (property_declaration
+          name: (identifier)
+          display: (string_literal
+            content: (string_content))
+          type: (property_type)
+          default: (number_literal))
+        (property_declaration
+          name: (identifier)
+          display: (string_literal
+            content: (string_content))
+          type: (property_type
+            (number_literal)
+            (number_literal))
+          default: (number_literal)))
+      (subshader_block
+        (tags_block
+          (tag_pair
+            key: (string_literal
+              content: (string_content))
+            value: (string_literal
+              content: (string_content))))
+        (lod
+          value: (number_literal))
+        (pass_block
+          (pass_name
+            (string_literal
+              content: (string_content)))
+          (tags_block
+            (tag_pair
+              key: (string_literal
+                content: (string_content))
+              value: (string_literal
+                content: (string_content))))
+          (cull_command
+            mode: (cull_mode))
+          (zwrite_command
+            mode: (on_off))
+          (ztest_command
+            func: (comparison_func))
+          (cg_program_block
+            content: (cg_content))))
+      (fallback
+        shader: (string_literal
+          content: (string_content))))))
+
+================================================================================
+Shader with multiple render states
+================================================================================
+Shader "Custom/Blend" {
+  SubShader {
+    Pass {
+      Blend SrcAlpha OneMinusSrcAlpha
+      BlendOp Add
+      ColorMask RGBA
+      Offset -1, -1
+      AlphaToMask On
+      ZClip True
+    }
+  }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (shader_definition
+    name: (string_literal
+      content: (string_content))
+    body: (shader_body
+      (subshader_block
+        (pass_block
+          (blend_command
+            src_color: (blend_factor)
+            dst_color: (blend_factor))
+          (blend_op_command
+            op_color: (blend_op))
+          (color_mask_command
+            mask: (color_mask_value))
+          (offset_command
+            factor: (signed_number
+              (number_literal))
+            units: (signed_number
+              (number_literal)))
+          (alpha_to_mask_command
+            mode: (on_off))
+          (zclip_command
+            mode: (true_false)))))))
+
+================================================================================
+HLSLPROGRAM block
+================================================================================
+Shader "Test" {
+  SubShader {
+    Pass {
+      HLSLPROGRAM
+      #pragma vertex vert
+      #pragma fragment frag
+      half4 frag() : SV_Target { return half4(1,1,1,1); }
+      ENDHLSL
+    }
+  }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (shader_definition
+    name: (string_literal
+      content: (string_content))
+    body: (shader_body
+      (subshader_block
+        (pass_block
+          (hlsl_program_block
+            content: (hlsl_content)))))))
+
+================================================================================
+UsePass, GrabPass, CustomEditor
+================================================================================
+Shader "Custom/PassRef" {
+  SubShader {
+    UsePass "Legacy/VertexLit/SHADOWCASTER"
+    GrabPass { "_GrabTexture" }
+  }
+  CustomEditor "MyShaderEditor"
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (shader_definition
+    name: (string_literal
+      content: (string_content))
+    body: (shader_body
+      (subshader_block
+        (use_pass
+          pass: (string_literal
+            content: (string_content)))
+        (grab_pass
+          texture: (string_literal
+            content: (string_content))))
+      (custom_editor
+        name: (string_literal
+          content: (string_content))))))
+
+================================================================================
+Category block (legacy)
+================================================================================
+Shader "Legacy/Category" {
+  Category {
+    SubShader {
+      Pass { }
+    }
+  }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (shader_definition
+    name: (string_literal
+      content: (string_content))
+    body: (shader_body
+      (category_block
+        (subshader_block
+          (pass_block))))))
+
+================================================================================
+CGINCLUDE in SubShader
+================================================================================
+Shader "Test" {
+  SubShader {
+    CGINCLUDE
+    struct appdata { float4 vertex : POSITION; };
+    ENDCG
+
+    Pass {
+      CGPROGRAM
+      #pragma vertex vert
+      #pragma fragment frag
+      ENDCG
+    }
+  }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (shader_definition
+    name: (string_literal
+      content: (string_content))
+    body: (shader_body
+      (subshader_block
+        (cg_include
+          (cg_content))
+        (pass_block
+          (cg_program_block
+            content: (cg_content)))))))
+
+================================================================================
+Property attributes
+================================================================================
+Shader "Test" {
+  Properties {
+    [HideInInspector] _Hidden ("Hidden", Float) = 0
+    [Toggle] _Toggle ("Toggle", Float) = 0
+    [Enum(Off, 0, On, 1)] _Enum ("Enum", Float) = 0
+    [NoScaleOffset] [Normal] _BumpMap ("Normal Map", 2D) = "bump" {}
+    [HDR] _Emission ("Emission", Color) = (1,1,1,1)
+  }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (shader_definition
+    name: (string_literal
+      content: (string_content))
+    body: (shader_body
+      (properties_block
+        (property_declaration
+          (property_attribute
+            (identifier))
+          name: (identifier)
+          display: (string_literal
+            content: (string_content))
+          type: (property_type)
+          default: (number_literal))
+        (property_declaration
+          (property_attribute
+            (identifier))
+          name: (identifier)
+          display: (string_literal
+            content: (string_content))
+          type: (property_type)
+          default: (number_literal))
+        (property_declaration
+          (property_attribute
+            (identifier)
+            (attribute_arguments
+              (identifier)
+              (number_literal)
+              (identifier)
+              (number_literal)))
+          name: (identifier)
+          display: (string_literal
+            content: (string_content))
+          type: (property_type)
+          default: (number_literal))
+        (property_declaration
+          (property_attribute
+            (identifier))
+          (property_attribute
+            (identifier))
+          name: (identifier)
+          display: (string_literal
+            content: (string_content))
+          type: (property_type)
+          default: (texture_default
+            (string_literal
+              content: (string_content))))
+        (property_declaration
+          (property_attribute
+            (identifier))
+          name: (identifier)
+          display: (string_literal
+            content: (string_content))
+          type: (property_type)
+          default: (color_default
+            (number_literal)
+            (number_literal)
+            (number_literal)
+            (number_literal)))))))
+
+================================================================================
+Stencil block
+================================================================================
+Pass {
+  Stencil {
+    Ref 1
+    ReadMask 255
+    WriteMask 128
+    Comp Always
+    Pass Replace
+    Fail Keep
+    ZFail Zero
+    CompBack Less
+    PassFront IncrSat
+  }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (pass_block
+    (stencil_block
+      value: (number_literal)
+      value: (number_literal)
+      value: (number_literal)
+      func: (comparison_func)
+      op: (stencil_op_value)
+      op: (stencil_op_value)
+      op: (stencil_op_value)
+      func: (comparison_func)
+      op: (stencil_op_value))))
+
+================================================================================
+Multi-target Blend
+================================================================================
+Pass {
+  Blend 0 SrcAlpha OneMinusSrcAlpha
+  Blend SrcAlpha OneMinusSrcAlpha, One Zero
+  BlendOp Add, Sub
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (pass_block
+    (blend_command
+      index: (number_literal)
+      src_color: (blend_factor)
+      dst_color: (blend_factor))
+    (blend_command
+      src_color: (blend_factor)
+      dst_color: (blend_factor)
+      src_alpha: (blend_factor)
+      dst_alpha: (blend_factor))
+    (blend_op_command
+      op_color: (blend_op)
+      op_alpha: (blend_op))))
+
+================================================================================
+Conservative rendering
+================================================================================
+Pass {
+  Conservative True
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (pass_block
+    (conservative_command
+      mode: (true_false))))
+
+================================================================================
+Comments are extras (appear anywhere in tree)
+================================================================================
+// Single line comment
+Shader "Test" { /* block comment */ }
+--------------------------------------------------------------------------------
+
+(source_file
+  (comment)
+  (shader_definition
+    name: (string_literal
+      content: (string_content))
+    body: (shader_body
+      (comment))))
+
+================================================================================
+CGPROGRAM with multiple pragmas
+================================================================================
+Pass {
+  CGPROGRAM
+  #pragma vertex vert
+  #pragma fragment frag
+  #pragma target 3.5
+  #pragma multi_compile _ _NORMALMAP
+  #pragma multi_compile_fog
+  #pragma multi_compile_instancing
+  #include "UnityCG.cginc"
+  #define MY_CONSTANT 42
+  #if MY_CONSTANT > 0
+  float4 _MyVar;
+  #endif
+  ENDCG
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (pass_block
+    (cg_program_block
+      content: (cg_content))))
+
+================================================================================
+HLSLPROGRAM with URP includes
+================================================================================
+Pass {
+  HLSLPROGRAM
+  #pragma vertex vert
+  #pragma fragment frag
+  #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+  #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
+  ENDHLSL
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (pass_block
+    (hlsl_program_block
+      content: (hlsl_content))))
+
+================================================================================
+CGINCLUDE with preprocessor directives
+================================================================================
+SubShader {
+  CGINCLUDE
+  #include "UnityCG.cginc"
+  #ifdef USE_INSTANCING
+  UNITY_VERTEX_INPUT_INSTANCE_ID
+  #endif
+  ENDCG
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (subshader_block
+    (cg_include
+      (cg_content))))
+
+================================================================================
+Empty CGPROGRAM block
+================================================================================
+Pass {
+  CGPROGRAM
+  ENDCG
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (pass_block
+    (cg_program_block
+      content: (cg_content))))
+
+================================================================================
+KNOW LIMIT: ENDCG in string causes early termination
+================================================================================
+Pass {
+  CGPROGRAM
+  const char* end = "the ENDCG keyword";
+  ENDCG
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (pass_block
+    (cg_program_block
+      content: (cg_content))
+    (ERROR
+      (identifier)
+      (cg_content))))
+
+================================================================================
+KNOW LIMIT: single-line comment ENDCG also triggers boundary
+================================================================================
+Pass {
+  CGPROGRAM
+  // ENDCG is not really the end
+  ENDCG
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (pass_block
+    (cg_program_block
+      (ERROR
+        (cg_content)
+        (identifier))
+      content: (cg_content))))

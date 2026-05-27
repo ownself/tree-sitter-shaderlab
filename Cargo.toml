@@ -1,0 +1,23 @@
+[package]
+name = "tree-sitter-shaderlab"
+description = "Unity ShaderLab grammar for the tree-sitter parsing library"
+version = "0.1.0"
+keywords = ["incremental", "parsing", "shaderlab", "unity"]
+categories = ["parsing", "text-editors"]
+edition = "2024"
+license = "MIT"
+
+build = "bindings/rust/build.rs"
+include = ["bindings/rust/*", "grammar.js", "queries/*", "src/*"]
+
+[lib]
+path = "bindings/rust/lib.rs"
+
+[dependencies]
+tree-sitter-language = "0.1"
+
+[dev-dependencies]
+tree-sitter = "0.25.3"
+
+[build-dependencies]
+cc = "1.0.73"

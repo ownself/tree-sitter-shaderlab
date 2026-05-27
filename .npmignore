@@ -1,0 +1,14 @@
+test/
+bindings/go/
+bindings/swift/
+bindings/python/
+examples/
+Makefile
+Cargo.lock
+target/
+.editorconfig
+.gitattributes
+.gitignore
+.github/
+.vscode/
+*.log
