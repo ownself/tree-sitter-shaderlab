@@ -255,8 +255,8 @@ Shader "Test" {
       content: (string_content))
     body: (shader_body
       (subshader_block
-        (cg_include
-          (cg_content))
+        (cg_program_block
+          content: (cg_content))
         (pass_block
           (cg_program_block
             content: (cg_content)))))))
@@ -283,7 +283,8 @@ Shader "Test" {
       (properties_block
         (property_declaration
           (property_attribute
-            (identifier))
+            (dotted_identifier
+              (identifier)))
           name: (identifier)
           display: (string_literal
             content: (string_content))
@@ -291,7 +292,8 @@ Shader "Test" {
           default: (number_literal))
         (property_declaration
           (property_attribute
-            (identifier))
+            (dotted_identifier
+              (identifier)))
           name: (identifier)
           display: (string_literal
             content: (string_content))
@@ -299,11 +301,14 @@ Shader "Test" {
           default: (number_literal))
         (property_declaration
           (property_attribute
-            (identifier)
+            (dotted_identifier
+              (identifier))
             (attribute_arguments
-              (identifier)
+              (dotted_identifier
+                (identifier))
               (number_literal)
-              (identifier)
+              (dotted_identifier
+                (identifier))
               (number_literal)))
           name: (identifier)
           display: (string_literal
@@ -312,9 +317,11 @@ Shader "Test" {
           default: (number_literal))
         (property_declaration
           (property_attribute
-            (identifier))
+            (dotted_identifier
+              (identifier)))
           (property_attribute
-            (identifier))
+            (dotted_identifier
+              (identifier)))
           name: (identifier)
           display: (string_literal
             content: (string_content))
@@ -324,7 +331,8 @@ Shader "Test" {
               content: (string_content))))
         (property_declaration
           (property_attribute
-            (identifier))
+            (dotted_identifier
+              (identifier)))
           name: (identifier)
           display: (string_literal
             content: (string_content))
@@ -477,7 +485,7 @@ SubShader {
 
 (source_file
   (subshader_block
-    (cg_include
+    (cg_program_block
       (cg_content))))
 
 ================================================================================

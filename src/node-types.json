@@ -10,6 +10,10 @@
           {
             "type": "on_off",
             "named": true
+          },
+          {
+            "type": "property_reference",
+            "named": true
           }
         ]
       }
@@ -23,6 +27,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "dotted_identifier",
+          "named": true
+        },
         {
           "type": "identifier",
           "named": true
@@ -49,6 +57,10 @@
           {
             "type": "blend_factor",
             "named": true
+          },
+          {
+            "type": "property_reference",
+            "named": true
           }
         ]
       },
@@ -58,6 +70,10 @@
         "types": [
           {
             "type": "blend_factor",
+            "named": true
+          },
+          {
+            "type": "property_reference",
             "named": true
           }
         ]
@@ -79,6 +95,10 @@
           {
             "type": "blend_factor",
             "named": true
+          },
+          {
+            "type": "property_reference",
+            "named": true
           }
         ]
       },
@@ -88,6 +108,10 @@
         "types": [
           {
             "type": "blend_factor",
+            "named": true
+          },
+          {
+            "type": "property_reference",
             "named": true
           }
         ]
@@ -149,7 +173,63 @@
       "required": false,
       "types": [
         {
+          "type": "alpha_to_mask_command",
+          "named": true
+        },
+        {
+          "type": "blend_command",
+          "named": true
+        },
+        {
+          "type": "blend_op_command",
+          "named": true
+        },
+        {
+          "type": "color_mask_command",
+          "named": true
+        },
+        {
+          "type": "conservative_command",
+          "named": true
+        },
+        {
+          "type": "cull_command",
+          "named": true
+        },
+        {
+          "type": "legacy_fog_command",
+          "named": true
+        },
+        {
+          "type": "legacy_lighting_command",
+          "named": true
+        },
+        {
+          "type": "offset_command",
+          "named": true
+        },
+        {
+          "type": "stencil_block",
+          "named": true
+        },
+        {
           "type": "subshader_block",
+          "named": true
+        },
+        {
+          "type": "tags_block",
+          "named": true
+        },
+        {
+          "type": "zclip_command",
+          "named": true
+        },
+        {
+          "type": "ztest_command",
+          "named": true
+        },
+        {
+          "type": "zwrite_command",
           "named": true
         }
       ]
@@ -219,6 +299,10 @@
       "required": true,
       "types": [
         {
+          "type": "identifier",
+          "named": true
+        },
+        {
           "type": "number_literal",
           "named": true
         }
@@ -235,6 +319,10 @@
         "types": [
           {
             "type": "color_mask_value",
+            "named": true
+          },
+          {
+            "type": "property_reference",
             "named": true
           }
         ]
@@ -276,6 +364,10 @@
         "required": true,
         "types": [
           {
+            "type": "property_reference",
+            "named": true
+          },
+          {
             "type": "true_false",
             "named": true
           }
@@ -293,6 +385,10 @@
         "types": [
           {
             "type": "cull_mode",
+            "named": true
+          },
+          {
+            "type": "property_reference",
             "named": true
           }
         ]
@@ -318,6 +414,21 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "dotted_identifier",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -412,6 +523,68 @@
     }
   },
   {
+    "type": "legacy_fog_command",
+    "named": true,
+    "fields": {
+      "mode": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "Exp",
+            "named": false
+          },
+          {
+            "type": "Exp2",
+            "named": false
+          },
+          {
+            "type": "Global",
+            "named": false
+          },
+          {
+            "type": "Linear",
+            "named": false
+          },
+          {
+            "type": "Off",
+            "named": false
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "legacy_lighting_command",
+    "named": true,
+    "fields": {
+      "mode": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "on_off",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "lod",
     "named": true,
     "fields": {
@@ -499,6 +672,14 @@
           "named": true
         },
         {
+          "type": "legacy_fog_command",
+          "named": true
+        },
+        {
+          "type": "legacy_lighting_command",
+          "named": true
+        },
+        {
           "type": "offset_command",
           "named": true
         },
@@ -572,7 +753,7 @@
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "dotted_identifier",
           "named": true
         }
       ]
@@ -583,11 +764,19 @@
     "named": true,
     "fields": {
       "default": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
           {
+            "type": "-",
+            "named": false
+          },
+          {
             "type": "color_default",
+            "named": true
+          },
+          {
+            "type": "identifier",
             "named": true
           },
           {
@@ -647,6 +836,21 @@
     }
   },
   {
+    "type": "property_reference",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "property_type",
     "named": true,
     "fields": {},
@@ -678,6 +882,10 @@
           "named": true
         },
         {
+          "type": "cg_include",
+          "named": true
+        },
+        {
           "type": "custom_editor",
           "named": true
         },
@@ -687,6 +895,10 @@
         },
         {
           "type": "grab_pass",
+          "named": true
+        },
+        {
+          "type": "hlsl_include",
           "named": true
         },
         {
@@ -824,6 +1036,54 @@
           {
             "type": "ZFailFront",
             "named": false
+          },
+          {
+            "type": "comp",
+            "named": false
+          },
+          {
+            "type": "compback",
+            "named": false
+          },
+          {
+            "type": "compfront",
+            "named": false
+          },
+          {
+            "type": "fail",
+            "named": false
+          },
+          {
+            "type": "failback",
+            "named": false
+          },
+          {
+            "type": "failfront",
+            "named": false
+          },
+          {
+            "type": "pass",
+            "named": false
+          },
+          {
+            "type": "passback",
+            "named": false
+          },
+          {
+            "type": "passfront",
+            "named": false
+          },
+          {
+            "type": "zfail",
+            "named": false
+          },
+          {
+            "type": "zfailback",
+            "named": false
+          },
+          {
+            "type": "zfailfront",
+            "named": false
           }
         ]
       },
@@ -834,6 +1094,10 @@
           {
             "type": "comparison_func",
             "named": true
+          },
+          {
+            "type": "property_reference",
+            "named": true
           }
         ]
       },
@@ -841,6 +1105,10 @@
         "multiple": true,
         "required": false,
         "types": [
+          {
+            "type": "property_reference",
+            "named": true
+          },
           {
             "type": "stencil_op_value",
             "named": true
@@ -853,6 +1121,10 @@
         "types": [
           {
             "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "property_reference",
             "named": true
           }
         ]
@@ -901,7 +1173,7 @@
           "named": true
         },
         {
-          "type": "cg_include",
+          "type": "cg_program_block",
           "named": true
         },
         {
@@ -921,7 +1193,15 @@
           "named": true
         },
         {
-          "type": "hlsl_include",
+          "type": "hlsl_program_block",
+          "named": true
+        },
+        {
+          "type": "legacy_fog_command",
+          "named": true
+        },
+        {
+          "type": "legacy_lighting_command",
           "named": true
         },
         {
@@ -1049,6 +1329,10 @@
         "required": true,
         "types": [
           {
+            "type": "property_reference",
+            "named": true
+          },
+          {
             "type": "true_false",
             "named": true
           }
@@ -1067,6 +1351,10 @@
           {
             "type": "comparison_func",
             "named": true
+          },
+          {
+            "type": "property_reference",
+            "named": true
           }
         ]
       }
@@ -1083,10 +1371,18 @@
           {
             "type": "on_off",
             "named": true
+          },
+          {
+            "type": "property_reference",
+            "named": true
           }
         ]
       }
     }
+  },
+  {
+    "type": " ",
+    "named": false
   },
   {
     "type": "\"",
@@ -1106,6 +1402,10 @@
   },
   {
     "type": "-",
+    "named": false
+  },
+  {
+    "type": ".",
     "named": false
   },
   {
@@ -1133,7 +1433,19 @@
     "named": false
   },
   {
+    "type": "2d",
+    "named": false
+  },
+  {
+    "type": "2darray",
+    "named": false
+  },
+  {
     "type": "3D",
+    "named": false
+  },
+  {
+    "type": "3d",
     "named": false
   },
   {
@@ -1154,6 +1466,10 @@
   },
   {
     "type": "Always",
+    "named": false
+  },
+  {
+    "type": "Any",
     "named": false
   },
   {
@@ -1233,6 +1549,10 @@
     "named": false
   },
   {
+    "type": "Density",
+    "named": false
+  },
+  {
     "type": "DstAlpha",
     "named": false
   },
@@ -1253,6 +1573,14 @@
     "named": false
   },
   {
+    "type": "Exp",
+    "named": false
+  },
+  {
+    "type": "Exp2",
+    "named": false
+  },
+  {
     "type": "Fail",
     "named": false
   },
@@ -1269,11 +1597,19 @@
     "named": false
   },
   {
+    "type": "Fallback",
+    "named": false
+  },
+  {
     "type": "False",
     "named": false
   },
   {
     "type": "Float",
+    "named": false
+  },
+  {
+    "type": "Fog",
     "named": false
   },
   {
@@ -1286,6 +1622,10 @@
   },
   {
     "type": "GEqual",
+    "named": false
+  },
+  {
+    "type": "Global",
     "named": false
   },
   {
@@ -1341,11 +1681,23 @@
     "named": false
   },
   {
+    "type": "Lighting",
+    "named": false
+  },
+  {
+    "type": "Linear",
+    "named": false
+  },
+  {
     "type": "Max",
     "named": false
   },
   {
     "type": "Min",
+    "named": false
+  },
+  {
+    "type": "Mode",
     "named": false
   },
   {
@@ -1521,8 +1873,88 @@
     "named": false
   },
   {
+    "type": "always",
+    "named": false
+  },
+  {
+    "type": "any",
+    "named": false
+  },
+  {
+    "type": "back",
+    "named": false
+  },
+  {
     "type": "cg_content",
     "named": true
+  },
+  {
+    "type": "color",
+    "named": false
+  },
+  {
+    "type": "comp",
+    "named": false
+  },
+  {
+    "type": "compback",
+    "named": false
+  },
+  {
+    "type": "compfront",
+    "named": false
+  },
+  {
+    "type": "cube",
+    "named": false
+  },
+  {
+    "type": "cubearray",
+    "named": false
+  },
+  {
+    "type": "decrsat",
+    "named": false
+  },
+  {
+    "type": "decrwrap",
+    "named": false
+  },
+  {
+    "type": "equal",
+    "named": false
+  },
+  {
+    "type": "fail",
+    "named": false
+  },
+  {
+    "type": "failback",
+    "named": false
+  },
+  {
+    "type": "failfront",
+    "named": false
+  },
+  {
+    "type": "false",
+    "named": false
+  },
+  {
+    "type": "float",
+    "named": false
+  },
+  {
+    "type": "front",
+    "named": false
+  },
+  {
+    "type": "gequal",
+    "named": false
+  },
+  {
+    "type": "greater",
+    "named": false
   },
   {
     "type": "hlsl_content",
@@ -1533,12 +1965,124 @@
     "named": true
   },
   {
+    "type": "incrsat",
+    "named": false
+  },
+  {
+    "type": "incrwrap",
+    "named": false
+  },
+  {
+    "type": "int",
+    "named": false
+  },
+  {
+    "type": "integer",
+    "named": false
+  },
+  {
+    "type": "invert",
+    "named": false
+  },
+  {
+    "type": "keep",
+    "named": false
+  },
+  {
+    "type": "lequal",
+    "named": false
+  },
+  {
+    "type": "less",
+    "named": false
+  },
+  {
+    "type": "never",
+    "named": false
+  },
+  {
+    "type": "notequal",
+    "named": false
+  },
+  {
     "type": "number_literal",
     "named": true
   },
   {
+    "type": "off",
+    "named": false
+  },
+  {
+    "type": "on",
+    "named": false
+  },
+  {
+    "type": "pass",
+    "named": false
+  },
+  {
+    "type": "passback",
+    "named": false
+  },
+  {
+    "type": "passfront",
+    "named": false
+  },
+  {
+    "type": "range",
+    "named": false
+  },
+  {
+    "type": "readMask",
+    "named": false
+  },
+  {
+    "type": "readmask",
+    "named": false
+  },
+  {
+    "type": "ref",
+    "named": false
+  },
+  {
+    "type": "replace",
+    "named": false
+  },
+  {
     "type": "string_content",
     "named": true
+  },
+  {
+    "type": "true",
+    "named": false
+  },
+  {
+    "type": "vector",
+    "named": false
+  },
+  {
+    "type": "writeMask",
+    "named": false
+  },
+  {
+    "type": "writemask",
+    "named": false
+  },
+  {
+    "type": "zero",
+    "named": false
+  },
+  {
+    "type": "zfail",
+    "named": false
+  },
+  {
+    "type": "zfailback",
+    "named": false
+  },
+  {
+    "type": "zfailfront",
+    "named": false
   },
   {
     "type": "{",

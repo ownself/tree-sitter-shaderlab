@@ -41,6 +41,8 @@ module.exports = grammar({
         _shader_body_item: $ => choice(
             $.properties_block,
             $.subshader_block,
+            $.cg_include,
+            $.hlsl_include,
             $.custom_editor,
             $.fallback,
             $.use_pass,
@@ -70,9 +72,14 @@ module.exports = grammar({
             field('default', $._property_default),
         ),
 
+        dotted_identifier: $ => seq(
+            $.identifier,
+            repeat(seq('.', $.identifier)),
+        ),
+
         property_attribute: $ => seq(
             '[',
-            $.identifier,
+            $.dotted_identifier,
             optional(seq('(', alias($._attr_args, $.attribute_arguments), ')')),
             ']',
         ),
@@ -83,34 +90,36 @@ module.exports = grammar({
         ),
 
         _attr_arg: $ => choice(
-            $.identifier,
+            $.dotted_identifier,
+            seq($.identifier, repeat1(seq(' ', $.identifier))),
             $.number_literal,
             $.string_literal,
         ),
 
         property_type: $ => choice(
-            '2D',
-            '3D',
-            'Cube',
-            'CubeArray',
-            '2DArray',
-            'Color',
-            'Vector',
-            'Float',
-            'Int',
-            'Integer',
-            seq('Range', '(', $._number, ',', $._number, ')'),
+            '2D', '2d',
+            '3D', '3d',
+            'Cube', 'cube',
+            'CubeArray', 'cubearray',
+            '2DArray', '2darray',
+            'Color', 'color',
+            'Vector', 'vector',
+            'Float', 'float',
+            'Int', 'int',
+            'Integer', 'integer',
+            'any', 'Any',
+            seq(choice('Range', 'range'), '(', $._number, ',', $._number, ')'),
         ),
 
         _property_default: $ => choice(
             $.texture_default,   // "name" {} — 纹理类属性
             $.color_default,     // (r,g,b,a)   — Color/Vector 属性
-            $.number_literal,
+            $._number,
             $.string_literal,
         ),
 
         texture_default: $ => seq($.string_literal, '{', '}'),
-        color_default: $ => seq('(', $.number_literal, ',', $.number_literal, ',', $.number_literal, ',', $.number_literal, ')'),
+        color_default: $ => seq('(', $._number, ',', $._number, ',', $._number, optional(seq(',', $._number)), ')'),
 
         // =============================================
         // SubShader 块
@@ -129,8 +138,8 @@ module.exports = grammar({
             $.pass_block,
             $.use_pass,
             $.grab_pass,
-            $.cg_include,
-            $.hlsl_include,
+            $.cg_program_block,
+            $.hlsl_program_block,
         ),
 
         // =============================================
@@ -184,21 +193,25 @@ module.exports = grammar({
             $.zclip_command,
             $.stencil_block,
             $.conservative_command,
+            // Phase 7 legacy commands (minimal support)
+            $.legacy_lighting_command,
+            $.legacy_fog_command,
         ),
 
-        cull_command: $ => seq('Cull', field('mode', $.cull_mode)),
-        cull_mode: $ => choice('Back', 'Front', 'Off'),
+        cull_command: $ => seq('Cull', field('mode', choice($.cull_mode, $.property_reference))),
+        cull_mode: $ => choice('Back', 'Front', 'Off', 'back', 'front', 'off'),
 
-        zwrite_command: $ => seq('ZWrite', field('mode', $.on_off)),
-        ztest_command: $ => seq('ZTest', field('func', $.comparison_func)),
-        zclip_command: $ => seq('ZClip', field('mode', $.true_false)),
+        zwrite_command: $ => seq('ZWrite', field('mode', choice($.on_off, $.property_reference))),
+        ztest_command: $ => seq('ZTest', field('func', choice($.comparison_func, $.property_reference))),
+        zclip_command: $ => seq('ZClip', field('mode', choice($.true_false, $.property_reference))),
 
+        _blend_value: $ => choice($.blend_factor, $.property_reference),
         blend_command: $ => seq(
             'Blend',
             optional(field('index', $.number_literal)),
-            field('src_color', $.blend_factor),
-            field('dst_color', $.blend_factor),
-            optional(seq(',', field('src_alpha', $.blend_factor), field('dst_alpha', $.blend_factor))),
+            field('src_color', $._blend_value),
+            field('dst_color', $._blend_value),
+            optional(seq(',', field('src_alpha', $._blend_value), field('dst_alpha', $._blend_value))),
         ),
         blend_op_command: $ => seq(
             'BlendOp',
@@ -207,12 +220,12 @@ module.exports = grammar({
             optional(seq(',', field('op_alpha', $.blend_op))),
         ),
 
-        color_mask_command: $ => seq('ColorMask', field('mask', $.color_mask_value)),
+        color_mask_command: $ => seq('ColorMask', field('mask', choice($.color_mask_value, $.property_reference))),
         color_mask_value: $ => choice('RGBA', 'RGB', 'A', 'R', 'G', 'B', '0', $.number_literal),
 
         offset_command: $ => seq('Offset', field('factor', $.signed_number), ',', field('units', $.signed_number)),
         signed_number: $ => choice($.number_literal, seq('-', $.number_literal)),
-        alpha_to_mask_command: $ => seq('AlphaToMask', field('mode', $.on_off)),
+        alpha_to_mask_command: $ => seq('AlphaToMask', field('mode', choice($.on_off, $.property_reference))),
 
         blend_factor: $ => choice(
             'One', 'Zero',
@@ -222,11 +235,37 @@ module.exports = grammar({
             'OneMinusDstColor', 'OneMinusDstAlpha',
         ),
         blend_op: $ => choice('Add', 'Sub', 'RevSub', 'Min', 'Max'),
-        comparison_func: $ => choice('Less', 'Greater', 'LEqual', 'GEqual', 'Equal', 'NotEqual', 'Always', 'Never'),
-        on_off: $ => choice('On', 'Off'),
-        true_false: $ => choice('True', 'False'),
+        comparison_func: $ => choice(
+            'Less', 'less',
+            'Greater', 'greater',
+            'LEqual', 'lequal',
+            'GEqual', 'gequal',
+            'Equal', 'equal',
+            'NotEqual', 'notequal',
+            'Always', 'always',
+            'Never', 'never',
+        ),
+        on_off: $ => choice('On', 'Off', 'on', 'off'),
+        true_false: $ => choice('True', 'False', 'true', 'false'),
 
-        conservative_command: $ => seq('Conservative', field('mode', $.true_false)),
+        conservative_command: $ => seq('Conservative', field('mode', choice($.true_false, $.property_reference))),
+
+        // =============================================
+        // Phase 7 旧版 Fixed Function 命令（最小支持）
+        // =============================================
+        legacy_lighting_command: $ => seq('Lighting', field('mode', $.on_off)),
+        legacy_fog_command: $ => seq(
+            'Fog',
+            '{',
+            repeat($._legacy_fog_item),
+            '}',
+        ),
+        _legacy_fog_item: $ => choice(
+            seq('Mode', field('mode', choice('Off', 'Global', 'Linear', 'Exp', 'Exp2'))),
+            seq('Color', '(', $._number, ',', $._number, ',', $._number, optional(seq(',', $._number)), ')'),
+            seq('Density', $._number),
+            seq('Range', $._number, ',', $._number),
+        ),
 
         // =============================================
         // Stencil 块
@@ -239,23 +278,31 @@ module.exports = grammar({
         ),
 
         _stencil_op: $ => choice(
-            seq('Ref', field('value', $.number_literal)),
-            seq('ReadMask', field('value', $.number_literal)),
-            seq('WriteMask', field('value', $.number_literal)),
-            seq(field('command', $._stencil_comp), field('func', $.comparison_func)),
-            seq(field('command', $._stencil_pass), field('op', $.stencil_op_value)),
-            seq(field('command', $._stencil_fail), field('op', $.stencil_op_value)),
-            seq(field('command', $._stencil_zfail), field('op', $.stencil_op_value)),
+            seq(choice('Ref', 'ref'), field('value', $._stencil_value)),
+            seq(choice('ReadMask', 'readMask', 'readmask'), field('value', $._stencil_value)),
+            seq(choice('WriteMask', 'writeMask', 'writemask'), field('value', $._stencil_value)),
+            seq(field('command', $._stencil_comp), field('func', choice($.comparison_func, $.property_reference))),
+            seq(field('command', $._stencil_pass), field('op', choice($.stencil_op_value, $.property_reference))),
+            seq(field('command', $._stencil_fail), field('op', choice($.stencil_op_value, $.property_reference))),
+            seq(field('command', $._stencil_zfail), field('op', choice($.stencil_op_value, $.property_reference))),
         ),
 
-        _stencil_comp: $ => choice('Comp', 'CompFront', 'CompBack'),
-        _stencil_pass: $ => choice('Pass', 'PassFront', 'PassBack'),
-        _stencil_fail: $ => choice('Fail', 'FailFront', 'FailBack'),
-        _stencil_zfail: $ => choice('ZFail', 'ZFailFront', 'ZFailBack'),
+        _stencil_value: $ => choice($.number_literal, $.property_reference),
+
+        _stencil_comp: $ => choice('Comp', 'CompFront', 'CompBack', 'comp', 'compfront', 'compback'),
+        _stencil_pass: $ => choice('Pass', 'PassFront', 'PassBack', 'pass', 'passfront', 'passback'),
+        _stencil_fail: $ => choice('Fail', 'FailFront', 'FailBack', 'fail', 'failfront', 'failback'),
+        _stencil_zfail: $ => choice('ZFail', 'ZFailFront', 'ZFailBack', 'zfail', 'zfailfront', 'zfailback'),
 
         stencil_op_value: $ => choice(
-            'Keep', 'Zero', 'Replace', 'IncrSat',
-            'DecrSat', 'Invert', 'IncrWrap', 'DecrWrap',
+            'Keep', 'keep',
+            'Zero', 'zero',
+            'Replace', 'replace',
+            'IncrSat', 'incrsat',
+            'DecrSat', 'decrsat',
+            'Invert', 'invert',
+            'IncrWrap', 'incrwrap',
+            'DecrWrap', 'decrwrap',
         ),
 
         // =============================================
@@ -281,16 +328,20 @@ module.exports = grammar({
         // 其他 ShaderLab 声明
         // =============================================
         custom_editor: $ => seq('CustomEditor', field('name', $.string_literal)),
-        fallback: $ => seq('FallBack', field('shader', choice($.string_literal, 'Off'))),
+        fallback: $ => seq(choice('FallBack', 'Fallback'), field('shader', choice($.string_literal, 'Off'))),
         use_pass: $ => seq('UsePass', field('pass', $.string_literal)),
         grab_pass: $ => seq('GrabPass', '{', optional(field('texture', $.string_literal)), '}'),
         lod: $ => seq('LOD', field('value', $.number_literal)),
 
-        // 旧版 Category 块 — 只包含 SubShader
+        // 旧版 Category 块 — 可包含渲染状态和 SubShader
         category_block: $ => seq(
             'Category',
             '{',
-            repeat($.subshader_block),
+            repeat(choice(
+                $.tags_block,
+                $._render_state,
+                $.subshader_block,
+            )),
             '}',
         ),
 
@@ -312,7 +363,13 @@ module.exports = grammar({
             return token(choice(float, float2, exponent, int));
         },
 
-        _number: $ => choice($.number_literal, $.identifier),
+        _number: $ => choice(
+            $.number_literal,
+            seq('-', $.number_literal),
+            $.identifier,
+        ),
+
+        property_reference: $ => seq('[', $.identifier, ']'),
 
         identifier: $ => /[a-zA-Z_][a-zA-Z0-9_]*/,
     },
