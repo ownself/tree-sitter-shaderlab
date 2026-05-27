@@ -97,6 +97,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "dependency"
+        },
+        {
+          "type": "SYMBOL",
           "name": "fallback"
         },
         {
@@ -363,6 +367,10 @@
         {
           "type": "STRING",
           "value": "cube"
+        },
+        {
+          "type": "STRING",
+          "value": "CUBE"
         },
         {
           "type": "STRING",
@@ -753,6 +761,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "blend_off_command"
+        },
+        {
+          "type": "SYMBOL",
           "name": "blend_op_command"
         },
         {
@@ -786,6 +798,26 @@
         {
           "type": "SYMBOL",
           "name": "legacy_fog_command"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "legacy_color_material_command"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "legacy_material_block"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "legacy_set_texture_command"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "legacy_alpha_test_command"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "legacy_bind_channels_command"
         }
       ]
     },
@@ -1006,6 +1038,19 @@
               "type": "BLANK"
             }
           ]
+        }
+      ]
+    },
+    "blend_off_command": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "Blend"
+        },
+        {
+          "type": "STRING",
+          "value": "Off"
         }
       ]
     },
@@ -1590,6 +1635,429 @@
         }
       ]
     },
+    "legacy_color_material_command": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ColorMaterial"
+        },
+        {
+          "type": "FIELD",
+          "name": "mode",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "AmbientAndDiffuse"
+              },
+              {
+                "type": "STRING",
+                "value": "Emission"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "legacy_material_block": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "Material"
+        },
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_legacy_material_item"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "_legacy_material_item": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "Diffuse"
+            },
+            {
+              "type": "FIELD",
+              "name": "color",
+              "content": {
+                "type": "SYMBOL",
+                "name": "color_default"
+              }
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "Ambient"
+            },
+            {
+              "type": "FIELD",
+              "name": "color",
+              "content": {
+                "type": "SYMBOL",
+                "name": "color_default"
+              }
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "Specular"
+            },
+            {
+              "type": "FIELD",
+              "name": "color",
+              "content": {
+                "type": "SYMBOL",
+                "name": "color_default"
+              }
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "Emission"
+            },
+            {
+              "type": "FIELD",
+              "name": "color",
+              "content": {
+                "type": "SYMBOL",
+                "name": "color_default"
+              }
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "Shininess"
+            },
+            {
+              "type": "FIELD",
+              "name": "value",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_number"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "legacy_set_texture_command": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "SetTexture"
+        },
+        {
+          "type": "STRING",
+          "value": "["
+        },
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        },
+        {
+          "type": "STRING",
+          "value": "]"
+        },
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_legacy_set_texture_item"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "_legacy_set_texture_item": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "combine"
+            },
+            {
+              "type": "REPEAT1",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_legacy_combine_value"
+              }
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "constantColor"
+            },
+            {
+              "type": "FIELD",
+              "name": "color",
+              "content": {
+                "type": "SYMBOL",
+                "name": "color_default"
+              }
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "Matrix"
+            },
+            {
+              "type": "STRING",
+              "value": "["
+            },
+            {
+              "type": "SYMBOL",
+              "name": "identifier"
+            },
+            {
+              "type": "STRING",
+              "value": "]"
+            }
+          ]
+        }
+      ]
+    },
+    "_legacy_combine_value": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "number_literal"
+        },
+        {
+          "type": "STRING",
+          "value": "texture"
+        },
+        {
+          "type": "STRING",
+          "value": "primary"
+        },
+        {
+          "type": "STRING",
+          "value": "previous"
+        },
+        {
+          "type": "STRING",
+          "value": "constant"
+        },
+        {
+          "type": "STRING",
+          "value": "one"
+        },
+        {
+          "type": "STRING",
+          "value": "One"
+        },
+        {
+          "type": "STRING",
+          "value": "alpha"
+        },
+        {
+          "type": "STRING",
+          "value": "invalpha"
+        },
+        {
+          "type": "STRING",
+          "value": "*"
+        },
+        {
+          "type": "STRING",
+          "value": "+"
+        },
+        {
+          "type": "STRING",
+          "value": "-"
+        },
+        {
+          "type": "STRING",
+          "value": "double"
+        },
+        {
+          "type": "STRING",
+          "value": "quad"
+        },
+        {
+          "type": "STRING",
+          "value": "lerp"
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        }
+      ]
+    },
+    "legacy_alpha_test_command": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "AlphaTest"
+        },
+        {
+          "type": "FIELD",
+          "name": "func",
+          "content": {
+            "type": "SYMBOL",
+            "name": "comparison_func"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "cutoff",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_number"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "legacy_bind_channels_command": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "BindChannels"
+        },
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_legacy_bind_channel"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "_legacy_bind_channel": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "Bind"
+        },
+        {
+          "type": "FIELD",
+          "name": "channel",
+          "content": {
+            "type": "SYMBOL",
+            "name": "string_literal"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "FIELD",
+          "name": "target",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "identifier"
+              },
+              {
+                "type": "STRING",
+                "value": "vertex"
+              },
+              {
+                "type": "STRING",
+                "value": "normal"
+              },
+              {
+                "type": "STRING",
+                "value": "tangent"
+              },
+              {
+                "type": "STRING",
+                "value": "color"
+              },
+              {
+                "type": "STRING",
+                "value": "texcoord0"
+              },
+              {
+                "type": "STRING",
+                "value": "texcoord1"
+              }
+            ]
+          }
+        }
+      ]
+    },
     "stencil_block": {
       "type": "SEQ",
       "members": [
@@ -2163,6 +2631,35 @@
         {
           "type": "FIELD",
           "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "string_literal"
+          }
+        }
+      ]
+    },
+    "dependency": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "Dependency"
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "string_literal"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "="
+        },
+        {
+          "type": "FIELD",
+          "name": "shader",
           "content": {
             "type": "SYMBOL",
             "name": "string_literal"

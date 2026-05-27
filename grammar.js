@@ -44,6 +44,7 @@ module.exports = grammar({
             $.cg_include,
             $.hlsl_include,
             $.custom_editor,
+            $.dependency,
             $.fallback,
             $.use_pass,
             $.grab_pass,
@@ -99,7 +100,7 @@ module.exports = grammar({
         property_type: $ => choice(
             '2D', '2d',
             '3D', '3d',
-            'Cube', 'cube',
+            'Cube', 'cube', 'CUBE',
             'CubeArray', 'cubearray',
             '2DArray', '2darray',
             'Color', 'color',
@@ -186,6 +187,7 @@ module.exports = grammar({
             $.zwrite_command,
             $.ztest_command,
             $.blend_command,
+            $.blend_off_command,
             $.blend_op_command,
             $.color_mask_command,
             $.offset_command,
@@ -196,6 +198,11 @@ module.exports = grammar({
             // Phase 7 legacy commands (minimal support)
             $.legacy_lighting_command,
             $.legacy_fog_command,
+            $.legacy_color_material_command,
+            $.legacy_material_block,
+            $.legacy_set_texture_command,
+            $.legacy_alpha_test_command,
+            $.legacy_bind_channels_command,
         ),
 
         cull_command: $ => seq('Cull', field('mode', choice($.cull_mode, $.property_reference))),
@@ -213,6 +220,7 @@ module.exports = grammar({
             field('dst_color', $._blend_value),
             optional(seq(',', field('src_alpha', $._blend_value), field('dst_alpha', $._blend_value))),
         ),
+        blend_off_command: $ => seq('Blend', 'Off'),
         blend_op_command: $ => seq(
             'BlendOp',
             optional(field('index', $.number_literal)),
@@ -251,7 +259,7 @@ module.exports = grammar({
         conservative_command: $ => seq('Conservative', field('mode', choice($.true_false, $.property_reference))),
 
         // =============================================
-        // Phase 7 旧版 Fixed Function 命令（最小支持）
+        // Phase 7 旧版 Fixed Function 命令（完整支持）
         // =============================================
         legacy_lighting_command: $ => seq('Lighting', field('mode', $.on_off)),
         legacy_fog_command: $ => seq(
@@ -265,6 +273,65 @@ module.exports = grammar({
             seq('Color', '(', $._number, ',', $._number, ',', $._number, optional(seq(',', $._number)), ')'),
             seq('Density', $._number),
             seq('Range', $._number, ',', $._number),
+        ),
+        legacy_color_material_command: $ => seq('ColorMaterial', field('mode', choice('AmbientAndDiffuse', 'Emission'))),
+
+        // Material { Diffuse/Ambient/Specular/Emission/Shininess }
+        legacy_material_block: $ => seq(
+            'Material',
+            '{',
+            repeat($._legacy_material_item),
+            '}',
+        ),
+        _legacy_material_item: $ => choice(
+            seq('Diffuse', field('color', $.color_default)),
+            seq('Ambient', field('color', $.color_default)),
+            seq('Specular', field('color', $.color_default)),
+            seq('Emission', field('color', $.color_default)),
+            seq('Shininess', field('value', $._number)),
+        ),
+
+        // SetTexture [name] { combine / constantColor / Matrix }
+        legacy_set_texture_command: $ => seq(
+            'SetTexture',
+            '[', $.identifier, ']',
+            '{',
+            repeat($._legacy_set_texture_item),
+            '}',
+        ),
+        _legacy_set_texture_item: $ => choice(
+            seq('combine', repeat1($._legacy_combine_value)),
+            seq('constantColor', field('color', $.color_default)),
+            seq('Matrix', '[', $.identifier, ']'),
+        ),
+        _legacy_combine_value: $ => choice(
+            $.identifier,
+            $.number_literal,
+            'texture', 'primary', 'previous', 'constant', 'one', 'One',
+            'alpha', 'invalpha',
+            '*', '+', '-', 'double', 'quad', 'lerp',
+            ',',
+        ),
+
+        // AlphaTest comparison [cutoff]
+        legacy_alpha_test_command: $ => seq(
+            'AlphaTest',
+            field('func', $.comparison_func),
+            optional(field('cutoff', $._number)),
+        ),
+
+        // BindChannels { Bind "channel", property }
+        legacy_bind_channels_command: $ => seq(
+            'BindChannels',
+            '{',
+            repeat($._legacy_bind_channel),
+            '}',
+        ),
+        _legacy_bind_channel: $ => seq(
+            'Bind',
+            field('channel', $.string_literal),
+            ',',
+            field('target', choice($.identifier, 'vertex', 'normal', 'tangent', 'color', 'texcoord0', 'texcoord1')),
         ),
 
         // =============================================
@@ -328,6 +395,7 @@ module.exports = grammar({
         // 其他 ShaderLab 声明
         // =============================================
         custom_editor: $ => seq('CustomEditor', field('name', $.string_literal)),
+        dependency: $ => seq('Dependency', field('name', $.string_literal), '=', field('shader', $.string_literal)),
         fallback: $ => seq(choice('FallBack', 'Fallback'), field('shader', choice($.string_literal, 'Off'))),
         use_pass: $ => seq('UsePass', field('pass', $.string_literal)),
         grab_pass: $ => seq('GrabPass', '{', optional(field('texture', $.string_literal)), '}'),

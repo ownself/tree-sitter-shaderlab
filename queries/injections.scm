@@ -5,10 +5,8 @@
 
 ; CGPROGRAM / CGINCLUDE blocks
 ((cg_content) @injection.content
-  (#set! injection.language "hlsl")
-  (#set! injection.combined))
+  (#set! injection.language "hlsl"))
 
 ; HLSLPROGRAM / HLSLINCLUDE blocks
 ((hlsl_content) @injection.content
-  (#set! injection.language "hlsl")
-  (#set! injection.combined))
+  (#set! injection.language "hlsl"))

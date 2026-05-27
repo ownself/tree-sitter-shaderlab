@@ -124,6 +124,11 @@
     "fields": {}
   },
   {
+    "type": "blend_off_command",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "blend_op",
     "named": true,
     "fields": {}
@@ -181,6 +186,10 @@
           "named": true
         },
         {
+          "type": "blend_off_command",
+          "named": true
+        },
+        {
           "type": "blend_op_command",
           "named": true
         },
@@ -197,11 +206,31 @@
           "named": true
         },
         {
+          "type": "legacy_alpha_test_command",
+          "named": true
+        },
+        {
+          "type": "legacy_bind_channels_command",
+          "named": true
+        },
+        {
+          "type": "legacy_color_material_command",
+          "named": true
+        },
+        {
           "type": "legacy_fog_command",
           "named": true
         },
         {
           "type": "legacy_lighting_command",
+          "named": true
+        },
+        {
+          "type": "legacy_material_block",
+          "named": true
+        },
+        {
+          "type": "legacy_set_texture_command",
           "named": true
         },
         {
@@ -417,6 +446,32 @@
     }
   },
   {
+    "type": "dependency",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      },
+      "shader": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "dotted_identifier",
     "named": true,
     "fields": {},
@@ -523,6 +578,110 @@
     }
   },
   {
+    "type": "legacy_alpha_test_command",
+    "named": true,
+    "fields": {
+      "cutoff": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "-",
+            "named": false
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          }
+        ]
+      },
+      "func": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "comparison_func",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "legacy_bind_channels_command",
+    "named": true,
+    "fields": {
+      "channel": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      },
+      "target": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "color",
+            "named": false
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "normal",
+            "named": false
+          },
+          {
+            "type": "tangent",
+            "named": false
+          },
+          {
+            "type": "texcoord0",
+            "named": false
+          },
+          {
+            "type": "texcoord1",
+            "named": false
+          },
+          {
+            "type": "vertex",
+            "named": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "legacy_color_material_command",
+    "named": true,
+    "fields": {
+      "mode": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "AmbientAndDiffuse",
+            "named": false
+          },
+          {
+            "type": "Emission",
+            "named": false
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "legacy_fog_command",
     "named": true,
     "fields": {
@@ -582,6 +741,70 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "legacy_material_block",
+    "named": true,
+    "fields": {
+      "color": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "color_default",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "-",
+            "named": false
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "legacy_set_texture_command",
+    "named": true,
+    "fields": {
+      "color": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "color_default",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number_literal",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -648,6 +871,10 @@
           "named": true
         },
         {
+          "type": "blend_off_command",
+          "named": true
+        },
+        {
           "type": "blend_op_command",
           "named": true
         },
@@ -672,11 +899,31 @@
           "named": true
         },
         {
+          "type": "legacy_alpha_test_command",
+          "named": true
+        },
+        {
+          "type": "legacy_bind_channels_command",
+          "named": true
+        },
+        {
+          "type": "legacy_color_material_command",
+          "named": true
+        },
+        {
           "type": "legacy_fog_command",
           "named": true
         },
         {
           "type": "legacy_lighting_command",
+          "named": true
+        },
+        {
+          "type": "legacy_material_block",
+          "named": true
+        },
+        {
+          "type": "legacy_set_texture_command",
           "named": true
         },
         {
@@ -887,6 +1134,10 @@
         },
         {
           "type": "custom_editor",
+          "named": true
+        },
+        {
+          "type": "dependency",
           "named": true
         },
         {
@@ -1169,6 +1420,10 @@
           "named": true
         },
         {
+          "type": "blend_off_command",
+          "named": true
+        },
+        {
           "type": "blend_op_command",
           "named": true
         },
@@ -1197,11 +1452,31 @@
           "named": true
         },
         {
+          "type": "legacy_alpha_test_command",
+          "named": true
+        },
+        {
+          "type": "legacy_bind_channels_command",
+          "named": true
+        },
+        {
+          "type": "legacy_color_material_command",
+          "named": true
+        },
+        {
           "type": "legacy_fog_command",
           "named": true
         },
         {
           "type": "legacy_lighting_command",
+          "named": true
+        },
+        {
+          "type": "legacy_material_block",
+          "named": true
+        },
+        {
+          "type": "legacy_set_texture_command",
           "named": true
         },
         {
@@ -1397,6 +1672,14 @@
     "named": false
   },
   {
+    "type": "*",
+    "named": false
+  },
+  {
+    "type": "+",
+    "named": false
+  },
+  {
     "type": ",",
     "named": false
   },
@@ -1461,11 +1744,23 @@
     "named": false
   },
   {
+    "type": "AlphaTest",
+    "named": false
+  },
+  {
     "type": "AlphaToMask",
     "named": false
   },
   {
     "type": "Always",
+    "named": false
+  },
+  {
+    "type": "Ambient",
+    "named": false
+  },
+  {
+    "type": "AmbientAndDiffuse",
     "named": false
   },
   {
@@ -1478,6 +1773,14 @@
   },
   {
     "type": "Back",
+    "named": false
+  },
+  {
+    "type": "Bind",
+    "named": false
+  },
+  {
+    "type": "BindChannels",
     "named": false
   },
   {
@@ -1497,6 +1800,10 @@
     "named": false
   },
   {
+    "type": "CUBE",
+    "named": false
+  },
+  {
     "type": "Category",
     "named": false
   },
@@ -1506,6 +1813,10 @@
   },
   {
     "type": "ColorMask",
+    "named": false
+  },
+  {
+    "type": "ColorMaterial",
     "named": false
   },
   {
@@ -1553,6 +1864,14 @@
     "named": false
   },
   {
+    "type": "Dependency",
+    "named": false
+  },
+  {
+    "type": "Diffuse",
+    "named": false
+  },
+  {
     "type": "DstAlpha",
     "named": false
   },
@@ -1566,6 +1885,10 @@
   },
   {
     "type": "ENDHLSL",
+    "named": false
+  },
+  {
+    "type": "Emission",
     "named": false
   },
   {
@@ -1689,6 +2012,14 @@
     "named": false
   },
   {
+    "type": "Material",
+    "named": false
+  },
+  {
+    "type": "Matrix",
+    "named": false
+  },
+  {
     "type": "Max",
     "named": false
   },
@@ -1793,7 +2124,19 @@
     "named": false
   },
   {
+    "type": "SetTexture",
+    "named": false
+  },
+  {
     "type": "Shader",
+    "named": false
+  },
+  {
+    "type": "Shininess",
+    "named": false
+  },
+  {
+    "type": "Specular",
     "named": false
   },
   {
@@ -1873,6 +2216,10 @@
     "named": false
   },
   {
+    "type": "alpha",
+    "named": false
+  },
+  {
     "type": "always",
     "named": false
   },
@@ -1893,6 +2240,10 @@
     "named": false
   },
   {
+    "type": "combine",
+    "named": false
+  },
+  {
     "type": "comp",
     "named": false
   },
@@ -1902,6 +2253,14 @@
   },
   {
     "type": "compfront",
+    "named": false
+  },
+  {
+    "type": "constant",
+    "named": false
+  },
+  {
+    "type": "constantColor",
     "named": false
   },
   {
@@ -1918,6 +2277,10 @@
   },
   {
     "type": "decrwrap",
+    "named": false
+  },
+  {
+    "type": "double",
     "named": false
   },
   {
@@ -1981,6 +2344,10 @@
     "named": false
   },
   {
+    "type": "invalpha",
+    "named": false
+  },
+  {
     "type": "invert",
     "named": false
   },
@@ -1993,11 +2360,19 @@
     "named": false
   },
   {
+    "type": "lerp",
+    "named": false
+  },
+  {
     "type": "less",
     "named": false
   },
   {
     "type": "never",
+    "named": false
+  },
+  {
+    "type": "normal",
     "named": false
   },
   {
@@ -2017,6 +2392,10 @@
     "named": false
   },
   {
+    "type": "one",
+    "named": false
+  },
+  {
     "type": "pass",
     "named": false
   },
@@ -2026,6 +2405,18 @@
   },
   {
     "type": "passfront",
+    "named": false
+  },
+  {
+    "type": "previous",
+    "named": false
+  },
+  {
+    "type": "primary",
+    "named": false
+  },
+  {
+    "type": "quad",
     "named": false
   },
   {
@@ -2053,11 +2444,31 @@
     "named": true
   },
   {
+    "type": "tangent",
+    "named": false
+  },
+  {
+    "type": "texcoord0",
+    "named": false
+  },
+  {
+    "type": "texcoord1",
+    "named": false
+  },
+  {
+    "type": "texture",
+    "named": false
+  },
+  {
     "type": "true",
     "named": false
   },
   {
     "type": "vector",
+    "named": false
+  },
+  {
+    "type": "vertex",
     "named": false
   },
   {
