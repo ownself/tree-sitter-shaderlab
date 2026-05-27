@@ -146,10 +146,12 @@ Shader "Custom/Blend" {
           (color_mask_command
             mask: (color_mask_value))
           (offset_command
-            factor: (signed_number
-              (number_literal))
-            units: (signed_number
-              (number_literal)))
+            factor: (signed_value
+              (signed_number
+                (number_literal)))
+            units: (signed_value
+              (signed_number
+                (number_literal))))
           (alpha_to_mask_command
             mode: (on_off))
           (zclip_command

@@ -14,6 +14,10 @@
           {
             "type": "property_reference",
             "named": true
+          },
+          {
+            "type": "true_false",
+            "named": true
           }
         ]
       }
@@ -214,6 +218,10 @@
           "named": true
         },
         {
+          "type": "legacy_color_command",
+          "named": true
+        },
+        {
           "type": "legacy_color_material_command",
           "named": true
         },
@@ -234,7 +242,15 @@
           "named": true
         },
         {
+          "type": "lod",
+          "named": true
+        },
+        {
           "type": "offset_command",
+          "named": true
+        },
+        {
+          "type": "separate_specular_command",
           "named": true
         },
         {
@@ -499,8 +515,67 @@
             "named": false
           },
           {
+            "type": "off",
+            "named": false
+          },
+          {
             "type": "string_literal",
             "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "glsl_include",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "glsl_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "glsl_program_block",
+    "named": true,
+    "fields": {
+      "content": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "glsl_content",
+            "named": true
+          }
+        ]
+      },
+      "end": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "ENDGLSL",
+            "named": false
+          }
+        ]
+      },
+      "start": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "GLSLINCLUDE",
+            "named": false
+          },
+          {
+            "type": "GLSLPROGRAM",
+            "named": false
           }
         ]
       }
@@ -511,7 +586,7 @@
     "named": true,
     "fields": {
       "texture": {
-        "multiple": false,
+        "multiple": true,
         "required": false,
         "types": [
           {
@@ -520,6 +595,20 @@
           }
         ]
       }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "pass_name",
+          "named": true
+        },
+        {
+          "type": "tags_block",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -596,6 +685,10 @@
           {
             "type": "number_literal",
             "named": true
+          },
+          {
+            "type": "property_reference",
+            "named": true
           }
         ]
       },
@@ -662,6 +755,26 @@
     }
   },
   {
+    "type": "legacy_color_command",
+    "named": true,
+    "fields": {
+      "color": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "color_default",
+            "named": true
+          },
+          {
+            "type": "property_reference",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "legacy_color_material_command",
     "named": true,
     "fields": {
@@ -707,6 +820,10 @@
           },
           {
             "type": "Off",
+            "named": false
+          },
+          {
+            "type": "off",
             "named": false
           }
         ]
@@ -754,6 +871,10 @@
           {
             "type": "color_default",
             "named": true
+          },
+          {
+            "type": "property_reference",
+            "named": true
           }
         ]
       },
@@ -772,6 +893,10 @@
           {
             "type": "number_literal",
             "named": true
+          },
+          {
+            "type": "property_reference",
+            "named": true
           }
         ]
       }
@@ -787,6 +912,10 @@
         "types": [
           {
             "type": "color_default",
+            "named": true
+          },
+          {
+            "type": "property_reference",
             "named": true
           }
         ]
@@ -832,7 +961,7 @@
         "required": true,
         "types": [
           {
-            "type": "signed_number",
+            "type": "signed_value",
             "named": true
           }
         ]
@@ -842,7 +971,7 @@
         "required": true,
         "types": [
           {
-            "type": "signed_number",
+            "type": "signed_value",
             "named": true
           }
         ]
@@ -895,6 +1024,10 @@
           "named": true
         },
         {
+          "type": "glsl_program_block",
+          "named": true
+        },
+        {
           "type": "hlsl_program_block",
           "named": true
         },
@@ -904,6 +1037,10 @@
         },
         {
           "type": "legacy_bind_channels_command",
+          "named": true
+        },
+        {
+          "type": "legacy_color_command",
           "named": true
         },
         {
@@ -927,11 +1064,19 @@
           "named": true
         },
         {
+          "type": "lod",
+          "named": true
+        },
+        {
           "type": "offset_command",
           "named": true
         },
         {
           "type": "pass_name",
+          "named": true
+        },
+        {
+          "type": "separate_specular_command",
           "named": true
         },
         {
@@ -1117,6 +1262,22 @@
     }
   },
   {
+    "type": "separate_specular_command",
+    "named": true,
+    "fields": {
+      "mode": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "on_off",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "shader_body",
     "named": true,
     "fields": {},
@@ -1142,6 +1303,10 @@
         },
         {
           "type": "fallback",
+          "named": true
+        },
+        {
+          "type": "glsl_include",
           "named": true
         },
         {
@@ -1203,6 +1368,25 @@
       "types": [
         {
           "type": "number_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "signed_value",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "property_reference",
+          "named": true
+        },
+        {
+          "type": "signed_number",
           "named": true
         }
       ]
@@ -1444,6 +1628,10 @@
           "named": true
         },
         {
+          "type": "glsl_program_block",
+          "named": true
+        },
+        {
           "type": "grab_pass",
           "named": true
         },
@@ -1457,6 +1645,10 @@
         },
         {
           "type": "legacy_bind_channels_command",
+          "named": true
+        },
+        {
+          "type": "legacy_color_command",
           "named": true
         },
         {
@@ -1489,6 +1681,10 @@
         },
         {
           "type": "pass_block",
+          "named": true
+        },
+        {
+          "type": "separate_specular_command",
           "named": true
         },
         {
@@ -1564,9 +1760,13 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
         {
           "type": "string_literal",
           "named": true
@@ -1752,6 +1952,10 @@
     "named": false
   },
   {
+    "type": "Alphatest",
+    "named": false
+  },
+  {
     "type": "Always",
     "named": false
   },
@@ -1820,6 +2024,10 @@
     "named": false
   },
   {
+    "type": "Combine",
+    "named": false
+  },
+  {
     "type": "Comp",
     "named": false
   },
@@ -1836,6 +2044,10 @@
     "named": false
   },
   {
+    "type": "ConstantColor",
+    "named": false
+  },
+  {
     "type": "Cube",
     "named": false
   },
@@ -1849,6 +2061,10 @@
   },
   {
     "type": "CustomEditor",
+    "named": false
+  },
+  {
+    "type": "DOUBLE",
     "named": false
   },
   {
@@ -1881,6 +2097,10 @@
   },
   {
     "type": "ENDCG",
+    "named": false
+  },
+  {
+    "type": "ENDGLSL",
     "named": false
   },
   {
@@ -1944,7 +2164,19 @@
     "named": false
   },
   {
+    "type": "GBA",
+    "named": false
+  },
+  {
     "type": "GEqual",
+    "named": false
+  },
+  {
+    "type": "GLSLINCLUDE",
+    "named": false
+  },
+  {
+    "type": "GLSLPROGRAM",
     "named": false
   },
   {
@@ -1989,6 +2221,10 @@
   },
   {
     "type": "Keep",
+    "named": false
+  },
+  {
+    "type": "LERP",
     "named": false
   },
   {
@@ -2092,7 +2328,19 @@
     "named": false
   },
   {
+    "type": "QUAD",
+    "named": false
+  },
+  {
     "type": "R",
+    "named": false
+  },
+  {
+    "type": "RANGE",
+    "named": false
+  },
+  {
+    "type": "RECT",
     "named": false
   },
   {
@@ -2121,6 +2369,10 @@
   },
   {
     "type": "RevSub",
+    "named": false
+  },
+  {
+    "type": "SeparateSpecular",
     "named": false
   },
   {
@@ -2157,6 +2409,10 @@
   },
   {
     "type": "SubShader",
+    "named": false
+  },
+  {
+    "type": "Subshader",
     "named": false
   },
   {
@@ -2208,6 +2464,10 @@
     "named": false
   },
   {
+    "type": "Ztest",
+    "named": false
+  },
+  {
     "type": "[",
     "named": false
   },
@@ -2217,6 +2477,10 @@
   },
   {
     "type": "alpha",
+    "named": false
+  },
+  {
+    "type": "alphatest",
     "named": false
   },
   {
@@ -2314,6 +2578,10 @@
   {
     "type": "gequal",
     "named": false
+  },
+  {
+    "type": "glsl_content",
+    "named": true
   },
   {
     "type": "greater",
@@ -2432,11 +2700,23 @@
     "named": false
   },
   {
+    "type": "rect",
+    "named": false
+  },
+  {
     "type": "ref",
     "named": false
   },
   {
     "type": "replace",
+    "named": false
+  },
+  {
+    "type": "rgb",
+    "named": false
+  },
+  {
+    "type": "rgba",
     "named": false
   },
   {
@@ -2493,6 +2773,10 @@
   },
   {
     "type": "zfailfront",
+    "named": false
+  },
+  {
+    "type": "ztest",
     "named": false
   },
   {

@@ -43,6 +43,7 @@ module.exports = grammar({
             $.subshader_block,
             $.cg_include,
             $.hlsl_include,
+            $.glsl_include,
             $.custom_editor,
             $.dependency,
             $.fallback,
@@ -93,6 +94,7 @@ module.exports = grammar({
         _attr_arg: $ => choice(
             $.dotted_identifier,
             seq($.identifier, repeat1(seq(' ', $.identifier))),
+            seq($.number_literal, repeat(seq(' ', $.identifier))),
             $.number_literal,
             $.string_literal,
         ),
@@ -109,7 +111,8 @@ module.exports = grammar({
             'Int', 'int',
             'Integer', 'integer',
             'any', 'Any',
-            seq(choice('Range', 'range'), '(', $._number, ',', $._number, ')'),
+            'RECT', 'rect',
+            seq(choice('Range', 'range', 'RANGE'), '(', $._number, ',', $._number, ')'),
         ),
 
         _property_default: $ => choice(
@@ -119,14 +122,14 @@ module.exports = grammar({
             $.string_literal,
         ),
 
-        texture_default: $ => seq($.string_literal, '{', '}'),
+        texture_default: $ => seq($.string_literal, '{', repeat($.identifier), '}'),
         color_default: $ => seq('(', $._number, ',', $._number, ',', $._number, optional(seq(',', $._number)), ')'),
 
         // =============================================
         // SubShader 块
         // =============================================
         subshader_block: $ => seq(
-            'SubShader',
+            choice('SubShader', 'Subshader'),
             '{',
             repeat($._subshader_body_item),
             '}',
@@ -141,6 +144,7 @@ module.exports = grammar({
             $.grab_pass,
             $.cg_program_block,
             $.hlsl_program_block,
+            $.glsl_program_block,
         ),
 
         // =============================================
@@ -156,9 +160,11 @@ module.exports = grammar({
         _pass_body_item: $ => choice(
             $.pass_name,
             $.tags_block,
+            $.lod,
             $._render_state,
             $.cg_program_block,
             $.hlsl_program_block,
+            $.glsl_program_block,
         ),
 
         pass_name: $ => seq('Name', $.string_literal),
@@ -203,13 +209,17 @@ module.exports = grammar({
             $.legacy_set_texture_command,
             $.legacy_alpha_test_command,
             $.legacy_bind_channels_command,
+            $.separate_specular_command,
+            $.legacy_color_command,
         ),
 
         cull_command: $ => seq('Cull', field('mode', choice($.cull_mode, $.property_reference))),
         cull_mode: $ => choice('Back', 'Front', 'Off', 'back', 'front', 'off'),
 
         zwrite_command: $ => seq('ZWrite', field('mode', choice($.on_off, $.property_reference))),
-        ztest_command: $ => seq('ZTest', field('func', choice($.comparison_func, $.property_reference))),
+        ztest_command: $ => seq(choice('ZTest', 'Ztest', 'ztest'), field('func', choice($.comparison_func, $.property_reference))),
+
+        separate_specular_command: $ => seq('SeparateSpecular', field('mode', $.on_off)),
         zclip_command: $ => seq('ZClip', field('mode', choice($.true_false, $.property_reference))),
 
         _blend_value: $ => choice($.blend_factor, $.property_reference),
@@ -229,11 +239,12 @@ module.exports = grammar({
         ),
 
         color_mask_command: $ => seq('ColorMask', field('mask', choice($.color_mask_value, $.property_reference))),
-        color_mask_value: $ => choice('RGBA', 'RGB', 'A', 'R', 'G', 'B', '0', $.number_literal),
+        color_mask_value: $ => choice('RGBA', 'RGB', 'A', 'R', 'G', 'B', '0', 'rgba', 'rgb', 'GBA', $.number_literal),
 
-        offset_command: $ => seq('Offset', field('factor', $.signed_number), ',', field('units', $.signed_number)),
+        offset_command: $ => seq('Offset', field('factor', $.signed_value), ',', field('units', $.signed_value)),
         signed_number: $ => choice($.number_literal, seq('-', $.number_literal)),
-        alpha_to_mask_command: $ => seq('AlphaToMask', field('mode', choice($.on_off, $.property_reference))),
+        signed_value: $ => choice($.signed_number, $.property_reference),
+        alpha_to_mask_command: $ => seq('AlphaToMask', field('mode', choice($.on_off, $.true_false, $.property_reference))),
 
         blend_factor: $ => choice(
             'One', 'Zero',
@@ -252,6 +263,7 @@ module.exports = grammar({
             'NotEqual', 'notequal',
             'Always', 'always',
             'Never', 'never',
+            'Off', 'off',
         ),
         on_off: $ => choice('On', 'Off', 'on', 'off'),
         true_false: $ => choice('True', 'False', 'true', 'false'),
@@ -269,12 +281,15 @@ module.exports = grammar({
             '}',
         ),
         _legacy_fog_item: $ => choice(
-            seq('Mode', field('mode', choice('Off', 'Global', 'Linear', 'Exp', 'Exp2'))),
+            seq('Mode', field('mode', choice('Off', 'off', 'Global', 'Linear', 'Exp', 'Exp2'))),
             seq('Color', '(', $._number, ',', $._number, ',', $._number, optional(seq(',', $._number)), ')'),
             seq('Density', $._number),
             seq('Range', $._number, ',', $._number),
         ),
         legacy_color_material_command: $ => seq('ColorMaterial', field('mode', choice('AmbientAndDiffuse', 'Emission'))),
+
+        // Color (r,g,b,a) or Color [_Property]
+        legacy_color_command: $ => seq('Color', field('color', choice($.color_default, $.property_reference))),
 
         // Material { Diffuse/Ambient/Specular/Emission/Shininess }
         legacy_material_block: $ => seq(
@@ -284,11 +299,11 @@ module.exports = grammar({
             '}',
         ),
         _legacy_material_item: $ => choice(
-            seq('Diffuse', field('color', $.color_default)),
-            seq('Ambient', field('color', $.color_default)),
-            seq('Specular', field('color', $.color_default)),
-            seq('Emission', field('color', $.color_default)),
-            seq('Shininess', field('value', $._number)),
+            seq('Diffuse', field('color', choice($.color_default, $.property_reference))),
+            seq('Ambient', field('color', choice($.color_default, $.property_reference))),
+            seq('Specular', field('color', choice($.color_default, $.property_reference))),
+            seq('Emission', field('color', choice($.color_default, $.property_reference))),
+            seq('Shininess', field('value', choice($._number, $.property_reference))),
         ),
 
         // SetTexture [name] { combine / constantColor / Matrix }
@@ -300,24 +315,26 @@ module.exports = grammar({
             '}',
         ),
         _legacy_set_texture_item: $ => choice(
-            seq('combine', repeat1($._legacy_combine_value)),
-            seq('constantColor', field('color', $.color_default)),
+            seq(choice('combine', 'Combine'), repeat1($._legacy_combine_value)),
+            seq(choice('constantColor', 'ConstantColor'), field('color', choice($.color_default, $.property_reference))),
             seq('Matrix', '[', $.identifier, ']'),
         ),
         _legacy_combine_value: $ => choice(
             $.identifier,
             $.number_literal,
+            seq('(', $._legacy_combine_value, ')'),
             'texture', 'primary', 'previous', 'constant', 'one', 'One',
             'alpha', 'invalpha',
             '*', '+', '-', 'double', 'quad', 'lerp',
+            'DOUBLE', 'QUAD', 'LERP',
             ',',
         ),
 
         // AlphaTest comparison [cutoff]
         legacy_alpha_test_command: $ => seq(
-            'AlphaTest',
+            choice('AlphaTest', 'Alphatest', 'alphatest'),
             field('func', $.comparison_func),
-            optional(field('cutoff', $._number)),
+            optional(field('cutoff', choice($._number, $.property_reference))),
         ),
 
         // BindChannels { Bind "channel", property }
@@ -373,7 +390,7 @@ module.exports = grammar({
         ),
 
         // =============================================
-        // CGPROGRAM / HLSLPROGRAM 块
+        // CGPROGRAM / HLSLPROGRAM / GLSLPROGRAM 块
         // =============================================
         cg_program_block: $ => seq(
             field('start', choice('CGPROGRAM', 'CGINCLUDE')),
@@ -387,18 +404,25 @@ module.exports = grammar({
             field('end', 'ENDHLSL'),
         ),
 
-        // 全局 CGINCLUDE / HLSLINCLUDE（在 SubShader 级别）
+        glsl_program_block: $ => seq(
+            field('start', choice('GLSLPROGRAM', 'GLSLINCLUDE')),
+            field('content', alias($.program_content, $.glsl_content)),
+            field('end', 'ENDGLSL'),
+        ),
+
+        // 全局 CGINCLUDE / HLSLINCLUDE / GLSLINCLUDE（在 SubShader 级别）
         cg_include: $ => seq('CGINCLUDE', alias($.program_content, $.cg_content), 'ENDCG'),
         hlsl_include: $ => seq('HLSLINCLUDE', alias($.program_content, $.hlsl_content), 'ENDHLSL'),
+        glsl_include: $ => seq('GLSLINCLUDE', alias($.program_content, $.glsl_content), 'ENDGLSL'),
 
         // =============================================
         // 其他 ShaderLab 声明
         // =============================================
         custom_editor: $ => seq('CustomEditor', field('name', $.string_literal)),
         dependency: $ => seq('Dependency', field('name', $.string_literal), '=', field('shader', $.string_literal)),
-        fallback: $ => seq(choice('FallBack', 'Fallback'), field('shader', choice($.string_literal, 'Off'))),
+        fallback: $ => seq(choice('FallBack', 'Fallback'), field('shader', choice($.string_literal, 'Off', 'off'))),
         use_pass: $ => seq('UsePass', field('pass', $.string_literal)),
-        grab_pass: $ => seq('GrabPass', '{', optional(field('texture', $.string_literal)), '}'),
+        grab_pass: $ => seq('GrabPass', '{', repeat(choice($.tags_block, $.pass_name, field('texture', $.string_literal))), '}'),
         lod: $ => seq('LOD', field('value', $.number_literal)),
 
         // 旧版 Category 块 — 可包含渲染状态和 SubShader
@@ -407,6 +431,7 @@ module.exports = grammar({
             '{',
             repeat(choice(
                 $.tags_block,
+                $.lod,
                 $._render_state,
                 $.subshader_block,
             )),

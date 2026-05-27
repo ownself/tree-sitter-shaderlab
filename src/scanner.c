@@ -6,7 +6,7 @@ enum TokenType {
     PROGRAM_CONTENT,
 };
 
-/// 扫描 CGPROGRAM/HLSLPROGRAM 块内容，直到遇到 ENDCG 或 ENDHLSL 为止。
+/// 扫描 CGPROGRAM/HLSLPROGRAM/GLSLPROGRAM 块内容，直到遇到 ENDCG / ENDHLSL / ENDGLSL 为止。
 /// 与 C 的 raw string 类似，内容作为一个完整 token 返回（供语言注入使用）。
 static bool scan_program_content(TSLexer *lexer) {
     bool has_content = false;
@@ -21,8 +21,7 @@ static bool scan_program_content(TSLexer *lexer) {
             return false;
         }
 
-        // 检测 ENDCG 或 ENDHLSL（5-7 字符的关键词）
-        // 为简单起见，检测到换行符后的 ENDCG/ENDHLSL 或文件开头的
+        // 检测 ENDCG、ENDHLSL 或 ENDGLSL
         if (lexer->lookahead == 'E') {
             lexer->mark_end(lexer);  // 标记当前位置（不含关键词）为内容结束
             has_content = true;
@@ -50,10 +49,22 @@ static bool scan_program_content(TSLexer *lexer) {
                                 }
                             }
                         }
+                    } else if (lexer->lookahead == 'G') {
+                        lexer->advance(lexer, false);
+                        if (lexer->lookahead == 'L') {
+                            lexer->advance(lexer, false);
+                            if (lexer->lookahead == 'S') {
+                                lexer->advance(lexer, false);
+                                if (lexer->lookahead == 'L') {
+                                    // 找到 ENDGLSL
+                                    return true;
+                                }
+                            }
+                        }
                     }
                 }
             }
-            // E 开头但不是 ENDCG/ENDHLSL：继续
+            // E 开头但不是 ENDCG/ENDHLSL/ENDGLSL：继续
         }
 
         lexer->advance(lexer, false);

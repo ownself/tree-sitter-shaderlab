@@ -7,16 +7,16 @@
 #endif
 
 #define LANGUAGE_VERSION 15
-#define STATE_COUNT 309
-#define LARGE_STATE_COUNT 4
-#define SYMBOL_COUNT 308
-#define ALIAS_COUNT 2
-#define TOKEN_COUNT 214
+#define STATE_COUNT 331
+#define LARGE_STATE_COUNT 10
+#define SYMBOL_COUNT 335
+#define ALIAS_COUNT 3
+#define TOKEN_COUNT 234
 #define EXTERNAL_TOKEN_COUNT 1
 #define FIELD_COUNT 31
 #define MAX_ALIAS_SEQUENCE_LENGTH 10
 #define MAX_RESERVED_WORD_SET_SIZE 0
-#define PRODUCTION_ID_COUNT 48
+#define PRODUCTION_ID_COUNT 52
 #define SUPERTYPE_COUNT 0
 
 enum ts_symbol_identifiers {
@@ -56,279 +56,307 @@ enum ts_symbol_identifiers {
   anon_sym_integer = 34,
   anon_sym_any = 35,
   anon_sym_Any = 36,
-  anon_sym_Range = 37,
-  anon_sym_range = 38,
-  anon_sym_SubShader = 39,
-  anon_sym_Pass = 40,
-  anon_sym_Name = 41,
-  anon_sym_Tags = 42,
-  anon_sym_Cull = 43,
-  anon_sym_Back = 44,
-  anon_sym_Front = 45,
-  anon_sym_Off = 46,
-  anon_sym_back = 47,
-  anon_sym_front = 48,
-  anon_sym_off = 49,
-  anon_sym_ZWrite = 50,
-  anon_sym_ZTest = 51,
-  anon_sym_ZClip = 52,
-  anon_sym_Blend = 53,
-  anon_sym_BlendOp = 54,
-  anon_sym_ColorMask = 55,
-  anon_sym_RGBA = 56,
-  anon_sym_RGB = 57,
-  anon_sym_A = 58,
-  anon_sym_R = 59,
-  anon_sym_G = 60,
-  anon_sym_B = 61,
-  anon_sym_0 = 62,
-  anon_sym_Offset = 63,
-  anon_sym_DASH = 64,
-  anon_sym_AlphaToMask = 65,
-  anon_sym_One = 66,
-  anon_sym_Zero = 67,
-  anon_sym_SrcColor = 68,
-  anon_sym_SrcAlpha = 69,
-  anon_sym_DstColor = 70,
-  anon_sym_DstAlpha = 71,
-  anon_sym_OneMinusSrcColor = 72,
-  anon_sym_OneMinusSrcAlpha = 73,
-  anon_sym_OneMinusDstColor = 74,
-  anon_sym_OneMinusDstAlpha = 75,
-  anon_sym_Add = 76,
-  anon_sym_Sub = 77,
-  anon_sym_RevSub = 78,
-  anon_sym_Min = 79,
-  anon_sym_Max = 80,
-  anon_sym_Less = 81,
-  anon_sym_less = 82,
-  anon_sym_Greater = 83,
-  anon_sym_greater = 84,
-  anon_sym_LEqual = 85,
-  anon_sym_lequal = 86,
-  anon_sym_GEqual = 87,
-  anon_sym_gequal = 88,
-  anon_sym_Equal = 89,
-  anon_sym_equal = 90,
-  anon_sym_NotEqual = 91,
-  anon_sym_notequal = 92,
-  anon_sym_Always = 93,
-  anon_sym_always = 94,
-  anon_sym_Never = 95,
-  anon_sym_never = 96,
-  anon_sym_On = 97,
-  anon_sym_on = 98,
-  anon_sym_True = 99,
-  anon_sym_False = 100,
-  anon_sym_true = 101,
-  anon_sym_false = 102,
-  anon_sym_Conservative = 103,
-  anon_sym_Lighting = 104,
-  anon_sym_Fog = 105,
-  anon_sym_Mode = 106,
-  anon_sym_Global = 107,
-  anon_sym_Linear = 108,
-  anon_sym_Exp = 109,
-  anon_sym_Exp2 = 110,
-  anon_sym_Density = 111,
-  anon_sym_ColorMaterial = 112,
-  anon_sym_AmbientAndDiffuse = 113,
-  anon_sym_Emission = 114,
-  anon_sym_Material = 115,
-  anon_sym_Diffuse = 116,
-  anon_sym_Ambient = 117,
-  anon_sym_Specular = 118,
-  anon_sym_Shininess = 119,
-  anon_sym_SetTexture = 120,
-  anon_sym_combine = 121,
-  anon_sym_constantColor = 122,
-  anon_sym_Matrix = 123,
-  anon_sym_texture = 124,
-  anon_sym_primary = 125,
-  anon_sym_previous = 126,
-  anon_sym_constant = 127,
-  anon_sym_one = 128,
-  anon_sym_alpha = 129,
-  anon_sym_invalpha = 130,
-  anon_sym_STAR = 131,
-  anon_sym_PLUS = 132,
-  anon_sym_double = 133,
-  anon_sym_quad = 134,
-  anon_sym_lerp = 135,
-  anon_sym_AlphaTest = 136,
-  anon_sym_BindChannels = 137,
-  anon_sym_Bind = 138,
-  anon_sym_vertex = 139,
-  anon_sym_normal = 140,
-  anon_sym_tangent = 141,
-  anon_sym_texcoord0 = 142,
-  anon_sym_texcoord1 = 143,
-  anon_sym_Stencil = 144,
-  anon_sym_Ref = 145,
-  anon_sym_ref = 146,
-  anon_sym_ReadMask = 147,
-  anon_sym_readMask = 148,
-  anon_sym_readmask = 149,
-  anon_sym_WriteMask = 150,
-  anon_sym_writeMask = 151,
-  anon_sym_writemask = 152,
-  anon_sym_Comp = 153,
-  anon_sym_CompFront = 154,
-  anon_sym_CompBack = 155,
-  anon_sym_comp = 156,
-  anon_sym_compfront = 157,
-  anon_sym_compback = 158,
-  anon_sym_PassFront = 159,
-  anon_sym_PassBack = 160,
-  anon_sym_pass = 161,
-  anon_sym_passfront = 162,
-  anon_sym_passback = 163,
-  anon_sym_Fail = 164,
-  anon_sym_FailFront = 165,
-  anon_sym_FailBack = 166,
-  anon_sym_fail = 167,
-  anon_sym_failfront = 168,
-  anon_sym_failback = 169,
-  anon_sym_ZFail = 170,
-  anon_sym_ZFailFront = 171,
-  anon_sym_ZFailBack = 172,
-  anon_sym_zfail = 173,
-  anon_sym_zfailfront = 174,
-  anon_sym_zfailback = 175,
-  anon_sym_Keep = 176,
-  anon_sym_keep = 177,
-  anon_sym_zero = 178,
-  anon_sym_Replace = 179,
-  anon_sym_replace = 180,
-  anon_sym_IncrSat = 181,
-  anon_sym_incrsat = 182,
-  anon_sym_DecrSat = 183,
-  anon_sym_decrsat = 184,
-  anon_sym_Invert = 185,
-  anon_sym_invert = 186,
-  anon_sym_IncrWrap = 187,
-  anon_sym_incrwrap = 188,
-  anon_sym_DecrWrap = 189,
-  anon_sym_decrwrap = 190,
-  anon_sym_CGPROGRAM = 191,
-  anon_sym_CGINCLUDE = 192,
-  anon_sym_ENDCG = 193,
-  anon_sym_HLSLPROGRAM = 194,
-  anon_sym_HLSLINCLUDE = 195,
-  anon_sym_ENDHLSL = 196,
-  anon_sym_CustomEditor = 197,
-  anon_sym_Dependency = 198,
-  anon_sym_FallBack = 199,
-  anon_sym_Fallback = 200,
-  anon_sym_UsePass = 201,
-  anon_sym_GrabPass = 202,
-  anon_sym_LOD = 203,
-  anon_sym_Category = 204,
-  anon_sym_SLASH_SLASH = 205,
-  aux_sym_comment_token1 = 206,
-  anon_sym_SLASH_STAR = 207,
-  aux_sym_comment_token2 = 208,
-  anon_sym_SLASH = 209,
-  anon_sym_DQUOTE = 210,
-  aux_sym_string_literal_token1 = 211,
-  sym_number_literal = 212,
-  sym_program_content = 213,
-  sym_source_file = 214,
-  sym__top_level_item = 215,
-  sym_shader_definition = 216,
-  sym_shader_body = 217,
-  sym__shader_body_item = 218,
-  sym_properties_block = 219,
-  sym_property_declaration = 220,
-  sym_dotted_identifier = 221,
-  sym_property_attribute = 222,
-  sym__attr_args = 223,
-  sym__attr_arg = 224,
-  sym_property_type = 225,
-  sym__property_default = 226,
-  sym_texture_default = 227,
-  sym_color_default = 228,
-  sym_subshader_block = 229,
-  sym__subshader_body_item = 230,
-  sym_pass_block = 231,
-  sym__pass_body_item = 232,
-  sym_pass_name = 233,
-  sym_tags_block = 234,
-  sym_tag_pair = 235,
-  sym__render_state = 236,
-  sym_cull_command = 237,
-  sym_cull_mode = 238,
-  sym_zwrite_command = 239,
-  sym_ztest_command = 240,
-  sym_zclip_command = 241,
-  sym__blend_value = 242,
-  sym_blend_command = 243,
-  sym_blend_off_command = 244,
-  sym_blend_op_command = 245,
-  sym_color_mask_command = 246,
-  sym_color_mask_value = 247,
-  sym_offset_command = 248,
-  sym_signed_number = 249,
-  sym_alpha_to_mask_command = 250,
-  sym_blend_factor = 251,
-  sym_blend_op = 252,
-  sym_comparison_func = 253,
-  sym_on_off = 254,
-  sym_true_false = 255,
-  sym_conservative_command = 256,
-  sym_legacy_lighting_command = 257,
-  sym_legacy_fog_command = 258,
-  sym__legacy_fog_item = 259,
-  sym_legacy_color_material_command = 260,
-  sym_legacy_material_block = 261,
-  sym__legacy_material_item = 262,
-  sym_legacy_set_texture_command = 263,
-  sym__legacy_set_texture_item = 264,
-  sym__legacy_combine_value = 265,
-  sym_legacy_alpha_test_command = 266,
-  sym_legacy_bind_channels_command = 267,
-  sym__legacy_bind_channel = 268,
-  sym_stencil_block = 269,
-  sym__stencil_op = 270,
-  sym__stencil_value = 271,
-  sym__stencil_comp = 272,
-  sym__stencil_pass = 273,
-  sym__stencil_fail = 274,
-  sym__stencil_zfail = 275,
-  sym_stencil_op_value = 276,
-  sym_cg_program_block = 277,
-  sym_hlsl_program_block = 278,
-  sym_cg_include = 279,
-  sym_hlsl_include = 280,
-  sym_custom_editor = 281,
-  sym_dependency = 282,
-  sym_fallback = 283,
-  sym_use_pass = 284,
-  sym_grab_pass = 285,
-  sym_lod = 286,
-  sym_category_block = 287,
-  sym_comment = 288,
-  sym_string_literal = 289,
-  sym__number = 290,
-  sym_property_reference = 291,
-  aux_sym_source_file_repeat1 = 292,
-  aux_sym_shader_body_repeat1 = 293,
-  aux_sym_properties_block_repeat1 = 294,
-  aux_sym_property_declaration_repeat1 = 295,
-  aux_sym_dotted_identifier_repeat1 = 296,
-  aux_sym__attr_arg_repeat1 = 297,
-  aux_sym_subshader_block_repeat1 = 298,
-  aux_sym_pass_block_repeat1 = 299,
-  aux_sym_tags_block_repeat1 = 300,
-  aux_sym_legacy_fog_command_repeat1 = 301,
-  aux_sym_legacy_material_block_repeat1 = 302,
-  aux_sym_legacy_set_texture_command_repeat1 = 303,
-  aux_sym__legacy_set_texture_item_repeat1 = 304,
-  aux_sym_legacy_bind_channels_command_repeat1 = 305,
-  aux_sym_stencil_block_repeat1 = 306,
-  aux_sym_category_block_repeat1 = 307,
-  alias_sym_attribute_arguments = 308,
-  alias_sym_hlsl_content = 309,
+  anon_sym_RECT = 37,
+  anon_sym_rect = 38,
+  anon_sym_Range = 39,
+  anon_sym_range = 40,
+  anon_sym_RANGE = 41,
+  anon_sym_SubShader = 42,
+  anon_sym_Subshader = 43,
+  anon_sym_Pass = 44,
+  anon_sym_Name = 45,
+  anon_sym_Tags = 46,
+  anon_sym_Cull = 47,
+  anon_sym_Back = 48,
+  anon_sym_Front = 49,
+  anon_sym_Off = 50,
+  anon_sym_back = 51,
+  anon_sym_front = 52,
+  anon_sym_off = 53,
+  anon_sym_ZWrite = 54,
+  anon_sym_ZTest = 55,
+  anon_sym_Ztest = 56,
+  anon_sym_ztest = 57,
+  anon_sym_SeparateSpecular = 58,
+  anon_sym_ZClip = 59,
+  anon_sym_Blend = 60,
+  anon_sym_BlendOp = 61,
+  anon_sym_ColorMask = 62,
+  anon_sym_RGBA = 63,
+  anon_sym_RGB = 64,
+  anon_sym_A = 65,
+  anon_sym_R = 66,
+  anon_sym_G = 67,
+  anon_sym_B = 68,
+  anon_sym_0 = 69,
+  anon_sym_rgba = 70,
+  anon_sym_rgb = 71,
+  anon_sym_GBA = 72,
+  anon_sym_Offset = 73,
+  anon_sym_DASH = 74,
+  anon_sym_AlphaToMask = 75,
+  anon_sym_One = 76,
+  anon_sym_Zero = 77,
+  anon_sym_SrcColor = 78,
+  anon_sym_SrcAlpha = 79,
+  anon_sym_DstColor = 80,
+  anon_sym_DstAlpha = 81,
+  anon_sym_OneMinusSrcColor = 82,
+  anon_sym_OneMinusSrcAlpha = 83,
+  anon_sym_OneMinusDstColor = 84,
+  anon_sym_OneMinusDstAlpha = 85,
+  anon_sym_Add = 86,
+  anon_sym_Sub = 87,
+  anon_sym_RevSub = 88,
+  anon_sym_Min = 89,
+  anon_sym_Max = 90,
+  anon_sym_Less = 91,
+  anon_sym_less = 92,
+  anon_sym_Greater = 93,
+  anon_sym_greater = 94,
+  anon_sym_LEqual = 95,
+  anon_sym_lequal = 96,
+  anon_sym_GEqual = 97,
+  anon_sym_gequal = 98,
+  anon_sym_Equal = 99,
+  anon_sym_equal = 100,
+  anon_sym_NotEqual = 101,
+  anon_sym_notequal = 102,
+  anon_sym_Always = 103,
+  anon_sym_always = 104,
+  anon_sym_Never = 105,
+  anon_sym_never = 106,
+  anon_sym_On = 107,
+  anon_sym_on = 108,
+  anon_sym_True = 109,
+  anon_sym_False = 110,
+  anon_sym_true = 111,
+  anon_sym_false = 112,
+  anon_sym_Conservative = 113,
+  anon_sym_Lighting = 114,
+  anon_sym_Fog = 115,
+  anon_sym_Mode = 116,
+  anon_sym_Global = 117,
+  anon_sym_Linear = 118,
+  anon_sym_Exp = 119,
+  anon_sym_Exp2 = 120,
+  anon_sym_Density = 121,
+  anon_sym_ColorMaterial = 122,
+  anon_sym_AmbientAndDiffuse = 123,
+  anon_sym_Emission = 124,
+  anon_sym_Material = 125,
+  anon_sym_Diffuse = 126,
+  anon_sym_Ambient = 127,
+  anon_sym_Specular = 128,
+  anon_sym_Shininess = 129,
+  anon_sym_SetTexture = 130,
+  anon_sym_combine = 131,
+  anon_sym_Combine = 132,
+  anon_sym_constantColor = 133,
+  anon_sym_ConstantColor = 134,
+  anon_sym_Matrix = 135,
+  anon_sym_texture = 136,
+  anon_sym_primary = 137,
+  anon_sym_previous = 138,
+  anon_sym_constant = 139,
+  anon_sym_one = 140,
+  anon_sym_alpha = 141,
+  anon_sym_invalpha = 142,
+  anon_sym_STAR = 143,
+  anon_sym_PLUS = 144,
+  anon_sym_double = 145,
+  anon_sym_quad = 146,
+  anon_sym_lerp = 147,
+  anon_sym_DOUBLE = 148,
+  anon_sym_QUAD = 149,
+  anon_sym_LERP = 150,
+  anon_sym_AlphaTest = 151,
+  anon_sym_Alphatest = 152,
+  anon_sym_alphatest = 153,
+  anon_sym_BindChannels = 154,
+  anon_sym_Bind = 155,
+  anon_sym_vertex = 156,
+  anon_sym_normal = 157,
+  anon_sym_tangent = 158,
+  anon_sym_texcoord0 = 159,
+  anon_sym_texcoord1 = 160,
+  anon_sym_Stencil = 161,
+  anon_sym_Ref = 162,
+  anon_sym_ref = 163,
+  anon_sym_ReadMask = 164,
+  anon_sym_readMask = 165,
+  anon_sym_readmask = 166,
+  anon_sym_WriteMask = 167,
+  anon_sym_writeMask = 168,
+  anon_sym_writemask = 169,
+  anon_sym_Comp = 170,
+  anon_sym_CompFront = 171,
+  anon_sym_CompBack = 172,
+  anon_sym_comp = 173,
+  anon_sym_compfront = 174,
+  anon_sym_compback = 175,
+  anon_sym_PassFront = 176,
+  anon_sym_PassBack = 177,
+  anon_sym_pass = 178,
+  anon_sym_passfront = 179,
+  anon_sym_passback = 180,
+  anon_sym_Fail = 181,
+  anon_sym_FailFront = 182,
+  anon_sym_FailBack = 183,
+  anon_sym_fail = 184,
+  anon_sym_failfront = 185,
+  anon_sym_failback = 186,
+  anon_sym_ZFail = 187,
+  anon_sym_ZFailFront = 188,
+  anon_sym_ZFailBack = 189,
+  anon_sym_zfail = 190,
+  anon_sym_zfailfront = 191,
+  anon_sym_zfailback = 192,
+  anon_sym_Keep = 193,
+  anon_sym_keep = 194,
+  anon_sym_zero = 195,
+  anon_sym_Replace = 196,
+  anon_sym_replace = 197,
+  anon_sym_IncrSat = 198,
+  anon_sym_incrsat = 199,
+  anon_sym_DecrSat = 200,
+  anon_sym_decrsat = 201,
+  anon_sym_Invert = 202,
+  anon_sym_invert = 203,
+  anon_sym_IncrWrap = 204,
+  anon_sym_incrwrap = 205,
+  anon_sym_DecrWrap = 206,
+  anon_sym_decrwrap = 207,
+  anon_sym_CGPROGRAM = 208,
+  anon_sym_CGINCLUDE = 209,
+  anon_sym_ENDCG = 210,
+  anon_sym_HLSLPROGRAM = 211,
+  anon_sym_HLSLINCLUDE = 212,
+  anon_sym_ENDHLSL = 213,
+  anon_sym_GLSLPROGRAM = 214,
+  anon_sym_GLSLINCLUDE = 215,
+  anon_sym_ENDGLSL = 216,
+  anon_sym_CustomEditor = 217,
+  anon_sym_Dependency = 218,
+  anon_sym_FallBack = 219,
+  anon_sym_Fallback = 220,
+  anon_sym_UsePass = 221,
+  anon_sym_GrabPass = 222,
+  anon_sym_LOD = 223,
+  anon_sym_Category = 224,
+  anon_sym_SLASH_SLASH = 225,
+  aux_sym_comment_token1 = 226,
+  anon_sym_SLASH_STAR = 227,
+  aux_sym_comment_token2 = 228,
+  anon_sym_SLASH = 229,
+  anon_sym_DQUOTE = 230,
+  aux_sym_string_literal_token1 = 231,
+  sym_number_literal = 232,
+  sym_program_content = 233,
+  sym_source_file = 234,
+  sym__top_level_item = 235,
+  sym_shader_definition = 236,
+  sym_shader_body = 237,
+  sym__shader_body_item = 238,
+  sym_properties_block = 239,
+  sym_property_declaration = 240,
+  sym_dotted_identifier = 241,
+  sym_property_attribute = 242,
+  sym__attr_args = 243,
+  sym__attr_arg = 244,
+  sym_property_type = 245,
+  sym__property_default = 246,
+  sym_texture_default = 247,
+  sym_color_default = 248,
+  sym_subshader_block = 249,
+  sym__subshader_body_item = 250,
+  sym_pass_block = 251,
+  sym__pass_body_item = 252,
+  sym_pass_name = 253,
+  sym_tags_block = 254,
+  sym_tag_pair = 255,
+  sym__render_state = 256,
+  sym_cull_command = 257,
+  sym_cull_mode = 258,
+  sym_zwrite_command = 259,
+  sym_ztest_command = 260,
+  sym_separate_specular_command = 261,
+  sym_zclip_command = 262,
+  sym__blend_value = 263,
+  sym_blend_command = 264,
+  sym_blend_off_command = 265,
+  sym_blend_op_command = 266,
+  sym_color_mask_command = 267,
+  sym_color_mask_value = 268,
+  sym_offset_command = 269,
+  sym_signed_number = 270,
+  sym_signed_value = 271,
+  sym_alpha_to_mask_command = 272,
+  sym_blend_factor = 273,
+  sym_blend_op = 274,
+  sym_comparison_func = 275,
+  sym_on_off = 276,
+  sym_true_false = 277,
+  sym_conservative_command = 278,
+  sym_legacy_lighting_command = 279,
+  sym_legacy_fog_command = 280,
+  sym__legacy_fog_item = 281,
+  sym_legacy_color_material_command = 282,
+  sym_legacy_color_command = 283,
+  sym_legacy_material_block = 284,
+  sym__legacy_material_item = 285,
+  sym_legacy_set_texture_command = 286,
+  sym__legacy_set_texture_item = 287,
+  sym__legacy_combine_value = 288,
+  sym_legacy_alpha_test_command = 289,
+  sym_legacy_bind_channels_command = 290,
+  sym__legacy_bind_channel = 291,
+  sym_stencil_block = 292,
+  sym__stencil_op = 293,
+  sym__stencil_value = 294,
+  sym__stencil_comp = 295,
+  sym__stencil_pass = 296,
+  sym__stencil_fail = 297,
+  sym__stencil_zfail = 298,
+  sym_stencil_op_value = 299,
+  sym_cg_program_block = 300,
+  sym_hlsl_program_block = 301,
+  sym_glsl_program_block = 302,
+  sym_cg_include = 303,
+  sym_hlsl_include = 304,
+  sym_glsl_include = 305,
+  sym_custom_editor = 306,
+  sym_dependency = 307,
+  sym_fallback = 308,
+  sym_use_pass = 309,
+  sym_grab_pass = 310,
+  sym_lod = 311,
+  sym_category_block = 312,
+  sym_comment = 313,
+  sym_string_literal = 314,
+  sym__number = 315,
+  sym_property_reference = 316,
+  aux_sym_source_file_repeat1 = 317,
+  aux_sym_shader_body_repeat1 = 318,
+  aux_sym_properties_block_repeat1 = 319,
+  aux_sym_property_declaration_repeat1 = 320,
+  aux_sym_dotted_identifier_repeat1 = 321,
+  aux_sym__attr_arg_repeat1 = 322,
+  aux_sym_texture_default_repeat1 = 323,
+  aux_sym_subshader_block_repeat1 = 324,
+  aux_sym_pass_block_repeat1 = 325,
+  aux_sym_tags_block_repeat1 = 326,
+  aux_sym_legacy_fog_command_repeat1 = 327,
+  aux_sym_legacy_material_block_repeat1 = 328,
+  aux_sym_legacy_set_texture_command_repeat1 = 329,
+  aux_sym__legacy_set_texture_item_repeat1 = 330,
+  aux_sym_legacy_bind_channels_command_repeat1 = 331,
+  aux_sym_stencil_block_repeat1 = 332,
+  aux_sym_grab_pass_repeat1 = 333,
+  aux_sym_category_block_repeat1 = 334,
+  alias_sym_attribute_arguments = 335,
+  alias_sym_glsl_content = 336,
+  alias_sym_hlsl_content = 337,
 };
 
 static const char * const ts_symbol_names[] = {
@@ -369,9 +397,13 @@ static const char * const ts_symbol_names[] = {
   [anon_sym_integer] = "integer",
   [anon_sym_any] = "any",
   [anon_sym_Any] = "Any",
+  [anon_sym_RECT] = "RECT",
+  [anon_sym_rect] = "rect",
   [anon_sym_Range] = "Range",
   [anon_sym_range] = "range",
+  [anon_sym_RANGE] = "RANGE",
   [anon_sym_SubShader] = "SubShader",
+  [anon_sym_Subshader] = "Subshader",
   [anon_sym_Pass] = "Pass",
   [anon_sym_Name] = "Name",
   [anon_sym_Tags] = "Tags",
@@ -384,6 +416,9 @@ static const char * const ts_symbol_names[] = {
   [anon_sym_off] = "off",
   [anon_sym_ZWrite] = "ZWrite",
   [anon_sym_ZTest] = "ZTest",
+  [anon_sym_Ztest] = "Ztest",
+  [anon_sym_ztest] = "ztest",
+  [anon_sym_SeparateSpecular] = "SeparateSpecular",
   [anon_sym_ZClip] = "ZClip",
   [anon_sym_Blend] = "Blend",
   [anon_sym_BlendOp] = "BlendOp",
@@ -395,6 +430,9 @@ static const char * const ts_symbol_names[] = {
   [anon_sym_G] = "G",
   [anon_sym_B] = "B",
   [anon_sym_0] = "0",
+  [anon_sym_rgba] = "rgba",
+  [anon_sym_rgb] = "rgb",
+  [anon_sym_GBA] = "GBA",
   [anon_sym_Offset] = "Offset",
   [anon_sym_DASH] = "-",
   [anon_sym_AlphaToMask] = "AlphaToMask",
@@ -454,7 +492,9 @@ static const char * const ts_symbol_names[] = {
   [anon_sym_Shininess] = "Shininess",
   [anon_sym_SetTexture] = "SetTexture",
   [anon_sym_combine] = "combine",
+  [anon_sym_Combine] = "Combine",
   [anon_sym_constantColor] = "constantColor",
+  [anon_sym_ConstantColor] = "ConstantColor",
   [anon_sym_Matrix] = "Matrix",
   [anon_sym_texture] = "texture",
   [anon_sym_primary] = "primary",
@@ -468,7 +508,12 @@ static const char * const ts_symbol_names[] = {
   [anon_sym_double] = "double",
   [anon_sym_quad] = "quad",
   [anon_sym_lerp] = "lerp",
+  [anon_sym_DOUBLE] = "DOUBLE",
+  [anon_sym_QUAD] = "QUAD",
+  [anon_sym_LERP] = "LERP",
   [anon_sym_AlphaTest] = "AlphaTest",
+  [anon_sym_Alphatest] = "Alphatest",
+  [anon_sym_alphatest] = "alphatest",
   [anon_sym_BindChannels] = "BindChannels",
   [anon_sym_Bind] = "Bind",
   [anon_sym_vertex] = "vertex",
@@ -529,6 +574,9 @@ static const char * const ts_symbol_names[] = {
   [anon_sym_HLSLPROGRAM] = "HLSLPROGRAM",
   [anon_sym_HLSLINCLUDE] = "HLSLINCLUDE",
   [anon_sym_ENDHLSL] = "ENDHLSL",
+  [anon_sym_GLSLPROGRAM] = "GLSLPROGRAM",
+  [anon_sym_GLSLINCLUDE] = "GLSLINCLUDE",
+  [anon_sym_ENDGLSL] = "ENDGLSL",
   [anon_sym_CustomEditor] = "CustomEditor",
   [anon_sym_Dependency] = "Dependency",
   [anon_sym_FallBack] = "FallBack",
@@ -573,6 +621,7 @@ static const char * const ts_symbol_names[] = {
   [sym_cull_mode] = "cull_mode",
   [sym_zwrite_command] = "zwrite_command",
   [sym_ztest_command] = "ztest_command",
+  [sym_separate_specular_command] = "separate_specular_command",
   [sym_zclip_command] = "zclip_command",
   [sym__blend_value] = "_blend_value",
   [sym_blend_command] = "blend_command",
@@ -582,6 +631,7 @@ static const char * const ts_symbol_names[] = {
   [sym_color_mask_value] = "color_mask_value",
   [sym_offset_command] = "offset_command",
   [sym_signed_number] = "signed_number",
+  [sym_signed_value] = "signed_value",
   [sym_alpha_to_mask_command] = "alpha_to_mask_command",
   [sym_blend_factor] = "blend_factor",
   [sym_blend_op] = "blend_op",
@@ -593,6 +643,7 @@ static const char * const ts_symbol_names[] = {
   [sym_legacy_fog_command] = "legacy_fog_command",
   [sym__legacy_fog_item] = "_legacy_fog_item",
   [sym_legacy_color_material_command] = "legacy_color_material_command",
+  [sym_legacy_color_command] = "legacy_color_command",
   [sym_legacy_material_block] = "legacy_material_block",
   [sym__legacy_material_item] = "_legacy_material_item",
   [sym_legacy_set_texture_command] = "legacy_set_texture_command",
@@ -611,8 +662,10 @@ static const char * const ts_symbol_names[] = {
   [sym_stencil_op_value] = "stencil_op_value",
   [sym_cg_program_block] = "cg_program_block",
   [sym_hlsl_program_block] = "hlsl_program_block",
+  [sym_glsl_program_block] = "glsl_program_block",
   [sym_cg_include] = "cg_include",
   [sym_hlsl_include] = "hlsl_include",
+  [sym_glsl_include] = "glsl_include",
   [sym_custom_editor] = "custom_editor",
   [sym_dependency] = "dependency",
   [sym_fallback] = "fallback",
@@ -630,6 +683,7 @@ static const char * const ts_symbol_names[] = {
   [aux_sym_property_declaration_repeat1] = "property_declaration_repeat1",
   [aux_sym_dotted_identifier_repeat1] = "dotted_identifier_repeat1",
   [aux_sym__attr_arg_repeat1] = "_attr_arg_repeat1",
+  [aux_sym_texture_default_repeat1] = "texture_default_repeat1",
   [aux_sym_subshader_block_repeat1] = "subshader_block_repeat1",
   [aux_sym_pass_block_repeat1] = "pass_block_repeat1",
   [aux_sym_tags_block_repeat1] = "tags_block_repeat1",
@@ -639,8 +693,10 @@ static const char * const ts_symbol_names[] = {
   [aux_sym__legacy_set_texture_item_repeat1] = "_legacy_set_texture_item_repeat1",
   [aux_sym_legacy_bind_channels_command_repeat1] = "legacy_bind_channels_command_repeat1",
   [aux_sym_stencil_block_repeat1] = "stencil_block_repeat1",
+  [aux_sym_grab_pass_repeat1] = "grab_pass_repeat1",
   [aux_sym_category_block_repeat1] = "category_block_repeat1",
   [alias_sym_attribute_arguments] = "attribute_arguments",
+  [alias_sym_glsl_content] = "glsl_content",
   [alias_sym_hlsl_content] = "hlsl_content",
 };
 
@@ -682,9 +738,13 @@ static const TSSymbol ts_symbol_map[] = {
   [anon_sym_integer] = anon_sym_integer,
   [anon_sym_any] = anon_sym_any,
   [anon_sym_Any] = anon_sym_Any,
+  [anon_sym_RECT] = anon_sym_RECT,
+  [anon_sym_rect] = anon_sym_rect,
   [anon_sym_Range] = anon_sym_Range,
   [anon_sym_range] = anon_sym_range,
+  [anon_sym_RANGE] = anon_sym_RANGE,
   [anon_sym_SubShader] = anon_sym_SubShader,
+  [anon_sym_Subshader] = anon_sym_Subshader,
   [anon_sym_Pass] = anon_sym_Pass,
   [anon_sym_Name] = anon_sym_Name,
   [anon_sym_Tags] = anon_sym_Tags,
@@ -697,6 +757,9 @@ static const TSSymbol ts_symbol_map[] = {
   [anon_sym_off] = anon_sym_off,
   [anon_sym_ZWrite] = anon_sym_ZWrite,
   [anon_sym_ZTest] = anon_sym_ZTest,
+  [anon_sym_Ztest] = anon_sym_Ztest,
+  [anon_sym_ztest] = anon_sym_ztest,
+  [anon_sym_SeparateSpecular] = anon_sym_SeparateSpecular,
   [anon_sym_ZClip] = anon_sym_ZClip,
   [anon_sym_Blend] = anon_sym_Blend,
   [anon_sym_BlendOp] = anon_sym_BlendOp,
@@ -708,6 +771,9 @@ static const TSSymbol ts_symbol_map[] = {
   [anon_sym_G] = anon_sym_G,
   [anon_sym_B] = anon_sym_B,
   [anon_sym_0] = anon_sym_0,
+  [anon_sym_rgba] = anon_sym_rgba,
+  [anon_sym_rgb] = anon_sym_rgb,
+  [anon_sym_GBA] = anon_sym_GBA,
   [anon_sym_Offset] = anon_sym_Offset,
   [anon_sym_DASH] = anon_sym_DASH,
   [anon_sym_AlphaToMask] = anon_sym_AlphaToMask,
@@ -767,7 +833,9 @@ static const TSSymbol ts_symbol_map[] = {
   [anon_sym_Shininess] = anon_sym_Shininess,
   [anon_sym_SetTexture] = anon_sym_SetTexture,
   [anon_sym_combine] = anon_sym_combine,
+  [anon_sym_Combine] = anon_sym_Combine,
   [anon_sym_constantColor] = anon_sym_constantColor,
+  [anon_sym_ConstantColor] = anon_sym_ConstantColor,
   [anon_sym_Matrix] = anon_sym_Matrix,
   [anon_sym_texture] = anon_sym_texture,
   [anon_sym_primary] = anon_sym_primary,
@@ -781,7 +849,12 @@ static const TSSymbol ts_symbol_map[] = {
   [anon_sym_double] = anon_sym_double,
   [anon_sym_quad] = anon_sym_quad,
   [anon_sym_lerp] = anon_sym_lerp,
+  [anon_sym_DOUBLE] = anon_sym_DOUBLE,
+  [anon_sym_QUAD] = anon_sym_QUAD,
+  [anon_sym_LERP] = anon_sym_LERP,
   [anon_sym_AlphaTest] = anon_sym_AlphaTest,
+  [anon_sym_Alphatest] = anon_sym_Alphatest,
+  [anon_sym_alphatest] = anon_sym_alphatest,
   [anon_sym_BindChannels] = anon_sym_BindChannels,
   [anon_sym_Bind] = anon_sym_Bind,
   [anon_sym_vertex] = anon_sym_vertex,
@@ -842,6 +915,9 @@ static const TSSymbol ts_symbol_map[] = {
   [anon_sym_HLSLPROGRAM] = anon_sym_HLSLPROGRAM,
   [anon_sym_HLSLINCLUDE] = anon_sym_HLSLINCLUDE,
   [anon_sym_ENDHLSL] = anon_sym_ENDHLSL,
+  [anon_sym_GLSLPROGRAM] = anon_sym_GLSLPROGRAM,
+  [anon_sym_GLSLINCLUDE] = anon_sym_GLSLINCLUDE,
+  [anon_sym_ENDGLSL] = anon_sym_ENDGLSL,
   [anon_sym_CustomEditor] = anon_sym_CustomEditor,
   [anon_sym_Dependency] = anon_sym_Dependency,
   [anon_sym_FallBack] = anon_sym_FallBack,
@@ -886,6 +962,7 @@ static const TSSymbol ts_symbol_map[] = {
   [sym_cull_mode] = sym_cull_mode,
   [sym_zwrite_command] = sym_zwrite_command,
   [sym_ztest_command] = sym_ztest_command,
+  [sym_separate_specular_command] = sym_separate_specular_command,
   [sym_zclip_command] = sym_zclip_command,
   [sym__blend_value] = sym__blend_value,
   [sym_blend_command] = sym_blend_command,
@@ -895,6 +972,7 @@ static const TSSymbol ts_symbol_map[] = {
   [sym_color_mask_value] = sym_color_mask_value,
   [sym_offset_command] = sym_offset_command,
   [sym_signed_number] = sym_signed_number,
+  [sym_signed_value] = sym_signed_value,
   [sym_alpha_to_mask_command] = sym_alpha_to_mask_command,
   [sym_blend_factor] = sym_blend_factor,
   [sym_blend_op] = sym_blend_op,
@@ -906,6 +984,7 @@ static const TSSymbol ts_symbol_map[] = {
   [sym_legacy_fog_command] = sym_legacy_fog_command,
   [sym__legacy_fog_item] = sym__legacy_fog_item,
   [sym_legacy_color_material_command] = sym_legacy_color_material_command,
+  [sym_legacy_color_command] = sym_legacy_color_command,
   [sym_legacy_material_block] = sym_legacy_material_block,
   [sym__legacy_material_item] = sym__legacy_material_item,
   [sym_legacy_set_texture_command] = sym_legacy_set_texture_command,
@@ -924,8 +1003,10 @@ static const TSSymbol ts_symbol_map[] = {
   [sym_stencil_op_value] = sym_stencil_op_value,
   [sym_cg_program_block] = sym_cg_program_block,
   [sym_hlsl_program_block] = sym_hlsl_program_block,
+  [sym_glsl_program_block] = sym_glsl_program_block,
   [sym_cg_include] = sym_cg_include,
   [sym_hlsl_include] = sym_hlsl_include,
+  [sym_glsl_include] = sym_glsl_include,
   [sym_custom_editor] = sym_custom_editor,
   [sym_dependency] = sym_dependency,
   [sym_fallback] = sym_fallback,
@@ -943,6 +1024,7 @@ static const TSSymbol ts_symbol_map[] = {
   [aux_sym_property_declaration_repeat1] = aux_sym_property_declaration_repeat1,
   [aux_sym_dotted_identifier_repeat1] = aux_sym_dotted_identifier_repeat1,
   [aux_sym__attr_arg_repeat1] = aux_sym__attr_arg_repeat1,
+  [aux_sym_texture_default_repeat1] = aux_sym_texture_default_repeat1,
   [aux_sym_subshader_block_repeat1] = aux_sym_subshader_block_repeat1,
   [aux_sym_pass_block_repeat1] = aux_sym_pass_block_repeat1,
   [aux_sym_tags_block_repeat1] = aux_sym_tags_block_repeat1,
@@ -952,8 +1034,10 @@ static const TSSymbol ts_symbol_map[] = {
   [aux_sym__legacy_set_texture_item_repeat1] = aux_sym__legacy_set_texture_item_repeat1,
   [aux_sym_legacy_bind_channels_command_repeat1] = aux_sym_legacy_bind_channels_command_repeat1,
   [aux_sym_stencil_block_repeat1] = aux_sym_stencil_block_repeat1,
+  [aux_sym_grab_pass_repeat1] = aux_sym_grab_pass_repeat1,
   [aux_sym_category_block_repeat1] = aux_sym_category_block_repeat1,
   [alias_sym_attribute_arguments] = alias_sym_attribute_arguments,
+  [alias_sym_glsl_content] = alias_sym_glsl_content,
   [alias_sym_hlsl_content] = alias_sym_hlsl_content,
 };
 
@@ -1106,6 +1190,14 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = false,
   },
+  [anon_sym_RECT] = {
+    .visible = true,
+    .named = false,
+  },
+  [anon_sym_rect] = {
+    .visible = true,
+    .named = false,
+  },
   [anon_sym_Range] = {
     .visible = true,
     .named = false,
@@ -1114,7 +1206,15 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = false,
   },
+  [anon_sym_RANGE] = {
+    .visible = true,
+    .named = false,
+  },
   [anon_sym_SubShader] = {
+    .visible = true,
+    .named = false,
+  },
+  [anon_sym_Subshader] = {
     .visible = true,
     .named = false,
   },
@@ -1166,6 +1266,18 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = false,
   },
+  [anon_sym_Ztest] = {
+    .visible = true,
+    .named = false,
+  },
+  [anon_sym_ztest] = {
+    .visible = true,
+    .named = false,
+  },
+  [anon_sym_SeparateSpecular] = {
+    .visible = true,
+    .named = false,
+  },
   [anon_sym_ZClip] = {
     .visible = true,
     .named = false,
@@ -1207,6 +1319,18 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .named = false,
   },
   [anon_sym_0] = {
+    .visible = true,
+    .named = false,
+  },
+  [anon_sym_rgba] = {
+    .visible = true,
+    .named = false,
+  },
+  [anon_sym_rgb] = {
+    .visible = true,
+    .named = false,
+  },
+  [anon_sym_GBA] = {
     .visible = true,
     .named = false,
   },
@@ -1446,7 +1570,15 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = false,
   },
+  [anon_sym_Combine] = {
+    .visible = true,
+    .named = false,
+  },
   [anon_sym_constantColor] = {
+    .visible = true,
+    .named = false,
+  },
+  [anon_sym_ConstantColor] = {
     .visible = true,
     .named = false,
   },
@@ -1502,7 +1634,27 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = false,
   },
+  [anon_sym_DOUBLE] = {
+    .visible = true,
+    .named = false,
+  },
+  [anon_sym_QUAD] = {
+    .visible = true,
+    .named = false,
+  },
+  [anon_sym_LERP] = {
+    .visible = true,
+    .named = false,
+  },
   [anon_sym_AlphaTest] = {
+    .visible = true,
+    .named = false,
+  },
+  [anon_sym_Alphatest] = {
+    .visible = true,
+    .named = false,
+  },
+  [anon_sym_alphatest] = {
     .visible = true,
     .named = false,
   },
@@ -1746,6 +1898,18 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = false,
   },
+  [anon_sym_GLSLPROGRAM] = {
+    .visible = true,
+    .named = false,
+  },
+  [anon_sym_GLSLINCLUDE] = {
+    .visible = true,
+    .named = false,
+  },
+  [anon_sym_ENDGLSL] = {
+    .visible = true,
+    .named = false,
+  },
   [anon_sym_CustomEditor] = {
     .visible = true,
     .named = false,
@@ -1922,6 +2086,10 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
+  [sym_separate_specular_command] = {
+    .visible = true,
+    .named = true,
+  },
   [sym_zclip_command] = {
     .visible = true,
     .named = true,
@@ -1955,6 +2123,10 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .named = true,
   },
   [sym_signed_number] = {
+    .visible = true,
+    .named = true,
+  },
+  [sym_signed_value] = {
     .visible = true,
     .named = true,
   },
@@ -1999,6 +2171,10 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .named = true,
   },
   [sym_legacy_color_material_command] = {
+    .visible = true,
+    .named = true,
+  },
+  [sym_legacy_color_command] = {
     .visible = true,
     .named = true,
   },
@@ -2074,11 +2250,19 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
+  [sym_glsl_program_block] = {
+    .visible = true,
+    .named = true,
+  },
   [sym_cg_include] = {
     .visible = true,
     .named = true,
   },
   [sym_hlsl_include] = {
+    .visible = true,
+    .named = true,
+  },
+  [sym_glsl_include] = {
     .visible = true,
     .named = true,
   },
@@ -2150,6 +2334,10 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = false,
     .named = false,
   },
+  [aux_sym_texture_default_repeat1] = {
+    .visible = false,
+    .named = false,
+  },
   [aux_sym_subshader_block_repeat1] = {
     .visible = false,
     .named = false,
@@ -2186,11 +2374,19 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = false,
     .named = false,
   },
+  [aux_sym_grab_pass_repeat1] = {
+    .visible = false,
+    .named = false,
+  },
   [aux_sym_category_block_repeat1] = {
     .visible = false,
     .named = false,
   },
   [alias_sym_attribute_arguments] = {
+    .visible = true,
+    .named = true,
+  },
+  [alias_sym_glsl_content] = {
     .visible = true,
     .named = true,
   },
@@ -2280,41 +2476,44 @@ static const TSMapSlice ts_field_map_slices[PRODUCTION_ID_COUNT] = {
   [8] = {.index = 8, .length = 1},
   [9] = {.index = 9, .length = 1},
   [10] = {.index = 10, .length = 1},
-  [11] = {.index = 11, .length = 2},
-  [12] = {.index = 13, .length = 2},
-  [13] = {.index = 15, .length = 1},
-  [14] = {.index = 16, .length = 2},
-  [15] = {.index = 18, .length = 2},
-  [16] = {.index = 20, .length = 2},
-  [17] = {.index = 22, .length = 4},
-  [18] = {.index = 26, .length = 3},
-  [19] = {.index = 26, .length = 3},
-  [21] = {.index = 29, .length = 3},
-  [22] = {.index = 32, .length = 2},
-  [23] = {.index = 34, .length = 2},
-  [24] = {.index = 36, .length = 1},
-  [25] = {.index = 37, .length = 2},
-  [26] = {.index = 39, .length = 1},
-  [27] = {.index = 40, .length = 2},
-  [28] = {.index = 42, .length = 4},
-  [29] = {.index = 46, .length = 2},
-  [30] = {.index = 48, .length = 4},
-  [31] = {.index = 52, .length = 2},
-  [32] = {.index = 54, .length = 2},
-  [33] = {.index = 56, .length = 4},
-  [34] = {.index = 60, .length = 8},
-  [35] = {.index = 68, .length = 1},
-  [36] = {.index = 69, .length = 2},
-  [37] = {.index = 71, .length = 2},
-  [38] = {.index = 73, .length = 3},
-  [39] = {.index = 76, .length = 4},
-  [40] = {.index = 80, .length = 1},
-  [41] = {.index = 81, .length = 2},
-  [42] = {.index = 83, .length = 5},
-  [43] = {.index = 88, .length = 1},
-  [44] = {.index = 89, .length = 2},
-  [46] = {.index = 91, .length = 4},
-  [47] = {.index = 95, .length = 4},
+  [11] = {.index = 11, .length = 1},
+  [12] = {.index = 12, .length = 2},
+  [13] = {.index = 14, .length = 2},
+  [14] = {.index = 16, .length = 1},
+  [15] = {.index = 17, .length = 2},
+  [16] = {.index = 19, .length = 2},
+  [17] = {.index = 21, .length = 2},
+  [18] = {.index = 23, .length = 4},
+  [19] = {.index = 27, .length = 3},
+  [20] = {.index = 27, .length = 3},
+  [21] = {.index = 27, .length = 3},
+  [22] = {.index = 30, .length = 1},
+  [25] = {.index = 31, .length = 3},
+  [26] = {.index = 34, .length = 2},
+  [27] = {.index = 36, .length = 2},
+  [28] = {.index = 38, .length = 1},
+  [29] = {.index = 39, .length = 2},
+  [30] = {.index = 41, .length = 2},
+  [31] = {.index = 43, .length = 4},
+  [32] = {.index = 47, .length = 2},
+  [33] = {.index = 49, .length = 4},
+  [34] = {.index = 53, .length = 2},
+  [35] = {.index = 55, .length = 2},
+  [36] = {.index = 57, .length = 4},
+  [37] = {.index = 61, .length = 8},
+  [38] = {.index = 69, .length = 1},
+  [39] = {.index = 70, .length = 2},
+  [40] = {.index = 72, .length = 2},
+  [41] = {.index = 74, .length = 2},
+  [42] = {.index = 76, .length = 3},
+  [43] = {.index = 79, .length = 4},
+  [44] = {.index = 83, .length = 1},
+  [45] = {.index = 84, .length = 2},
+  [46] = {.index = 86, .length = 5},
+  [47] = {.index = 91, .length = 1},
+  [48] = {.index = 92, .length = 2},
+  [50] = {.index = 94, .length = 4},
+  [51] = {.index = 98, .length = 4},
 };
 
 static const TSFieldMapEntry ts_field_map_entries[] = {
@@ -2324,92 +2523,94 @@ static const TSFieldMapEntry ts_field_map_entries[] = {
   [2] =
     {field_content, 1},
   [3] =
-    {field_mode, 1},
+    {field_color, 1},
   [4] =
-    {field_func, 1},
+    {field_mode, 1},
   [5] =
-    {field_op_color, 1},
+    {field_func, 1},
   [6] =
-    {field_mask, 1},
+    {field_op_color, 1},
   [7] =
-    {field_pass, 1},
+    {field_mask, 1},
   [8] =
-    {field_value, 1},
+    {field_pass, 1},
   [9] =
-    {field_name, 1},
+    {field_value, 1},
   [10] =
-    {field_shader, 1},
+    {field_name, 1},
   [11] =
+    {field_shader, 1},
+  [12] =
     {field_dst_color, 2},
     {field_src_color, 1},
-  [13] =
+  [14] =
     {field_index, 1},
     {field_op_color, 2},
-  [15] =
-    {field_mode, 0, .inherited = true},
   [16] =
+    {field_mode, 0, .inherited = true},
+  [17] =
     {field_color, 0, .inherited = true},
     {field_value, 0, .inherited = true},
-  [18] =
+  [19] =
     {field_cutoff, 2},
     {field_func, 1},
-  [20] =
+  [21] =
     {field_channel, 0, .inherited = true},
     {field_target, 0, .inherited = true},
-  [22] =
+  [23] =
     {field_command, 0, .inherited = true},
     {field_func, 0, .inherited = true},
     {field_op, 0, .inherited = true},
     {field_value, 0, .inherited = true},
-  [26] =
+  [27] =
     {field_content, 1},
     {field_end, 2},
     {field_start, 0},
-  [29] =
+  [30] =
+    {field_texture, 0},
+  [31] =
     {field_dst_color, 3},
     {field_index, 1},
     {field_src_color, 2},
-  [32] =
+  [34] =
     {field_op_alpha, 3},
     {field_op_color, 1},
-  [34] =
+  [36] =
     {field_factor, 1},
     {field_units, 3},
-  [36] =
+  [38] =
     {field_mode, 2, .inherited = true},
-  [37] =
+  [39] =
     {field_mode, 0, .inherited = true},
     {field_mode, 1, .inherited = true},
-  [39] =
-    {field_color, 1},
-  [40] =
+  [41] =
     {field_color, 2, .inherited = true},
     {field_value, 2, .inherited = true},
-  [42] =
+  [43] =
     {field_color, 0, .inherited = true},
     {field_color, 1, .inherited = true},
     {field_value, 0, .inherited = true},
     {field_value, 1, .inherited = true},
-  [46] =
+  [47] =
     {field_channel, 2, .inherited = true},
     {field_target, 2, .inherited = true},
-  [48] =
+  [49] =
     {field_channel, 0, .inherited = true},
     {field_channel, 1, .inherited = true},
     {field_target, 0, .inherited = true},
     {field_target, 1, .inherited = true},
-  [52] =
+  [53] =
     {field_command, 0},
     {field_func, 1},
-  [54] =
+  [55] =
     {field_command, 0},
     {field_op, 1},
-  [56] =
+  [57] =
     {field_command, 2, .inherited = true},
     {field_func, 2, .inherited = true},
     {field_op, 2, .inherited = true},
     {field_value, 2, .inherited = true},
-  [60] =
+  [61] =
     {field_command, 0, .inherited = true},
     {field_command, 1, .inherited = true},
     {field_func, 0, .inherited = true},
@@ -2418,45 +2619,48 @@ static const TSFieldMapEntry ts_field_map_entries[] = {
     {field_op, 1, .inherited = true},
     {field_value, 0, .inherited = true},
     {field_value, 1, .inherited = true},
-  [68] =
-    {field_texture, 2},
   [69] =
+    {field_texture, 2, .inherited = true},
+  [70] =
+    {field_texture, 0, .inherited = true},
+    {field_texture, 1, .inherited = true},
+  [72] =
     {field_name, 1},
     {field_shader, 3},
-  [71] =
+  [74] =
     {field_key, 0},
     {field_value, 2},
-  [73] =
+  [76] =
     {field_index, 1},
     {field_op_alpha, 4},
     {field_op_color, 2},
-  [76] =
+  [79] =
     {field_dst_alpha, 5},
     {field_dst_color, 2},
     {field_src_alpha, 4},
     {field_src_color, 1},
-  [80] =
+  [83] =
     {field_color, 0, .inherited = true},
-  [81] =
+  [84] =
     {field_channel, 1},
     {field_target, 3},
-  [83] =
+  [86] =
     {field_dst_alpha, 6},
     {field_dst_color, 3},
     {field_index, 1},
     {field_src_alpha, 5},
     {field_src_color, 2},
-  [88] =
+  [91] =
     {field_color, 5, .inherited = true},
-  [89] =
+  [92] =
     {field_color, 0, .inherited = true},
     {field_color, 1, .inherited = true},
-  [91] =
+  [94] =
     {field_default, 7},
     {field_display, 2},
     {field_name, 0},
     {field_type, 4},
-  [95] =
+  [98] =
     {field_default, 8},
     {field_display, 3},
     {field_name, 1},
@@ -2465,13 +2669,19 @@ static const TSFieldMapEntry ts_field_map_entries[] = {
 
 static const TSSymbol ts_alias_sequences[PRODUCTION_ID_COUNT][MAX_ALIAS_SEQUENCE_LENGTH] = {
   [0] = {0},
-  [19] = {
-    [1] = alias_sym_hlsl_content,
-  },
   [20] = {
     [1] = alias_sym_hlsl_content,
   },
-  [45] = {
+  [21] = {
+    [1] = alias_sym_glsl_content,
+  },
+  [23] = {
+    [1] = alias_sym_hlsl_content,
+  },
+  [24] = {
+    [1] = alias_sym_glsl_content,
+  },
+  [49] = {
     [3] = alias_sym_attribute_arguments,
   },
 };
@@ -2793,6 +3003,28 @@ static const TSStateId ts_primary_state_ids[STATE_COUNT] = {
   [306] = 306,
   [307] = 307,
   [308] = 308,
+  [309] = 309,
+  [310] = 310,
+  [311] = 311,
+  [312] = 312,
+  [313] = 313,
+  [314] = 314,
+  [315] = 315,
+  [316] = 316,
+  [317] = 317,
+  [318] = 318,
+  [319] = 319,
+  [320] = 320,
+  [321] = 321,
+  [322] = 322,
+  [323] = 323,
+  [324] = 324,
+  [325] = 325,
+  [326] = 326,
+  [327] = 327,
+  [328] = 328,
+  [329] = 329,
+  [330] = 330,
 };
 
 static bool ts_lex(TSLexer *lexer, TSStateId state) {
@@ -2837,6 +3069,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       ADVANCE_MAP(
         '"', 57,
         '(', 25,
+        ')', 27,
         '*', 42,
         '+', 43,
         ',', 26,
@@ -3172,2708 +3405,3013 @@ static bool ts_lex_keywords(TSLexer *lexer, TSStateId state) {
         'N', 13,
         'O', 14,
         'P', 15,
-        'R', 16,
-        'S', 17,
-        'T', 18,
-        'U', 19,
-        'V', 20,
-        'W', 21,
-        'Z', 22,
-        'a', 23,
-        'b', 24,
-        'c', 25,
-        'd', 26,
-        'e', 27,
-        'f', 28,
-        'g', 29,
-        'i', 30,
-        'k', 31,
-        'l', 32,
-        'n', 33,
-        'o', 34,
-        'p', 35,
-        'q', 36,
-        'r', 37,
-        't', 38,
-        'v', 39,
-        'w', 40,
-        'z', 41,
+        'Q', 16,
+        'R', 17,
+        'S', 18,
+        'T', 19,
+        'U', 20,
+        'V', 21,
+        'W', 22,
+        'Z', 23,
+        'a', 24,
+        'b', 25,
+        'c', 26,
+        'd', 27,
+        'e', 28,
+        'f', 29,
+        'g', 30,
+        'i', 31,
+        'k', 32,
+        'l', 33,
+        'n', 34,
+        'o', 35,
+        'p', 36,
+        'q', 37,
+        'r', 38,
+        't', 39,
+        'v', 40,
+        'w', 41,
+        'z', 42,
       );
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(0);
       END_STATE();
     case 1:
       ACCEPT_TOKEN(anon_sym_A);
-      if (lookahead == 'd') ADVANCE(42);
-      if (lookahead == 'l') ADVANCE(43);
-      if (lookahead == 'm') ADVANCE(44);
-      if (lookahead == 'n') ADVANCE(45);
+      if (lookahead == 'd') ADVANCE(43);
+      if (lookahead == 'l') ADVANCE(44);
+      if (lookahead == 'm') ADVANCE(45);
+      if (lookahead == 'n') ADVANCE(46);
       END_STATE();
     case 2:
       ACCEPT_TOKEN(anon_sym_B);
-      if (lookahead == 'a') ADVANCE(46);
-      if (lookahead == 'i') ADVANCE(47);
-      if (lookahead == 'l') ADVANCE(48);
+      if (lookahead == 'a') ADVANCE(47);
+      if (lookahead == 'i') ADVANCE(48);
+      if (lookahead == 'l') ADVANCE(49);
       END_STATE();
     case 3:
-      if (lookahead == 'G') ADVANCE(49);
-      if (lookahead == 'U') ADVANCE(50);
-      if (lookahead == 'a') ADVANCE(51);
-      if (lookahead == 'o') ADVANCE(52);
-      if (lookahead == 'u') ADVANCE(53);
+      if (lookahead == 'G') ADVANCE(50);
+      if (lookahead == 'U') ADVANCE(51);
+      if (lookahead == 'a') ADVANCE(52);
+      if (lookahead == 'o') ADVANCE(53);
+      if (lookahead == 'u') ADVANCE(54);
       END_STATE();
     case 4:
-      if (lookahead == 'e') ADVANCE(54);
-      if (lookahead == 'i') ADVANCE(55);
-      if (lookahead == 's') ADVANCE(56);
+      if (lookahead == 'O') ADVANCE(55);
+      if (lookahead == 'e') ADVANCE(56);
+      if (lookahead == 'i') ADVANCE(57);
+      if (lookahead == 's') ADVANCE(58);
       END_STATE();
     case 5:
-      if (lookahead == 'N') ADVANCE(57);
-      if (lookahead == 'm') ADVANCE(58);
-      if (lookahead == 'q') ADVANCE(59);
-      if (lookahead == 'x') ADVANCE(60);
+      if (lookahead == 'N') ADVANCE(59);
+      if (lookahead == 'm') ADVANCE(60);
+      if (lookahead == 'q') ADVANCE(61);
+      if (lookahead == 'x') ADVANCE(62);
       END_STATE();
     case 6:
-      if (lookahead == 'a') ADVANCE(61);
-      if (lookahead == 'l') ADVANCE(62);
-      if (lookahead == 'o') ADVANCE(63);
-      if (lookahead == 'r') ADVANCE(64);
+      if (lookahead == 'a') ADVANCE(63);
+      if (lookahead == 'l') ADVANCE(64);
+      if (lookahead == 'o') ADVANCE(65);
+      if (lookahead == 'r') ADVANCE(66);
       END_STATE();
     case 7:
       ACCEPT_TOKEN(anon_sym_G);
-      if (lookahead == 'E') ADVANCE(65);
-      if (lookahead == 'l') ADVANCE(66);
-      if (lookahead == 'r') ADVANCE(67);
+      if (lookahead == 'B') ADVANCE(67);
+      if (lookahead == 'E') ADVANCE(68);
+      if (lookahead == 'L') ADVANCE(69);
+      if (lookahead == 'l') ADVANCE(70);
+      if (lookahead == 'r') ADVANCE(71);
       END_STATE();
     case 8:
-      if (lookahead == 'L') ADVANCE(68);
+      if (lookahead == 'L') ADVANCE(72);
       END_STATE();
     case 9:
-      if (lookahead == 'n') ADVANCE(69);
+      if (lookahead == 'n') ADVANCE(73);
       END_STATE();
     case 10:
-      if (lookahead == 'e') ADVANCE(70);
+      if (lookahead == 'e') ADVANCE(74);
       END_STATE();
     case 11:
-      if (lookahead == 'E') ADVANCE(71);
-      if (lookahead == 'O') ADVANCE(72);
-      if (lookahead == 'e') ADVANCE(73);
-      if (lookahead == 'i') ADVANCE(74);
+      if (lookahead == 'E') ADVANCE(75);
+      if (lookahead == 'O') ADVANCE(76);
+      if (lookahead == 'e') ADVANCE(77);
+      if (lookahead == 'i') ADVANCE(78);
       END_STATE();
     case 12:
-      if (lookahead == 'a') ADVANCE(75);
-      if (lookahead == 'i') ADVANCE(76);
-      if (lookahead == 'o') ADVANCE(77);
+      if (lookahead == 'a') ADVANCE(79);
+      if (lookahead == 'i') ADVANCE(80);
+      if (lookahead == 'o') ADVANCE(81);
       END_STATE();
     case 13:
-      if (lookahead == 'a') ADVANCE(78);
-      if (lookahead == 'e') ADVANCE(79);
-      if (lookahead == 'o') ADVANCE(80);
+      if (lookahead == 'a') ADVANCE(82);
+      if (lookahead == 'e') ADVANCE(83);
+      if (lookahead == 'o') ADVANCE(84);
       END_STATE();
     case 14:
-      if (lookahead == 'f') ADVANCE(81);
-      if (lookahead == 'n') ADVANCE(82);
+      if (lookahead == 'f') ADVANCE(85);
+      if (lookahead == 'n') ADVANCE(86);
       END_STATE();
     case 15:
-      if (lookahead == 'a') ADVANCE(83);
-      if (lookahead == 'r') ADVANCE(84);
+      if (lookahead == 'a') ADVANCE(87);
+      if (lookahead == 'r') ADVANCE(88);
       END_STATE();
     case 16:
-      ACCEPT_TOKEN(anon_sym_R);
-      if (lookahead == 'G') ADVANCE(85);
-      if (lookahead == 'a') ADVANCE(86);
-      if (lookahead == 'e') ADVANCE(87);
+      if (lookahead == 'U') ADVANCE(89);
       END_STATE();
     case 17:
-      if (lookahead == 'e') ADVANCE(88);
-      if (lookahead == 'h') ADVANCE(89);
-      if (lookahead == 'p') ADVANCE(90);
-      if (lookahead == 'r') ADVANCE(91);
-      if (lookahead == 't') ADVANCE(92);
-      if (lookahead == 'u') ADVANCE(93);
+      ACCEPT_TOKEN(anon_sym_R);
+      if (lookahead == 'A') ADVANCE(90);
+      if (lookahead == 'E') ADVANCE(91);
+      if (lookahead == 'G') ADVANCE(92);
+      if (lookahead == 'a') ADVANCE(93);
+      if (lookahead == 'e') ADVANCE(94);
       END_STATE();
     case 18:
-      if (lookahead == 'a') ADVANCE(94);
-      if (lookahead == 'r') ADVANCE(95);
+      if (lookahead == 'e') ADVANCE(95);
+      if (lookahead == 'h') ADVANCE(96);
+      if (lookahead == 'p') ADVANCE(97);
+      if (lookahead == 'r') ADVANCE(98);
+      if (lookahead == 't') ADVANCE(99);
+      if (lookahead == 'u') ADVANCE(100);
       END_STATE();
     case 19:
-      if (lookahead == 's') ADVANCE(96);
+      if (lookahead == 'a') ADVANCE(101);
+      if (lookahead == 'r') ADVANCE(102);
       END_STATE();
     case 20:
-      if (lookahead == 'e') ADVANCE(97);
+      if (lookahead == 's') ADVANCE(103);
       END_STATE();
     case 21:
-      if (lookahead == 'r') ADVANCE(98);
+      if (lookahead == 'e') ADVANCE(104);
       END_STATE();
     case 22:
-      if (lookahead == 'C') ADVANCE(99);
-      if (lookahead == 'F') ADVANCE(100);
-      if (lookahead == 'T') ADVANCE(101);
-      if (lookahead == 'W') ADVANCE(102);
-      if (lookahead == 'e') ADVANCE(103);
+      if (lookahead == 'r') ADVANCE(105);
       END_STATE();
     case 23:
-      if (lookahead == 'l') ADVANCE(104);
-      if (lookahead == 'n') ADVANCE(105);
+      if (lookahead == 'C') ADVANCE(106);
+      if (lookahead == 'F') ADVANCE(107);
+      if (lookahead == 'T') ADVANCE(108);
+      if (lookahead == 'W') ADVANCE(109);
+      if (lookahead == 'e') ADVANCE(110);
+      if (lookahead == 't') ADVANCE(111);
       END_STATE();
     case 24:
-      if (lookahead == 'a') ADVANCE(106);
+      if (lookahead == 'l') ADVANCE(112);
+      if (lookahead == 'n') ADVANCE(113);
       END_STATE();
     case 25:
-      if (lookahead == 'o') ADVANCE(107);
-      if (lookahead == 'u') ADVANCE(108);
+      if (lookahead == 'a') ADVANCE(114);
       END_STATE();
     case 26:
-      if (lookahead == 'e') ADVANCE(109);
-      if (lookahead == 'o') ADVANCE(110);
+      if (lookahead == 'o') ADVANCE(115);
+      if (lookahead == 'u') ADVANCE(116);
       END_STATE();
     case 27:
-      if (lookahead == 'q') ADVANCE(111);
+      if (lookahead == 'e') ADVANCE(117);
+      if (lookahead == 'o') ADVANCE(118);
       END_STATE();
     case 28:
-      if (lookahead == 'a') ADVANCE(112);
-      if (lookahead == 'l') ADVANCE(113);
-      if (lookahead == 'r') ADVANCE(114);
+      if (lookahead == 'q') ADVANCE(119);
       END_STATE();
     case 29:
-      if (lookahead == 'e') ADVANCE(115);
-      if (lookahead == 'r') ADVANCE(116);
+      if (lookahead == 'a') ADVANCE(120);
+      if (lookahead == 'l') ADVANCE(121);
+      if (lookahead == 'r') ADVANCE(122);
       END_STATE();
     case 30:
-      if (lookahead == 'n') ADVANCE(117);
+      if (lookahead == 'e') ADVANCE(123);
+      if (lookahead == 'r') ADVANCE(124);
       END_STATE();
     case 31:
-      if (lookahead == 'e') ADVANCE(118);
+      if (lookahead == 'n') ADVANCE(125);
       END_STATE();
     case 32:
-      if (lookahead == 'e') ADVANCE(119);
+      if (lookahead == 'e') ADVANCE(126);
       END_STATE();
     case 33:
-      if (lookahead == 'e') ADVANCE(120);
-      if (lookahead == 'o') ADVANCE(121);
+      if (lookahead == 'e') ADVANCE(127);
       END_STATE();
     case 34:
-      if (lookahead == 'f') ADVANCE(122);
-      if (lookahead == 'n') ADVANCE(123);
+      if (lookahead == 'e') ADVANCE(128);
+      if (lookahead == 'o') ADVANCE(129);
       END_STATE();
     case 35:
-      if (lookahead == 'a') ADVANCE(124);
-      if (lookahead == 'r') ADVANCE(125);
+      if (lookahead == 'f') ADVANCE(130);
+      if (lookahead == 'n') ADVANCE(131);
       END_STATE();
     case 36:
-      if (lookahead == 'u') ADVANCE(126);
-      END_STATE();
-    case 37:
-      if (lookahead == 'a') ADVANCE(127);
-      if (lookahead == 'e') ADVANCE(128);
-      END_STATE();
-    case 38:
-      if (lookahead == 'a') ADVANCE(129);
-      if (lookahead == 'e') ADVANCE(130);
-      if (lookahead == 'r') ADVANCE(131);
-      END_STATE();
-    case 39:
-      if (lookahead == 'e') ADVANCE(132);
-      END_STATE();
-    case 40:
+      if (lookahead == 'a') ADVANCE(132);
       if (lookahead == 'r') ADVANCE(133);
       END_STATE();
+    case 37:
+      if (lookahead == 'u') ADVANCE(134);
+      END_STATE();
+    case 38:
+      if (lookahead == 'a') ADVANCE(135);
+      if (lookahead == 'e') ADVANCE(136);
+      if (lookahead == 'g') ADVANCE(137);
+      END_STATE();
+    case 39:
+      if (lookahead == 'a') ADVANCE(138);
+      if (lookahead == 'e') ADVANCE(139);
+      if (lookahead == 'r') ADVANCE(140);
+      END_STATE();
+    case 40:
+      if (lookahead == 'e') ADVANCE(141);
+      END_STATE();
     case 41:
-      if (lookahead == 'e') ADVANCE(134);
-      if (lookahead == 'f') ADVANCE(135);
+      if (lookahead == 'r') ADVANCE(142);
       END_STATE();
     case 42:
-      if (lookahead == 'd') ADVANCE(136);
+      if (lookahead == 'e') ADVANCE(143);
+      if (lookahead == 'f') ADVANCE(144);
+      if (lookahead == 't') ADVANCE(145);
       END_STATE();
     case 43:
-      if (lookahead == 'p') ADVANCE(137);
-      if (lookahead == 'w') ADVANCE(138);
+      if (lookahead == 'd') ADVANCE(146);
       END_STATE();
     case 44:
-      if (lookahead == 'b') ADVANCE(139);
+      if (lookahead == 'p') ADVANCE(147);
+      if (lookahead == 'w') ADVANCE(148);
       END_STATE();
     case 45:
-      if (lookahead == 'y') ADVANCE(140);
+      if (lookahead == 'b') ADVANCE(149);
       END_STATE();
     case 46:
-      if (lookahead == 'c') ADVANCE(141);
+      if (lookahead == 'y') ADVANCE(150);
       END_STATE();
     case 47:
-      if (lookahead == 'n') ADVANCE(142);
+      if (lookahead == 'c') ADVANCE(151);
       END_STATE();
     case 48:
-      if (lookahead == 'e') ADVANCE(143);
+      if (lookahead == 'n') ADVANCE(152);
       END_STATE();
     case 49:
-      if (lookahead == 'I') ADVANCE(144);
-      if (lookahead == 'P') ADVANCE(145);
+      if (lookahead == 'e') ADVANCE(153);
       END_STATE();
     case 50:
-      if (lookahead == 'B') ADVANCE(146);
+      if (lookahead == 'I') ADVANCE(154);
+      if (lookahead == 'P') ADVANCE(155);
       END_STATE();
     case 51:
-      if (lookahead == 't') ADVANCE(147);
+      if (lookahead == 'B') ADVANCE(156);
       END_STATE();
     case 52:
-      if (lookahead == 'l') ADVANCE(148);
-      if (lookahead == 'm') ADVANCE(149);
-      if (lookahead == 'n') ADVANCE(150);
+      if (lookahead == 't') ADVANCE(157);
       END_STATE();
     case 53:
-      if (lookahead == 'b') ADVANCE(151);
-      if (lookahead == 'l') ADVANCE(152);
-      if (lookahead == 's') ADVANCE(153);
+      if (lookahead == 'l') ADVANCE(158);
+      if (lookahead == 'm') ADVANCE(159);
+      if (lookahead == 'n') ADVANCE(160);
       END_STATE();
     case 54:
-      if (lookahead == 'c') ADVANCE(154);
-      if (lookahead == 'n') ADVANCE(155);
-      if (lookahead == 'p') ADVANCE(156);
+      if (lookahead == 'b') ADVANCE(161);
+      if (lookahead == 'l') ADVANCE(162);
+      if (lookahead == 's') ADVANCE(163);
       END_STATE();
     case 55:
-      if (lookahead == 'f') ADVANCE(157);
+      if (lookahead == 'U') ADVANCE(164);
       END_STATE();
     case 56:
-      if (lookahead == 't') ADVANCE(158);
+      if (lookahead == 'c') ADVANCE(165);
+      if (lookahead == 'n') ADVANCE(166);
+      if (lookahead == 'p') ADVANCE(167);
       END_STATE();
     case 57:
-      if (lookahead == 'D') ADVANCE(159);
+      if (lookahead == 'f') ADVANCE(168);
       END_STATE();
     case 58:
-      if (lookahead == 'i') ADVANCE(160);
+      if (lookahead == 't') ADVANCE(169);
       END_STATE();
     case 59:
-      if (lookahead == 'u') ADVANCE(161);
+      if (lookahead == 'D') ADVANCE(170);
       END_STATE();
     case 60:
-      if (lookahead == 'p') ADVANCE(162);
+      if (lookahead == 'i') ADVANCE(171);
       END_STATE();
     case 61:
-      if (lookahead == 'i') ADVANCE(163);
-      if (lookahead == 'l') ADVANCE(164);
+      if (lookahead == 'u') ADVANCE(172);
       END_STATE();
     case 62:
-      if (lookahead == 'o') ADVANCE(165);
+      if (lookahead == 'p') ADVANCE(173);
       END_STATE();
     case 63:
-      if (lookahead == 'g') ADVANCE(166);
+      if (lookahead == 'i') ADVANCE(174);
+      if (lookahead == 'l') ADVANCE(175);
       END_STATE();
     case 64:
-      if (lookahead == 'o') ADVANCE(167);
+      if (lookahead == 'o') ADVANCE(176);
       END_STATE();
     case 65:
-      if (lookahead == 'q') ADVANCE(168);
+      if (lookahead == 'g') ADVANCE(177);
       END_STATE();
     case 66:
-      if (lookahead == 'o') ADVANCE(169);
+      if (lookahead == 'o') ADVANCE(178);
       END_STATE();
     case 67:
-      if (lookahead == 'a') ADVANCE(170);
-      if (lookahead == 'e') ADVANCE(171);
+      if (lookahead == 'A') ADVANCE(179);
       END_STATE();
     case 68:
-      if (lookahead == 'S') ADVANCE(172);
+      if (lookahead == 'q') ADVANCE(180);
       END_STATE();
     case 69:
-      if (lookahead == 'c') ADVANCE(173);
-      if (lookahead == 't') ADVANCE(174);
-      if (lookahead == 'v') ADVANCE(175);
+      if (lookahead == 'S') ADVANCE(181);
       END_STATE();
     case 70:
-      if (lookahead == 'e') ADVANCE(176);
+      if (lookahead == 'o') ADVANCE(182);
       END_STATE();
     case 71:
-      if (lookahead == 'q') ADVANCE(177);
+      if (lookahead == 'a') ADVANCE(183);
+      if (lookahead == 'e') ADVANCE(184);
       END_STATE();
     case 72:
-      if (lookahead == 'D') ADVANCE(178);
+      if (lookahead == 'S') ADVANCE(185);
       END_STATE();
     case 73:
-      if (lookahead == 's') ADVANCE(179);
+      if (lookahead == 'c') ADVANCE(186);
+      if (lookahead == 't') ADVANCE(187);
+      if (lookahead == 'v') ADVANCE(188);
       END_STATE();
     case 74:
-      if (lookahead == 'g') ADVANCE(180);
-      if (lookahead == 'n') ADVANCE(181);
+      if (lookahead == 'e') ADVANCE(189);
       END_STATE();
     case 75:
-      if (lookahead == 't') ADVANCE(182);
-      if (lookahead == 'x') ADVANCE(183);
+      if (lookahead == 'R') ADVANCE(190);
+      if (lookahead == 'q') ADVANCE(191);
       END_STATE();
     case 76:
-      if (lookahead == 'n') ADVANCE(184);
+      if (lookahead == 'D') ADVANCE(192);
       END_STATE();
     case 77:
-      if (lookahead == 'd') ADVANCE(185);
+      if (lookahead == 's') ADVANCE(193);
       END_STATE();
     case 78:
-      if (lookahead == 'm') ADVANCE(186);
+      if (lookahead == 'g') ADVANCE(194);
+      if (lookahead == 'n') ADVANCE(195);
       END_STATE();
     case 79:
-      if (lookahead == 'v') ADVANCE(187);
+      if (lookahead == 't') ADVANCE(196);
+      if (lookahead == 'x') ADVANCE(197);
       END_STATE();
     case 80:
-      if (lookahead == 't') ADVANCE(188);
+      if (lookahead == 'n') ADVANCE(198);
       END_STATE();
     case 81:
-      if (lookahead == 'f') ADVANCE(189);
+      if (lookahead == 'd') ADVANCE(199);
       END_STATE();
     case 82:
-      ACCEPT_TOKEN(anon_sym_On);
-      if (lookahead == 'e') ADVANCE(190);
+      if (lookahead == 'm') ADVANCE(200);
       END_STATE();
     case 83:
-      if (lookahead == 's') ADVANCE(191);
+      if (lookahead == 'v') ADVANCE(201);
       END_STATE();
     case 84:
-      if (lookahead == 'o') ADVANCE(192);
+      if (lookahead == 't') ADVANCE(202);
       END_STATE();
     case 85:
-      if (lookahead == 'B') ADVANCE(193);
+      if (lookahead == 'f') ADVANCE(203);
       END_STATE();
     case 86:
-      if (lookahead == 'n') ADVANCE(194);
-      END_STATE();
-    case 87:
-      if (lookahead == 'a') ADVANCE(195);
-      if (lookahead == 'f') ADVANCE(196);
-      if (lookahead == 'p') ADVANCE(197);
-      if (lookahead == 'v') ADVANCE(198);
-      END_STATE();
-    case 88:
-      if (lookahead == 't') ADVANCE(199);
-      END_STATE();
-    case 89:
-      if (lookahead == 'a') ADVANCE(200);
-      if (lookahead == 'i') ADVANCE(201);
-      END_STATE();
-    case 90:
-      if (lookahead == 'e') ADVANCE(202);
-      END_STATE();
-    case 91:
-      if (lookahead == 'c') ADVANCE(203);
-      END_STATE();
-    case 92:
+      ACCEPT_TOKEN(anon_sym_On);
       if (lookahead == 'e') ADVANCE(204);
       END_STATE();
+    case 87:
+      if (lookahead == 's') ADVANCE(205);
+      END_STATE();
+    case 88:
+      if (lookahead == 'o') ADVANCE(206);
+      END_STATE();
+    case 89:
+      if (lookahead == 'A') ADVANCE(207);
+      END_STATE();
+    case 90:
+      if (lookahead == 'N') ADVANCE(208);
+      END_STATE();
+    case 91:
+      if (lookahead == 'C') ADVANCE(209);
+      END_STATE();
+    case 92:
+      if (lookahead == 'B') ADVANCE(210);
+      END_STATE();
     case 93:
-      if (lookahead == 'b') ADVANCE(205);
+      if (lookahead == 'n') ADVANCE(211);
       END_STATE();
     case 94:
-      if (lookahead == 'g') ADVANCE(206);
+      if (lookahead == 'a') ADVANCE(212);
+      if (lookahead == 'f') ADVANCE(213);
+      if (lookahead == 'p') ADVANCE(214);
+      if (lookahead == 'v') ADVANCE(215);
       END_STATE();
     case 95:
-      if (lookahead == 'u') ADVANCE(207);
+      if (lookahead == 'p') ADVANCE(216);
+      if (lookahead == 't') ADVANCE(217);
       END_STATE();
     case 96:
-      if (lookahead == 'e') ADVANCE(208);
+      if (lookahead == 'a') ADVANCE(218);
+      if (lookahead == 'i') ADVANCE(219);
       END_STATE();
     case 97:
-      if (lookahead == 'c') ADVANCE(209);
+      if (lookahead == 'e') ADVANCE(220);
       END_STATE();
     case 98:
-      if (lookahead == 'i') ADVANCE(210);
+      if (lookahead == 'c') ADVANCE(221);
       END_STATE();
     case 99:
-      if (lookahead == 'l') ADVANCE(211);
+      if (lookahead == 'e') ADVANCE(222);
       END_STATE();
     case 100:
-      if (lookahead == 'a') ADVANCE(212);
-      END_STATE();
-    case 101:
-      if (lookahead == 'e') ADVANCE(213);
-      END_STATE();
-    case 102:
-      if (lookahead == 'r') ADVANCE(214);
-      END_STATE();
-    case 103:
-      if (lookahead == 'r') ADVANCE(215);
-      END_STATE();
-    case 104:
-      if (lookahead == 'p') ADVANCE(216);
-      if (lookahead == 'w') ADVANCE(217);
-      END_STATE();
-    case 105:
-      if (lookahead == 'y') ADVANCE(218);
-      END_STATE();
-    case 106:
-      if (lookahead == 'c') ADVANCE(219);
-      END_STATE();
-    case 107:
-      if (lookahead == 'l') ADVANCE(220);
-      if (lookahead == 'm') ADVANCE(221);
-      if (lookahead == 'n') ADVANCE(222);
-      END_STATE();
-    case 108:
       if (lookahead == 'b') ADVANCE(223);
       END_STATE();
-    case 109:
-      if (lookahead == 'c') ADVANCE(224);
+    case 101:
+      if (lookahead == 'g') ADVANCE(224);
       END_STATE();
-    case 110:
+    case 102:
       if (lookahead == 'u') ADVANCE(225);
       END_STATE();
+    case 103:
+      if (lookahead == 'e') ADVANCE(226);
+      END_STATE();
+    case 104:
+      if (lookahead == 'c') ADVANCE(227);
+      END_STATE();
+    case 105:
+      if (lookahead == 'i') ADVANCE(228);
+      END_STATE();
+    case 106:
+      if (lookahead == 'l') ADVANCE(229);
+      END_STATE();
+    case 107:
+      if (lookahead == 'a') ADVANCE(230);
+      END_STATE();
+    case 108:
+      if (lookahead == 'e') ADVANCE(231);
+      END_STATE();
+    case 109:
+      if (lookahead == 'r') ADVANCE(232);
+      END_STATE();
+    case 110:
+      if (lookahead == 'r') ADVANCE(233);
+      END_STATE();
     case 111:
-      if (lookahead == 'u') ADVANCE(226);
+      if (lookahead == 'e') ADVANCE(234);
       END_STATE();
     case 112:
-      if (lookahead == 'i') ADVANCE(227);
-      if (lookahead == 'l') ADVANCE(228);
+      if (lookahead == 'p') ADVANCE(235);
+      if (lookahead == 'w') ADVANCE(236);
       END_STATE();
     case 113:
-      if (lookahead == 'o') ADVANCE(229);
+      if (lookahead == 'y') ADVANCE(237);
       END_STATE();
     case 114:
-      if (lookahead == 'o') ADVANCE(230);
+      if (lookahead == 'c') ADVANCE(238);
       END_STATE();
     case 115:
-      if (lookahead == 'q') ADVANCE(231);
+      if (lookahead == 'l') ADVANCE(239);
+      if (lookahead == 'm') ADVANCE(240);
+      if (lookahead == 'n') ADVANCE(241);
       END_STATE();
     case 116:
-      if (lookahead == 'e') ADVANCE(232);
+      if (lookahead == 'b') ADVANCE(242);
       END_STATE();
     case 117:
-      if (lookahead == 'c') ADVANCE(233);
-      if (lookahead == 't') ADVANCE(234);
-      if (lookahead == 'v') ADVANCE(235);
+      if (lookahead == 'c') ADVANCE(243);
       END_STATE();
     case 118:
-      if (lookahead == 'e') ADVANCE(236);
+      if (lookahead == 'u') ADVANCE(244);
       END_STATE();
     case 119:
-      if (lookahead == 'q') ADVANCE(237);
-      if (lookahead == 'r') ADVANCE(238);
-      if (lookahead == 's') ADVANCE(239);
+      if (lookahead == 'u') ADVANCE(245);
       END_STATE();
     case 120:
-      if (lookahead == 'v') ADVANCE(240);
+      if (lookahead == 'i') ADVANCE(246);
+      if (lookahead == 'l') ADVANCE(247);
       END_STATE();
     case 121:
-      if (lookahead == 'r') ADVANCE(241);
-      if (lookahead == 't') ADVANCE(242);
+      if (lookahead == 'o') ADVANCE(248);
       END_STATE();
     case 122:
-      if (lookahead == 'f') ADVANCE(243);
+      if (lookahead == 'o') ADVANCE(249);
       END_STATE();
     case 123:
-      ACCEPT_TOKEN(anon_sym_on);
-      if (lookahead == 'e') ADVANCE(244);
+      if (lookahead == 'q') ADVANCE(250);
       END_STATE();
     case 124:
-      if (lookahead == 's') ADVANCE(245);
+      if (lookahead == 'e') ADVANCE(251);
       END_STATE();
     case 125:
-      if (lookahead == 'e') ADVANCE(246);
-      if (lookahead == 'i') ADVANCE(247);
+      if (lookahead == 'c') ADVANCE(252);
+      if (lookahead == 't') ADVANCE(253);
+      if (lookahead == 'v') ADVANCE(254);
       END_STATE();
     case 126:
-      if (lookahead == 'a') ADVANCE(248);
+      if (lookahead == 'e') ADVANCE(255);
       END_STATE();
     case 127:
-      if (lookahead == 'n') ADVANCE(249);
+      if (lookahead == 'q') ADVANCE(256);
+      if (lookahead == 'r') ADVANCE(257);
+      if (lookahead == 's') ADVANCE(258);
       END_STATE();
     case 128:
-      if (lookahead == 'a') ADVANCE(250);
-      if (lookahead == 'f') ADVANCE(251);
-      if (lookahead == 'p') ADVANCE(252);
+      if (lookahead == 'v') ADVANCE(259);
       END_STATE();
     case 129:
-      if (lookahead == 'n') ADVANCE(253);
+      if (lookahead == 'r') ADVANCE(260);
+      if (lookahead == 't') ADVANCE(261);
       END_STATE();
     case 130:
-      if (lookahead == 'x') ADVANCE(254);
+      if (lookahead == 'f') ADVANCE(262);
       END_STATE();
     case 131:
-      if (lookahead == 'u') ADVANCE(255);
+      ACCEPT_TOKEN(anon_sym_on);
+      if (lookahead == 'e') ADVANCE(263);
       END_STATE();
     case 132:
-      if (lookahead == 'c') ADVANCE(256);
-      if (lookahead == 'r') ADVANCE(257);
+      if (lookahead == 's') ADVANCE(264);
       END_STATE();
     case 133:
-      if (lookahead == 'i') ADVANCE(258);
+      if (lookahead == 'e') ADVANCE(265);
+      if (lookahead == 'i') ADVANCE(266);
       END_STATE();
     case 134:
-      if (lookahead == 'r') ADVANCE(259);
+      if (lookahead == 'a') ADVANCE(267);
       END_STATE();
     case 135:
-      if (lookahead == 'a') ADVANCE(260);
+      if (lookahead == 'n') ADVANCE(268);
       END_STATE();
     case 136:
-      ACCEPT_TOKEN(anon_sym_Add);
-      END_STATE();
-    case 137:
-      if (lookahead == 'h') ADVANCE(261);
-      END_STATE();
-    case 138:
-      if (lookahead == 'a') ADVANCE(262);
-      END_STATE();
-    case 139:
-      if (lookahead == 'i') ADVANCE(263);
-      END_STATE();
-    case 140:
-      ACCEPT_TOKEN(anon_sym_Any);
-      END_STATE();
-    case 141:
-      if (lookahead == 'k') ADVANCE(264);
-      END_STATE();
-    case 142:
-      if (lookahead == 'd') ADVANCE(265);
-      END_STATE();
-    case 143:
-      if (lookahead == 'n') ADVANCE(266);
-      END_STATE();
-    case 144:
-      if (lookahead == 'N') ADVANCE(267);
-      END_STATE();
-    case 145:
-      if (lookahead == 'R') ADVANCE(268);
-      END_STATE();
-    case 146:
-      if (lookahead == 'E') ADVANCE(269);
-      END_STATE();
-    case 147:
-      if (lookahead == 'e') ADVANCE(270);
-      END_STATE();
-    case 148:
-      if (lookahead == 'o') ADVANCE(271);
-      END_STATE();
-    case 149:
+      if (lookahead == 'a') ADVANCE(269);
+      if (lookahead == 'c') ADVANCE(270);
+      if (lookahead == 'f') ADVANCE(271);
       if (lookahead == 'p') ADVANCE(272);
       END_STATE();
+    case 137:
+      if (lookahead == 'b') ADVANCE(273);
+      END_STATE();
+    case 138:
+      if (lookahead == 'n') ADVANCE(274);
+      END_STATE();
+    case 139:
+      if (lookahead == 'x') ADVANCE(275);
+      END_STATE();
+    case 140:
+      if (lookahead == 'u') ADVANCE(276);
+      END_STATE();
+    case 141:
+      if (lookahead == 'c') ADVANCE(277);
+      if (lookahead == 'r') ADVANCE(278);
+      END_STATE();
+    case 142:
+      if (lookahead == 'i') ADVANCE(279);
+      END_STATE();
+    case 143:
+      if (lookahead == 'r') ADVANCE(280);
+      END_STATE();
+    case 144:
+      if (lookahead == 'a') ADVANCE(281);
+      END_STATE();
+    case 145:
+      if (lookahead == 'e') ADVANCE(282);
+      END_STATE();
+    case 146:
+      ACCEPT_TOKEN(anon_sym_Add);
+      END_STATE();
+    case 147:
+      if (lookahead == 'h') ADVANCE(283);
+      END_STATE();
+    case 148:
+      if (lookahead == 'a') ADVANCE(284);
+      END_STATE();
+    case 149:
+      if (lookahead == 'i') ADVANCE(285);
+      END_STATE();
     case 150:
-      if (lookahead == 's') ADVANCE(273);
+      ACCEPT_TOKEN(anon_sym_Any);
       END_STATE();
     case 151:
-      if (lookahead == 'e') ADVANCE(274);
+      if (lookahead == 'k') ADVANCE(286);
       END_STATE();
     case 152:
-      if (lookahead == 'l') ADVANCE(275);
+      if (lookahead == 'd') ADVANCE(287);
       END_STATE();
     case 153:
-      if (lookahead == 't') ADVANCE(276);
+      if (lookahead == 'n') ADVANCE(288);
       END_STATE();
     case 154:
-      if (lookahead == 'r') ADVANCE(277);
+      if (lookahead == 'N') ADVANCE(289);
       END_STATE();
     case 155:
-      if (lookahead == 's') ADVANCE(278);
+      if (lookahead == 'R') ADVANCE(290);
       END_STATE();
     case 156:
-      if (lookahead == 'e') ADVANCE(279);
+      if (lookahead == 'E') ADVANCE(291);
       END_STATE();
     case 157:
-      if (lookahead == 'f') ADVANCE(280);
+      if (lookahead == 'e') ADVANCE(292);
       END_STATE();
     case 158:
-      if (lookahead == 'A') ADVANCE(281);
-      if (lookahead == 'C') ADVANCE(282);
+      if (lookahead == 'o') ADVANCE(293);
       END_STATE();
     case 159:
-      if (lookahead == 'C') ADVANCE(283);
-      if (lookahead == 'H') ADVANCE(284);
+      if (lookahead == 'b') ADVANCE(294);
+      if (lookahead == 'p') ADVANCE(295);
       END_STATE();
     case 160:
-      if (lookahead == 's') ADVANCE(285);
+      if (lookahead == 's') ADVANCE(296);
       END_STATE();
     case 161:
-      if (lookahead == 'a') ADVANCE(286);
+      if (lookahead == 'e') ADVANCE(297);
       END_STATE();
     case 162:
-      ACCEPT_TOKEN(anon_sym_Exp);
-      if (lookahead == '2') ADVANCE(287);
+      if (lookahead == 'l') ADVANCE(298);
       END_STATE();
     case 163:
-      if (lookahead == 'l') ADVANCE(288);
+      if (lookahead == 't') ADVANCE(299);
       END_STATE();
     case 164:
-      if (lookahead == 'l') ADVANCE(289);
-      if (lookahead == 's') ADVANCE(290);
+      if (lookahead == 'B') ADVANCE(300);
       END_STATE();
     case 165:
-      if (lookahead == 'a') ADVANCE(291);
+      if (lookahead == 'r') ADVANCE(301);
       END_STATE();
     case 166:
-      ACCEPT_TOKEN(anon_sym_Fog);
+      if (lookahead == 's') ADVANCE(302);
       END_STATE();
     case 167:
-      if (lookahead == 'n') ADVANCE(292);
+      if (lookahead == 'e') ADVANCE(303);
       END_STATE();
     case 168:
-      if (lookahead == 'u') ADVANCE(293);
+      if (lookahead == 'f') ADVANCE(304);
       END_STATE();
     case 169:
-      if (lookahead == 'b') ADVANCE(294);
+      if (lookahead == 'A') ADVANCE(305);
+      if (lookahead == 'C') ADVANCE(306);
       END_STATE();
     case 170:
-      if (lookahead == 'b') ADVANCE(295);
+      if (lookahead == 'C') ADVANCE(307);
+      if (lookahead == 'G') ADVANCE(308);
+      if (lookahead == 'H') ADVANCE(309);
       END_STATE();
     case 171:
-      if (lookahead == 'a') ADVANCE(296);
+      if (lookahead == 's') ADVANCE(310);
       END_STATE();
     case 172:
-      if (lookahead == 'L') ADVANCE(297);
+      if (lookahead == 'a') ADVANCE(311);
       END_STATE();
     case 173:
-      if (lookahead == 'r') ADVANCE(298);
+      ACCEPT_TOKEN(anon_sym_Exp);
+      if (lookahead == '2') ADVANCE(312);
       END_STATE();
     case 174:
-      ACCEPT_TOKEN(anon_sym_Int);
-      if (lookahead == 'e') ADVANCE(299);
+      if (lookahead == 'l') ADVANCE(313);
       END_STATE();
     case 175:
-      if (lookahead == 'e') ADVANCE(300);
+      if (lookahead == 'l') ADVANCE(314);
+      if (lookahead == 's') ADVANCE(315);
       END_STATE();
     case 176:
-      if (lookahead == 'p') ADVANCE(301);
+      if (lookahead == 'a') ADVANCE(316);
       END_STATE();
     case 177:
-      if (lookahead == 'u') ADVANCE(302);
+      ACCEPT_TOKEN(anon_sym_Fog);
       END_STATE();
     case 178:
-      ACCEPT_TOKEN(anon_sym_LOD);
+      if (lookahead == 'n') ADVANCE(317);
       END_STATE();
     case 179:
-      if (lookahead == 's') ADVANCE(303);
+      ACCEPT_TOKEN(anon_sym_GBA);
       END_STATE();
     case 180:
-      if (lookahead == 'h') ADVANCE(304);
+      if (lookahead == 'u') ADVANCE(318);
       END_STATE();
     case 181:
-      if (lookahead == 'e') ADVANCE(305);
+      if (lookahead == 'L') ADVANCE(319);
       END_STATE();
     case 182:
-      if (lookahead == 'e') ADVANCE(306);
-      if (lookahead == 'r') ADVANCE(307);
+      if (lookahead == 'b') ADVANCE(320);
       END_STATE();
     case 183:
-      ACCEPT_TOKEN(anon_sym_Max);
+      if (lookahead == 'b') ADVANCE(321);
       END_STATE();
     case 184:
-      ACCEPT_TOKEN(anon_sym_Min);
+      if (lookahead == 'a') ADVANCE(322);
       END_STATE();
     case 185:
-      if (lookahead == 'e') ADVANCE(308);
+      if (lookahead == 'L') ADVANCE(323);
       END_STATE();
     case 186:
-      if (lookahead == 'e') ADVANCE(309);
+      if (lookahead == 'r') ADVANCE(324);
       END_STATE();
     case 187:
-      if (lookahead == 'e') ADVANCE(310);
+      ACCEPT_TOKEN(anon_sym_Int);
+      if (lookahead == 'e') ADVANCE(325);
       END_STATE();
     case 188:
-      if (lookahead == 'E') ADVANCE(311);
+      if (lookahead == 'e') ADVANCE(326);
       END_STATE();
     case 189:
-      ACCEPT_TOKEN(anon_sym_Off);
-      if (lookahead == 's') ADVANCE(312);
+      if (lookahead == 'p') ADVANCE(327);
       END_STATE();
     case 190:
-      ACCEPT_TOKEN(anon_sym_One);
-      if (lookahead == 'M') ADVANCE(313);
+      if (lookahead == 'P') ADVANCE(328);
       END_STATE();
     case 191:
-      if (lookahead == 's') ADVANCE(314);
+      if (lookahead == 'u') ADVANCE(329);
       END_STATE();
     case 192:
-      if (lookahead == 'p') ADVANCE(315);
+      ACCEPT_TOKEN(anon_sym_LOD);
       END_STATE();
     case 193:
-      ACCEPT_TOKEN(anon_sym_RGB);
-      if (lookahead == 'A') ADVANCE(316);
+      if (lookahead == 's') ADVANCE(330);
       END_STATE();
     case 194:
-      if (lookahead == 'g') ADVANCE(317);
+      if (lookahead == 'h') ADVANCE(331);
       END_STATE();
     case 195:
-      if (lookahead == 'd') ADVANCE(318);
+      if (lookahead == 'e') ADVANCE(332);
       END_STATE();
     case 196:
-      ACCEPT_TOKEN(anon_sym_Ref);
+      if (lookahead == 'e') ADVANCE(333);
+      if (lookahead == 'r') ADVANCE(334);
       END_STATE();
     case 197:
-      if (lookahead == 'l') ADVANCE(319);
+      ACCEPT_TOKEN(anon_sym_Max);
       END_STATE();
     case 198:
-      if (lookahead == 'S') ADVANCE(320);
+      ACCEPT_TOKEN(anon_sym_Min);
       END_STATE();
     case 199:
-      if (lookahead == 'T') ADVANCE(321);
+      if (lookahead == 'e') ADVANCE(335);
       END_STATE();
     case 200:
-      if (lookahead == 'd') ADVANCE(322);
+      if (lookahead == 'e') ADVANCE(336);
       END_STATE();
     case 201:
-      if (lookahead == 'n') ADVANCE(323);
+      if (lookahead == 'e') ADVANCE(337);
       END_STATE();
     case 202:
-      if (lookahead == 'c') ADVANCE(324);
+      if (lookahead == 'E') ADVANCE(338);
       END_STATE();
     case 203:
-      if (lookahead == 'A') ADVANCE(325);
-      if (lookahead == 'C') ADVANCE(326);
+      ACCEPT_TOKEN(anon_sym_Off);
+      if (lookahead == 's') ADVANCE(339);
       END_STATE();
     case 204:
-      if (lookahead == 'n') ADVANCE(327);
+      ACCEPT_TOKEN(anon_sym_One);
+      if (lookahead == 'M') ADVANCE(340);
       END_STATE();
     case 205:
-      ACCEPT_TOKEN(anon_sym_Sub);
-      if (lookahead == 'S') ADVANCE(328);
+      if (lookahead == 's') ADVANCE(341);
       END_STATE();
     case 206:
-      if (lookahead == 's') ADVANCE(329);
+      if (lookahead == 'p') ADVANCE(342);
       END_STATE();
     case 207:
-      if (lookahead == 'e') ADVANCE(330);
+      if (lookahead == 'D') ADVANCE(343);
       END_STATE();
     case 208:
-      if (lookahead == 'P') ADVANCE(331);
+      if (lookahead == 'G') ADVANCE(344);
       END_STATE();
     case 209:
-      if (lookahead == 't') ADVANCE(332);
+      if (lookahead == 'T') ADVANCE(345);
       END_STATE();
     case 210:
-      if (lookahead == 't') ADVANCE(333);
+      ACCEPT_TOKEN(anon_sym_RGB);
+      if (lookahead == 'A') ADVANCE(346);
       END_STATE();
     case 211:
-      if (lookahead == 'i') ADVANCE(334);
+      if (lookahead == 'g') ADVANCE(347);
       END_STATE();
     case 212:
-      if (lookahead == 'i') ADVANCE(335);
+      if (lookahead == 'd') ADVANCE(348);
       END_STATE();
     case 213:
-      if (lookahead == 's') ADVANCE(336);
+      ACCEPT_TOKEN(anon_sym_Ref);
       END_STATE();
     case 214:
-      if (lookahead == 'i') ADVANCE(337);
+      if (lookahead == 'l') ADVANCE(349);
       END_STATE();
     case 215:
-      if (lookahead == 'o') ADVANCE(338);
+      if (lookahead == 'S') ADVANCE(350);
       END_STATE();
     case 216:
-      if (lookahead == 'h') ADVANCE(339);
+      if (lookahead == 'a') ADVANCE(351);
       END_STATE();
     case 217:
-      if (lookahead == 'a') ADVANCE(340);
+      if (lookahead == 'T') ADVANCE(352);
       END_STATE();
     case 218:
-      ACCEPT_TOKEN(anon_sym_any);
+      if (lookahead == 'd') ADVANCE(353);
       END_STATE();
     case 219:
-      if (lookahead == 'k') ADVANCE(341);
+      if (lookahead == 'n') ADVANCE(354);
       END_STATE();
     case 220:
-      if (lookahead == 'o') ADVANCE(342);
+      if (lookahead == 'c') ADVANCE(355);
       END_STATE();
     case 221:
-      if (lookahead == 'b') ADVANCE(343);
-      if (lookahead == 'p') ADVANCE(344);
+      if (lookahead == 'A') ADVANCE(356);
+      if (lookahead == 'C') ADVANCE(357);
       END_STATE();
     case 222:
-      if (lookahead == 's') ADVANCE(345);
+      if (lookahead == 'n') ADVANCE(358);
       END_STATE();
     case 223:
-      if (lookahead == 'e') ADVANCE(346);
+      ACCEPT_TOKEN(anon_sym_Sub);
+      if (lookahead == 'S') ADVANCE(359);
+      if (lookahead == 's') ADVANCE(360);
       END_STATE();
     case 224:
-      if (lookahead == 'r') ADVANCE(347);
+      if (lookahead == 's') ADVANCE(361);
       END_STATE();
     case 225:
-      if (lookahead == 'b') ADVANCE(348);
+      if (lookahead == 'e') ADVANCE(362);
       END_STATE();
     case 226:
-      if (lookahead == 'a') ADVANCE(349);
+      if (lookahead == 'P') ADVANCE(363);
       END_STATE();
     case 227:
-      if (lookahead == 'l') ADVANCE(350);
+      if (lookahead == 't') ADVANCE(364);
       END_STATE();
     case 228:
-      if (lookahead == 's') ADVANCE(351);
+      if (lookahead == 't') ADVANCE(365);
       END_STATE();
     case 229:
-      if (lookahead == 'a') ADVANCE(352);
+      if (lookahead == 'i') ADVANCE(366);
       END_STATE();
     case 230:
-      if (lookahead == 'n') ADVANCE(353);
+      if (lookahead == 'i') ADVANCE(367);
       END_STATE();
     case 231:
-      if (lookahead == 'u') ADVANCE(354);
+      if (lookahead == 's') ADVANCE(368);
       END_STATE();
     case 232:
-      if (lookahead == 'a') ADVANCE(355);
+      if (lookahead == 'i') ADVANCE(369);
       END_STATE();
     case 233:
-      if (lookahead == 'r') ADVANCE(356);
+      if (lookahead == 'o') ADVANCE(370);
       END_STATE();
     case 234:
-      ACCEPT_TOKEN(anon_sym_int);
-      if (lookahead == 'e') ADVANCE(357);
+      if (lookahead == 's') ADVANCE(371);
       END_STATE();
     case 235:
-      if (lookahead == 'a') ADVANCE(358);
-      if (lookahead == 'e') ADVANCE(359);
+      if (lookahead == 'h') ADVANCE(372);
       END_STATE();
     case 236:
-      if (lookahead == 'p') ADVANCE(360);
+      if (lookahead == 'a') ADVANCE(373);
       END_STATE();
     case 237:
-      if (lookahead == 'u') ADVANCE(361);
+      ACCEPT_TOKEN(anon_sym_any);
       END_STATE();
     case 238:
-      if (lookahead == 'p') ADVANCE(362);
+      if (lookahead == 'k') ADVANCE(374);
       END_STATE();
     case 239:
-      if (lookahead == 's') ADVANCE(363);
+      if (lookahead == 'o') ADVANCE(375);
       END_STATE();
     case 240:
-      if (lookahead == 'e') ADVANCE(364);
+      if (lookahead == 'b') ADVANCE(376);
+      if (lookahead == 'p') ADVANCE(377);
       END_STATE();
     case 241:
-      if (lookahead == 'm') ADVANCE(365);
+      if (lookahead == 's') ADVANCE(378);
       END_STATE();
     case 242:
-      if (lookahead == 'e') ADVANCE(366);
+      if (lookahead == 'e') ADVANCE(379);
       END_STATE();
     case 243:
-      ACCEPT_TOKEN(anon_sym_off);
+      if (lookahead == 'r') ADVANCE(380);
       END_STATE();
     case 244:
-      ACCEPT_TOKEN(anon_sym_one);
+      if (lookahead == 'b') ADVANCE(381);
       END_STATE();
     case 245:
-      if (lookahead == 's') ADVANCE(367);
+      if (lookahead == 'a') ADVANCE(382);
       END_STATE();
     case 246:
-      if (lookahead == 'v') ADVANCE(368);
+      if (lookahead == 'l') ADVANCE(383);
       END_STATE();
     case 247:
-      if (lookahead == 'm') ADVANCE(369);
+      if (lookahead == 's') ADVANCE(384);
       END_STATE();
     case 248:
-      if (lookahead == 'd') ADVANCE(370);
+      if (lookahead == 'a') ADVANCE(385);
       END_STATE();
     case 249:
-      if (lookahead == 'g') ADVANCE(371);
+      if (lookahead == 'n') ADVANCE(386);
       END_STATE();
     case 250:
-      if (lookahead == 'd') ADVANCE(372);
+      if (lookahead == 'u') ADVANCE(387);
       END_STATE();
     case 251:
-      ACCEPT_TOKEN(anon_sym_ref);
+      if (lookahead == 'a') ADVANCE(388);
       END_STATE();
     case 252:
-      if (lookahead == 'l') ADVANCE(373);
+      if (lookahead == 'r') ADVANCE(389);
       END_STATE();
     case 253:
-      if (lookahead == 'g') ADVANCE(374);
+      ACCEPT_TOKEN(anon_sym_int);
+      if (lookahead == 'e') ADVANCE(390);
       END_STATE();
     case 254:
-      if (lookahead == 'c') ADVANCE(375);
-      if (lookahead == 't') ADVANCE(376);
+      if (lookahead == 'a') ADVANCE(391);
+      if (lookahead == 'e') ADVANCE(392);
       END_STATE();
     case 255:
-      if (lookahead == 'e') ADVANCE(377);
+      if (lookahead == 'p') ADVANCE(393);
       END_STATE();
     case 256:
-      if (lookahead == 't') ADVANCE(378);
+      if (lookahead == 'u') ADVANCE(394);
       END_STATE();
     case 257:
-      if (lookahead == 't') ADVANCE(379);
+      if (lookahead == 'p') ADVANCE(395);
       END_STATE();
     case 258:
-      if (lookahead == 't') ADVANCE(380);
+      if (lookahead == 's') ADVANCE(396);
       END_STATE();
     case 259:
-      if (lookahead == 'o') ADVANCE(381);
+      if (lookahead == 'e') ADVANCE(397);
       END_STATE();
     case 260:
-      if (lookahead == 'i') ADVANCE(382);
+      if (lookahead == 'm') ADVANCE(398);
       END_STATE();
     case 261:
-      if (lookahead == 'a') ADVANCE(383);
+      if (lookahead == 'e') ADVANCE(399);
       END_STATE();
     case 262:
-      if (lookahead == 'y') ADVANCE(384);
+      ACCEPT_TOKEN(anon_sym_off);
       END_STATE();
     case 263:
-      if (lookahead == 'e') ADVANCE(385);
+      ACCEPT_TOKEN(anon_sym_one);
       END_STATE();
     case 264:
-      ACCEPT_TOKEN(anon_sym_Back);
+      if (lookahead == 's') ADVANCE(400);
       END_STATE();
     case 265:
-      ACCEPT_TOKEN(anon_sym_Bind);
-      if (lookahead == 'C') ADVANCE(386);
+      if (lookahead == 'v') ADVANCE(401);
       END_STATE();
     case 266:
-      if (lookahead == 'd') ADVANCE(387);
+      if (lookahead == 'm') ADVANCE(402);
       END_STATE();
     case 267:
-      if (lookahead == 'C') ADVANCE(388);
+      if (lookahead == 'd') ADVANCE(403);
       END_STATE();
     case 268:
-      if (lookahead == 'O') ADVANCE(389);
+      if (lookahead == 'g') ADVANCE(404);
       END_STATE();
     case 269:
-      ACCEPT_TOKEN(anon_sym_CUBE);
+      if (lookahead == 'd') ADVANCE(405);
       END_STATE();
     case 270:
-      if (lookahead == 'g') ADVANCE(390);
+      if (lookahead == 't') ADVANCE(406);
       END_STATE();
     case 271:
-      if (lookahead == 'r') ADVANCE(391);
+      ACCEPT_TOKEN(anon_sym_ref);
       END_STATE();
     case 272:
-      ACCEPT_TOKEN(anon_sym_Comp);
-      if (lookahead == 'B') ADVANCE(392);
-      if (lookahead == 'F') ADVANCE(393);
-      END_STATE();
-    case 273:
-      if (lookahead == 'e') ADVANCE(394);
-      END_STATE();
-    case 274:
-      ACCEPT_TOKEN(anon_sym_Cube);
-      if (lookahead == 'A') ADVANCE(395);
-      END_STATE();
-    case 275:
-      ACCEPT_TOKEN(anon_sym_Cull);
-      END_STATE();
-    case 276:
-      if (lookahead == 'o') ADVANCE(396);
-      END_STATE();
-    case 277:
-      if (lookahead == 'S') ADVANCE(397);
-      if (lookahead == 'W') ADVANCE(398);
-      END_STATE();
-    case 278:
-      if (lookahead == 'i') ADVANCE(399);
-      END_STATE();
-    case 279:
-      if (lookahead == 'n') ADVANCE(400);
-      END_STATE();
-    case 280:
-      if (lookahead == 'u') ADVANCE(401);
-      END_STATE();
-    case 281:
-      if (lookahead == 'l') ADVANCE(402);
-      END_STATE();
-    case 282:
-      if (lookahead == 'o') ADVANCE(403);
-      END_STATE();
-    case 283:
-      if (lookahead == 'G') ADVANCE(404);
-      END_STATE();
-    case 284:
-      if (lookahead == 'L') ADVANCE(405);
-      END_STATE();
-    case 285:
-      if (lookahead == 's') ADVANCE(406);
-      END_STATE();
-    case 286:
       if (lookahead == 'l') ADVANCE(407);
       END_STATE();
-    case 287:
-      ACCEPT_TOKEN(anon_sym_Exp2);
+    case 273:
+      ACCEPT_TOKEN(anon_sym_rgb);
+      if (lookahead == 'a') ADVANCE(408);
       END_STATE();
-    case 288:
-      ACCEPT_TOKEN(anon_sym_Fail);
-      if (lookahead == 'B') ADVANCE(408);
-      if (lookahead == 'F') ADVANCE(409);
+    case 274:
+      if (lookahead == 'g') ADVANCE(409);
       END_STATE();
-    case 289:
-      if (lookahead == 'B') ADVANCE(410);
-      if (lookahead == 'b') ADVANCE(411);
+    case 275:
+      if (lookahead == 'c') ADVANCE(410);
+      if (lookahead == 't') ADVANCE(411);
       END_STATE();
-    case 290:
+    case 276:
       if (lookahead == 'e') ADVANCE(412);
       END_STATE();
-    case 291:
+    case 277:
       if (lookahead == 't') ADVANCE(413);
       END_STATE();
-    case 292:
+    case 278:
       if (lookahead == 't') ADVANCE(414);
       END_STATE();
+    case 279:
+      if (lookahead == 't') ADVANCE(415);
+      END_STATE();
+    case 280:
+      if (lookahead == 'o') ADVANCE(416);
+      END_STATE();
+    case 281:
+      if (lookahead == 'i') ADVANCE(417);
+      END_STATE();
+    case 282:
+      if (lookahead == 's') ADVANCE(418);
+      END_STATE();
+    case 283:
+      if (lookahead == 'a') ADVANCE(419);
+      END_STATE();
+    case 284:
+      if (lookahead == 'y') ADVANCE(420);
+      END_STATE();
+    case 285:
+      if (lookahead == 'e') ADVANCE(421);
+      END_STATE();
+    case 286:
+      ACCEPT_TOKEN(anon_sym_Back);
+      END_STATE();
+    case 287:
+      ACCEPT_TOKEN(anon_sym_Bind);
+      if (lookahead == 'C') ADVANCE(422);
+      END_STATE();
+    case 288:
+      if (lookahead == 'd') ADVANCE(423);
+      END_STATE();
+    case 289:
+      if (lookahead == 'C') ADVANCE(424);
+      END_STATE();
+    case 290:
+      if (lookahead == 'O') ADVANCE(425);
+      END_STATE();
+    case 291:
+      ACCEPT_TOKEN(anon_sym_CUBE);
+      END_STATE();
+    case 292:
+      if (lookahead == 'g') ADVANCE(426);
+      END_STATE();
     case 293:
-      if (lookahead == 'a') ADVANCE(415);
+      if (lookahead == 'r') ADVANCE(427);
       END_STATE();
     case 294:
-      if (lookahead == 'a') ADVANCE(416);
+      if (lookahead == 'i') ADVANCE(428);
       END_STATE();
     case 295:
-      if (lookahead == 'P') ADVANCE(417);
+      ACCEPT_TOKEN(anon_sym_Comp);
+      if (lookahead == 'B') ADVANCE(429);
+      if (lookahead == 'F') ADVANCE(430);
       END_STATE();
     case 296:
-      if (lookahead == 't') ADVANCE(418);
+      if (lookahead == 'e') ADVANCE(431);
+      if (lookahead == 't') ADVANCE(432);
       END_STATE();
     case 297:
-      if (lookahead == 'I') ADVANCE(419);
-      if (lookahead == 'P') ADVANCE(420);
+      ACCEPT_TOKEN(anon_sym_Cube);
+      if (lookahead == 'A') ADVANCE(433);
       END_STATE();
     case 298:
-      if (lookahead == 'S') ADVANCE(421);
-      if (lookahead == 'W') ADVANCE(422);
+      ACCEPT_TOKEN(anon_sym_Cull);
       END_STATE();
     case 299:
-      if (lookahead == 'g') ADVANCE(423);
+      if (lookahead == 'o') ADVANCE(434);
       END_STATE();
     case 300:
-      if (lookahead == 'r') ADVANCE(424);
+      if (lookahead == 'L') ADVANCE(435);
       END_STATE();
     case 301:
-      ACCEPT_TOKEN(anon_sym_Keep);
+      if (lookahead == 'S') ADVANCE(436);
+      if (lookahead == 'W') ADVANCE(437);
       END_STATE();
     case 302:
-      if (lookahead == 'a') ADVANCE(425);
+      if (lookahead == 'i') ADVANCE(438);
       END_STATE();
     case 303:
-      ACCEPT_TOKEN(anon_sym_Less);
+      if (lookahead == 'n') ADVANCE(439);
       END_STATE();
     case 304:
-      if (lookahead == 't') ADVANCE(426);
-      END_STATE();
-    case 305:
-      if (lookahead == 'a') ADVANCE(427);
-      END_STATE();
-    case 306:
-      if (lookahead == 'r') ADVANCE(428);
-      END_STATE();
-    case 307:
-      if (lookahead == 'i') ADVANCE(429);
-      END_STATE();
-    case 308:
-      ACCEPT_TOKEN(anon_sym_Mode);
-      END_STATE();
-    case 309:
-      ACCEPT_TOKEN(anon_sym_Name);
-      END_STATE();
-    case 310:
-      if (lookahead == 'r') ADVANCE(430);
-      END_STATE();
-    case 311:
-      if (lookahead == 'q') ADVANCE(431);
-      END_STATE();
-    case 312:
-      if (lookahead == 'e') ADVANCE(432);
-      END_STATE();
-    case 313:
-      if (lookahead == 'i') ADVANCE(433);
-      END_STATE();
-    case 314:
-      ACCEPT_TOKEN(anon_sym_Pass);
-      if (lookahead == 'B') ADVANCE(434);
-      if (lookahead == 'F') ADVANCE(435);
-      END_STATE();
-    case 315:
-      if (lookahead == 'e') ADVANCE(436);
-      END_STATE();
-    case 316:
-      ACCEPT_TOKEN(anon_sym_RGBA);
-      END_STATE();
-    case 317:
-      if (lookahead == 'e') ADVANCE(437);
-      END_STATE();
-    case 318:
-      if (lookahead == 'M') ADVANCE(438);
-      END_STATE();
-    case 319:
-      if (lookahead == 'a') ADVANCE(439);
-      END_STATE();
-    case 320:
       if (lookahead == 'u') ADVANCE(440);
       END_STATE();
-    case 321:
-      if (lookahead == 'e') ADVANCE(441);
+    case 305:
+      if (lookahead == 'l') ADVANCE(441);
       END_STATE();
-    case 322:
-      if (lookahead == 'e') ADVANCE(442);
+    case 306:
+      if (lookahead == 'o') ADVANCE(442);
       END_STATE();
-    case 323:
-      if (lookahead == 'i') ADVANCE(443);
+    case 307:
+      if (lookahead == 'G') ADVANCE(443);
       END_STATE();
-    case 324:
-      if (lookahead == 'u') ADVANCE(444);
+    case 308:
+      if (lookahead == 'L') ADVANCE(444);
       END_STATE();
-    case 325:
-      if (lookahead == 'l') ADVANCE(445);
+    case 309:
+      if (lookahead == 'L') ADVANCE(445);
       END_STATE();
-    case 326:
-      if (lookahead == 'o') ADVANCE(446);
+    case 310:
+      if (lookahead == 's') ADVANCE(446);
       END_STATE();
-    case 327:
-      if (lookahead == 'c') ADVANCE(447);
+    case 311:
+      if (lookahead == 'l') ADVANCE(447);
       END_STATE();
-    case 328:
-      if (lookahead == 'h') ADVANCE(448);
+    case 312:
+      ACCEPT_TOKEN(anon_sym_Exp2);
       END_STATE();
-    case 329:
-      ACCEPT_TOKEN(anon_sym_Tags);
+    case 313:
+      ACCEPT_TOKEN(anon_sym_Fail);
+      if (lookahead == 'B') ADVANCE(448);
+      if (lookahead == 'F') ADVANCE(449);
       END_STATE();
-    case 330:
-      ACCEPT_TOKEN(anon_sym_True);
+    case 314:
+      if (lookahead == 'B') ADVANCE(450);
+      if (lookahead == 'b') ADVANCE(451);
       END_STATE();
-    case 331:
-      if (lookahead == 'a') ADVANCE(449);
+    case 315:
+      if (lookahead == 'e') ADVANCE(452);
       END_STATE();
-    case 332:
-      if (lookahead == 'o') ADVANCE(450);
+    case 316:
+      if (lookahead == 't') ADVANCE(453);
       END_STATE();
-    case 333:
-      if (lookahead == 'e') ADVANCE(451);
-      END_STATE();
-    case 334:
-      if (lookahead == 'p') ADVANCE(452);
-      END_STATE();
-    case 335:
-      if (lookahead == 'l') ADVANCE(453);
-      END_STATE();
-    case 336:
+    case 317:
       if (lookahead == 't') ADVANCE(454);
       END_STATE();
+    case 318:
+      if (lookahead == 'a') ADVANCE(455);
+      END_STATE();
+    case 319:
+      if (lookahead == 'I') ADVANCE(456);
+      if (lookahead == 'P') ADVANCE(457);
+      END_STATE();
+    case 320:
+      if (lookahead == 'a') ADVANCE(458);
+      END_STATE();
+    case 321:
+      if (lookahead == 'P') ADVANCE(459);
+      END_STATE();
+    case 322:
+      if (lookahead == 't') ADVANCE(460);
+      END_STATE();
+    case 323:
+      if (lookahead == 'I') ADVANCE(461);
+      if (lookahead == 'P') ADVANCE(462);
+      END_STATE();
+    case 324:
+      if (lookahead == 'S') ADVANCE(463);
+      if (lookahead == 'W') ADVANCE(464);
+      END_STATE();
+    case 325:
+      if (lookahead == 'g') ADVANCE(465);
+      END_STATE();
+    case 326:
+      if (lookahead == 'r') ADVANCE(466);
+      END_STATE();
+    case 327:
+      ACCEPT_TOKEN(anon_sym_Keep);
+      END_STATE();
+    case 328:
+      ACCEPT_TOKEN(anon_sym_LERP);
+      END_STATE();
+    case 329:
+      if (lookahead == 'a') ADVANCE(467);
+      END_STATE();
+    case 330:
+      ACCEPT_TOKEN(anon_sym_Less);
+      END_STATE();
+    case 331:
+      if (lookahead == 't') ADVANCE(468);
+      END_STATE();
+    case 332:
+      if (lookahead == 'a') ADVANCE(469);
+      END_STATE();
+    case 333:
+      if (lookahead == 'r') ADVANCE(470);
+      END_STATE();
+    case 334:
+      if (lookahead == 'i') ADVANCE(471);
+      END_STATE();
+    case 335:
+      ACCEPT_TOKEN(anon_sym_Mode);
+      END_STATE();
+    case 336:
+      ACCEPT_TOKEN(anon_sym_Name);
+      END_STATE();
     case 337:
-      if (lookahead == 't') ADVANCE(455);
+      if (lookahead == 'r') ADVANCE(472);
       END_STATE();
     case 338:
-      ACCEPT_TOKEN(anon_sym_Zero);
+      if (lookahead == 'q') ADVANCE(473);
       END_STATE();
     case 339:
-      if (lookahead == 'a') ADVANCE(456);
+      if (lookahead == 'e') ADVANCE(474);
       END_STATE();
     case 340:
-      if (lookahead == 'y') ADVANCE(457);
+      if (lookahead == 'i') ADVANCE(475);
       END_STATE();
     case 341:
-      ACCEPT_TOKEN(anon_sym_back);
+      ACCEPT_TOKEN(anon_sym_Pass);
+      if (lookahead == 'B') ADVANCE(476);
+      if (lookahead == 'F') ADVANCE(477);
       END_STATE();
     case 342:
-      if (lookahead == 'r') ADVANCE(458);
+      if (lookahead == 'e') ADVANCE(478);
       END_STATE();
     case 343:
-      if (lookahead == 'i') ADVANCE(459);
+      ACCEPT_TOKEN(anon_sym_QUAD);
       END_STATE();
     case 344:
-      ACCEPT_TOKEN(anon_sym_comp);
-      if (lookahead == 'b') ADVANCE(460);
-      if (lookahead == 'f') ADVANCE(461);
+      if (lookahead == 'E') ADVANCE(479);
       END_STATE();
     case 345:
-      if (lookahead == 't') ADVANCE(462);
+      ACCEPT_TOKEN(anon_sym_RECT);
       END_STATE();
     case 346:
-      ACCEPT_TOKEN(anon_sym_cube);
-      if (lookahead == 'a') ADVANCE(463);
+      ACCEPT_TOKEN(anon_sym_RGBA);
       END_STATE();
     case 347:
-      if (lookahead == 's') ADVANCE(464);
-      if (lookahead == 'w') ADVANCE(465);
+      if (lookahead == 'e') ADVANCE(480);
       END_STATE();
     case 348:
-      if (lookahead == 'l') ADVANCE(466);
+      if (lookahead == 'M') ADVANCE(481);
       END_STATE();
     case 349:
-      if (lookahead == 'l') ADVANCE(467);
-      END_STATE();
-    case 350:
-      ACCEPT_TOKEN(anon_sym_fail);
-      if (lookahead == 'b') ADVANCE(468);
-      if (lookahead == 'f') ADVANCE(469);
-      END_STATE();
-    case 351:
-      if (lookahead == 'e') ADVANCE(470);
-      END_STATE();
-    case 352:
-      if (lookahead == 't') ADVANCE(471);
-      END_STATE();
-    case 353:
-      if (lookahead == 't') ADVANCE(472);
-      END_STATE();
-    case 354:
-      if (lookahead == 'a') ADVANCE(473);
-      END_STATE();
-    case 355:
-      if (lookahead == 't') ADVANCE(474);
-      END_STATE();
-    case 356:
-      if (lookahead == 's') ADVANCE(475);
-      if (lookahead == 'w') ADVANCE(476);
-      END_STATE();
-    case 357:
-      if (lookahead == 'g') ADVANCE(477);
-      END_STATE();
-    case 358:
-      if (lookahead == 'l') ADVANCE(478);
-      END_STATE();
-    case 359:
-      if (lookahead == 'r') ADVANCE(479);
-      END_STATE();
-    case 360:
-      ACCEPT_TOKEN(anon_sym_keep);
-      END_STATE();
-    case 361:
-      if (lookahead == 'a') ADVANCE(480);
-      END_STATE();
-    case 362:
-      ACCEPT_TOKEN(anon_sym_lerp);
-      END_STATE();
-    case 363:
-      ACCEPT_TOKEN(anon_sym_less);
-      END_STATE();
-    case 364:
-      if (lookahead == 'r') ADVANCE(481);
-      END_STATE();
-    case 365:
       if (lookahead == 'a') ADVANCE(482);
       END_STATE();
-    case 366:
-      if (lookahead == 'q') ADVANCE(483);
+    case 350:
+      if (lookahead == 'u') ADVANCE(483);
       END_STATE();
-    case 367:
-      ACCEPT_TOKEN(anon_sym_pass);
-      if (lookahead == 'b') ADVANCE(484);
-      if (lookahead == 'f') ADVANCE(485);
+    case 351:
+      if (lookahead == 'r') ADVANCE(484);
       END_STATE();
-    case 368:
-      if (lookahead == 'i') ADVANCE(486);
+    case 352:
+      if (lookahead == 'e') ADVANCE(485);
       END_STATE();
-    case 369:
-      if (lookahead == 'a') ADVANCE(487);
+    case 353:
+      if (lookahead == 'e') ADVANCE(486);
       END_STATE();
-    case 370:
-      ACCEPT_TOKEN(anon_sym_quad);
+    case 354:
+      if (lookahead == 'i') ADVANCE(487);
       END_STATE();
-    case 371:
-      if (lookahead == 'e') ADVANCE(488);
+    case 355:
+      if (lookahead == 'u') ADVANCE(488);
       END_STATE();
-    case 372:
-      if (lookahead == 'M') ADVANCE(489);
-      if (lookahead == 'm') ADVANCE(490);
+    case 356:
+      if (lookahead == 'l') ADVANCE(489);
       END_STATE();
-    case 373:
-      if (lookahead == 'a') ADVANCE(491);
+    case 357:
+      if (lookahead == 'o') ADVANCE(490);
       END_STATE();
-    case 374:
-      if (lookahead == 'e') ADVANCE(492);
+    case 358:
+      if (lookahead == 'c') ADVANCE(491);
       END_STATE();
-    case 375:
-      if (lookahead == 'o') ADVANCE(493);
+    case 359:
+      if (lookahead == 'h') ADVANCE(492);
       END_STATE();
-    case 376:
-      if (lookahead == 'u') ADVANCE(494);
+    case 360:
+      if (lookahead == 'h') ADVANCE(493);
       END_STATE();
-    case 377:
-      ACCEPT_TOKEN(anon_sym_true);
+    case 361:
+      ACCEPT_TOKEN(anon_sym_Tags);
       END_STATE();
-    case 378:
+    case 362:
+      ACCEPT_TOKEN(anon_sym_True);
+      END_STATE();
+    case 363:
+      if (lookahead == 'a') ADVANCE(494);
+      END_STATE();
+    case 364:
       if (lookahead == 'o') ADVANCE(495);
       END_STATE();
-    case 379:
+    case 365:
       if (lookahead == 'e') ADVANCE(496);
       END_STATE();
-    case 380:
-      if (lookahead == 'e') ADVANCE(497);
+    case 366:
+      if (lookahead == 'p') ADVANCE(497);
       END_STATE();
-    case 381:
-      ACCEPT_TOKEN(anon_sym_zero);
-      END_STATE();
-    case 382:
+    case 367:
       if (lookahead == 'l') ADVANCE(498);
       END_STATE();
+    case 368:
+      if (lookahead == 't') ADVANCE(499);
+      END_STATE();
+    case 369:
+      if (lookahead == 't') ADVANCE(500);
+      END_STATE();
+    case 370:
+      ACCEPT_TOKEN(anon_sym_Zero);
+      END_STATE();
+    case 371:
+      if (lookahead == 't') ADVANCE(501);
+      END_STATE();
+    case 372:
+      if (lookahead == 'a') ADVANCE(502);
+      END_STATE();
+    case 373:
+      if (lookahead == 'y') ADVANCE(503);
+      END_STATE();
+    case 374:
+      ACCEPT_TOKEN(anon_sym_back);
+      END_STATE();
+    case 375:
+      if (lookahead == 'r') ADVANCE(504);
+      END_STATE();
+    case 376:
+      if (lookahead == 'i') ADVANCE(505);
+      END_STATE();
+    case 377:
+      ACCEPT_TOKEN(anon_sym_comp);
+      if (lookahead == 'b') ADVANCE(506);
+      if (lookahead == 'f') ADVANCE(507);
+      END_STATE();
+    case 378:
+      if (lookahead == 't') ADVANCE(508);
+      END_STATE();
+    case 379:
+      ACCEPT_TOKEN(anon_sym_cube);
+      if (lookahead == 'a') ADVANCE(509);
+      END_STATE();
+    case 380:
+      if (lookahead == 's') ADVANCE(510);
+      if (lookahead == 'w') ADVANCE(511);
+      END_STATE();
+    case 381:
+      if (lookahead == 'l') ADVANCE(512);
+      END_STATE();
+    case 382:
+      if (lookahead == 'l') ADVANCE(513);
+      END_STATE();
     case 383:
-      if (lookahead == 'T') ADVANCE(499);
+      ACCEPT_TOKEN(anon_sym_fail);
+      if (lookahead == 'b') ADVANCE(514);
+      if (lookahead == 'f') ADVANCE(515);
       END_STATE();
     case 384:
-      if (lookahead == 's') ADVANCE(500);
+      if (lookahead == 'e') ADVANCE(516);
       END_STATE();
     case 385:
-      if (lookahead == 'n') ADVANCE(501);
+      if (lookahead == 't') ADVANCE(517);
       END_STATE();
     case 386:
-      if (lookahead == 'h') ADVANCE(502);
+      if (lookahead == 't') ADVANCE(518);
       END_STATE();
     case 387:
-      ACCEPT_TOKEN(anon_sym_Blend);
-      if (lookahead == 'O') ADVANCE(503);
+      if (lookahead == 'a') ADVANCE(519);
       END_STATE();
     case 388:
-      if (lookahead == 'L') ADVANCE(504);
+      if (lookahead == 't') ADVANCE(520);
       END_STATE();
     case 389:
-      if (lookahead == 'G') ADVANCE(505);
+      if (lookahead == 's') ADVANCE(521);
+      if (lookahead == 'w') ADVANCE(522);
       END_STATE();
     case 390:
-      if (lookahead == 'o') ADVANCE(506);
+      if (lookahead == 'g') ADVANCE(523);
       END_STATE();
     case 391:
-      ACCEPT_TOKEN(anon_sym_Color);
-      if (lookahead == 'M') ADVANCE(507);
+      if (lookahead == 'l') ADVANCE(524);
       END_STATE();
     case 392:
-      if (lookahead == 'a') ADVANCE(508);
+      if (lookahead == 'r') ADVANCE(525);
       END_STATE();
     case 393:
-      if (lookahead == 'r') ADVANCE(509);
+      ACCEPT_TOKEN(anon_sym_keep);
       END_STATE();
     case 394:
-      if (lookahead == 'r') ADVANCE(510);
+      if (lookahead == 'a') ADVANCE(526);
       END_STATE();
     case 395:
-      if (lookahead == 'r') ADVANCE(511);
+      ACCEPT_TOKEN(anon_sym_lerp);
       END_STATE();
     case 396:
-      if (lookahead == 'm') ADVANCE(512);
+      ACCEPT_TOKEN(anon_sym_less);
       END_STATE();
     case 397:
-      if (lookahead == 'a') ADVANCE(513);
+      if (lookahead == 'r') ADVANCE(527);
       END_STATE();
     case 398:
-      if (lookahead == 'r') ADVANCE(514);
-      END_STATE();
-    case 399:
-      if (lookahead == 't') ADVANCE(515);
-      END_STATE();
-    case 400:
-      if (lookahead == 'd') ADVANCE(516);
-      END_STATE();
-    case 401:
-      if (lookahead == 's') ADVANCE(517);
-      END_STATE();
-    case 402:
-      if (lookahead == 'p') ADVANCE(518);
-      END_STATE();
-    case 403:
-      if (lookahead == 'l') ADVANCE(519);
-      END_STATE();
-    case 404:
-      ACCEPT_TOKEN(anon_sym_ENDCG);
-      END_STATE();
-    case 405:
-      if (lookahead == 'S') ADVANCE(520);
-      END_STATE();
-    case 406:
-      if (lookahead == 'i') ADVANCE(521);
-      END_STATE();
-    case 407:
-      ACCEPT_TOKEN(anon_sym_Equal);
-      END_STATE();
-    case 408:
-      if (lookahead == 'a') ADVANCE(522);
-      END_STATE();
-    case 409:
-      if (lookahead == 'r') ADVANCE(523);
-      END_STATE();
-    case 410:
-      if (lookahead == 'a') ADVANCE(524);
-      END_STATE();
-    case 411:
-      if (lookahead == 'a') ADVANCE(525);
-      END_STATE();
-    case 412:
-      ACCEPT_TOKEN(anon_sym_False);
-      END_STATE();
-    case 413:
-      ACCEPT_TOKEN(anon_sym_Float);
-      END_STATE();
-    case 414:
-      ACCEPT_TOKEN(anon_sym_Front);
-      END_STATE();
-    case 415:
-      if (lookahead == 'l') ADVANCE(526);
-      END_STATE();
-    case 416:
-      if (lookahead == 'l') ADVANCE(527);
-      END_STATE();
-    case 417:
       if (lookahead == 'a') ADVANCE(528);
       END_STATE();
-    case 418:
-      if (lookahead == 'e') ADVANCE(529);
+    case 399:
+      if (lookahead == 'q') ADVANCE(529);
       END_STATE();
-    case 419:
-      if (lookahead == 'N') ADVANCE(530);
+    case 400:
+      ACCEPT_TOKEN(anon_sym_pass);
+      if (lookahead == 'b') ADVANCE(530);
+      if (lookahead == 'f') ADVANCE(531);
       END_STATE();
-    case 420:
-      if (lookahead == 'R') ADVANCE(531);
+    case 401:
+      if (lookahead == 'i') ADVANCE(532);
       END_STATE();
-    case 421:
-      if (lookahead == 'a') ADVANCE(532);
+    case 402:
+      if (lookahead == 'a') ADVANCE(533);
       END_STATE();
-    case 422:
-      if (lookahead == 'r') ADVANCE(533);
+    case 403:
+      ACCEPT_TOKEN(anon_sym_quad);
       END_STATE();
-    case 423:
+    case 404:
       if (lookahead == 'e') ADVANCE(534);
       END_STATE();
+    case 405:
+      if (lookahead == 'M') ADVANCE(535);
+      if (lookahead == 'm') ADVANCE(536);
+      END_STATE();
+    case 406:
+      ACCEPT_TOKEN(anon_sym_rect);
+      END_STATE();
+    case 407:
+      if (lookahead == 'a') ADVANCE(537);
+      END_STATE();
+    case 408:
+      ACCEPT_TOKEN(anon_sym_rgba);
+      END_STATE();
+    case 409:
+      if (lookahead == 'e') ADVANCE(538);
+      END_STATE();
+    case 410:
+      if (lookahead == 'o') ADVANCE(539);
+      END_STATE();
+    case 411:
+      if (lookahead == 'u') ADVANCE(540);
+      END_STATE();
+    case 412:
+      ACCEPT_TOKEN(anon_sym_true);
+      END_STATE();
+    case 413:
+      if (lookahead == 'o') ADVANCE(541);
+      END_STATE();
+    case 414:
+      if (lookahead == 'e') ADVANCE(542);
+      END_STATE();
+    case 415:
+      if (lookahead == 'e') ADVANCE(543);
+      END_STATE();
+    case 416:
+      ACCEPT_TOKEN(anon_sym_zero);
+      END_STATE();
+    case 417:
+      if (lookahead == 'l') ADVANCE(544);
+      END_STATE();
+    case 418:
+      if (lookahead == 't') ADVANCE(545);
+      END_STATE();
+    case 419:
+      if (lookahead == 'T') ADVANCE(546);
+      if (lookahead == 't') ADVANCE(547);
+      END_STATE();
+    case 420:
+      if (lookahead == 's') ADVANCE(548);
+      END_STATE();
+    case 421:
+      if (lookahead == 'n') ADVANCE(549);
+      END_STATE();
+    case 422:
+      if (lookahead == 'h') ADVANCE(550);
+      END_STATE();
+    case 423:
+      ACCEPT_TOKEN(anon_sym_Blend);
+      if (lookahead == 'O') ADVANCE(551);
+      END_STATE();
     case 424:
-      if (lookahead == 't') ADVANCE(535);
+      if (lookahead == 'L') ADVANCE(552);
       END_STATE();
     case 425:
-      if (lookahead == 'l') ADVANCE(536);
+      if (lookahead == 'G') ADVANCE(553);
       END_STATE();
     case 426:
-      if (lookahead == 'i') ADVANCE(537);
+      if (lookahead == 'o') ADVANCE(554);
       END_STATE();
     case 427:
-      if (lookahead == 'r') ADVANCE(538);
+      ACCEPT_TOKEN(anon_sym_Color);
+      if (lookahead == 'M') ADVANCE(555);
       END_STATE();
     case 428:
-      if (lookahead == 'i') ADVANCE(539);
+      if (lookahead == 'n') ADVANCE(556);
       END_STATE();
     case 429:
-      if (lookahead == 'x') ADVANCE(540);
-      END_STATE();
-    case 430:
-      ACCEPT_TOKEN(anon_sym_Never);
-      END_STATE();
-    case 431:
-      if (lookahead == 'u') ADVANCE(541);
-      END_STATE();
-    case 432:
-      if (lookahead == 't') ADVANCE(542);
-      END_STATE();
-    case 433:
-      if (lookahead == 'n') ADVANCE(543);
-      END_STATE();
-    case 434:
-      if (lookahead == 'a') ADVANCE(544);
-      END_STATE();
-    case 435:
-      if (lookahead == 'r') ADVANCE(545);
-      END_STATE();
-    case 436:
-      if (lookahead == 'r') ADVANCE(546);
-      END_STATE();
-    case 437:
-      ACCEPT_TOKEN(anon_sym_Range);
-      END_STATE();
-    case 438:
-      if (lookahead == 'a') ADVANCE(547);
-      END_STATE();
-    case 439:
-      if (lookahead == 'c') ADVANCE(548);
-      END_STATE();
-    case 440:
-      if (lookahead == 'b') ADVANCE(549);
-      END_STATE();
-    case 441:
-      if (lookahead == 'x') ADVANCE(550);
-      END_STATE();
-    case 442:
-      if (lookahead == 'r') ADVANCE(551);
-      END_STATE();
-    case 443:
-      if (lookahead == 'n') ADVANCE(552);
-      END_STATE();
-    case 444:
-      if (lookahead == 'l') ADVANCE(553);
-      END_STATE();
-    case 445:
-      if (lookahead == 'p') ADVANCE(554);
-      END_STATE();
-    case 446:
-      if (lookahead == 'l') ADVANCE(555);
-      END_STATE();
-    case 447:
-      if (lookahead == 'i') ADVANCE(556);
-      END_STATE();
-    case 448:
       if (lookahead == 'a') ADVANCE(557);
       END_STATE();
-    case 449:
-      if (lookahead == 's') ADVANCE(558);
+    case 430:
+      if (lookahead == 'r') ADVANCE(558);
       END_STATE();
-    case 450:
+    case 431:
       if (lookahead == 'r') ADVANCE(559);
       END_STATE();
+    case 432:
+      if (lookahead == 'a') ADVANCE(560);
+      END_STATE();
+    case 433:
+      if (lookahead == 'r') ADVANCE(561);
+      END_STATE();
+    case 434:
+      if (lookahead == 'm') ADVANCE(562);
+      END_STATE();
+    case 435:
+      if (lookahead == 'E') ADVANCE(563);
+      END_STATE();
+    case 436:
+      if (lookahead == 'a') ADVANCE(564);
+      END_STATE();
+    case 437:
+      if (lookahead == 'r') ADVANCE(565);
+      END_STATE();
+    case 438:
+      if (lookahead == 't') ADVANCE(566);
+      END_STATE();
+    case 439:
+      if (lookahead == 'd') ADVANCE(567);
+      END_STATE();
+    case 440:
+      if (lookahead == 's') ADVANCE(568);
+      END_STATE();
+    case 441:
+      if (lookahead == 'p') ADVANCE(569);
+      END_STATE();
+    case 442:
+      if (lookahead == 'l') ADVANCE(570);
+      END_STATE();
+    case 443:
+      ACCEPT_TOKEN(anon_sym_ENDCG);
+      END_STATE();
+    case 444:
+      if (lookahead == 'S') ADVANCE(571);
+      END_STATE();
+    case 445:
+      if (lookahead == 'S') ADVANCE(572);
+      END_STATE();
+    case 446:
+      if (lookahead == 'i') ADVANCE(573);
+      END_STATE();
+    case 447:
+      ACCEPT_TOKEN(anon_sym_Equal);
+      END_STATE();
+    case 448:
+      if (lookahead == 'a') ADVANCE(574);
+      END_STATE();
+    case 449:
+      if (lookahead == 'r') ADVANCE(575);
+      END_STATE();
+    case 450:
+      if (lookahead == 'a') ADVANCE(576);
+      END_STATE();
     case 451:
-      if (lookahead == 'M') ADVANCE(560);
-      END_STATE();
-    case 452:
-      ACCEPT_TOKEN(anon_sym_ZClip);
-      END_STATE();
-    case 453:
-      ACCEPT_TOKEN(anon_sym_ZFail);
-      if (lookahead == 'B') ADVANCE(561);
-      if (lookahead == 'F') ADVANCE(562);
-      END_STATE();
-    case 454:
-      ACCEPT_TOKEN(anon_sym_ZTest);
-      END_STATE();
-    case 455:
-      if (lookahead == 'e') ADVANCE(563);
-      END_STATE();
-    case 456:
-      ACCEPT_TOKEN(anon_sym_alpha);
-      END_STATE();
-    case 457:
-      if (lookahead == 's') ADVANCE(564);
-      END_STATE();
-    case 458:
-      ACCEPT_TOKEN(anon_sym_color);
-      END_STATE();
-    case 459:
-      if (lookahead == 'n') ADVANCE(565);
-      END_STATE();
-    case 460:
-      if (lookahead == 'a') ADVANCE(566);
-      END_STATE();
-    case 461:
-      if (lookahead == 'r') ADVANCE(567);
-      END_STATE();
-    case 462:
-      if (lookahead == 'a') ADVANCE(568);
-      END_STATE();
-    case 463:
-      if (lookahead == 'r') ADVANCE(569);
-      END_STATE();
-    case 464:
-      if (lookahead == 'a') ADVANCE(570);
-      END_STATE();
-    case 465:
-      if (lookahead == 'r') ADVANCE(571);
-      END_STATE();
-    case 466:
-      if (lookahead == 'e') ADVANCE(572);
-      END_STATE();
-    case 467:
-      ACCEPT_TOKEN(anon_sym_equal);
-      END_STATE();
-    case 468:
-      if (lookahead == 'a') ADVANCE(573);
-      END_STATE();
-    case 469:
-      if (lookahead == 'r') ADVANCE(574);
-      END_STATE();
-    case 470:
-      ACCEPT_TOKEN(anon_sym_false);
-      END_STATE();
-    case 471:
-      ACCEPT_TOKEN(anon_sym_float);
-      END_STATE();
-    case 472:
-      ACCEPT_TOKEN(anon_sym_front);
-      END_STATE();
-    case 473:
-      if (lookahead == 'l') ADVANCE(575);
-      END_STATE();
-    case 474:
-      if (lookahead == 'e') ADVANCE(576);
-      END_STATE();
-    case 475:
       if (lookahead == 'a') ADVANCE(577);
       END_STATE();
+    case 452:
+      ACCEPT_TOKEN(anon_sym_False);
+      END_STATE();
+    case 453:
+      ACCEPT_TOKEN(anon_sym_Float);
+      END_STATE();
+    case 454:
+      ACCEPT_TOKEN(anon_sym_Front);
+      END_STATE();
+    case 455:
+      if (lookahead == 'l') ADVANCE(578);
+      END_STATE();
+    case 456:
+      if (lookahead == 'N') ADVANCE(579);
+      END_STATE();
+    case 457:
+      if (lookahead == 'R') ADVANCE(580);
+      END_STATE();
+    case 458:
+      if (lookahead == 'l') ADVANCE(581);
+      END_STATE();
+    case 459:
+      if (lookahead == 'a') ADVANCE(582);
+      END_STATE();
+    case 460:
+      if (lookahead == 'e') ADVANCE(583);
+      END_STATE();
+    case 461:
+      if (lookahead == 'N') ADVANCE(584);
+      END_STATE();
+    case 462:
+      if (lookahead == 'R') ADVANCE(585);
+      END_STATE();
+    case 463:
+      if (lookahead == 'a') ADVANCE(586);
+      END_STATE();
+    case 464:
+      if (lookahead == 'r') ADVANCE(587);
+      END_STATE();
+    case 465:
+      if (lookahead == 'e') ADVANCE(588);
+      END_STATE();
+    case 466:
+      if (lookahead == 't') ADVANCE(589);
+      END_STATE();
+    case 467:
+      if (lookahead == 'l') ADVANCE(590);
+      END_STATE();
+    case 468:
+      if (lookahead == 'i') ADVANCE(591);
+      END_STATE();
+    case 469:
+      if (lookahead == 'r') ADVANCE(592);
+      END_STATE();
+    case 470:
+      if (lookahead == 'i') ADVANCE(593);
+      END_STATE();
+    case 471:
+      if (lookahead == 'x') ADVANCE(594);
+      END_STATE();
+    case 472:
+      ACCEPT_TOKEN(anon_sym_Never);
+      END_STATE();
+    case 473:
+      if (lookahead == 'u') ADVANCE(595);
+      END_STATE();
+    case 474:
+      if (lookahead == 't') ADVANCE(596);
+      END_STATE();
+    case 475:
+      if (lookahead == 'n') ADVANCE(597);
+      END_STATE();
     case 476:
-      if (lookahead == 'r') ADVANCE(578);
+      if (lookahead == 'a') ADVANCE(598);
       END_STATE();
     case 477:
-      if (lookahead == 'e') ADVANCE(579);
+      if (lookahead == 'r') ADVANCE(599);
       END_STATE();
     case 478:
-      if (lookahead == 'p') ADVANCE(580);
+      if (lookahead == 'r') ADVANCE(600);
       END_STATE();
     case 479:
-      if (lookahead == 't') ADVANCE(581);
+      ACCEPT_TOKEN(anon_sym_RANGE);
       END_STATE();
     case 480:
-      if (lookahead == 'l') ADVANCE(582);
+      ACCEPT_TOKEN(anon_sym_Range);
       END_STATE();
     case 481:
-      ACCEPT_TOKEN(anon_sym_never);
+      if (lookahead == 'a') ADVANCE(601);
       END_STATE();
     case 482:
-      if (lookahead == 'l') ADVANCE(583);
+      if (lookahead == 'c') ADVANCE(602);
       END_STATE();
     case 483:
-      if (lookahead == 'u') ADVANCE(584);
+      if (lookahead == 'b') ADVANCE(603);
       END_STATE();
     case 484:
-      if (lookahead == 'a') ADVANCE(585);
-      END_STATE();
-    case 485:
-      if (lookahead == 'r') ADVANCE(586);
-      END_STATE();
-    case 486:
-      if (lookahead == 'o') ADVANCE(587);
-      END_STATE();
-    case 487:
-      if (lookahead == 'r') ADVANCE(588);
-      END_STATE();
-    case 488:
-      ACCEPT_TOKEN(anon_sym_range);
-      END_STATE();
-    case 489:
-      if (lookahead == 'a') ADVANCE(589);
-      END_STATE();
-    case 490:
-      if (lookahead == 'a') ADVANCE(590);
-      END_STATE();
-    case 491:
-      if (lookahead == 'c') ADVANCE(591);
-      END_STATE();
-    case 492:
-      if (lookahead == 'n') ADVANCE(592);
-      END_STATE();
-    case 493:
-      if (lookahead == 'o') ADVANCE(593);
-      END_STATE();
-    case 494:
-      if (lookahead == 'r') ADVANCE(594);
-      END_STATE();
-    case 495:
-      if (lookahead == 'r') ADVANCE(595);
-      END_STATE();
-    case 496:
-      if (lookahead == 'x') ADVANCE(596);
-      END_STATE();
-    case 497:
-      if (lookahead == 'M') ADVANCE(597);
-      if (lookahead == 'm') ADVANCE(598);
-      END_STATE();
-    case 498:
-      ACCEPT_TOKEN(anon_sym_zfail);
-      if (lookahead == 'b') ADVANCE(599);
-      if (lookahead == 'f') ADVANCE(600);
-      END_STATE();
-    case 499:
-      if (lookahead == 'e') ADVANCE(601);
-      if (lookahead == 'o') ADVANCE(602);
-      END_STATE();
-    case 500:
-      ACCEPT_TOKEN(anon_sym_Always);
-      END_STATE();
-    case 501:
-      if (lookahead == 't') ADVANCE(603);
-      END_STATE();
-    case 502:
       if (lookahead == 'a') ADVANCE(604);
       END_STATE();
-    case 503:
-      if (lookahead == 'p') ADVANCE(605);
+    case 485:
+      if (lookahead == 'x') ADVANCE(605);
       END_STATE();
-    case 504:
-      if (lookahead == 'U') ADVANCE(606);
+    case 486:
+      if (lookahead == 'r') ADVANCE(606);
       END_STATE();
-    case 505:
-      if (lookahead == 'R') ADVANCE(607);
+    case 487:
+      if (lookahead == 'n') ADVANCE(607);
       END_STATE();
-    case 506:
-      if (lookahead == 'r') ADVANCE(608);
+    case 488:
+      if (lookahead == 'l') ADVANCE(608);
       END_STATE();
-    case 507:
-      if (lookahead == 'a') ADVANCE(609);
+    case 489:
+      if (lookahead == 'p') ADVANCE(609);
       END_STATE();
-    case 508:
-      if (lookahead == 'c') ADVANCE(610);
+    case 490:
+      if (lookahead == 'l') ADVANCE(610);
       END_STATE();
-    case 509:
-      if (lookahead == 'o') ADVANCE(611);
+    case 491:
+      if (lookahead == 'i') ADVANCE(611);
       END_STATE();
-    case 510:
-      if (lookahead == 'v') ADVANCE(612);
+    case 492:
+      if (lookahead == 'a') ADVANCE(612);
       END_STATE();
-    case 511:
-      if (lookahead == 'r') ADVANCE(613);
+    case 493:
+      if (lookahead == 'a') ADVANCE(613);
       END_STATE();
-    case 512:
-      if (lookahead == 'E') ADVANCE(614);
+    case 494:
+      if (lookahead == 's') ADVANCE(614);
       END_STATE();
-    case 513:
-      if (lookahead == 't') ADVANCE(615);
+    case 495:
+      if (lookahead == 'r') ADVANCE(615);
       END_STATE();
-    case 514:
-      if (lookahead == 'a') ADVANCE(616);
+    case 496:
+      if (lookahead == 'M') ADVANCE(616);
       END_STATE();
-    case 515:
-      if (lookahead == 'y') ADVANCE(617);
+    case 497:
+      ACCEPT_TOKEN(anon_sym_ZClip);
       END_STATE();
-    case 516:
-      if (lookahead == 'e') ADVANCE(618);
+    case 498:
+      ACCEPT_TOKEN(anon_sym_ZFail);
+      if (lookahead == 'B') ADVANCE(617);
+      if (lookahead == 'F') ADVANCE(618);
       END_STATE();
-    case 517:
+    case 499:
+      ACCEPT_TOKEN(anon_sym_ZTest);
+      END_STATE();
+    case 500:
       if (lookahead == 'e') ADVANCE(619);
       END_STATE();
+    case 501:
+      ACCEPT_TOKEN(anon_sym_Ztest);
+      END_STATE();
+    case 502:
+      ACCEPT_TOKEN(anon_sym_alpha);
+      if (lookahead == 't') ADVANCE(620);
+      END_STATE();
+    case 503:
+      if (lookahead == 's') ADVANCE(621);
+      END_STATE();
+    case 504:
+      ACCEPT_TOKEN(anon_sym_color);
+      END_STATE();
+    case 505:
+      if (lookahead == 'n') ADVANCE(622);
+      END_STATE();
+    case 506:
+      if (lookahead == 'a') ADVANCE(623);
+      END_STATE();
+    case 507:
+      if (lookahead == 'r') ADVANCE(624);
+      END_STATE();
+    case 508:
+      if (lookahead == 'a') ADVANCE(625);
+      END_STATE();
+    case 509:
+      if (lookahead == 'r') ADVANCE(626);
+      END_STATE();
+    case 510:
+      if (lookahead == 'a') ADVANCE(627);
+      END_STATE();
+    case 511:
+      if (lookahead == 'r') ADVANCE(628);
+      END_STATE();
+    case 512:
+      if (lookahead == 'e') ADVANCE(629);
+      END_STATE();
+    case 513:
+      ACCEPT_TOKEN(anon_sym_equal);
+      END_STATE();
+    case 514:
+      if (lookahead == 'a') ADVANCE(630);
+      END_STATE();
+    case 515:
+      if (lookahead == 'r') ADVANCE(631);
+      END_STATE();
+    case 516:
+      ACCEPT_TOKEN(anon_sym_false);
+      END_STATE();
+    case 517:
+      ACCEPT_TOKEN(anon_sym_float);
+      END_STATE();
     case 518:
-      if (lookahead == 'h') ADVANCE(620);
+      ACCEPT_TOKEN(anon_sym_front);
       END_STATE();
     case 519:
-      if (lookahead == 'o') ADVANCE(621);
+      if (lookahead == 'l') ADVANCE(632);
       END_STATE();
     case 520:
-      if (lookahead == 'L') ADVANCE(622);
+      if (lookahead == 'e') ADVANCE(633);
       END_STATE();
     case 521:
-      if (lookahead == 'o') ADVANCE(623);
+      if (lookahead == 'a') ADVANCE(634);
       END_STATE();
     case 522:
-      if (lookahead == 'c') ADVANCE(624);
+      if (lookahead == 'r') ADVANCE(635);
       END_STATE();
     case 523:
-      if (lookahead == 'o') ADVANCE(625);
+      if (lookahead == 'e') ADVANCE(636);
       END_STATE();
     case 524:
-      if (lookahead == 'c') ADVANCE(626);
+      if (lookahead == 'p') ADVANCE(637);
       END_STATE();
     case 525:
-      if (lookahead == 'c') ADVANCE(627);
+      if (lookahead == 't') ADVANCE(638);
       END_STATE();
     case 526:
-      ACCEPT_TOKEN(anon_sym_GEqual);
+      if (lookahead == 'l') ADVANCE(639);
       END_STATE();
     case 527:
-      ACCEPT_TOKEN(anon_sym_Global);
+      ACCEPT_TOKEN(anon_sym_never);
       END_STATE();
     case 528:
-      if (lookahead == 's') ADVANCE(628);
+      if (lookahead == 'l') ADVANCE(640);
       END_STATE();
     case 529:
-      if (lookahead == 'r') ADVANCE(629);
+      if (lookahead == 'u') ADVANCE(641);
       END_STATE();
     case 530:
-      if (lookahead == 'C') ADVANCE(630);
+      if (lookahead == 'a') ADVANCE(642);
       END_STATE();
     case 531:
-      if (lookahead == 'O') ADVANCE(631);
+      if (lookahead == 'r') ADVANCE(643);
       END_STATE();
     case 532:
-      if (lookahead == 't') ADVANCE(632);
+      if (lookahead == 'o') ADVANCE(644);
       END_STATE();
     case 533:
-      if (lookahead == 'a') ADVANCE(633);
+      if (lookahead == 'r') ADVANCE(645);
       END_STATE();
     case 534:
-      if (lookahead == 'r') ADVANCE(634);
+      ACCEPT_TOKEN(anon_sym_range);
       END_STATE();
     case 535:
-      ACCEPT_TOKEN(anon_sym_Invert);
-      END_STATE();
-    case 536:
-      ACCEPT_TOKEN(anon_sym_LEqual);
-      END_STATE();
-    case 537:
-      if (lookahead == 'n') ADVANCE(635);
-      END_STATE();
-    case 538:
-      ACCEPT_TOKEN(anon_sym_Linear);
-      END_STATE();
-    case 539:
-      if (lookahead == 'a') ADVANCE(636);
-      END_STATE();
-    case 540:
-      ACCEPT_TOKEN(anon_sym_Matrix);
-      END_STATE();
-    case 541:
-      if (lookahead == 'a') ADVANCE(637);
-      END_STATE();
-    case 542:
-      ACCEPT_TOKEN(anon_sym_Offset);
-      END_STATE();
-    case 543:
-      if (lookahead == 'u') ADVANCE(638);
-      END_STATE();
-    case 544:
-      if (lookahead == 'c') ADVANCE(639);
-      END_STATE();
-    case 545:
-      if (lookahead == 'o') ADVANCE(640);
-      END_STATE();
-    case 546:
-      if (lookahead == 't') ADVANCE(641);
-      END_STATE();
-    case 547:
-      if (lookahead == 's') ADVANCE(642);
-      END_STATE();
-    case 548:
-      if (lookahead == 'e') ADVANCE(643);
-      END_STATE();
-    case 549:
-      ACCEPT_TOKEN(anon_sym_RevSub);
-      END_STATE();
-    case 550:
-      if (lookahead == 't') ADVANCE(644);
-      END_STATE();
-    case 551:
-      ACCEPT_TOKEN(anon_sym_Shader);
-      END_STATE();
-    case 552:
-      if (lookahead == 'e') ADVANCE(645);
-      END_STATE();
-    case 553:
       if (lookahead == 'a') ADVANCE(646);
       END_STATE();
+    case 536:
+      if (lookahead == 'a') ADVANCE(647);
+      END_STATE();
+    case 537:
+      if (lookahead == 'c') ADVANCE(648);
+      END_STATE();
+    case 538:
+      if (lookahead == 'n') ADVANCE(649);
+      END_STATE();
+    case 539:
+      if (lookahead == 'o') ADVANCE(650);
+      END_STATE();
+    case 540:
+      if (lookahead == 'r') ADVANCE(651);
+      END_STATE();
+    case 541:
+      if (lookahead == 'r') ADVANCE(652);
+      END_STATE();
+    case 542:
+      if (lookahead == 'x') ADVANCE(653);
+      END_STATE();
+    case 543:
+      if (lookahead == 'M') ADVANCE(654);
+      if (lookahead == 'm') ADVANCE(655);
+      END_STATE();
+    case 544:
+      ACCEPT_TOKEN(anon_sym_zfail);
+      if (lookahead == 'b') ADVANCE(656);
+      if (lookahead == 'f') ADVANCE(657);
+      END_STATE();
+    case 545:
+      ACCEPT_TOKEN(anon_sym_ztest);
+      END_STATE();
+    case 546:
+      if (lookahead == 'e') ADVANCE(658);
+      if (lookahead == 'o') ADVANCE(659);
+      END_STATE();
+    case 547:
+      if (lookahead == 'e') ADVANCE(660);
+      END_STATE();
+    case 548:
+      ACCEPT_TOKEN(anon_sym_Always);
+      END_STATE();
+    case 549:
+      if (lookahead == 't') ADVANCE(661);
+      END_STATE();
+    case 550:
+      if (lookahead == 'a') ADVANCE(662);
+      END_STATE();
+    case 551:
+      if (lookahead == 'p') ADVANCE(663);
+      END_STATE();
+    case 552:
+      if (lookahead == 'U') ADVANCE(664);
+      END_STATE();
+    case 553:
+      if (lookahead == 'R') ADVANCE(665);
+      END_STATE();
     case 554:
-      if (lookahead == 'h') ADVANCE(647);
+      if (lookahead == 'r') ADVANCE(666);
       END_STATE();
     case 555:
-      if (lookahead == 'o') ADVANCE(648);
+      if (lookahead == 'a') ADVANCE(667);
       END_STATE();
     case 556:
-      if (lookahead == 'l') ADVANCE(649);
+      if (lookahead == 'e') ADVANCE(668);
       END_STATE();
     case 557:
-      if (lookahead == 'd') ADVANCE(650);
+      if (lookahead == 'c') ADVANCE(669);
       END_STATE();
     case 558:
-      if (lookahead == 's') ADVANCE(651);
+      if (lookahead == 'o') ADVANCE(670);
       END_STATE();
     case 559:
-      ACCEPT_TOKEN(anon_sym_Vector);
+      if (lookahead == 'v') ADVANCE(671);
       END_STATE();
     case 560:
-      if (lookahead == 'a') ADVANCE(652);
+      if (lookahead == 'n') ADVANCE(672);
       END_STATE();
     case 561:
-      if (lookahead == 'a') ADVANCE(653);
+      if (lookahead == 'r') ADVANCE(673);
       END_STATE();
     case 562:
-      if (lookahead == 'r') ADVANCE(654);
+      if (lookahead == 'E') ADVANCE(674);
       END_STATE();
     case 563:
-      ACCEPT_TOKEN(anon_sym_ZWrite);
+      ACCEPT_TOKEN(anon_sym_DOUBLE);
       END_STATE();
     case 564:
-      ACCEPT_TOKEN(anon_sym_always);
+      if (lookahead == 't') ADVANCE(675);
       END_STATE();
     case 565:
-      if (lookahead == 'e') ADVANCE(655);
+      if (lookahead == 'a') ADVANCE(676);
       END_STATE();
     case 566:
-      if (lookahead == 'c') ADVANCE(656);
+      if (lookahead == 'y') ADVANCE(677);
       END_STATE();
     case 567:
-      if (lookahead == 'o') ADVANCE(657);
+      if (lookahead == 'e') ADVANCE(678);
       END_STATE();
     case 568:
-      if (lookahead == 'n') ADVANCE(658);
-      END_STATE();
-    case 569:
-      if (lookahead == 'r') ADVANCE(659);
-      END_STATE();
-    case 570:
-      if (lookahead == 't') ADVANCE(660);
-      END_STATE();
-    case 571:
-      if (lookahead == 'a') ADVANCE(661);
-      END_STATE();
-    case 572:
-      ACCEPT_TOKEN(anon_sym_double);
-      END_STATE();
-    case 573:
-      if (lookahead == 'c') ADVANCE(662);
-      END_STATE();
-    case 574:
-      if (lookahead == 'o') ADVANCE(663);
-      END_STATE();
-    case 575:
-      ACCEPT_TOKEN(anon_sym_gequal);
-      END_STATE();
-    case 576:
-      if (lookahead == 'r') ADVANCE(664);
-      END_STATE();
-    case 577:
-      if (lookahead == 't') ADVANCE(665);
-      END_STATE();
-    case 578:
-      if (lookahead == 'a') ADVANCE(666);
-      END_STATE();
-    case 579:
-      if (lookahead == 'r') ADVANCE(667);
-      END_STATE();
-    case 580:
-      if (lookahead == 'h') ADVANCE(668);
-      END_STATE();
-    case 581:
-      ACCEPT_TOKEN(anon_sym_invert);
-      END_STATE();
-    case 582:
-      ACCEPT_TOKEN(anon_sym_lequal);
-      END_STATE();
-    case 583:
-      ACCEPT_TOKEN(anon_sym_normal);
-      END_STATE();
-    case 584:
-      if (lookahead == 'a') ADVANCE(669);
-      END_STATE();
-    case 585:
-      if (lookahead == 'c') ADVANCE(670);
-      END_STATE();
-    case 586:
-      if (lookahead == 'o') ADVANCE(671);
-      END_STATE();
-    case 587:
-      if (lookahead == 'u') ADVANCE(672);
-      END_STATE();
-    case 588:
-      if (lookahead == 'y') ADVANCE(673);
-      END_STATE();
-    case 589:
-      if (lookahead == 's') ADVANCE(674);
-      END_STATE();
-    case 590:
-      if (lookahead == 's') ADVANCE(675);
-      END_STATE();
-    case 591:
-      if (lookahead == 'e') ADVANCE(676);
-      END_STATE();
-    case 592:
-      if (lookahead == 't') ADVANCE(677);
-      END_STATE();
-    case 593:
-      if (lookahead == 'r') ADVANCE(678);
-      END_STATE();
-    case 594:
       if (lookahead == 'e') ADVANCE(679);
       END_STATE();
-    case 595:
-      ACCEPT_TOKEN(anon_sym_vector);
+    case 569:
+      if (lookahead == 'h') ADVANCE(680);
       END_STATE();
-    case 596:
-      ACCEPT_TOKEN(anon_sym_vertex);
+    case 570:
+      if (lookahead == 'o') ADVANCE(681);
       END_STATE();
-    case 597:
-      if (lookahead == 'a') ADVANCE(680);
+    case 571:
+      if (lookahead == 'L') ADVANCE(682);
       END_STATE();
-    case 598:
-      if (lookahead == 'a') ADVANCE(681);
+    case 572:
+      if (lookahead == 'L') ADVANCE(683);
       END_STATE();
-    case 599:
-      if (lookahead == 'a') ADVANCE(682);
+    case 573:
+      if (lookahead == 'o') ADVANCE(684);
       END_STATE();
-    case 600:
-      if (lookahead == 'r') ADVANCE(683);
+    case 574:
+      if (lookahead == 'c') ADVANCE(685);
       END_STATE();
-    case 601:
-      if (lookahead == 's') ADVANCE(684);
+    case 575:
+      if (lookahead == 'o') ADVANCE(686);
       END_STATE();
-    case 602:
-      if (lookahead == 'M') ADVANCE(685);
+    case 576:
+      if (lookahead == 'c') ADVANCE(687);
       END_STATE();
-    case 603:
-      ACCEPT_TOKEN(anon_sym_Ambient);
-      if (lookahead == 'A') ADVANCE(686);
+    case 577:
+      if (lookahead == 'c') ADVANCE(688);
       END_STATE();
-    case 604:
-      if (lookahead == 'n') ADVANCE(687);
+    case 578:
+      ACCEPT_TOKEN(anon_sym_GEqual);
       END_STATE();
-    case 605:
-      ACCEPT_TOKEN(anon_sym_BlendOp);
+    case 579:
+      if (lookahead == 'C') ADVANCE(689);
       END_STATE();
-    case 606:
-      if (lookahead == 'D') ADVANCE(688);
+    case 580:
+      if (lookahead == 'O') ADVANCE(690);
       END_STATE();
-    case 607:
-      if (lookahead == 'A') ADVANCE(689);
+    case 581:
+      ACCEPT_TOKEN(anon_sym_Global);
       END_STATE();
-    case 608:
-      if (lookahead == 'y') ADVANCE(690);
-      END_STATE();
-    case 609:
+    case 582:
       if (lookahead == 's') ADVANCE(691);
-      if (lookahead == 't') ADVANCE(692);
       END_STATE();
-    case 610:
-      if (lookahead == 'k') ADVANCE(693);
+    case 583:
+      if (lookahead == 'r') ADVANCE(692);
       END_STATE();
-    case 611:
-      if (lookahead == 'n') ADVANCE(694);
+    case 584:
+      if (lookahead == 'C') ADVANCE(693);
       END_STATE();
-    case 612:
-      if (lookahead == 'a') ADVANCE(695);
+    case 585:
+      if (lookahead == 'O') ADVANCE(694);
       END_STATE();
-    case 613:
+    case 586:
+      if (lookahead == 't') ADVANCE(695);
+      END_STATE();
+    case 587:
       if (lookahead == 'a') ADVANCE(696);
       END_STATE();
-    case 614:
-      if (lookahead == 'd') ADVANCE(697);
+    case 588:
+      if (lookahead == 'r') ADVANCE(697);
       END_STATE();
-    case 615:
-      ACCEPT_TOKEN(anon_sym_DecrSat);
+    case 589:
+      ACCEPT_TOKEN(anon_sym_Invert);
       END_STATE();
-    case 616:
-      if (lookahead == 'p') ADVANCE(698);
+    case 590:
+      ACCEPT_TOKEN(anon_sym_LEqual);
       END_STATE();
-    case 617:
-      ACCEPT_TOKEN(anon_sym_Density);
+    case 591:
+      if (lookahead == 'n') ADVANCE(698);
       END_STATE();
-    case 618:
-      if (lookahead == 'n') ADVANCE(699);
+    case 592:
+      ACCEPT_TOKEN(anon_sym_Linear);
       END_STATE();
-    case 619:
-      ACCEPT_TOKEN(anon_sym_Diffuse);
+    case 593:
+      if (lookahead == 'a') ADVANCE(699);
       END_STATE();
-    case 620:
+    case 594:
+      ACCEPT_TOKEN(anon_sym_Matrix);
+      END_STATE();
+    case 595:
       if (lookahead == 'a') ADVANCE(700);
       END_STATE();
-    case 621:
-      if (lookahead == 'r') ADVANCE(701);
+    case 596:
+      ACCEPT_TOKEN(anon_sym_Offset);
       END_STATE();
-    case 622:
-      ACCEPT_TOKEN(anon_sym_ENDHLSL);
+    case 597:
+      if (lookahead == 'u') ADVANCE(701);
       END_STATE();
-    case 623:
-      if (lookahead == 'n') ADVANCE(702);
+    case 598:
+      if (lookahead == 'c') ADVANCE(702);
       END_STATE();
-    case 624:
-      if (lookahead == 'k') ADVANCE(703);
+    case 599:
+      if (lookahead == 'o') ADVANCE(703);
       END_STATE();
-    case 625:
-      if (lookahead == 'n') ADVANCE(704);
+    case 600:
+      if (lookahead == 't') ADVANCE(704);
       END_STATE();
-    case 626:
-      if (lookahead == 'k') ADVANCE(705);
+    case 601:
+      if (lookahead == 's') ADVANCE(705);
       END_STATE();
-    case 627:
-      if (lookahead == 'k') ADVANCE(706);
+    case 602:
+      if (lookahead == 'e') ADVANCE(706);
       END_STATE();
-    case 628:
-      if (lookahead == 's') ADVANCE(707);
+    case 603:
+      ACCEPT_TOKEN(anon_sym_RevSub);
       END_STATE();
-    case 629:
-      ACCEPT_TOKEN(anon_sym_Greater);
+    case 604:
+      if (lookahead == 't') ADVANCE(707);
       END_STATE();
-    case 630:
-      if (lookahead == 'L') ADVANCE(708);
+    case 605:
+      if (lookahead == 't') ADVANCE(708);
       END_STATE();
-    case 631:
-      if (lookahead == 'G') ADVANCE(709);
+    case 606:
+      ACCEPT_TOKEN(anon_sym_Shader);
       END_STATE();
-    case 632:
-      ACCEPT_TOKEN(anon_sym_IncrSat);
+    case 607:
+      if (lookahead == 'e') ADVANCE(709);
       END_STATE();
-    case 633:
-      if (lookahead == 'p') ADVANCE(710);
+    case 608:
+      if (lookahead == 'a') ADVANCE(710);
       END_STATE();
-    case 634:
-      ACCEPT_TOKEN(anon_sym_Integer);
+    case 609:
+      if (lookahead == 'h') ADVANCE(711);
       END_STATE();
-    case 635:
-      if (lookahead == 'g') ADVANCE(711);
+    case 610:
+      if (lookahead == 'o') ADVANCE(712);
       END_STATE();
-    case 636:
-      if (lookahead == 'l') ADVANCE(712);
-      END_STATE();
-    case 637:
+    case 611:
       if (lookahead == 'l') ADVANCE(713);
       END_STATE();
+    case 612:
+      if (lookahead == 'd') ADVANCE(714);
+      END_STATE();
+    case 613:
+      if (lookahead == 'd') ADVANCE(715);
+      END_STATE();
+    case 614:
+      if (lookahead == 's') ADVANCE(716);
+      END_STATE();
+    case 615:
+      ACCEPT_TOKEN(anon_sym_Vector);
+      END_STATE();
+    case 616:
+      if (lookahead == 'a') ADVANCE(717);
+      END_STATE();
+    case 617:
+      if (lookahead == 'a') ADVANCE(718);
+      END_STATE();
+    case 618:
+      if (lookahead == 'r') ADVANCE(719);
+      END_STATE();
+    case 619:
+      ACCEPT_TOKEN(anon_sym_ZWrite);
+      END_STATE();
+    case 620:
+      if (lookahead == 'e') ADVANCE(720);
+      END_STATE();
+    case 621:
+      ACCEPT_TOKEN(anon_sym_always);
+      END_STATE();
+    case 622:
+      if (lookahead == 'e') ADVANCE(721);
+      END_STATE();
+    case 623:
+      if (lookahead == 'c') ADVANCE(722);
+      END_STATE();
+    case 624:
+      if (lookahead == 'o') ADVANCE(723);
+      END_STATE();
+    case 625:
+      if (lookahead == 'n') ADVANCE(724);
+      END_STATE();
+    case 626:
+      if (lookahead == 'r') ADVANCE(725);
+      END_STATE();
+    case 627:
+      if (lookahead == 't') ADVANCE(726);
+      END_STATE();
+    case 628:
+      if (lookahead == 'a') ADVANCE(727);
+      END_STATE();
+    case 629:
+      ACCEPT_TOKEN(anon_sym_double);
+      END_STATE();
+    case 630:
+      if (lookahead == 'c') ADVANCE(728);
+      END_STATE();
+    case 631:
+      if (lookahead == 'o') ADVANCE(729);
+      END_STATE();
+    case 632:
+      ACCEPT_TOKEN(anon_sym_gequal);
+      END_STATE();
+    case 633:
+      if (lookahead == 'r') ADVANCE(730);
+      END_STATE();
+    case 634:
+      if (lookahead == 't') ADVANCE(731);
+      END_STATE();
+    case 635:
+      if (lookahead == 'a') ADVANCE(732);
+      END_STATE();
+    case 636:
+      if (lookahead == 'r') ADVANCE(733);
+      END_STATE();
+    case 637:
+      if (lookahead == 'h') ADVANCE(734);
+      END_STATE();
     case 638:
-      if (lookahead == 's') ADVANCE(714);
+      ACCEPT_TOKEN(anon_sym_invert);
       END_STATE();
     case 639:
-      if (lookahead == 'k') ADVANCE(715);
+      ACCEPT_TOKEN(anon_sym_lequal);
       END_STATE();
     case 640:
-      if (lookahead == 'n') ADVANCE(716);
+      ACCEPT_TOKEN(anon_sym_normal);
       END_STATE();
     case 641:
-      if (lookahead == 'i') ADVANCE(717);
+      if (lookahead == 'a') ADVANCE(735);
       END_STATE();
     case 642:
-      if (lookahead == 'k') ADVANCE(718);
+      if (lookahead == 'c') ADVANCE(736);
       END_STATE();
     case 643:
-      ACCEPT_TOKEN(anon_sym_Replace);
+      if (lookahead == 'o') ADVANCE(737);
       END_STATE();
     case 644:
-      if (lookahead == 'u') ADVANCE(719);
+      if (lookahead == 'u') ADVANCE(738);
       END_STATE();
     case 645:
-      if (lookahead == 's') ADVANCE(720);
+      if (lookahead == 'y') ADVANCE(739);
       END_STATE();
     case 646:
-      if (lookahead == 'r') ADVANCE(721);
-      END_STATE();
-    case 647:
-      if (lookahead == 'a') ADVANCE(722);
-      END_STATE();
-    case 648:
-      if (lookahead == 'r') ADVANCE(723);
-      END_STATE();
-    case 649:
-      ACCEPT_TOKEN(anon_sym_Stencil);
-      END_STATE();
-    case 650:
-      if (lookahead == 'e') ADVANCE(724);
-      END_STATE();
-    case 651:
-      ACCEPT_TOKEN(anon_sym_UsePass);
-      END_STATE();
-    case 652:
-      if (lookahead == 's') ADVANCE(725);
-      END_STATE();
-    case 653:
-      if (lookahead == 'c') ADVANCE(726);
-      END_STATE();
-    case 654:
-      if (lookahead == 'o') ADVANCE(727);
-      END_STATE();
-    case 655:
-      ACCEPT_TOKEN(anon_sym_combine);
-      END_STATE();
-    case 656:
-      if (lookahead == 'k') ADVANCE(728);
-      END_STATE();
-    case 657:
-      if (lookahead == 'n') ADVANCE(729);
-      END_STATE();
-    case 658:
-      if (lookahead == 't') ADVANCE(730);
-      END_STATE();
-    case 659:
-      if (lookahead == 'a') ADVANCE(731);
-      END_STATE();
-    case 660:
-      ACCEPT_TOKEN(anon_sym_decrsat);
-      END_STATE();
-    case 661:
-      if (lookahead == 'p') ADVANCE(732);
-      END_STATE();
-    case 662:
-      if (lookahead == 'k') ADVANCE(733);
-      END_STATE();
-    case 663:
-      if (lookahead == 'n') ADVANCE(734);
-      END_STATE();
-    case 664:
-      ACCEPT_TOKEN(anon_sym_greater);
-      END_STATE();
-    case 665:
-      ACCEPT_TOKEN(anon_sym_incrsat);
-      END_STATE();
-    case 666:
-      if (lookahead == 'p') ADVANCE(735);
-      END_STATE();
-    case 667:
-      ACCEPT_TOKEN(anon_sym_integer);
-      END_STATE();
-    case 668:
-      if (lookahead == 'a') ADVANCE(736);
-      END_STATE();
-    case 669:
-      if (lookahead == 'l') ADVANCE(737);
-      END_STATE();
-    case 670:
-      if (lookahead == 'k') ADVANCE(738);
-      END_STATE();
-    case 671:
-      if (lookahead == 'n') ADVANCE(739);
-      END_STATE();
-    case 672:
       if (lookahead == 's') ADVANCE(740);
       END_STATE();
+    case 647:
+      if (lookahead == 's') ADVANCE(741);
+      END_STATE();
+    case 648:
+      if (lookahead == 'e') ADVANCE(742);
+      END_STATE();
+    case 649:
+      if (lookahead == 't') ADVANCE(743);
+      END_STATE();
+    case 650:
+      if (lookahead == 'r') ADVANCE(744);
+      END_STATE();
+    case 651:
+      if (lookahead == 'e') ADVANCE(745);
+      END_STATE();
+    case 652:
+      ACCEPT_TOKEN(anon_sym_vector);
+      END_STATE();
+    case 653:
+      ACCEPT_TOKEN(anon_sym_vertex);
+      END_STATE();
+    case 654:
+      if (lookahead == 'a') ADVANCE(746);
+      END_STATE();
+    case 655:
+      if (lookahead == 'a') ADVANCE(747);
+      END_STATE();
+    case 656:
+      if (lookahead == 'a') ADVANCE(748);
+      END_STATE();
+    case 657:
+      if (lookahead == 'r') ADVANCE(749);
+      END_STATE();
+    case 658:
+      if (lookahead == 's') ADVANCE(750);
+      END_STATE();
+    case 659:
+      if (lookahead == 'M') ADVANCE(751);
+      END_STATE();
+    case 660:
+      if (lookahead == 's') ADVANCE(752);
+      END_STATE();
+    case 661:
+      ACCEPT_TOKEN(anon_sym_Ambient);
+      if (lookahead == 'A') ADVANCE(753);
+      END_STATE();
+    case 662:
+      if (lookahead == 'n') ADVANCE(754);
+      END_STATE();
+    case 663:
+      ACCEPT_TOKEN(anon_sym_BlendOp);
+      END_STATE();
+    case 664:
+      if (lookahead == 'D') ADVANCE(755);
+      END_STATE();
+    case 665:
+      if (lookahead == 'A') ADVANCE(756);
+      END_STATE();
+    case 666:
+      if (lookahead == 'y') ADVANCE(757);
+      END_STATE();
+    case 667:
+      if (lookahead == 's') ADVANCE(758);
+      if (lookahead == 't') ADVANCE(759);
+      END_STATE();
+    case 668:
+      ACCEPT_TOKEN(anon_sym_Combine);
+      END_STATE();
+    case 669:
+      if (lookahead == 'k') ADVANCE(760);
+      END_STATE();
+    case 670:
+      if (lookahead == 'n') ADVANCE(761);
+      END_STATE();
+    case 671:
+      if (lookahead == 'a') ADVANCE(762);
+      END_STATE();
+    case 672:
+      if (lookahead == 't') ADVANCE(763);
+      END_STATE();
     case 673:
-      ACCEPT_TOKEN(anon_sym_primary);
+      if (lookahead == 'a') ADVANCE(764);
       END_STATE();
     case 674:
-      if (lookahead == 'k') ADVANCE(741);
+      if (lookahead == 'd') ADVANCE(765);
       END_STATE();
     case 675:
-      if (lookahead == 'k') ADVANCE(742);
+      ACCEPT_TOKEN(anon_sym_DecrSat);
       END_STATE();
     case 676:
-      ACCEPT_TOKEN(anon_sym_replace);
+      if (lookahead == 'p') ADVANCE(766);
       END_STATE();
     case 677:
-      ACCEPT_TOKEN(anon_sym_tangent);
+      ACCEPT_TOKEN(anon_sym_Density);
       END_STATE();
     case 678:
-      if (lookahead == 'd') ADVANCE(743);
+      if (lookahead == 'n') ADVANCE(767);
       END_STATE();
     case 679:
-      ACCEPT_TOKEN(anon_sym_texture);
+      ACCEPT_TOKEN(anon_sym_Diffuse);
       END_STATE();
     case 680:
-      if (lookahead == 's') ADVANCE(744);
+      if (lookahead == 'a') ADVANCE(768);
       END_STATE();
     case 681:
-      if (lookahead == 's') ADVANCE(745);
+      if (lookahead == 'r') ADVANCE(769);
       END_STATE();
     case 682:
-      if (lookahead == 'c') ADVANCE(746);
+      ACCEPT_TOKEN(anon_sym_ENDGLSL);
       END_STATE();
     case 683:
-      if (lookahead == 'o') ADVANCE(747);
+      ACCEPT_TOKEN(anon_sym_ENDHLSL);
       END_STATE();
     case 684:
-      if (lookahead == 't') ADVANCE(748);
+      if (lookahead == 'n') ADVANCE(770);
       END_STATE();
     case 685:
-      if (lookahead == 'a') ADVANCE(749);
-      END_STATE();
-    case 686:
-      if (lookahead == 'n') ADVANCE(750);
-      END_STATE();
-    case 687:
-      if (lookahead == 'n') ADVANCE(751);
-      END_STATE();
-    case 688:
-      if (lookahead == 'E') ADVANCE(752);
-      END_STATE();
-    case 689:
-      if (lookahead == 'M') ADVANCE(753);
-      END_STATE();
-    case 690:
-      ACCEPT_TOKEN(anon_sym_Category);
-      END_STATE();
-    case 691:
-      if (lookahead == 'k') ADVANCE(754);
-      END_STATE();
-    case 692:
-      if (lookahead == 'e') ADVANCE(755);
-      END_STATE();
-    case 693:
-      ACCEPT_TOKEN(anon_sym_CompBack);
-      END_STATE();
-    case 694:
-      if (lookahead == 't') ADVANCE(756);
-      END_STATE();
-    case 695:
-      if (lookahead == 't') ADVANCE(757);
-      END_STATE();
-    case 696:
-      if (lookahead == 'y') ADVANCE(758);
-      END_STATE();
-    case 697:
-      if (lookahead == 'i') ADVANCE(759);
-      END_STATE();
-    case 698:
-      ACCEPT_TOKEN(anon_sym_DecrWrap);
-      END_STATE();
-    case 699:
-      if (lookahead == 'c') ADVANCE(760);
-      END_STATE();
-    case 700:
-      ACCEPT_TOKEN(anon_sym_DstAlpha);
-      END_STATE();
-    case 701:
-      ACCEPT_TOKEN(anon_sym_DstColor);
-      END_STATE();
-    case 702:
-      ACCEPT_TOKEN(anon_sym_Emission);
-      END_STATE();
-    case 703:
-      ACCEPT_TOKEN(anon_sym_FailBack);
-      END_STATE();
-    case 704:
-      if (lookahead == 't') ADVANCE(761);
-      END_STATE();
-    case 705:
-      ACCEPT_TOKEN(anon_sym_FallBack);
-      END_STATE();
-    case 706:
-      ACCEPT_TOKEN(anon_sym_Fallback);
-      END_STATE();
-    case 707:
-      ACCEPT_TOKEN(anon_sym_GrabPass);
-      END_STATE();
-    case 708:
-      if (lookahead == 'U') ADVANCE(762);
-      END_STATE();
-    case 709:
-      if (lookahead == 'R') ADVANCE(763);
-      END_STATE();
-    case 710:
-      ACCEPT_TOKEN(anon_sym_IncrWrap);
-      END_STATE();
-    case 711:
-      ACCEPT_TOKEN(anon_sym_Lighting);
-      END_STATE();
-    case 712:
-      ACCEPT_TOKEN(anon_sym_Material);
-      END_STATE();
-    case 713:
-      ACCEPT_TOKEN(anon_sym_NotEqual);
-      END_STATE();
-    case 714:
-      if (lookahead == 'D') ADVANCE(764);
-      if (lookahead == 'S') ADVANCE(765);
-      END_STATE();
-    case 715:
-      ACCEPT_TOKEN(anon_sym_PassBack);
-      END_STATE();
-    case 716:
-      if (lookahead == 't') ADVANCE(766);
-      END_STATE();
-    case 717:
-      if (lookahead == 'e') ADVANCE(767);
-      END_STATE();
-    case 718:
-      ACCEPT_TOKEN(anon_sym_ReadMask);
-      END_STATE();
-    case 719:
-      if (lookahead == 'r') ADVANCE(768);
-      END_STATE();
-    case 720:
-      if (lookahead == 's') ADVANCE(769);
-      END_STATE();
-    case 721:
-      ACCEPT_TOKEN(anon_sym_Specular);
-      END_STATE();
-    case 722:
-      ACCEPT_TOKEN(anon_sym_SrcAlpha);
-      END_STATE();
-    case 723:
-      ACCEPT_TOKEN(anon_sym_SrcColor);
-      END_STATE();
-    case 724:
-      if (lookahead == 'r') ADVANCE(770);
-      END_STATE();
-    case 725:
       if (lookahead == 'k') ADVANCE(771);
       END_STATE();
-    case 726:
-      if (lookahead == 'k') ADVANCE(772);
+    case 686:
+      if (lookahead == 'n') ADVANCE(772);
       END_STATE();
-    case 727:
-      if (lookahead == 'n') ADVANCE(773);
+    case 687:
+      if (lookahead == 'k') ADVANCE(773);
       END_STATE();
-    case 728:
-      ACCEPT_TOKEN(anon_sym_compback);
+    case 688:
+      if (lookahead == 'k') ADVANCE(774);
       END_STATE();
-    case 729:
-      if (lookahead == 't') ADVANCE(774);
+    case 689:
+      if (lookahead == 'L') ADVANCE(775);
       END_STATE();
-    case 730:
-      ACCEPT_TOKEN(anon_sym_constant);
-      if (lookahead == 'C') ADVANCE(775);
+    case 690:
+      if (lookahead == 'G') ADVANCE(776);
       END_STATE();
-    case 731:
-      if (lookahead == 'y') ADVANCE(776);
+    case 691:
+      if (lookahead == 's') ADVANCE(777);
       END_STATE();
-    case 732:
-      ACCEPT_TOKEN(anon_sym_decrwrap);
+    case 692:
+      ACCEPT_TOKEN(anon_sym_Greater);
       END_STATE();
-    case 733:
-      ACCEPT_TOKEN(anon_sym_failback);
+    case 693:
+      if (lookahead == 'L') ADVANCE(778);
       END_STATE();
-    case 734:
-      if (lookahead == 't') ADVANCE(777);
+    case 694:
+      if (lookahead == 'G') ADVANCE(779);
       END_STATE();
-    case 735:
-      ACCEPT_TOKEN(anon_sym_incrwrap);
+    case 695:
+      ACCEPT_TOKEN(anon_sym_IncrSat);
       END_STATE();
-    case 736:
-      ACCEPT_TOKEN(anon_sym_invalpha);
+    case 696:
+      if (lookahead == 'p') ADVANCE(780);
       END_STATE();
-    case 737:
-      ACCEPT_TOKEN(anon_sym_notequal);
+    case 697:
+      ACCEPT_TOKEN(anon_sym_Integer);
       END_STATE();
-    case 738:
-      ACCEPT_TOKEN(anon_sym_passback);
+    case 698:
+      if (lookahead == 'g') ADVANCE(781);
       END_STATE();
-    case 739:
-      if (lookahead == 't') ADVANCE(778);
+    case 699:
+      if (lookahead == 'l') ADVANCE(782);
       END_STATE();
-    case 740:
-      ACCEPT_TOKEN(anon_sym_previous);
+    case 700:
+      if (lookahead == 'l') ADVANCE(783);
       END_STATE();
-    case 741:
-      ACCEPT_TOKEN(anon_sym_readMask);
+    case 701:
+      if (lookahead == 's') ADVANCE(784);
       END_STATE();
-    case 742:
-      ACCEPT_TOKEN(anon_sym_readmask);
+    case 702:
+      if (lookahead == 'k') ADVANCE(785);
       END_STATE();
-    case 743:
-      if (lookahead == '0') ADVANCE(779);
-      if (lookahead == '1') ADVANCE(780);
+    case 703:
+      if (lookahead == 'n') ADVANCE(786);
       END_STATE();
-    case 744:
-      if (lookahead == 'k') ADVANCE(781);
+    case 704:
+      if (lookahead == 'i') ADVANCE(787);
       END_STATE();
-    case 745:
-      if (lookahead == 'k') ADVANCE(782);
+    case 705:
+      if (lookahead == 'k') ADVANCE(788);
       END_STATE();
-    case 746:
-      if (lookahead == 'k') ADVANCE(783);
+    case 706:
+      ACCEPT_TOKEN(anon_sym_Replace);
       END_STATE();
-    case 747:
-      if (lookahead == 'n') ADVANCE(784);
+    case 707:
+      if (lookahead == 'e') ADVANCE(789);
       END_STATE();
-    case 748:
-      ACCEPT_TOKEN(anon_sym_AlphaTest);
+    case 708:
+      if (lookahead == 'u') ADVANCE(790);
       END_STATE();
-    case 749:
-      if (lookahead == 's') ADVANCE(785);
+    case 709:
+      if (lookahead == 's') ADVANCE(791);
       END_STATE();
-    case 750:
-      if (lookahead == 'd') ADVANCE(786);
+    case 710:
+      if (lookahead == 'r') ADVANCE(792);
       END_STATE();
-    case 751:
-      if (lookahead == 'e') ADVANCE(787);
+    case 711:
+      if (lookahead == 'a') ADVANCE(793);
       END_STATE();
-    case 752:
-      ACCEPT_TOKEN(anon_sym_CGINCLUDE);
+    case 712:
+      if (lookahead == 'r') ADVANCE(794);
       END_STATE();
-    case 753:
-      ACCEPT_TOKEN(anon_sym_CGPROGRAM);
+    case 713:
+      ACCEPT_TOKEN(anon_sym_Stencil);
       END_STATE();
-    case 754:
-      ACCEPT_TOKEN(anon_sym_ColorMask);
+    case 714:
+      if (lookahead == 'e') ADVANCE(795);
       END_STATE();
-    case 755:
-      if (lookahead == 'r') ADVANCE(788);
+    case 715:
+      if (lookahead == 'e') ADVANCE(796);
       END_STATE();
-    case 756:
-      ACCEPT_TOKEN(anon_sym_CompFront);
+    case 716:
+      ACCEPT_TOKEN(anon_sym_UsePass);
       END_STATE();
-    case 757:
-      if (lookahead == 'i') ADVANCE(789);
+    case 717:
+      if (lookahead == 's') ADVANCE(797);
       END_STATE();
-    case 758:
-      ACCEPT_TOKEN(anon_sym_CubeArray);
+    case 718:
+      if (lookahead == 'c') ADVANCE(798);
       END_STATE();
-    case 759:
-      if (lookahead == 't') ADVANCE(790);
-      END_STATE();
-    case 760:
-      if (lookahead == 'y') ADVANCE(791);
-      END_STATE();
-    case 761:
-      ACCEPT_TOKEN(anon_sym_FailFront);
-      END_STATE();
-    case 762:
-      if (lookahead == 'D') ADVANCE(792);
-      END_STATE();
-    case 763:
-      if (lookahead == 'A') ADVANCE(793);
-      END_STATE();
-    case 764:
-      if (lookahead == 's') ADVANCE(794);
-      END_STATE();
-    case 765:
-      if (lookahead == 'r') ADVANCE(795);
-      END_STATE();
-    case 766:
-      ACCEPT_TOKEN(anon_sym_PassFront);
-      END_STATE();
-    case 767:
-      if (lookahead == 's') ADVANCE(796);
-      END_STATE();
-    case 768:
-      if (lookahead == 'e') ADVANCE(797);
-      END_STATE();
-    case 769:
-      ACCEPT_TOKEN(anon_sym_Shininess);
-      END_STATE();
-    case 770:
-      ACCEPT_TOKEN(anon_sym_SubShader);
-      END_STATE();
-    case 771:
-      ACCEPT_TOKEN(anon_sym_WriteMask);
-      END_STATE();
-    case 772:
-      ACCEPT_TOKEN(anon_sym_ZFailBack);
-      END_STATE();
-    case 773:
-      if (lookahead == 't') ADVANCE(798);
-      END_STATE();
-    case 774:
-      ACCEPT_TOKEN(anon_sym_compfront);
-      END_STATE();
-    case 775:
+    case 719:
       if (lookahead == 'o') ADVANCE(799);
       END_STATE();
-    case 776:
-      ACCEPT_TOKEN(anon_sym_cubearray);
+    case 720:
+      if (lookahead == 's') ADVANCE(800);
       END_STATE();
-    case 777:
-      ACCEPT_TOKEN(anon_sym_failfront);
+    case 721:
+      ACCEPT_TOKEN(anon_sym_combine);
       END_STATE();
-    case 778:
-      ACCEPT_TOKEN(anon_sym_passfront);
-      END_STATE();
-    case 779:
-      ACCEPT_TOKEN(anon_sym_texcoord0);
-      END_STATE();
-    case 780:
-      ACCEPT_TOKEN(anon_sym_texcoord1);
-      END_STATE();
-    case 781:
-      ACCEPT_TOKEN(anon_sym_writeMask);
-      END_STATE();
-    case 782:
-      ACCEPT_TOKEN(anon_sym_writemask);
-      END_STATE();
-    case 783:
-      ACCEPT_TOKEN(anon_sym_zfailback);
-      END_STATE();
-    case 784:
-      if (lookahead == 't') ADVANCE(800);
-      END_STATE();
-    case 785:
+    case 722:
       if (lookahead == 'k') ADVANCE(801);
       END_STATE();
-    case 786:
-      if (lookahead == 'D') ADVANCE(802);
+    case 723:
+      if (lookahead == 'n') ADVANCE(802);
       END_STATE();
-    case 787:
-      if (lookahead == 'l') ADVANCE(803);
+    case 724:
+      if (lookahead == 't') ADVANCE(803);
       END_STATE();
-    case 788:
-      if (lookahead == 'i') ADVANCE(804);
+    case 725:
+      if (lookahead == 'a') ADVANCE(804);
       END_STATE();
-    case 789:
-      if (lookahead == 'v') ADVANCE(805);
+    case 726:
+      ACCEPT_TOKEN(anon_sym_decrsat);
       END_STATE();
-    case 790:
-      if (lookahead == 'o') ADVANCE(806);
+    case 727:
+      if (lookahead == 'p') ADVANCE(805);
       END_STATE();
-    case 791:
-      ACCEPT_TOKEN(anon_sym_Dependency);
+    case 728:
+      if (lookahead == 'k') ADVANCE(806);
       END_STATE();
-    case 792:
-      if (lookahead == 'E') ADVANCE(807);
+    case 729:
+      if (lookahead == 'n') ADVANCE(807);
       END_STATE();
-    case 793:
-      if (lookahead == 'M') ADVANCE(808);
+    case 730:
+      ACCEPT_TOKEN(anon_sym_greater);
       END_STATE();
-    case 794:
-      if (lookahead == 't') ADVANCE(809);
+    case 731:
+      ACCEPT_TOKEN(anon_sym_incrsat);
       END_STATE();
-    case 795:
-      if (lookahead == 'c') ADVANCE(810);
+    case 732:
+      if (lookahead == 'p') ADVANCE(808);
       END_STATE();
-    case 796:
-      ACCEPT_TOKEN(anon_sym_Properties);
+    case 733:
+      ACCEPT_TOKEN(anon_sym_integer);
       END_STATE();
-    case 797:
-      ACCEPT_TOKEN(anon_sym_SetTexture);
+    case 734:
+      if (lookahead == 'a') ADVANCE(809);
       END_STATE();
-    case 798:
-      ACCEPT_TOKEN(anon_sym_ZFailFront);
+    case 735:
+      if (lookahead == 'l') ADVANCE(810);
       END_STATE();
-    case 799:
-      if (lookahead == 'l') ADVANCE(811);
+    case 736:
+      if (lookahead == 'k') ADVANCE(811);
       END_STATE();
-    case 800:
-      ACCEPT_TOKEN(anon_sym_zfailfront);
+    case 737:
+      if (lookahead == 'n') ADVANCE(812);
       END_STATE();
-    case 801:
-      ACCEPT_TOKEN(anon_sym_AlphaToMask);
-      END_STATE();
-    case 802:
-      if (lookahead == 'i') ADVANCE(812);
-      END_STATE();
-    case 803:
+    case 738:
       if (lookahead == 's') ADVANCE(813);
       END_STATE();
-    case 804:
-      if (lookahead == 'a') ADVANCE(814);
+    case 739:
+      ACCEPT_TOKEN(anon_sym_primary);
       END_STATE();
-    case 805:
-      if (lookahead == 'e') ADVANCE(815);
+    case 740:
+      if (lookahead == 'k') ADVANCE(814);
       END_STATE();
-    case 806:
-      if (lookahead == 'r') ADVANCE(816);
+    case 741:
+      if (lookahead == 'k') ADVANCE(815);
       END_STATE();
-    case 807:
-      ACCEPT_TOKEN(anon_sym_HLSLINCLUDE);
+    case 742:
+      ACCEPT_TOKEN(anon_sym_replace);
       END_STATE();
-    case 808:
-      ACCEPT_TOKEN(anon_sym_HLSLPROGRAM);
+    case 743:
+      ACCEPT_TOKEN(anon_sym_tangent);
       END_STATE();
-    case 809:
-      if (lookahead == 'A') ADVANCE(817);
-      if (lookahead == 'C') ADVANCE(818);
+    case 744:
+      if (lookahead == 'd') ADVANCE(816);
       END_STATE();
-    case 810:
-      if (lookahead == 'A') ADVANCE(819);
-      if (lookahead == 'C') ADVANCE(820);
+    case 745:
+      ACCEPT_TOKEN(anon_sym_texture);
       END_STATE();
-    case 811:
-      if (lookahead == 'o') ADVANCE(821);
+    case 746:
+      if (lookahead == 's') ADVANCE(817);
       END_STATE();
-    case 812:
-      if (lookahead == 'f') ADVANCE(822);
+    case 747:
+      if (lookahead == 's') ADVANCE(818);
       END_STATE();
-    case 813:
-      ACCEPT_TOKEN(anon_sym_BindChannels);
+    case 748:
+      if (lookahead == 'c') ADVANCE(819);
       END_STATE();
-    case 814:
-      if (lookahead == 'l') ADVANCE(823);
+    case 749:
+      if (lookahead == 'o') ADVANCE(820);
       END_STATE();
-    case 815:
-      ACCEPT_TOKEN(anon_sym_Conservative);
+    case 750:
+      if (lookahead == 't') ADVANCE(821);
       END_STATE();
-    case 816:
-      ACCEPT_TOKEN(anon_sym_CustomEditor);
+    case 751:
+      if (lookahead == 'a') ADVANCE(822);
       END_STATE();
-    case 817:
-      if (lookahead == 'l') ADVANCE(824);
+    case 752:
+      if (lookahead == 't') ADVANCE(823);
       END_STATE();
-    case 818:
-      if (lookahead == 'o') ADVANCE(825);
+    case 753:
+      if (lookahead == 'n') ADVANCE(824);
       END_STATE();
-    case 819:
-      if (lookahead == 'l') ADVANCE(826);
+    case 754:
+      if (lookahead == 'n') ADVANCE(825);
       END_STATE();
-    case 820:
-      if (lookahead == 'o') ADVANCE(827);
+    case 755:
+      if (lookahead == 'E') ADVANCE(826);
       END_STATE();
-    case 821:
-      if (lookahead == 'r') ADVANCE(828);
+    case 756:
+      if (lookahead == 'M') ADVANCE(827);
       END_STATE();
-    case 822:
-      if (lookahead == 'f') ADVANCE(829);
+    case 757:
+      ACCEPT_TOKEN(anon_sym_Category);
       END_STATE();
-    case 823:
-      ACCEPT_TOKEN(anon_sym_ColorMaterial);
+    case 758:
+      if (lookahead == 'k') ADVANCE(828);
       END_STATE();
-    case 824:
-      if (lookahead == 'p') ADVANCE(830);
+    case 759:
+      if (lookahead == 'e') ADVANCE(829);
       END_STATE();
-    case 825:
-      if (lookahead == 'l') ADVANCE(831);
+    case 760:
+      ACCEPT_TOKEN(anon_sym_CompBack);
       END_STATE();
-    case 826:
-      if (lookahead == 'p') ADVANCE(832);
+    case 761:
+      if (lookahead == 't') ADVANCE(830);
       END_STATE();
-    case 827:
-      if (lookahead == 'l') ADVANCE(833);
+    case 762:
+      if (lookahead == 't') ADVANCE(831);
       END_STATE();
-    case 828:
-      ACCEPT_TOKEN(anon_sym_constantColor);
+    case 763:
+      if (lookahead == 'C') ADVANCE(832);
       END_STATE();
-    case 829:
-      if (lookahead == 'u') ADVANCE(834);
+    case 764:
+      if (lookahead == 'y') ADVANCE(833);
       END_STATE();
-    case 830:
-      if (lookahead == 'h') ADVANCE(835);
+    case 765:
+      if (lookahead == 'i') ADVANCE(834);
       END_STATE();
-    case 831:
-      if (lookahead == 'o') ADVANCE(836);
+    case 766:
+      ACCEPT_TOKEN(anon_sym_DecrWrap);
       END_STATE();
-    case 832:
-      if (lookahead == 'h') ADVANCE(837);
+    case 767:
+      if (lookahead == 'c') ADVANCE(835);
       END_STATE();
-    case 833:
-      if (lookahead == 'o') ADVANCE(838);
+    case 768:
+      ACCEPT_TOKEN(anon_sym_DstAlpha);
       END_STATE();
-    case 834:
-      if (lookahead == 's') ADVANCE(839);
+    case 769:
+      ACCEPT_TOKEN(anon_sym_DstColor);
       END_STATE();
-    case 835:
-      if (lookahead == 'a') ADVANCE(840);
+    case 770:
+      ACCEPT_TOKEN(anon_sym_Emission);
       END_STATE();
-    case 836:
-      if (lookahead == 'r') ADVANCE(841);
+    case 771:
+      ACCEPT_TOKEN(anon_sym_FailBack);
       END_STATE();
-    case 837:
-      if (lookahead == 'a') ADVANCE(842);
+    case 772:
+      if (lookahead == 't') ADVANCE(836);
       END_STATE();
-    case 838:
-      if (lookahead == 'r') ADVANCE(843);
+    case 773:
+      ACCEPT_TOKEN(anon_sym_FallBack);
       END_STATE();
-    case 839:
+    case 774:
+      ACCEPT_TOKEN(anon_sym_Fallback);
+      END_STATE();
+    case 775:
+      if (lookahead == 'U') ADVANCE(837);
+      END_STATE();
+    case 776:
+      if (lookahead == 'R') ADVANCE(838);
+      END_STATE();
+    case 777:
+      ACCEPT_TOKEN(anon_sym_GrabPass);
+      END_STATE();
+    case 778:
+      if (lookahead == 'U') ADVANCE(839);
+      END_STATE();
+    case 779:
+      if (lookahead == 'R') ADVANCE(840);
+      END_STATE();
+    case 780:
+      ACCEPT_TOKEN(anon_sym_IncrWrap);
+      END_STATE();
+    case 781:
+      ACCEPT_TOKEN(anon_sym_Lighting);
+      END_STATE();
+    case 782:
+      ACCEPT_TOKEN(anon_sym_Material);
+      END_STATE();
+    case 783:
+      ACCEPT_TOKEN(anon_sym_NotEqual);
+      END_STATE();
+    case 784:
+      if (lookahead == 'D') ADVANCE(841);
+      if (lookahead == 'S') ADVANCE(842);
+      END_STATE();
+    case 785:
+      ACCEPT_TOKEN(anon_sym_PassBack);
+      END_STATE();
+    case 786:
+      if (lookahead == 't') ADVANCE(843);
+      END_STATE();
+    case 787:
       if (lookahead == 'e') ADVANCE(844);
       END_STATE();
+    case 788:
+      ACCEPT_TOKEN(anon_sym_ReadMask);
+      END_STATE();
+    case 789:
+      if (lookahead == 'S') ADVANCE(845);
+      END_STATE();
+    case 790:
+      if (lookahead == 'r') ADVANCE(846);
+      END_STATE();
+    case 791:
+      if (lookahead == 's') ADVANCE(847);
+      END_STATE();
+    case 792:
+      ACCEPT_TOKEN(anon_sym_Specular);
+      END_STATE();
+    case 793:
+      ACCEPT_TOKEN(anon_sym_SrcAlpha);
+      END_STATE();
+    case 794:
+      ACCEPT_TOKEN(anon_sym_SrcColor);
+      END_STATE();
+    case 795:
+      if (lookahead == 'r') ADVANCE(848);
+      END_STATE();
+    case 796:
+      if (lookahead == 'r') ADVANCE(849);
+      END_STATE();
+    case 797:
+      if (lookahead == 'k') ADVANCE(850);
+      END_STATE();
+    case 798:
+      if (lookahead == 'k') ADVANCE(851);
+      END_STATE();
+    case 799:
+      if (lookahead == 'n') ADVANCE(852);
+      END_STATE();
+    case 800:
+      if (lookahead == 't') ADVANCE(853);
+      END_STATE();
+    case 801:
+      ACCEPT_TOKEN(anon_sym_compback);
+      END_STATE();
+    case 802:
+      if (lookahead == 't') ADVANCE(854);
+      END_STATE();
+    case 803:
+      ACCEPT_TOKEN(anon_sym_constant);
+      if (lookahead == 'C') ADVANCE(855);
+      END_STATE();
+    case 804:
+      if (lookahead == 'y') ADVANCE(856);
+      END_STATE();
+    case 805:
+      ACCEPT_TOKEN(anon_sym_decrwrap);
+      END_STATE();
+    case 806:
+      ACCEPT_TOKEN(anon_sym_failback);
+      END_STATE();
+    case 807:
+      if (lookahead == 't') ADVANCE(857);
+      END_STATE();
+    case 808:
+      ACCEPT_TOKEN(anon_sym_incrwrap);
+      END_STATE();
+    case 809:
+      ACCEPT_TOKEN(anon_sym_invalpha);
+      END_STATE();
+    case 810:
+      ACCEPT_TOKEN(anon_sym_notequal);
+      END_STATE();
+    case 811:
+      ACCEPT_TOKEN(anon_sym_passback);
+      END_STATE();
+    case 812:
+      if (lookahead == 't') ADVANCE(858);
+      END_STATE();
+    case 813:
+      ACCEPT_TOKEN(anon_sym_previous);
+      END_STATE();
+    case 814:
+      ACCEPT_TOKEN(anon_sym_readMask);
+      END_STATE();
+    case 815:
+      ACCEPT_TOKEN(anon_sym_readmask);
+      END_STATE();
+    case 816:
+      if (lookahead == '0') ADVANCE(859);
+      if (lookahead == '1') ADVANCE(860);
+      END_STATE();
+    case 817:
+      if (lookahead == 'k') ADVANCE(861);
+      END_STATE();
+    case 818:
+      if (lookahead == 'k') ADVANCE(862);
+      END_STATE();
+    case 819:
+      if (lookahead == 'k') ADVANCE(863);
+      END_STATE();
+    case 820:
+      if (lookahead == 'n') ADVANCE(864);
+      END_STATE();
+    case 821:
+      ACCEPT_TOKEN(anon_sym_AlphaTest);
+      END_STATE();
+    case 822:
+      if (lookahead == 's') ADVANCE(865);
+      END_STATE();
+    case 823:
+      ACCEPT_TOKEN(anon_sym_Alphatest);
+      END_STATE();
+    case 824:
+      if (lookahead == 'd') ADVANCE(866);
+      END_STATE();
+    case 825:
+      if (lookahead == 'e') ADVANCE(867);
+      END_STATE();
+    case 826:
+      ACCEPT_TOKEN(anon_sym_CGINCLUDE);
+      END_STATE();
+    case 827:
+      ACCEPT_TOKEN(anon_sym_CGPROGRAM);
+      END_STATE();
+    case 828:
+      ACCEPT_TOKEN(anon_sym_ColorMask);
+      END_STATE();
+    case 829:
+      if (lookahead == 'r') ADVANCE(868);
+      END_STATE();
+    case 830:
+      ACCEPT_TOKEN(anon_sym_CompFront);
+      END_STATE();
+    case 831:
+      if (lookahead == 'i') ADVANCE(869);
+      END_STATE();
+    case 832:
+      if (lookahead == 'o') ADVANCE(870);
+      END_STATE();
+    case 833:
+      ACCEPT_TOKEN(anon_sym_CubeArray);
+      END_STATE();
+    case 834:
+      if (lookahead == 't') ADVANCE(871);
+      END_STATE();
+    case 835:
+      if (lookahead == 'y') ADVANCE(872);
+      END_STATE();
+    case 836:
+      ACCEPT_TOKEN(anon_sym_FailFront);
+      END_STATE();
+    case 837:
+      if (lookahead == 'D') ADVANCE(873);
+      END_STATE();
+    case 838:
+      if (lookahead == 'A') ADVANCE(874);
+      END_STATE();
+    case 839:
+      if (lookahead == 'D') ADVANCE(875);
+      END_STATE();
     case 840:
-      ACCEPT_TOKEN(anon_sym_OneMinusDstAlpha);
+      if (lookahead == 'A') ADVANCE(876);
       END_STATE();
     case 841:
-      ACCEPT_TOKEN(anon_sym_OneMinusDstColor);
+      if (lookahead == 's') ADVANCE(877);
       END_STATE();
     case 842:
-      ACCEPT_TOKEN(anon_sym_OneMinusSrcAlpha);
+      if (lookahead == 'r') ADVANCE(878);
       END_STATE();
     case 843:
-      ACCEPT_TOKEN(anon_sym_OneMinusSrcColor);
+      ACCEPT_TOKEN(anon_sym_PassFront);
       END_STATE();
     case 844:
+      if (lookahead == 's') ADVANCE(879);
+      END_STATE();
+    case 845:
+      if (lookahead == 'p') ADVANCE(880);
+      END_STATE();
+    case 846:
+      if (lookahead == 'e') ADVANCE(881);
+      END_STATE();
+    case 847:
+      ACCEPT_TOKEN(anon_sym_Shininess);
+      END_STATE();
+    case 848:
+      ACCEPT_TOKEN(anon_sym_SubShader);
+      END_STATE();
+    case 849:
+      ACCEPT_TOKEN(anon_sym_Subshader);
+      END_STATE();
+    case 850:
+      ACCEPT_TOKEN(anon_sym_WriteMask);
+      END_STATE();
+    case 851:
+      ACCEPT_TOKEN(anon_sym_ZFailBack);
+      END_STATE();
+    case 852:
+      if (lookahead == 't') ADVANCE(882);
+      END_STATE();
+    case 853:
+      ACCEPT_TOKEN(anon_sym_alphatest);
+      END_STATE();
+    case 854:
+      ACCEPT_TOKEN(anon_sym_compfront);
+      END_STATE();
+    case 855:
+      if (lookahead == 'o') ADVANCE(883);
+      END_STATE();
+    case 856:
+      ACCEPT_TOKEN(anon_sym_cubearray);
+      END_STATE();
+    case 857:
+      ACCEPT_TOKEN(anon_sym_failfront);
+      END_STATE();
+    case 858:
+      ACCEPT_TOKEN(anon_sym_passfront);
+      END_STATE();
+    case 859:
+      ACCEPT_TOKEN(anon_sym_texcoord0);
+      END_STATE();
+    case 860:
+      ACCEPT_TOKEN(anon_sym_texcoord1);
+      END_STATE();
+    case 861:
+      ACCEPT_TOKEN(anon_sym_writeMask);
+      END_STATE();
+    case 862:
+      ACCEPT_TOKEN(anon_sym_writemask);
+      END_STATE();
+    case 863:
+      ACCEPT_TOKEN(anon_sym_zfailback);
+      END_STATE();
+    case 864:
+      if (lookahead == 't') ADVANCE(884);
+      END_STATE();
+    case 865:
+      if (lookahead == 'k') ADVANCE(885);
+      END_STATE();
+    case 866:
+      if (lookahead == 'D') ADVANCE(886);
+      END_STATE();
+    case 867:
+      if (lookahead == 'l') ADVANCE(887);
+      END_STATE();
+    case 868:
+      if (lookahead == 'i') ADVANCE(888);
+      END_STATE();
+    case 869:
+      if (lookahead == 'v') ADVANCE(889);
+      END_STATE();
+    case 870:
+      if (lookahead == 'l') ADVANCE(890);
+      END_STATE();
+    case 871:
+      if (lookahead == 'o') ADVANCE(891);
+      END_STATE();
+    case 872:
+      ACCEPT_TOKEN(anon_sym_Dependency);
+      END_STATE();
+    case 873:
+      if (lookahead == 'E') ADVANCE(892);
+      END_STATE();
+    case 874:
+      if (lookahead == 'M') ADVANCE(893);
+      END_STATE();
+    case 875:
+      if (lookahead == 'E') ADVANCE(894);
+      END_STATE();
+    case 876:
+      if (lookahead == 'M') ADVANCE(895);
+      END_STATE();
+    case 877:
+      if (lookahead == 't') ADVANCE(896);
+      END_STATE();
+    case 878:
+      if (lookahead == 'c') ADVANCE(897);
+      END_STATE();
+    case 879:
+      ACCEPT_TOKEN(anon_sym_Properties);
+      END_STATE();
+    case 880:
+      if (lookahead == 'e') ADVANCE(898);
+      END_STATE();
+    case 881:
+      ACCEPT_TOKEN(anon_sym_SetTexture);
+      END_STATE();
+    case 882:
+      ACCEPT_TOKEN(anon_sym_ZFailFront);
+      END_STATE();
+    case 883:
+      if (lookahead == 'l') ADVANCE(899);
+      END_STATE();
+    case 884:
+      ACCEPT_TOKEN(anon_sym_zfailfront);
+      END_STATE();
+    case 885:
+      ACCEPT_TOKEN(anon_sym_AlphaToMask);
+      END_STATE();
+    case 886:
+      if (lookahead == 'i') ADVANCE(900);
+      END_STATE();
+    case 887:
+      if (lookahead == 's') ADVANCE(901);
+      END_STATE();
+    case 888:
+      if (lookahead == 'a') ADVANCE(902);
+      END_STATE();
+    case 889:
+      if (lookahead == 'e') ADVANCE(903);
+      END_STATE();
+    case 890:
+      if (lookahead == 'o') ADVANCE(904);
+      END_STATE();
+    case 891:
+      if (lookahead == 'r') ADVANCE(905);
+      END_STATE();
+    case 892:
+      ACCEPT_TOKEN(anon_sym_GLSLINCLUDE);
+      END_STATE();
+    case 893:
+      ACCEPT_TOKEN(anon_sym_GLSLPROGRAM);
+      END_STATE();
+    case 894:
+      ACCEPT_TOKEN(anon_sym_HLSLINCLUDE);
+      END_STATE();
+    case 895:
+      ACCEPT_TOKEN(anon_sym_HLSLPROGRAM);
+      END_STATE();
+    case 896:
+      if (lookahead == 'A') ADVANCE(906);
+      if (lookahead == 'C') ADVANCE(907);
+      END_STATE();
+    case 897:
+      if (lookahead == 'A') ADVANCE(908);
+      if (lookahead == 'C') ADVANCE(909);
+      END_STATE();
+    case 898:
+      if (lookahead == 'c') ADVANCE(910);
+      END_STATE();
+    case 899:
+      if (lookahead == 'o') ADVANCE(911);
+      END_STATE();
+    case 900:
+      if (lookahead == 'f') ADVANCE(912);
+      END_STATE();
+    case 901:
+      ACCEPT_TOKEN(anon_sym_BindChannels);
+      END_STATE();
+    case 902:
+      if (lookahead == 'l') ADVANCE(913);
+      END_STATE();
+    case 903:
+      ACCEPT_TOKEN(anon_sym_Conservative);
+      END_STATE();
+    case 904:
+      if (lookahead == 'r') ADVANCE(914);
+      END_STATE();
+    case 905:
+      ACCEPT_TOKEN(anon_sym_CustomEditor);
+      END_STATE();
+    case 906:
+      if (lookahead == 'l') ADVANCE(915);
+      END_STATE();
+    case 907:
+      if (lookahead == 'o') ADVANCE(916);
+      END_STATE();
+    case 908:
+      if (lookahead == 'l') ADVANCE(917);
+      END_STATE();
+    case 909:
+      if (lookahead == 'o') ADVANCE(918);
+      END_STATE();
+    case 910:
+      if (lookahead == 'u') ADVANCE(919);
+      END_STATE();
+    case 911:
+      if (lookahead == 'r') ADVANCE(920);
+      END_STATE();
+    case 912:
+      if (lookahead == 'f') ADVANCE(921);
+      END_STATE();
+    case 913:
+      ACCEPT_TOKEN(anon_sym_ColorMaterial);
+      END_STATE();
+    case 914:
+      ACCEPT_TOKEN(anon_sym_ConstantColor);
+      END_STATE();
+    case 915:
+      if (lookahead == 'p') ADVANCE(922);
+      END_STATE();
+    case 916:
+      if (lookahead == 'l') ADVANCE(923);
+      END_STATE();
+    case 917:
+      if (lookahead == 'p') ADVANCE(924);
+      END_STATE();
+    case 918:
+      if (lookahead == 'l') ADVANCE(925);
+      END_STATE();
+    case 919:
+      if (lookahead == 'l') ADVANCE(926);
+      END_STATE();
+    case 920:
+      ACCEPT_TOKEN(anon_sym_constantColor);
+      END_STATE();
+    case 921:
+      if (lookahead == 'u') ADVANCE(927);
+      END_STATE();
+    case 922:
+      if (lookahead == 'h') ADVANCE(928);
+      END_STATE();
+    case 923:
+      if (lookahead == 'o') ADVANCE(929);
+      END_STATE();
+    case 924:
+      if (lookahead == 'h') ADVANCE(930);
+      END_STATE();
+    case 925:
+      if (lookahead == 'o') ADVANCE(931);
+      END_STATE();
+    case 926:
+      if (lookahead == 'a') ADVANCE(932);
+      END_STATE();
+    case 927:
+      if (lookahead == 's') ADVANCE(933);
+      END_STATE();
+    case 928:
+      if (lookahead == 'a') ADVANCE(934);
+      END_STATE();
+    case 929:
+      if (lookahead == 'r') ADVANCE(935);
+      END_STATE();
+    case 930:
+      if (lookahead == 'a') ADVANCE(936);
+      END_STATE();
+    case 931:
+      if (lookahead == 'r') ADVANCE(937);
+      END_STATE();
+    case 932:
+      if (lookahead == 'r') ADVANCE(938);
+      END_STATE();
+    case 933:
+      if (lookahead == 'e') ADVANCE(939);
+      END_STATE();
+    case 934:
+      ACCEPT_TOKEN(anon_sym_OneMinusDstAlpha);
+      END_STATE();
+    case 935:
+      ACCEPT_TOKEN(anon_sym_OneMinusDstColor);
+      END_STATE();
+    case 936:
+      ACCEPT_TOKEN(anon_sym_OneMinusSrcAlpha);
+      END_STATE();
+    case 937:
+      ACCEPT_TOKEN(anon_sym_OneMinusSrcColor);
+      END_STATE();
+    case 938:
+      ACCEPT_TOKEN(anon_sym_SeparateSpecular);
+      END_STATE();
+    case 939:
       ACCEPT_TOKEN(anon_sym_AmbientAndDiffuse);
       END_STATE();
     default:
@@ -5902,11 +6440,11 @@ static const TSLexerMode ts_lex_modes[STATE_COUNT] = {
   [17] = {.lex_state = 0},
   [18] = {.lex_state = 0},
   [19] = {.lex_state = 0},
-  [20] = {.lex_state = 0},
+  [20] = {.lex_state = 2},
   [21] = {.lex_state = 0},
   [22] = {.lex_state = 0},
   [23] = {.lex_state = 0},
-  [24] = {.lex_state = 2},
+  [24] = {.lex_state = 0},
   [25] = {.lex_state = 0},
   [26] = {.lex_state = 0},
   [27] = {.lex_state = 0},
@@ -5962,29 +6500,29 @@ static const TSLexerMode ts_lex_modes[STATE_COUNT] = {
   [77] = {.lex_state = 0},
   [78] = {.lex_state = 0},
   [79] = {.lex_state = 0},
-  [80] = {.lex_state = 3},
-  [81] = {.lex_state = 3},
+  [80] = {.lex_state = 0},
+  [81] = {.lex_state = 0},
   [82] = {.lex_state = 0},
   [83] = {.lex_state = 0},
   [84] = {.lex_state = 0},
   [85] = {.lex_state = 0},
   [86] = {.lex_state = 0},
   [87] = {.lex_state = 0},
-  [88] = {.lex_state = 2},
-  [89] = {.lex_state = 2},
-  [90] = {.lex_state = 0},
+  [88] = {.lex_state = 0},
+  [89] = {.lex_state = 0},
+  [90] = {.lex_state = 3},
   [91] = {.lex_state = 2},
-  [92] = {.lex_state = 2},
-  [93] = {.lex_state = 0},
+  [92] = {.lex_state = 3},
+  [93] = {.lex_state = 2},
   [94] = {.lex_state = 2},
-  [95] = {.lex_state = 0},
+  [95] = {.lex_state = 2},
   [96] = {.lex_state = 0},
   [97] = {.lex_state = 0},
-  [98] = {.lex_state = 0},
+  [98] = {.lex_state = 2},
   [99] = {.lex_state = 0},
-  [100] = {.lex_state = 0},
-  [101] = {.lex_state = 0},
-  [102] = {.lex_state = 2},
+  [100] = {.lex_state = 2},
+  [101] = {.lex_state = 2},
+  [102] = {.lex_state = 0},
   [103] = {.lex_state = 0},
   [104] = {.lex_state = 0},
   [105] = {.lex_state = 0},
@@ -5992,9 +6530,9 @@ static const TSLexerMode ts_lex_modes[STATE_COUNT] = {
   [107] = {.lex_state = 0},
   [108] = {.lex_state = 0},
   [109] = {.lex_state = 0},
-  [110] = {.lex_state = 0},
+  [110] = {.lex_state = 2},
   [111] = {.lex_state = 0},
-  [112] = {.lex_state = 0},
+  [112] = {.lex_state = 8},
   [113] = {.lex_state = 0},
   [114] = {.lex_state = 0},
   [115] = {.lex_state = 0},
@@ -6004,10 +6542,10 @@ static const TSLexerMode ts_lex_modes[STATE_COUNT] = {
   [119] = {.lex_state = 0},
   [120] = {.lex_state = 0},
   [121] = {.lex_state = 0},
-  [122] = {.lex_state = 8},
+  [122] = {.lex_state = 0},
   [123] = {.lex_state = 0},
-  [124] = {.lex_state = 2},
-  [125] = {.lex_state = 2},
+  [124] = {.lex_state = 0},
+  [125] = {.lex_state = 0},
   [126] = {.lex_state = 0},
   [127] = {.lex_state = 0},
   [128] = {.lex_state = 0},
@@ -6015,98 +6553,98 @@ static const TSLexerMode ts_lex_modes[STATE_COUNT] = {
   [130] = {.lex_state = 0},
   [131] = {.lex_state = 0},
   [132] = {.lex_state = 0},
-  [133] = {.lex_state = 2},
-  [134] = {.lex_state = 0},
-  [135] = {.lex_state = 0},
+  [133] = {.lex_state = 0},
+  [134] = {.lex_state = 2},
+  [135] = {.lex_state = 2},
   [136] = {.lex_state = 0},
   [137] = {.lex_state = 0},
   [138] = {.lex_state = 0},
   [139] = {.lex_state = 0},
   [140] = {.lex_state = 0},
-  [141] = {.lex_state = 2},
+  [141] = {.lex_state = 0},
   [142] = {.lex_state = 0},
-  [143] = {.lex_state = 2},
+  [143] = {.lex_state = 0},
   [144] = {.lex_state = 0},
   [145] = {.lex_state = 0},
-  [146] = {.lex_state = 0},
+  [146] = {.lex_state = 2},
   [147] = {.lex_state = 0},
-  [148] = {.lex_state = 3},
+  [148] = {.lex_state = 0},
   [149] = {.lex_state = 0},
-  [150] = {.lex_state = 3},
-  [151] = {.lex_state = 1},
+  [150] = {.lex_state = 2},
+  [151] = {.lex_state = 0},
   [152] = {.lex_state = 0},
   [153] = {.lex_state = 0},
   [154] = {.lex_state = 0},
   [155] = {.lex_state = 0},
-  [156] = {.lex_state = 0},
+  [156] = {.lex_state = 2},
   [157] = {.lex_state = 0},
   [158] = {.lex_state = 0},
-  [159] = {.lex_state = 0},
+  [159] = {.lex_state = 2},
   [160] = {.lex_state = 0},
   [161] = {.lex_state = 0},
   [162] = {.lex_state = 0},
-  [163] = {.lex_state = 0},
+  [163] = {.lex_state = 2},
   [164] = {.lex_state = 0},
   [165] = {.lex_state = 0},
-  [166] = {.lex_state = 0},
+  [166] = {.lex_state = 3},
   [167] = {.lex_state = 0},
-  [168] = {.lex_state = 3},
-  [169] = {.lex_state = 0},
-  [170] = {.lex_state = 2},
-  [171] = {.lex_state = 2},
+  [168] = {.lex_state = 0},
+  [169] = {.lex_state = 3},
+  [170] = {.lex_state = 1},
+  [171] = {.lex_state = 0},
   [172] = {.lex_state = 0},
-  [173] = {.lex_state = 0},
+  [173] = {.lex_state = 2},
   [174] = {.lex_state = 0},
   [175] = {.lex_state = 0},
-  [176] = {.lex_state = 3},
+  [176] = {.lex_state = 0},
   [177] = {.lex_state = 0},
   [178] = {.lex_state = 0},
-  [179] = {.lex_state = 2},
+  [179] = {.lex_state = 0},
   [180] = {.lex_state = 0},
-  [181] = {.lex_state = 2},
-  [182] = {.lex_state = 2},
-  [183] = {.lex_state = 2},
-  [184] = {.lex_state = 2},
-  [185] = {.lex_state = 2},
+  [181] = {.lex_state = 0},
+  [182] = {.lex_state = 0},
+  [183] = {.lex_state = 3},
+  [184] = {.lex_state = 0},
+  [185] = {.lex_state = 0},
   [186] = {.lex_state = 0},
   [187] = {.lex_state = 0},
   [188] = {.lex_state = 0},
-  [189] = {.lex_state = 1},
-  [190] = {.lex_state = 2},
-  [191] = {.lex_state = 2},
+  [189] = {.lex_state = 0},
+  [190] = {.lex_state = 0},
+  [191] = {.lex_state = 0},
   [192] = {.lex_state = 2},
-  [193] = {.lex_state = 1},
-  [194] = {.lex_state = 2},
+  [193] = {.lex_state = 0},
+  [194] = {.lex_state = 0},
   [195] = {.lex_state = 0},
   [196] = {.lex_state = 2},
   [197] = {.lex_state = 0},
-  [198] = {.lex_state = 2},
-  [199] = {.lex_state = 2},
-  [200] = {.lex_state = 0},
+  [198] = {.lex_state = 0},
+  [199] = {.lex_state = 1},
+  [200] = {.lex_state = 2},
   [201] = {.lex_state = 0},
-  [202] = {.lex_state = 0},
+  [202] = {.lex_state = 2},
   [203] = {.lex_state = 0},
-  [204] = {.lex_state = 2},
-  [205] = {.lex_state = 1},
+  [204] = {.lex_state = 1},
+  [205] = {.lex_state = 0},
   [206] = {.lex_state = 2},
-  [207] = {.lex_state = 0},
-  [208] = {.lex_state = 0},
-  [209] = {.lex_state = 0},
-  [210] = {.lex_state = 0},
+  [207] = {.lex_state = 2},
+  [208] = {.lex_state = 2},
+  [209] = {.lex_state = 2},
+  [210] = {.lex_state = 1},
   [211] = {.lex_state = 0},
   [212] = {.lex_state = 0},
   [213] = {.lex_state = 0},
-  [214] = {.lex_state = 0},
-  [215] = {.lex_state = 0},
-  [216] = {.lex_state = 0},
-  [217] = {.lex_state = 0},
+  [214] = {.lex_state = 2},
+  [215] = {.lex_state = 2},
+  [216] = {.lex_state = 2},
+  [217] = {.lex_state = 2},
   [218] = {.lex_state = 0},
-  [219] = {.lex_state = 0},
-  [220] = {.lex_state = 0},
-  [221] = {.lex_state = 0},
+  [219] = {.lex_state = 2},
+  [220] = {.lex_state = 2},
+  [221] = {.lex_state = 3},
   [222] = {.lex_state = 0},
   [223] = {.lex_state = 0},
-  [224] = {.lex_state = 0},
+  [224] = {.lex_state = 1},
   [225] = {.lex_state = 0},
   [226] = {.lex_state = 0},
   [227] = {.lex_state = 0},
@@ -6128,11 +6666,11 @@ static const TSLexerMode ts_lex_modes[STATE_COUNT] = {
   [243] = {.lex_state = 0},
   [244] = {.lex_state = 0},
   [245] = {.lex_state = 0},
-  [246] = {.lex_state = 0, .external_lex_state = 1},
+  [246] = {.lex_state = 0},
   [247] = {.lex_state = 0},
   [248] = {.lex_state = 0},
   [249] = {.lex_state = 0},
-  [250] = {.lex_state = 2},
+  [250] = {.lex_state = 0},
   [251] = {.lex_state = 0},
   [252] = {.lex_state = 0},
   [253] = {.lex_state = 0},
@@ -6140,28 +6678,28 @@ static const TSLexerMode ts_lex_modes[STATE_COUNT] = {
   [255] = {.lex_state = 0},
   [256] = {.lex_state = 0},
   [257] = {.lex_state = 0},
-  [258] = {.lex_state = 0, .external_lex_state = 1},
-  [259] = {.lex_state = 5},
+  [258] = {.lex_state = 0},
+  [259] = {.lex_state = 0},
   [260] = {.lex_state = 0},
-  [261] = {.lex_state = 0},
+  [261] = {.lex_state = 2},
   [262] = {.lex_state = 0},
   [263] = {.lex_state = 0},
-  [264] = {.lex_state = 0, .external_lex_state = 1},
+  [264] = {.lex_state = 2},
   [265] = {.lex_state = 0},
   [266] = {.lex_state = 0},
   [267] = {.lex_state = 0},
   [268] = {.lex_state = 0},
-  [269] = {.lex_state = 0},
+  [269] = {.lex_state = 0, .external_lex_state = 1},
   [270] = {.lex_state = 0},
   [271] = {.lex_state = 0},
-  [272] = {.lex_state = 0},
+  [272] = {.lex_state = 0, .external_lex_state = 1},
   [273] = {.lex_state = 0},
   [274] = {.lex_state = 0},
   [275] = {.lex_state = 0},
   [276] = {.lex_state = 0},
-  [277] = {.lex_state = 59},
+  [277] = {.lex_state = 0},
   [278] = {.lex_state = 0},
-  [279] = {.lex_state = 0},
+  [279] = {.lex_state = 5},
   [280] = {.lex_state = 0},
   [281] = {.lex_state = 0},
   [282] = {.lex_state = 0},
@@ -6169,28 +6707,50 @@ static const TSLexerMode ts_lex_modes[STATE_COUNT] = {
   [284] = {.lex_state = 0},
   [285] = {.lex_state = 0},
   [286] = {.lex_state = 0},
-  [287] = {.lex_state = 2},
+  [287] = {.lex_state = 0},
   [288] = {.lex_state = 0},
-  [289] = {.lex_state = 49},
+  [289] = {.lex_state = 0},
   [290] = {.lex_state = 0},
-  [291] = {.lex_state = 0},
+  [291] = {.lex_state = 49},
   [292] = {.lex_state = 0},
   [293] = {.lex_state = 0},
   [294] = {.lex_state = 0},
-  [295] = {.lex_state = 0},
-  [296] = {.lex_state = 2},
+  [295] = {.lex_state = 59},
+  [296] = {.lex_state = 0},
   [297] = {.lex_state = 0},
-  [298] = {.lex_state = 0},
+  [298] = {.lex_state = 2},
   [299] = {.lex_state = 0},
-  [300] = {.lex_state = 0},
+  [300] = {.lex_state = 0, .external_lex_state = 1},
   [301] = {.lex_state = 0},
-  [302] = {.lex_state = 0, .external_lex_state = 1},
+  [302] = {.lex_state = 0},
   [303] = {.lex_state = 0},
   [304] = {.lex_state = 0},
   [305] = {.lex_state = 0},
   [306] = {.lex_state = 0},
-  [307] = {(TSStateId)(-1),},
-  [308] = {(TSStateId)(-1),},
+  [307] = {.lex_state = 0},
+  [308] = {.lex_state = 0},
+  [309] = {.lex_state = 0},
+  [310] = {.lex_state = 0},
+  [311] = {.lex_state = 0},
+  [312] = {.lex_state = 0},
+  [313] = {.lex_state = 0},
+  [314] = {.lex_state = 0},
+  [315] = {.lex_state = 0, .external_lex_state = 1},
+  [316] = {.lex_state = 0},
+  [317] = {.lex_state = 0},
+  [318] = {.lex_state = 0},
+  [319] = {.lex_state = 0},
+  [320] = {.lex_state = 0, .external_lex_state = 1},
+  [321] = {.lex_state = 0, .external_lex_state = 1},
+  [322] = {.lex_state = 0},
+  [323] = {.lex_state = 0},
+  [324] = {.lex_state = 0},
+  [325] = {.lex_state = 0},
+  [326] = {.lex_state = 0},
+  [327] = {.lex_state = 0},
+  [328] = {.lex_state = 0},
+  [329] = {(TSStateId)(-1),},
+  [330] = {(TSStateId)(-1),},
 };
 
 static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
@@ -6226,9 +6786,13 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_integer] = ACTIONS(1),
     [anon_sym_any] = ACTIONS(1),
     [anon_sym_Any] = ACTIONS(1),
+    [anon_sym_RECT] = ACTIONS(1),
+    [anon_sym_rect] = ACTIONS(1),
     [anon_sym_Range] = ACTIONS(1),
     [anon_sym_range] = ACTIONS(1),
+    [anon_sym_RANGE] = ACTIONS(1),
     [anon_sym_SubShader] = ACTIONS(1),
+    [anon_sym_Subshader] = ACTIONS(1),
     [anon_sym_Pass] = ACTIONS(1),
     [anon_sym_Name] = ACTIONS(1),
     [anon_sym_Tags] = ACTIONS(1),
@@ -6241,6 +6805,9 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_off] = ACTIONS(1),
     [anon_sym_ZWrite] = ACTIONS(1),
     [anon_sym_ZTest] = ACTIONS(1),
+    [anon_sym_Ztest] = ACTIONS(1),
+    [anon_sym_ztest] = ACTIONS(1),
+    [anon_sym_SeparateSpecular] = ACTIONS(1),
     [anon_sym_ZClip] = ACTIONS(1),
     [anon_sym_Blend] = ACTIONS(1),
     [anon_sym_BlendOp] = ACTIONS(1),
@@ -6252,6 +6819,9 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_G] = ACTIONS(1),
     [anon_sym_B] = ACTIONS(1),
     [anon_sym_0] = ACTIONS(1),
+    [anon_sym_rgba] = ACTIONS(1),
+    [anon_sym_rgb] = ACTIONS(1),
+    [anon_sym_GBA] = ACTIONS(1),
     [anon_sym_Offset] = ACTIONS(1),
     [anon_sym_DASH] = ACTIONS(1),
     [anon_sym_AlphaToMask] = ACTIONS(1),
@@ -6311,7 +6881,9 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Shininess] = ACTIONS(1),
     [anon_sym_SetTexture] = ACTIONS(1),
     [anon_sym_combine] = ACTIONS(1),
+    [anon_sym_Combine] = ACTIONS(1),
     [anon_sym_constantColor] = ACTIONS(1),
+    [anon_sym_ConstantColor] = ACTIONS(1),
     [anon_sym_Matrix] = ACTIONS(1),
     [anon_sym_texture] = ACTIONS(1),
     [anon_sym_primary] = ACTIONS(1),
@@ -6325,7 +6897,12 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_double] = ACTIONS(1),
     [anon_sym_quad] = ACTIONS(1),
     [anon_sym_lerp] = ACTIONS(1),
+    [anon_sym_DOUBLE] = ACTIONS(1),
+    [anon_sym_QUAD] = ACTIONS(1),
+    [anon_sym_LERP] = ACTIONS(1),
     [anon_sym_AlphaTest] = ACTIONS(1),
+    [anon_sym_Alphatest] = ACTIONS(1),
+    [anon_sym_alphatest] = ACTIONS(1),
     [anon_sym_BindChannels] = ACTIONS(1),
     [anon_sym_Bind] = ACTIONS(1),
     [anon_sym_vertex] = ACTIONS(1),
@@ -6386,6 +6963,9 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_HLSLPROGRAM] = ACTIONS(1),
     [anon_sym_HLSLINCLUDE] = ACTIONS(1),
     [anon_sym_ENDHLSL] = ACTIONS(1),
+    [anon_sym_GLSLPROGRAM] = ACTIONS(1),
+    [anon_sym_GLSLINCLUDE] = ACTIONS(1),
+    [anon_sym_ENDGLSL] = ACTIONS(1),
     [anon_sym_CustomEditor] = ACTIONS(1),
     [anon_sym_Dependency] = ACTIONS(1),
     [anon_sym_FallBack] = ACTIONS(1),
@@ -6402,16 +6982,17 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_program_content] = ACTIONS(1),
   },
   [STATE(1)] = {
-    [sym_source_file] = STATE(267),
-    [sym__top_level_item] = STATE(197),
-    [sym_shader_definition] = STATE(175),
-    [sym_subshader_block] = STATE(175),
-    [sym_pass_block] = STATE(175),
+    [sym_source_file] = STATE(263),
+    [sym__top_level_item] = STATE(186),
+    [sym_shader_definition] = STATE(191),
+    [sym_subshader_block] = STATE(191),
+    [sym_pass_block] = STATE(191),
     [sym_comment] = STATE(1),
-    [aux_sym_source_file_repeat1] = STATE(126),
+    [aux_sym_source_file_repeat1] = STATE(132),
     [ts_builtin_sym_end] = ACTIONS(7),
     [anon_sym_Shader] = ACTIONS(9),
     [anon_sym_SubShader] = ACTIONS(11),
+    [anon_sym_Subshader] = ACTIONS(11),
     [anon_sym_Pass] = ACTIONS(13),
     [anon_sym_SLASH_SLASH] = ACTIONS(3),
     [anon_sym_SLASH_STAR] = ACTIONS(5),
@@ -6421,13 +7002,18 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_RBRACE] = ACTIONS(15),
     [anon_sym_COMMA] = ACTIONS(15),
     [anon_sym_LBRACK] = ACTIONS(15),
+    [anon_sym_Color] = ACTIONS(17),
     [anon_sym_SubShader] = ACTIONS(15),
+    [anon_sym_Subshader] = ACTIONS(15),
     [anon_sym_Pass] = ACTIONS(17),
     [anon_sym_Name] = ACTIONS(15),
     [anon_sym_Tags] = ACTIONS(15),
     [anon_sym_Cull] = ACTIONS(15),
     [anon_sym_ZWrite] = ACTIONS(15),
     [anon_sym_ZTest] = ACTIONS(15),
+    [anon_sym_Ztest] = ACTIONS(15),
+    [anon_sym_ztest] = ACTIONS(15),
+    [anon_sym_SeparateSpecular] = ACTIONS(15),
     [anon_sym_ZClip] = ACTIONS(15),
     [anon_sym_Blend] = ACTIONS(17),
     [anon_sym_BlendOp] = ACTIONS(15),
@@ -6448,9 +7034,21 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Lighting] = ACTIONS(15),
     [anon_sym_Fog] = ACTIONS(15),
     [anon_sym_ColorMaterial] = ACTIONS(15),
+    [anon_sym_Emission] = ACTIONS(15),
     [anon_sym_Material] = ACTIONS(15),
+    [anon_sym_Diffuse] = ACTIONS(15),
+    [anon_sym_Ambient] = ACTIONS(15),
+    [anon_sym_Specular] = ACTIONS(15),
+    [anon_sym_Shininess] = ACTIONS(15),
     [anon_sym_SetTexture] = ACTIONS(15),
+    [anon_sym_combine] = ACTIONS(15),
+    [anon_sym_Combine] = ACTIONS(15),
+    [anon_sym_constantColor] = ACTIONS(15),
+    [anon_sym_ConstantColor] = ACTIONS(15),
+    [anon_sym_Matrix] = ACTIONS(15),
     [anon_sym_AlphaTest] = ACTIONS(15),
+    [anon_sym_Alphatest] = ACTIONS(15),
+    [anon_sym_alphatest] = ACTIONS(15),
     [anon_sym_BindChannels] = ACTIONS(15),
     [anon_sym_Stencil] = ACTIONS(15),
     [anon_sym_Ref] = ACTIONS(15),
@@ -6488,6 +7086,8 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_CGINCLUDE] = ACTIONS(15),
     [anon_sym_HLSLPROGRAM] = ACTIONS(15),
     [anon_sym_HLSLINCLUDE] = ACTIONS(15),
+    [anon_sym_GLSLPROGRAM] = ACTIONS(15),
+    [anon_sym_GLSLINCLUDE] = ACTIONS(15),
     [anon_sym_UsePass] = ACTIONS(15),
     [anon_sym_GrabPass] = ACTIONS(15),
     [anon_sym_LOD] = ACTIONS(15),
@@ -6498,13 +7098,19 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_comment] = STATE(3),
     [sym_identifier] = ACTIONS(19),
     [anon_sym_RBRACE] = ACTIONS(21),
+    [anon_sym_LBRACK] = ACTIONS(21),
+    [anon_sym_Color] = ACTIONS(19),
     [anon_sym_SubShader] = ACTIONS(19),
+    [anon_sym_Subshader] = ACTIONS(19),
     [anon_sym_Pass] = ACTIONS(19),
     [anon_sym_Name] = ACTIONS(19),
     [anon_sym_Tags] = ACTIONS(19),
     [anon_sym_Cull] = ACTIONS(19),
     [anon_sym_ZWrite] = ACTIONS(19),
     [anon_sym_ZTest] = ACTIONS(19),
+    [anon_sym_Ztest] = ACTIONS(19),
+    [anon_sym_ztest] = ACTIONS(19),
+    [anon_sym_SeparateSpecular] = ACTIONS(19),
     [anon_sym_ZClip] = ACTIONS(19),
     [anon_sym_Blend] = ACTIONS(19),
     [anon_sym_BlendOp] = ACTIONS(19),
@@ -6519,6 +7125,8 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Material] = ACTIONS(19),
     [anon_sym_SetTexture] = ACTIONS(19),
     [anon_sym_AlphaTest] = ACTIONS(19),
+    [anon_sym_Alphatest] = ACTIONS(19),
+    [anon_sym_alphatest] = ACTIONS(19),
     [anon_sym_BindChannels] = ACTIONS(19),
     [anon_sym_Stencil] = ACTIONS(19),
     [anon_sym_Ref] = ACTIONS(19),
@@ -6556,6 +7164,8 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_CGINCLUDE] = ACTIONS(19),
     [anon_sym_HLSLPROGRAM] = ACTIONS(19),
     [anon_sym_HLSLINCLUDE] = ACTIONS(19),
+    [anon_sym_GLSLPROGRAM] = ACTIONS(19),
+    [anon_sym_GLSLINCLUDE] = ACTIONS(19),
     [anon_sym_UsePass] = ACTIONS(19),
     [anon_sym_GrabPass] = ACTIONS(19),
     [anon_sym_LOD] = ACTIONS(19),
@@ -6563,603 +7173,507 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_SLASH_STAR] = ACTIONS(5),
     [sym_number_literal] = ACTIONS(21),
   },
+  [STATE(4)] = {
+    [sym__subshader_body_item] = STATE(78),
+    [sym_pass_block] = STATE(79),
+    [sym_tags_block] = STATE(79),
+    [sym__render_state] = STATE(79),
+    [sym_cull_command] = STATE(55),
+    [sym_zwrite_command] = STATE(55),
+    [sym_ztest_command] = STATE(55),
+    [sym_separate_specular_command] = STATE(55),
+    [sym_zclip_command] = STATE(55),
+    [sym_blend_command] = STATE(55),
+    [sym_blend_off_command] = STATE(55),
+    [sym_blend_op_command] = STATE(55),
+    [sym_color_mask_command] = STATE(55),
+    [sym_offset_command] = STATE(55),
+    [sym_alpha_to_mask_command] = STATE(55),
+    [sym_conservative_command] = STATE(55),
+    [sym_legacy_lighting_command] = STATE(55),
+    [sym_legacy_fog_command] = STATE(55),
+    [sym_legacy_color_material_command] = STATE(55),
+    [sym_legacy_color_command] = STATE(55),
+    [sym_legacy_material_block] = STATE(55),
+    [sym_legacy_set_texture_command] = STATE(55),
+    [sym_legacy_alpha_test_command] = STATE(55),
+    [sym_legacy_bind_channels_command] = STATE(55),
+    [sym_stencil_block] = STATE(55),
+    [sym_cg_program_block] = STATE(79),
+    [sym_hlsl_program_block] = STATE(79),
+    [sym_glsl_program_block] = STATE(79),
+    [sym_use_pass] = STATE(79),
+    [sym_grab_pass] = STATE(79),
+    [sym_lod] = STATE(79),
+    [sym_comment] = STATE(4),
+    [aux_sym_subshader_block_repeat1] = STATE(6),
+    [anon_sym_RBRACE] = ACTIONS(23),
+    [anon_sym_Color] = ACTIONS(25),
+    [anon_sym_Pass] = ACTIONS(13),
+    [anon_sym_Tags] = ACTIONS(27),
+    [anon_sym_Cull] = ACTIONS(29),
+    [anon_sym_ZWrite] = ACTIONS(31),
+    [anon_sym_ZTest] = ACTIONS(33),
+    [anon_sym_Ztest] = ACTIONS(33),
+    [anon_sym_ztest] = ACTIONS(33),
+    [anon_sym_SeparateSpecular] = ACTIONS(35),
+    [anon_sym_ZClip] = ACTIONS(37),
+    [anon_sym_Blend] = ACTIONS(39),
+    [anon_sym_BlendOp] = ACTIONS(41),
+    [anon_sym_ColorMask] = ACTIONS(43),
+    [anon_sym_Offset] = ACTIONS(45),
+    [anon_sym_AlphaToMask] = ACTIONS(47),
+    [anon_sym_Conservative] = ACTIONS(49),
+    [anon_sym_Lighting] = ACTIONS(51),
+    [anon_sym_Fog] = ACTIONS(53),
+    [anon_sym_ColorMaterial] = ACTIONS(55),
+    [anon_sym_Material] = ACTIONS(57),
+    [anon_sym_SetTexture] = ACTIONS(59),
+    [anon_sym_AlphaTest] = ACTIONS(61),
+    [anon_sym_Alphatest] = ACTIONS(61),
+    [anon_sym_alphatest] = ACTIONS(61),
+    [anon_sym_BindChannels] = ACTIONS(63),
+    [anon_sym_Stencil] = ACTIONS(65),
+    [anon_sym_CGPROGRAM] = ACTIONS(67),
+    [anon_sym_CGINCLUDE] = ACTIONS(67),
+    [anon_sym_HLSLPROGRAM] = ACTIONS(69),
+    [anon_sym_HLSLINCLUDE] = ACTIONS(69),
+    [anon_sym_GLSLPROGRAM] = ACTIONS(71),
+    [anon_sym_GLSLINCLUDE] = ACTIONS(71),
+    [anon_sym_UsePass] = ACTIONS(73),
+    [anon_sym_GrabPass] = ACTIONS(75),
+    [anon_sym_LOD] = ACTIONS(77),
+    [anon_sym_SLASH_SLASH] = ACTIONS(3),
+    [anon_sym_SLASH_STAR] = ACTIONS(5),
+  },
+  [STATE(5)] = {
+    [sym__subshader_body_item] = STATE(78),
+    [sym_pass_block] = STATE(79),
+    [sym_tags_block] = STATE(79),
+    [sym__render_state] = STATE(79),
+    [sym_cull_command] = STATE(55),
+    [sym_zwrite_command] = STATE(55),
+    [sym_ztest_command] = STATE(55),
+    [sym_separate_specular_command] = STATE(55),
+    [sym_zclip_command] = STATE(55),
+    [sym_blend_command] = STATE(55),
+    [sym_blend_off_command] = STATE(55),
+    [sym_blend_op_command] = STATE(55),
+    [sym_color_mask_command] = STATE(55),
+    [sym_offset_command] = STATE(55),
+    [sym_alpha_to_mask_command] = STATE(55),
+    [sym_conservative_command] = STATE(55),
+    [sym_legacy_lighting_command] = STATE(55),
+    [sym_legacy_fog_command] = STATE(55),
+    [sym_legacy_color_material_command] = STATE(55),
+    [sym_legacy_color_command] = STATE(55),
+    [sym_legacy_material_block] = STATE(55),
+    [sym_legacy_set_texture_command] = STATE(55),
+    [sym_legacy_alpha_test_command] = STATE(55),
+    [sym_legacy_bind_channels_command] = STATE(55),
+    [sym_stencil_block] = STATE(55),
+    [sym_cg_program_block] = STATE(79),
+    [sym_hlsl_program_block] = STATE(79),
+    [sym_glsl_program_block] = STATE(79),
+    [sym_use_pass] = STATE(79),
+    [sym_grab_pass] = STATE(79),
+    [sym_lod] = STATE(79),
+    [sym_comment] = STATE(5),
+    [aux_sym_subshader_block_repeat1] = STATE(4),
+    [anon_sym_RBRACE] = ACTIONS(79),
+    [anon_sym_Color] = ACTIONS(25),
+    [anon_sym_Pass] = ACTIONS(13),
+    [anon_sym_Tags] = ACTIONS(27),
+    [anon_sym_Cull] = ACTIONS(29),
+    [anon_sym_ZWrite] = ACTIONS(31),
+    [anon_sym_ZTest] = ACTIONS(33),
+    [anon_sym_Ztest] = ACTIONS(33),
+    [anon_sym_ztest] = ACTIONS(33),
+    [anon_sym_SeparateSpecular] = ACTIONS(35),
+    [anon_sym_ZClip] = ACTIONS(37),
+    [anon_sym_Blend] = ACTIONS(39),
+    [anon_sym_BlendOp] = ACTIONS(41),
+    [anon_sym_ColorMask] = ACTIONS(43),
+    [anon_sym_Offset] = ACTIONS(45),
+    [anon_sym_AlphaToMask] = ACTIONS(47),
+    [anon_sym_Conservative] = ACTIONS(49),
+    [anon_sym_Lighting] = ACTIONS(51),
+    [anon_sym_Fog] = ACTIONS(53),
+    [anon_sym_ColorMaterial] = ACTIONS(55),
+    [anon_sym_Material] = ACTIONS(57),
+    [anon_sym_SetTexture] = ACTIONS(59),
+    [anon_sym_AlphaTest] = ACTIONS(61),
+    [anon_sym_Alphatest] = ACTIONS(61),
+    [anon_sym_alphatest] = ACTIONS(61),
+    [anon_sym_BindChannels] = ACTIONS(63),
+    [anon_sym_Stencil] = ACTIONS(65),
+    [anon_sym_CGPROGRAM] = ACTIONS(67),
+    [anon_sym_CGINCLUDE] = ACTIONS(67),
+    [anon_sym_HLSLPROGRAM] = ACTIONS(69),
+    [anon_sym_HLSLINCLUDE] = ACTIONS(69),
+    [anon_sym_GLSLPROGRAM] = ACTIONS(71),
+    [anon_sym_GLSLINCLUDE] = ACTIONS(71),
+    [anon_sym_UsePass] = ACTIONS(73),
+    [anon_sym_GrabPass] = ACTIONS(75),
+    [anon_sym_LOD] = ACTIONS(77),
+    [anon_sym_SLASH_SLASH] = ACTIONS(3),
+    [anon_sym_SLASH_STAR] = ACTIONS(5),
+  },
+  [STATE(6)] = {
+    [sym__subshader_body_item] = STATE(78),
+    [sym_pass_block] = STATE(79),
+    [sym_tags_block] = STATE(79),
+    [sym__render_state] = STATE(79),
+    [sym_cull_command] = STATE(55),
+    [sym_zwrite_command] = STATE(55),
+    [sym_ztest_command] = STATE(55),
+    [sym_separate_specular_command] = STATE(55),
+    [sym_zclip_command] = STATE(55),
+    [sym_blend_command] = STATE(55),
+    [sym_blend_off_command] = STATE(55),
+    [sym_blend_op_command] = STATE(55),
+    [sym_color_mask_command] = STATE(55),
+    [sym_offset_command] = STATE(55),
+    [sym_alpha_to_mask_command] = STATE(55),
+    [sym_conservative_command] = STATE(55),
+    [sym_legacy_lighting_command] = STATE(55),
+    [sym_legacy_fog_command] = STATE(55),
+    [sym_legacy_color_material_command] = STATE(55),
+    [sym_legacy_color_command] = STATE(55),
+    [sym_legacy_material_block] = STATE(55),
+    [sym_legacy_set_texture_command] = STATE(55),
+    [sym_legacy_alpha_test_command] = STATE(55),
+    [sym_legacy_bind_channels_command] = STATE(55),
+    [sym_stencil_block] = STATE(55),
+    [sym_cg_program_block] = STATE(79),
+    [sym_hlsl_program_block] = STATE(79),
+    [sym_glsl_program_block] = STATE(79),
+    [sym_use_pass] = STATE(79),
+    [sym_grab_pass] = STATE(79),
+    [sym_lod] = STATE(79),
+    [sym_comment] = STATE(6),
+    [aux_sym_subshader_block_repeat1] = STATE(6),
+    [anon_sym_RBRACE] = ACTIONS(81),
+    [anon_sym_Color] = ACTIONS(83),
+    [anon_sym_Pass] = ACTIONS(86),
+    [anon_sym_Tags] = ACTIONS(89),
+    [anon_sym_Cull] = ACTIONS(92),
+    [anon_sym_ZWrite] = ACTIONS(95),
+    [anon_sym_ZTest] = ACTIONS(98),
+    [anon_sym_Ztest] = ACTIONS(98),
+    [anon_sym_ztest] = ACTIONS(98),
+    [anon_sym_SeparateSpecular] = ACTIONS(101),
+    [anon_sym_ZClip] = ACTIONS(104),
+    [anon_sym_Blend] = ACTIONS(107),
+    [anon_sym_BlendOp] = ACTIONS(110),
+    [anon_sym_ColorMask] = ACTIONS(113),
+    [anon_sym_Offset] = ACTIONS(116),
+    [anon_sym_AlphaToMask] = ACTIONS(119),
+    [anon_sym_Conservative] = ACTIONS(122),
+    [anon_sym_Lighting] = ACTIONS(125),
+    [anon_sym_Fog] = ACTIONS(128),
+    [anon_sym_ColorMaterial] = ACTIONS(131),
+    [anon_sym_Material] = ACTIONS(134),
+    [anon_sym_SetTexture] = ACTIONS(137),
+    [anon_sym_AlphaTest] = ACTIONS(140),
+    [anon_sym_Alphatest] = ACTIONS(140),
+    [anon_sym_alphatest] = ACTIONS(140),
+    [anon_sym_BindChannels] = ACTIONS(143),
+    [anon_sym_Stencil] = ACTIONS(146),
+    [anon_sym_CGPROGRAM] = ACTIONS(149),
+    [anon_sym_CGINCLUDE] = ACTIONS(149),
+    [anon_sym_HLSLPROGRAM] = ACTIONS(152),
+    [anon_sym_HLSLINCLUDE] = ACTIONS(152),
+    [anon_sym_GLSLPROGRAM] = ACTIONS(155),
+    [anon_sym_GLSLINCLUDE] = ACTIONS(155),
+    [anon_sym_UsePass] = ACTIONS(158),
+    [anon_sym_GrabPass] = ACTIONS(161),
+    [anon_sym_LOD] = ACTIONS(164),
+    [anon_sym_SLASH_SLASH] = ACTIONS(3),
+    [anon_sym_SLASH_STAR] = ACTIONS(5),
+  },
+  [STATE(7)] = {
+    [sym__pass_body_item] = STATE(82),
+    [sym_pass_name] = STATE(81),
+    [sym_tags_block] = STATE(81),
+    [sym__render_state] = STATE(81),
+    [sym_cull_command] = STATE(55),
+    [sym_zwrite_command] = STATE(55),
+    [sym_ztest_command] = STATE(55),
+    [sym_separate_specular_command] = STATE(55),
+    [sym_zclip_command] = STATE(55),
+    [sym_blend_command] = STATE(55),
+    [sym_blend_off_command] = STATE(55),
+    [sym_blend_op_command] = STATE(55),
+    [sym_color_mask_command] = STATE(55),
+    [sym_offset_command] = STATE(55),
+    [sym_alpha_to_mask_command] = STATE(55),
+    [sym_conservative_command] = STATE(55),
+    [sym_legacy_lighting_command] = STATE(55),
+    [sym_legacy_fog_command] = STATE(55),
+    [sym_legacy_color_material_command] = STATE(55),
+    [sym_legacy_color_command] = STATE(55),
+    [sym_legacy_material_block] = STATE(55),
+    [sym_legacy_set_texture_command] = STATE(55),
+    [sym_legacy_alpha_test_command] = STATE(55),
+    [sym_legacy_bind_channels_command] = STATE(55),
+    [sym_stencil_block] = STATE(55),
+    [sym_cg_program_block] = STATE(81),
+    [sym_hlsl_program_block] = STATE(81),
+    [sym_glsl_program_block] = STATE(81),
+    [sym_lod] = STATE(81),
+    [sym_comment] = STATE(7),
+    [aux_sym_pass_block_repeat1] = STATE(9),
+    [anon_sym_RBRACE] = ACTIONS(167),
+    [anon_sym_Color] = ACTIONS(25),
+    [anon_sym_Name] = ACTIONS(169),
+    [anon_sym_Tags] = ACTIONS(27),
+    [anon_sym_Cull] = ACTIONS(29),
+    [anon_sym_ZWrite] = ACTIONS(31),
+    [anon_sym_ZTest] = ACTIONS(33),
+    [anon_sym_Ztest] = ACTIONS(33),
+    [anon_sym_ztest] = ACTIONS(33),
+    [anon_sym_SeparateSpecular] = ACTIONS(35),
+    [anon_sym_ZClip] = ACTIONS(37),
+    [anon_sym_Blend] = ACTIONS(39),
+    [anon_sym_BlendOp] = ACTIONS(41),
+    [anon_sym_ColorMask] = ACTIONS(43),
+    [anon_sym_Offset] = ACTIONS(45),
+    [anon_sym_AlphaToMask] = ACTIONS(47),
+    [anon_sym_Conservative] = ACTIONS(49),
+    [anon_sym_Lighting] = ACTIONS(51),
+    [anon_sym_Fog] = ACTIONS(53),
+    [anon_sym_ColorMaterial] = ACTIONS(55),
+    [anon_sym_Material] = ACTIONS(57),
+    [anon_sym_SetTexture] = ACTIONS(59),
+    [anon_sym_AlphaTest] = ACTIONS(61),
+    [anon_sym_Alphatest] = ACTIONS(61),
+    [anon_sym_alphatest] = ACTIONS(61),
+    [anon_sym_BindChannels] = ACTIONS(63),
+    [anon_sym_Stencil] = ACTIONS(65),
+    [anon_sym_CGPROGRAM] = ACTIONS(67),
+    [anon_sym_CGINCLUDE] = ACTIONS(67),
+    [anon_sym_HLSLPROGRAM] = ACTIONS(69),
+    [anon_sym_HLSLINCLUDE] = ACTIONS(69),
+    [anon_sym_GLSLPROGRAM] = ACTIONS(71),
+    [anon_sym_GLSLINCLUDE] = ACTIONS(71),
+    [anon_sym_LOD] = ACTIONS(77),
+    [anon_sym_SLASH_SLASH] = ACTIONS(3),
+    [anon_sym_SLASH_STAR] = ACTIONS(5),
+  },
+  [STATE(8)] = {
+    [sym__pass_body_item] = STATE(82),
+    [sym_pass_name] = STATE(81),
+    [sym_tags_block] = STATE(81),
+    [sym__render_state] = STATE(81),
+    [sym_cull_command] = STATE(55),
+    [sym_zwrite_command] = STATE(55),
+    [sym_ztest_command] = STATE(55),
+    [sym_separate_specular_command] = STATE(55),
+    [sym_zclip_command] = STATE(55),
+    [sym_blend_command] = STATE(55),
+    [sym_blend_off_command] = STATE(55),
+    [sym_blend_op_command] = STATE(55),
+    [sym_color_mask_command] = STATE(55),
+    [sym_offset_command] = STATE(55),
+    [sym_alpha_to_mask_command] = STATE(55),
+    [sym_conservative_command] = STATE(55),
+    [sym_legacy_lighting_command] = STATE(55),
+    [sym_legacy_fog_command] = STATE(55),
+    [sym_legacy_color_material_command] = STATE(55),
+    [sym_legacy_color_command] = STATE(55),
+    [sym_legacy_material_block] = STATE(55),
+    [sym_legacy_set_texture_command] = STATE(55),
+    [sym_legacy_alpha_test_command] = STATE(55),
+    [sym_legacy_bind_channels_command] = STATE(55),
+    [sym_stencil_block] = STATE(55),
+    [sym_cg_program_block] = STATE(81),
+    [sym_hlsl_program_block] = STATE(81),
+    [sym_glsl_program_block] = STATE(81),
+    [sym_lod] = STATE(81),
+    [sym_comment] = STATE(8),
+    [aux_sym_pass_block_repeat1] = STATE(7),
+    [anon_sym_RBRACE] = ACTIONS(171),
+    [anon_sym_Color] = ACTIONS(25),
+    [anon_sym_Name] = ACTIONS(169),
+    [anon_sym_Tags] = ACTIONS(27),
+    [anon_sym_Cull] = ACTIONS(29),
+    [anon_sym_ZWrite] = ACTIONS(31),
+    [anon_sym_ZTest] = ACTIONS(33),
+    [anon_sym_Ztest] = ACTIONS(33),
+    [anon_sym_ztest] = ACTIONS(33),
+    [anon_sym_SeparateSpecular] = ACTIONS(35),
+    [anon_sym_ZClip] = ACTIONS(37),
+    [anon_sym_Blend] = ACTIONS(39),
+    [anon_sym_BlendOp] = ACTIONS(41),
+    [anon_sym_ColorMask] = ACTIONS(43),
+    [anon_sym_Offset] = ACTIONS(45),
+    [anon_sym_AlphaToMask] = ACTIONS(47),
+    [anon_sym_Conservative] = ACTIONS(49),
+    [anon_sym_Lighting] = ACTIONS(51),
+    [anon_sym_Fog] = ACTIONS(53),
+    [anon_sym_ColorMaterial] = ACTIONS(55),
+    [anon_sym_Material] = ACTIONS(57),
+    [anon_sym_SetTexture] = ACTIONS(59),
+    [anon_sym_AlphaTest] = ACTIONS(61),
+    [anon_sym_Alphatest] = ACTIONS(61),
+    [anon_sym_alphatest] = ACTIONS(61),
+    [anon_sym_BindChannels] = ACTIONS(63),
+    [anon_sym_Stencil] = ACTIONS(65),
+    [anon_sym_CGPROGRAM] = ACTIONS(67),
+    [anon_sym_CGINCLUDE] = ACTIONS(67),
+    [anon_sym_HLSLPROGRAM] = ACTIONS(69),
+    [anon_sym_HLSLINCLUDE] = ACTIONS(69),
+    [anon_sym_GLSLPROGRAM] = ACTIONS(71),
+    [anon_sym_GLSLINCLUDE] = ACTIONS(71),
+    [anon_sym_LOD] = ACTIONS(77),
+    [anon_sym_SLASH_SLASH] = ACTIONS(3),
+    [anon_sym_SLASH_STAR] = ACTIONS(5),
+  },
+  [STATE(9)] = {
+    [sym__pass_body_item] = STATE(82),
+    [sym_pass_name] = STATE(81),
+    [sym_tags_block] = STATE(81),
+    [sym__render_state] = STATE(81),
+    [sym_cull_command] = STATE(55),
+    [sym_zwrite_command] = STATE(55),
+    [sym_ztest_command] = STATE(55),
+    [sym_separate_specular_command] = STATE(55),
+    [sym_zclip_command] = STATE(55),
+    [sym_blend_command] = STATE(55),
+    [sym_blend_off_command] = STATE(55),
+    [sym_blend_op_command] = STATE(55),
+    [sym_color_mask_command] = STATE(55),
+    [sym_offset_command] = STATE(55),
+    [sym_alpha_to_mask_command] = STATE(55),
+    [sym_conservative_command] = STATE(55),
+    [sym_legacy_lighting_command] = STATE(55),
+    [sym_legacy_fog_command] = STATE(55),
+    [sym_legacy_color_material_command] = STATE(55),
+    [sym_legacy_color_command] = STATE(55),
+    [sym_legacy_material_block] = STATE(55),
+    [sym_legacy_set_texture_command] = STATE(55),
+    [sym_legacy_alpha_test_command] = STATE(55),
+    [sym_legacy_bind_channels_command] = STATE(55),
+    [sym_stencil_block] = STATE(55),
+    [sym_cg_program_block] = STATE(81),
+    [sym_hlsl_program_block] = STATE(81),
+    [sym_glsl_program_block] = STATE(81),
+    [sym_lod] = STATE(81),
+    [sym_comment] = STATE(9),
+    [aux_sym_pass_block_repeat1] = STATE(9),
+    [anon_sym_RBRACE] = ACTIONS(173),
+    [anon_sym_Color] = ACTIONS(175),
+    [anon_sym_Name] = ACTIONS(178),
+    [anon_sym_Tags] = ACTIONS(181),
+    [anon_sym_Cull] = ACTIONS(184),
+    [anon_sym_ZWrite] = ACTIONS(187),
+    [anon_sym_ZTest] = ACTIONS(190),
+    [anon_sym_Ztest] = ACTIONS(190),
+    [anon_sym_ztest] = ACTIONS(190),
+    [anon_sym_SeparateSpecular] = ACTIONS(193),
+    [anon_sym_ZClip] = ACTIONS(196),
+    [anon_sym_Blend] = ACTIONS(199),
+    [anon_sym_BlendOp] = ACTIONS(202),
+    [anon_sym_ColorMask] = ACTIONS(205),
+    [anon_sym_Offset] = ACTIONS(208),
+    [anon_sym_AlphaToMask] = ACTIONS(211),
+    [anon_sym_Conservative] = ACTIONS(214),
+    [anon_sym_Lighting] = ACTIONS(217),
+    [anon_sym_Fog] = ACTIONS(220),
+    [anon_sym_ColorMaterial] = ACTIONS(223),
+    [anon_sym_Material] = ACTIONS(226),
+    [anon_sym_SetTexture] = ACTIONS(229),
+    [anon_sym_AlphaTest] = ACTIONS(232),
+    [anon_sym_Alphatest] = ACTIONS(232),
+    [anon_sym_alphatest] = ACTIONS(232),
+    [anon_sym_BindChannels] = ACTIONS(235),
+    [anon_sym_Stencil] = ACTIONS(238),
+    [anon_sym_CGPROGRAM] = ACTIONS(241),
+    [anon_sym_CGINCLUDE] = ACTIONS(241),
+    [anon_sym_HLSLPROGRAM] = ACTIONS(244),
+    [anon_sym_HLSLINCLUDE] = ACTIONS(244),
+    [anon_sym_GLSLPROGRAM] = ACTIONS(247),
+    [anon_sym_GLSLINCLUDE] = ACTIONS(247),
+    [anon_sym_LOD] = ACTIONS(250),
+    [anon_sym_SLASH_SLASH] = ACTIONS(3),
+    [anon_sym_SLASH_STAR] = ACTIONS(5),
+  },
 };
 
 static const uint16_t ts_small_parse_table[] = {
-  [0] = 33,
+  [0] = 30,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(13), 1,
-      anon_sym_Pass,
-    ACTIONS(23), 1,
-      anon_sym_RBRACE,
     ACTIONS(25), 1,
-      anon_sym_Tags,
+      anon_sym_Color,
     ACTIONS(27), 1,
-      anon_sym_Cull,
+      anon_sym_Tags,
     ACTIONS(29), 1,
-      anon_sym_ZWrite,
+      anon_sym_Cull,
     ACTIONS(31), 1,
-      anon_sym_ZTest,
-    ACTIONS(33), 1,
-      anon_sym_ZClip,
+      anon_sym_ZWrite,
     ACTIONS(35), 1,
-      anon_sym_Blend,
+      anon_sym_SeparateSpecular,
     ACTIONS(37), 1,
-      anon_sym_BlendOp,
+      anon_sym_ZClip,
     ACTIONS(39), 1,
-      anon_sym_ColorMask,
+      anon_sym_Blend,
     ACTIONS(41), 1,
-      anon_sym_Offset,
+      anon_sym_BlendOp,
     ACTIONS(43), 1,
-      anon_sym_AlphaToMask,
+      anon_sym_ColorMask,
     ACTIONS(45), 1,
-      anon_sym_Conservative,
+      anon_sym_Offset,
     ACTIONS(47), 1,
-      anon_sym_Lighting,
+      anon_sym_AlphaToMask,
     ACTIONS(49), 1,
-      anon_sym_Fog,
+      anon_sym_Conservative,
     ACTIONS(51), 1,
-      anon_sym_ColorMaterial,
+      anon_sym_Lighting,
     ACTIONS(53), 1,
-      anon_sym_Material,
+      anon_sym_Fog,
     ACTIONS(55), 1,
-      anon_sym_SetTexture,
+      anon_sym_ColorMaterial,
     ACTIONS(57), 1,
-      anon_sym_AlphaTest,
+      anon_sym_Material,
     ACTIONS(59), 1,
+      anon_sym_SetTexture,
+    ACTIONS(63), 1,
       anon_sym_BindChannels,
-    ACTIONS(61), 1,
+    ACTIONS(65), 1,
       anon_sym_Stencil,
-    ACTIONS(67), 1,
-      anon_sym_UsePass,
-    ACTIONS(69), 1,
-      anon_sym_GrabPass,
-    ACTIONS(71), 1,
+    ACTIONS(77), 1,
       anon_sym_LOD,
-    STATE(4), 1,
-      sym_comment,
-    STATE(5), 1,
-      aux_sym_subshader_block_repeat1,
-    STATE(78), 1,
-      sym__subshader_body_item,
-    ACTIONS(63), 2,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-    ACTIONS(65), 2,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-    STATE(77), 8,
-      sym_pass_block,
-      sym_tags_block,
-      sym__render_state,
-      sym_cg_program_block,
-      sym_hlsl_program_block,
-      sym_use_pass,
-      sym_grab_pass,
-      sym_lod,
-    STATE(55), 19,
-      sym_cull_command,
-      sym_zwrite_command,
-      sym_ztest_command,
-      sym_zclip_command,
-      sym_blend_command,
-      sym_blend_off_command,
-      sym_blend_op_command,
-      sym_color_mask_command,
-      sym_offset_command,
-      sym_alpha_to_mask_command,
-      sym_conservative_command,
-      sym_legacy_lighting_command,
-      sym_legacy_fog_command,
-      sym_legacy_color_material_command,
-      sym_legacy_material_block,
-      sym_legacy_set_texture_command,
-      sym_legacy_alpha_test_command,
-      sym_legacy_bind_channels_command,
-      sym_stencil_block,
-  [127] = 32,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(73), 1,
-      anon_sym_RBRACE,
-    ACTIONS(75), 1,
-      anon_sym_Pass,
-    ACTIONS(78), 1,
-      anon_sym_Tags,
-    ACTIONS(81), 1,
-      anon_sym_Cull,
-    ACTIONS(84), 1,
-      anon_sym_ZWrite,
-    ACTIONS(87), 1,
-      anon_sym_ZTest,
-    ACTIONS(90), 1,
-      anon_sym_ZClip,
-    ACTIONS(93), 1,
-      anon_sym_Blend,
-    ACTIONS(96), 1,
-      anon_sym_BlendOp,
-    ACTIONS(99), 1,
-      anon_sym_ColorMask,
-    ACTIONS(102), 1,
-      anon_sym_Offset,
-    ACTIONS(105), 1,
-      anon_sym_AlphaToMask,
-    ACTIONS(108), 1,
-      anon_sym_Conservative,
-    ACTIONS(111), 1,
-      anon_sym_Lighting,
-    ACTIONS(114), 1,
-      anon_sym_Fog,
-    ACTIONS(117), 1,
-      anon_sym_ColorMaterial,
-    ACTIONS(120), 1,
-      anon_sym_Material,
-    ACTIONS(123), 1,
-      anon_sym_SetTexture,
-    ACTIONS(126), 1,
-      anon_sym_AlphaTest,
-    ACTIONS(129), 1,
-      anon_sym_BindChannels,
-    ACTIONS(132), 1,
-      anon_sym_Stencil,
-    ACTIONS(141), 1,
-      anon_sym_UsePass,
-    ACTIONS(144), 1,
-      anon_sym_GrabPass,
-    ACTIONS(147), 1,
-      anon_sym_LOD,
-    STATE(78), 1,
-      sym__subshader_body_item,
-    ACTIONS(135), 2,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-    ACTIONS(138), 2,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-    STATE(5), 2,
-      sym_comment,
-      aux_sym_subshader_block_repeat1,
-    STATE(77), 8,
-      sym_pass_block,
-      sym_tags_block,
-      sym__render_state,
-      sym_cg_program_block,
-      sym_hlsl_program_block,
-      sym_use_pass,
-      sym_grab_pass,
-      sym_lod,
-    STATE(55), 19,
-      sym_cull_command,
-      sym_zwrite_command,
-      sym_ztest_command,
-      sym_zclip_command,
-      sym_blend_command,
-      sym_blend_off_command,
-      sym_blend_op_command,
-      sym_color_mask_command,
-      sym_offset_command,
-      sym_alpha_to_mask_command,
-      sym_conservative_command,
-      sym_legacy_lighting_command,
-      sym_legacy_fog_command,
-      sym_legacy_color_material_command,
-      sym_legacy_material_block,
-      sym_legacy_set_texture_command,
-      sym_legacy_alpha_test_command,
-      sym_legacy_bind_channels_command,
-      sym_stencil_block,
-  [252] = 33,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(13), 1,
-      anon_sym_Pass,
-    ACTIONS(25), 1,
-      anon_sym_Tags,
-    ACTIONS(27), 1,
-      anon_sym_Cull,
-    ACTIONS(29), 1,
-      anon_sym_ZWrite,
-    ACTIONS(31), 1,
-      anon_sym_ZTest,
-    ACTIONS(33), 1,
-      anon_sym_ZClip,
-    ACTIONS(35), 1,
-      anon_sym_Blend,
-    ACTIONS(37), 1,
-      anon_sym_BlendOp,
-    ACTIONS(39), 1,
-      anon_sym_ColorMask,
-    ACTIONS(41), 1,
-      anon_sym_Offset,
-    ACTIONS(43), 1,
-      anon_sym_AlphaToMask,
-    ACTIONS(45), 1,
-      anon_sym_Conservative,
-    ACTIONS(47), 1,
-      anon_sym_Lighting,
-    ACTIONS(49), 1,
-      anon_sym_Fog,
-    ACTIONS(51), 1,
-      anon_sym_ColorMaterial,
-    ACTIONS(53), 1,
-      anon_sym_Material,
-    ACTIONS(55), 1,
-      anon_sym_SetTexture,
-    ACTIONS(57), 1,
-      anon_sym_AlphaTest,
-    ACTIONS(59), 1,
-      anon_sym_BindChannels,
-    ACTIONS(61), 1,
-      anon_sym_Stencil,
-    ACTIONS(67), 1,
-      anon_sym_UsePass,
-    ACTIONS(69), 1,
-      anon_sym_GrabPass,
-    ACTIONS(71), 1,
-      anon_sym_LOD,
-    ACTIONS(150), 1,
-      anon_sym_RBRACE,
-    STATE(4), 1,
-      aux_sym_subshader_block_repeat1,
-    STATE(6), 1,
-      sym_comment,
-    STATE(78), 1,
-      sym__subshader_body_item,
-    ACTIONS(63), 2,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-    ACTIONS(65), 2,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-    STATE(77), 8,
-      sym_pass_block,
-      sym_tags_block,
-      sym__render_state,
-      sym_cg_program_block,
-      sym_hlsl_program_block,
-      sym_use_pass,
-      sym_grab_pass,
-      sym_lod,
-    STATE(55), 19,
-      sym_cull_command,
-      sym_zwrite_command,
-      sym_ztest_command,
-      sym_zclip_command,
-      sym_blend_command,
-      sym_blend_off_command,
-      sym_blend_op_command,
-      sym_color_mask_command,
-      sym_offset_command,
-      sym_alpha_to_mask_command,
-      sym_conservative_command,
-      sym_legacy_lighting_command,
-      sym_legacy_fog_command,
-      sym_legacy_color_material_command,
-      sym_legacy_material_block,
-      sym_legacy_set_texture_command,
-      sym_legacy_alpha_test_command,
-      sym_legacy_bind_channels_command,
-      sym_stencil_block,
-  [379] = 30,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(25), 1,
-      anon_sym_Tags,
-    ACTIONS(27), 1,
-      anon_sym_Cull,
-    ACTIONS(29), 1,
-      anon_sym_ZWrite,
-    ACTIONS(31), 1,
-      anon_sym_ZTest,
-    ACTIONS(33), 1,
-      anon_sym_ZClip,
-    ACTIONS(35), 1,
-      anon_sym_Blend,
-    ACTIONS(37), 1,
-      anon_sym_BlendOp,
-    ACTIONS(39), 1,
-      anon_sym_ColorMask,
-    ACTIONS(41), 1,
-      anon_sym_Offset,
-    ACTIONS(43), 1,
-      anon_sym_AlphaToMask,
-    ACTIONS(45), 1,
-      anon_sym_Conservative,
-    ACTIONS(47), 1,
-      anon_sym_Lighting,
-    ACTIONS(49), 1,
-      anon_sym_Fog,
-    ACTIONS(51), 1,
-      anon_sym_ColorMaterial,
-    ACTIONS(53), 1,
-      anon_sym_Material,
-    ACTIONS(55), 1,
-      anon_sym_SetTexture,
-    ACTIONS(57), 1,
-      anon_sym_AlphaTest,
-    ACTIONS(59), 1,
-      anon_sym_BindChannels,
-    ACTIONS(61), 1,
-      anon_sym_Stencil,
-    ACTIONS(152), 1,
-      anon_sym_RBRACE,
-    ACTIONS(154), 1,
-      anon_sym_Name,
-    STATE(7), 1,
-      sym_comment,
-    STATE(8), 1,
-      aux_sym_pass_block_repeat1,
-    STATE(82), 1,
-      sym__pass_body_item,
-    ACTIONS(63), 2,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-    ACTIONS(65), 2,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-    STATE(84), 5,
-      sym_pass_name,
-      sym_tags_block,
-      sym__render_state,
-      sym_cg_program_block,
-      sym_hlsl_program_block,
-    STATE(55), 19,
-      sym_cull_command,
-      sym_zwrite_command,
-      sym_ztest_command,
-      sym_zclip_command,
-      sym_blend_command,
-      sym_blend_off_command,
-      sym_blend_op_command,
-      sym_color_mask_command,
-      sym_offset_command,
-      sym_alpha_to_mask_command,
-      sym_conservative_command,
-      sym_legacy_lighting_command,
-      sym_legacy_fog_command,
-      sym_legacy_color_material_command,
-      sym_legacy_material_block,
-      sym_legacy_set_texture_command,
-      sym_legacy_alpha_test_command,
-      sym_legacy_bind_channels_command,
-      sym_stencil_block,
-  [494] = 30,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(25), 1,
-      anon_sym_Tags,
-    ACTIONS(27), 1,
-      anon_sym_Cull,
-    ACTIONS(29), 1,
-      anon_sym_ZWrite,
-    ACTIONS(31), 1,
-      anon_sym_ZTest,
-    ACTIONS(33), 1,
-      anon_sym_ZClip,
-    ACTIONS(35), 1,
-      anon_sym_Blend,
-    ACTIONS(37), 1,
-      anon_sym_BlendOp,
-    ACTIONS(39), 1,
-      anon_sym_ColorMask,
-    ACTIONS(41), 1,
-      anon_sym_Offset,
-    ACTIONS(43), 1,
-      anon_sym_AlphaToMask,
-    ACTIONS(45), 1,
-      anon_sym_Conservative,
-    ACTIONS(47), 1,
-      anon_sym_Lighting,
-    ACTIONS(49), 1,
-      anon_sym_Fog,
-    ACTIONS(51), 1,
-      anon_sym_ColorMaterial,
-    ACTIONS(53), 1,
-      anon_sym_Material,
-    ACTIONS(55), 1,
-      anon_sym_SetTexture,
-    ACTIONS(57), 1,
-      anon_sym_AlphaTest,
-    ACTIONS(59), 1,
-      anon_sym_BindChannels,
-    ACTIONS(61), 1,
-      anon_sym_Stencil,
-    ACTIONS(154), 1,
-      anon_sym_Name,
-    ACTIONS(156), 1,
-      anon_sym_RBRACE,
-    STATE(8), 1,
-      sym_comment,
-    STATE(9), 1,
-      aux_sym_pass_block_repeat1,
-    STATE(82), 1,
-      sym__pass_body_item,
-    ACTIONS(63), 2,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-    ACTIONS(65), 2,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-    STATE(84), 5,
-      sym_pass_name,
-      sym_tags_block,
-      sym__render_state,
-      sym_cg_program_block,
-      sym_hlsl_program_block,
-    STATE(55), 19,
-      sym_cull_command,
-      sym_zwrite_command,
-      sym_ztest_command,
-      sym_zclip_command,
-      sym_blend_command,
-      sym_blend_off_command,
-      sym_blend_op_command,
-      sym_color_mask_command,
-      sym_offset_command,
-      sym_alpha_to_mask_command,
-      sym_conservative_command,
-      sym_legacy_lighting_command,
-      sym_legacy_fog_command,
-      sym_legacy_color_material_command,
-      sym_legacy_material_block,
-      sym_legacy_set_texture_command,
-      sym_legacy_alpha_test_command,
-      sym_legacy_bind_channels_command,
-      sym_stencil_block,
-  [609] = 29,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(158), 1,
-      anon_sym_RBRACE,
-    ACTIONS(160), 1,
-      anon_sym_Name,
-    ACTIONS(163), 1,
-      anon_sym_Tags,
-    ACTIONS(166), 1,
-      anon_sym_Cull,
-    ACTIONS(169), 1,
-      anon_sym_ZWrite,
-    ACTIONS(172), 1,
-      anon_sym_ZTest,
-    ACTIONS(175), 1,
-      anon_sym_ZClip,
-    ACTIONS(178), 1,
-      anon_sym_Blend,
-    ACTIONS(181), 1,
-      anon_sym_BlendOp,
-    ACTIONS(184), 1,
-      anon_sym_ColorMask,
-    ACTIONS(187), 1,
-      anon_sym_Offset,
-    ACTIONS(190), 1,
-      anon_sym_AlphaToMask,
-    ACTIONS(193), 1,
-      anon_sym_Conservative,
-    ACTIONS(196), 1,
-      anon_sym_Lighting,
-    ACTIONS(199), 1,
-      anon_sym_Fog,
-    ACTIONS(202), 1,
-      anon_sym_ColorMaterial,
-    ACTIONS(205), 1,
-      anon_sym_Material,
-    ACTIONS(208), 1,
-      anon_sym_SetTexture,
-    ACTIONS(211), 1,
-      anon_sym_AlphaTest,
-    ACTIONS(214), 1,
-      anon_sym_BindChannels,
-    ACTIONS(217), 1,
-      anon_sym_Stencil,
-    STATE(82), 1,
-      sym__pass_body_item,
-    ACTIONS(220), 2,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-    ACTIONS(223), 2,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-    STATE(9), 2,
-      sym_comment,
-      aux_sym_pass_block_repeat1,
-    STATE(84), 5,
-      sym_pass_name,
-      sym_tags_block,
-      sym__render_state,
-      sym_cg_program_block,
-      sym_hlsl_program_block,
-    STATE(55), 19,
-      sym_cull_command,
-      sym_zwrite_command,
-      sym_ztest_command,
-      sym_zclip_command,
-      sym_blend_command,
-      sym_blend_off_command,
-      sym_blend_op_command,
-      sym_color_mask_command,
-      sym_offset_command,
-      sym_alpha_to_mask_command,
-      sym_conservative_command,
-      sym_legacy_lighting_command,
-      sym_legacy_fog_command,
-      sym_legacy_color_material_command,
-      sym_legacy_material_block,
-      sym_legacy_set_texture_command,
-      sym_legacy_alpha_test_command,
-      sym_legacy_bind_channels_command,
-      sym_stencil_block,
-  [722] = 27,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(11), 1,
-      anon_sym_SubShader,
-    ACTIONS(25), 1,
-      anon_sym_Tags,
-    ACTIONS(27), 1,
-      anon_sym_Cull,
-    ACTIONS(29), 1,
-      anon_sym_ZWrite,
-    ACTIONS(31), 1,
-      anon_sym_ZTest,
-    ACTIONS(33), 1,
-      anon_sym_ZClip,
-    ACTIONS(35), 1,
-      anon_sym_Blend,
-    ACTIONS(37), 1,
-      anon_sym_BlendOp,
-    ACTIONS(39), 1,
-      anon_sym_ColorMask,
-    ACTIONS(41), 1,
-      anon_sym_Offset,
-    ACTIONS(43), 1,
-      anon_sym_AlphaToMask,
-    ACTIONS(45), 1,
-      anon_sym_Conservative,
-    ACTIONS(47), 1,
-      anon_sym_Lighting,
-    ACTIONS(49), 1,
-      anon_sym_Fog,
-    ACTIONS(51), 1,
-      anon_sym_ColorMaterial,
-    ACTIONS(53), 1,
-      anon_sym_Material,
-    ACTIONS(55), 1,
-      anon_sym_SetTexture,
-    ACTIONS(57), 1,
-      anon_sym_AlphaTest,
-    ACTIONS(59), 1,
-      anon_sym_BindChannels,
-    ACTIONS(61), 1,
-      anon_sym_Stencil,
-    ACTIONS(226), 1,
+    ACTIONS(253), 1,
       anon_sym_RBRACE,
     STATE(10), 1,
       sym_comment,
     STATE(12), 1,
       aux_sym_category_block_repeat1,
-    STATE(90), 3,
+    ACTIONS(11), 2,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+    ACTIONS(33), 3,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+    ACTIONS(61), 3,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+    STATE(89), 4,
       sym_subshader_block,
       sym_tags_block,
       sym__render_state,
-    STATE(55), 19,
+      sym_lod,
+    STATE(55), 21,
       sym_cull_command,
       sym_zwrite_command,
       sym_ztest_command,
+      sym_separate_specular_command,
       sym_zclip_command,
       sym_blend_command,
       sym_blend_off_command,
@@ -7171,70 +7685,84 @@ static const uint16_t ts_small_parse_table[] = {
       sym_legacy_lighting_command,
       sym_legacy_fog_command,
       sym_legacy_color_material_command,
+      sym_legacy_color_command,
       sym_legacy_material_block,
       sym_legacy_set_texture_command,
       sym_legacy_alpha_test_command,
       sym_legacy_bind_channels_command,
       sym_stencil_block,
-  [824] = 27,
+  [119] = 30,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(11), 1,
-      anon_sym_SubShader,
     ACTIONS(25), 1,
-      anon_sym_Tags,
+      anon_sym_Color,
     ACTIONS(27), 1,
-      anon_sym_Cull,
+      anon_sym_Tags,
     ACTIONS(29), 1,
-      anon_sym_ZWrite,
+      anon_sym_Cull,
     ACTIONS(31), 1,
-      anon_sym_ZTest,
-    ACTIONS(33), 1,
-      anon_sym_ZClip,
+      anon_sym_ZWrite,
     ACTIONS(35), 1,
-      anon_sym_Blend,
+      anon_sym_SeparateSpecular,
     ACTIONS(37), 1,
-      anon_sym_BlendOp,
+      anon_sym_ZClip,
     ACTIONS(39), 1,
-      anon_sym_ColorMask,
+      anon_sym_Blend,
     ACTIONS(41), 1,
-      anon_sym_Offset,
+      anon_sym_BlendOp,
     ACTIONS(43), 1,
-      anon_sym_AlphaToMask,
+      anon_sym_ColorMask,
     ACTIONS(45), 1,
-      anon_sym_Conservative,
+      anon_sym_Offset,
     ACTIONS(47), 1,
-      anon_sym_Lighting,
+      anon_sym_AlphaToMask,
     ACTIONS(49), 1,
-      anon_sym_Fog,
+      anon_sym_Conservative,
     ACTIONS(51), 1,
-      anon_sym_ColorMaterial,
+      anon_sym_Lighting,
     ACTIONS(53), 1,
-      anon_sym_Material,
+      anon_sym_Fog,
     ACTIONS(55), 1,
-      anon_sym_SetTexture,
+      anon_sym_ColorMaterial,
     ACTIONS(57), 1,
-      anon_sym_AlphaTest,
+      anon_sym_Material,
     ACTIONS(59), 1,
+      anon_sym_SetTexture,
+    ACTIONS(63), 1,
       anon_sym_BindChannels,
-    ACTIONS(61), 1,
+    ACTIONS(65), 1,
       anon_sym_Stencil,
-    ACTIONS(228), 1,
+    ACTIONS(77), 1,
+      anon_sym_LOD,
+    ACTIONS(255), 1,
       anon_sym_RBRACE,
     STATE(10), 1,
       aux_sym_category_block_repeat1,
     STATE(11), 1,
       sym_comment,
-    STATE(90), 3,
+    ACTIONS(11), 2,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+    ACTIONS(33), 3,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+    ACTIONS(61), 3,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+    STATE(89), 4,
       sym_subshader_block,
       sym_tags_block,
       sym__render_state,
-    STATE(55), 19,
+      sym_lod,
+    STATE(55), 21,
       sym_cull_command,
       sym_zwrite_command,
       sym_ztest_command,
+      sym_separate_specular_command,
       sym_zclip_command,
       sym_blend_command,
       sym_blend_off_command,
@@ -7246,69 +7774,83 @@ static const uint16_t ts_small_parse_table[] = {
       sym_legacy_lighting_command,
       sym_legacy_fog_command,
       sym_legacy_color_material_command,
+      sym_legacy_color_command,
       sym_legacy_material_block,
       sym_legacy_set_texture_command,
       sym_legacy_alpha_test_command,
       sym_legacy_bind_channels_command,
       sym_stencil_block,
-  [926] = 26,
+  [238] = 29,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(230), 1,
+    ACTIONS(257), 1,
       anon_sym_RBRACE,
-    ACTIONS(232), 1,
-      anon_sym_SubShader,
-    ACTIONS(235), 1,
-      anon_sym_Tags,
-    ACTIONS(238), 1,
-      anon_sym_Cull,
-    ACTIONS(241), 1,
-      anon_sym_ZWrite,
-    ACTIONS(244), 1,
-      anon_sym_ZTest,
-    ACTIONS(247), 1,
-      anon_sym_ZClip,
-    ACTIONS(250), 1,
-      anon_sym_Blend,
-    ACTIONS(253), 1,
-      anon_sym_BlendOp,
-    ACTIONS(256), 1,
-      anon_sym_ColorMask,
     ACTIONS(259), 1,
-      anon_sym_Offset,
-    ACTIONS(262), 1,
-      anon_sym_AlphaToMask,
+      anon_sym_Color,
     ACTIONS(265), 1,
-      anon_sym_Conservative,
+      anon_sym_Tags,
     ACTIONS(268), 1,
-      anon_sym_Lighting,
+      anon_sym_Cull,
     ACTIONS(271), 1,
-      anon_sym_Fog,
-    ACTIONS(274), 1,
-      anon_sym_ColorMaterial,
+      anon_sym_ZWrite,
     ACTIONS(277), 1,
-      anon_sym_Material,
+      anon_sym_SeparateSpecular,
     ACTIONS(280), 1,
-      anon_sym_SetTexture,
+      anon_sym_ZClip,
     ACTIONS(283), 1,
-      anon_sym_AlphaTest,
+      anon_sym_Blend,
     ACTIONS(286), 1,
-      anon_sym_BindChannels,
+      anon_sym_BlendOp,
     ACTIONS(289), 1,
+      anon_sym_ColorMask,
+    ACTIONS(292), 1,
+      anon_sym_Offset,
+    ACTIONS(295), 1,
+      anon_sym_AlphaToMask,
+    ACTIONS(298), 1,
+      anon_sym_Conservative,
+    ACTIONS(301), 1,
+      anon_sym_Lighting,
+    ACTIONS(304), 1,
+      anon_sym_Fog,
+    ACTIONS(307), 1,
+      anon_sym_ColorMaterial,
+    ACTIONS(310), 1,
+      anon_sym_Material,
+    ACTIONS(313), 1,
+      anon_sym_SetTexture,
+    ACTIONS(319), 1,
+      anon_sym_BindChannels,
+    ACTIONS(322), 1,
       anon_sym_Stencil,
+    ACTIONS(325), 1,
+      anon_sym_LOD,
+    ACTIONS(262), 2,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
     STATE(12), 2,
       sym_comment,
       aux_sym_category_block_repeat1,
-    STATE(90), 3,
+    ACTIONS(274), 3,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+    ACTIONS(316), 3,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+    STATE(89), 4,
       sym_subshader_block,
       sym_tags_block,
       sym__render_state,
-    STATE(55), 19,
+      sym_lod,
+    STATE(55), 21,
       sym_cull_command,
       sym_zwrite_command,
       sym_ztest_command,
+      sym_separate_specular_command,
       sym_zclip_command,
       sym_blend_command,
       sym_blend_off_command,
@@ -7320,19 +7862,20 @@ static const uint16_t ts_small_parse_table[] = {
       sym_legacy_lighting_command,
       sym_legacy_fog_command,
       sym_legacy_color_material_command,
+      sym_legacy_color_command,
       sym_legacy_material_block,
       sym_legacy_set_texture_command,
       sym_legacy_alpha_test_command,
       sym_legacy_bind_channels_command,
       sym_stencil_block,
-  [1026] = 5,
+  [355] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     STATE(13), 1,
       sym_comment,
-    ACTIONS(294), 7,
+    ACTIONS(330), 7,
       anon_sym_LBRACE,
       anon_sym_RBRACE,
       anon_sym_COMMA,
@@ -7340,15 +7883,20 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_EQ,
       anon_sym_LBRACK,
       anon_sym_DQUOTE,
-    ACTIONS(292), 36,
+    ACTIONS(328), 45,
       anon_sym_Properties,
+      anon_sym_Color,
       anon_sym_SubShader,
+      anon_sym_Subshader,
       anon_sym_Pass,
       anon_sym_Name,
       anon_sym_Tags,
       anon_sym_Cull,
       anon_sym_ZWrite,
       anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
       anon_sym_ZClip,
       anon_sym_Blend,
       anon_sym_BlendOp,
@@ -7362,12 +7910,16 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_Material,
       anon_sym_SetTexture,
       anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
       anon_sym_BindChannels,
       anon_sym_Stencil,
       anon_sym_CGPROGRAM,
       anon_sym_CGINCLUDE,
       anon_sym_HLSLPROGRAM,
       anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
       anon_sym_CustomEditor,
       anon_sym_Dependency,
       anon_sym_FallBack,
@@ -7377,80 +7929,212 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_LOD,
       anon_sym_Category,
       sym_identifier,
-  [1083] = 5,
+  [421] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     STATE(14), 1,
       sym_comment,
-    ACTIONS(298), 4,
+    ACTIONS(334), 3,
+      anon_sym_Color,
+      anon_sym_Blend,
+      anon_sym_One,
+    ACTIONS(332), 48,
       anon_sym_RBRACE,
       anon_sym_COMMA,
-      anon_sym_RPAREN,
       anon_sym_LBRACK,
-    ACTIONS(296), 39,
-      anon_sym_Color,
-      anon_sym_Range,
       anon_sym_SubShader,
+      anon_sym_Subshader,
       anon_sym_Pass,
       anon_sym_Name,
       anon_sym_Tags,
       anon_sym_Cull,
       anon_sym_ZWrite,
       anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
       anon_sym_ZClip,
-      anon_sym_Blend,
       anon_sym_BlendOp,
       anon_sym_ColorMask,
       anon_sym_Offset,
       anon_sym_AlphaToMask,
+      anon_sym_Zero,
+      anon_sym_SrcColor,
+      anon_sym_SrcAlpha,
+      anon_sym_DstColor,
+      anon_sym_DstAlpha,
+      anon_sym_OneMinusSrcColor,
+      anon_sym_OneMinusSrcAlpha,
+      anon_sym_OneMinusDstColor,
+      anon_sym_OneMinusDstAlpha,
       anon_sym_Conservative,
       anon_sym_Lighting,
       anon_sym_Fog,
-      anon_sym_Mode,
-      anon_sym_Density,
       anon_sym_ColorMaterial,
-      anon_sym_Emission,
       anon_sym_Material,
-      anon_sym_Diffuse,
-      anon_sym_Ambient,
-      anon_sym_Specular,
-      anon_sym_Shininess,
       anon_sym_SetTexture,
       anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
       anon_sym_BindChannels,
       anon_sym_Stencil,
       anon_sym_CGPROGRAM,
       anon_sym_CGINCLUDE,
       anon_sym_HLSLPROGRAM,
       anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
       anon_sym_UsePass,
       anon_sym_GrabPass,
       anon_sym_LOD,
-      sym_identifier,
-  [1140] = 5,
+  [486] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     STATE(15), 1,
       sym_comment,
-    ACTIONS(302), 4,
+    ACTIONS(338), 3,
+      anon_sym_Color,
+      anon_sym_Blend,
+      anon_sym_One,
+    ACTIONS(336), 48,
       anon_sym_RBRACE,
       anon_sym_COMMA,
-      anon_sym_RPAREN,
       anon_sym_LBRACK,
-    ACTIONS(300), 39,
-      anon_sym_Color,
-      anon_sym_Range,
       anon_sym_SubShader,
+      anon_sym_Subshader,
       anon_sym_Pass,
       anon_sym_Name,
       anon_sym_Tags,
       anon_sym_Cull,
       anon_sym_ZWrite,
       anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Zero,
+      anon_sym_SrcColor,
+      anon_sym_SrcAlpha,
+      anon_sym_DstColor,
+      anon_sym_DstAlpha,
+      anon_sym_OneMinusSrcColor,
+      anon_sym_OneMinusSrcAlpha,
+      anon_sym_OneMinusDstColor,
+      anon_sym_OneMinusDstAlpha,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [551] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(16), 1,
+      sym_comment,
+    ACTIONS(342), 2,
+      anon_sym_RBRACE,
+      anon_sym_LBRACK,
+    ACTIONS(340), 49,
+      anon_sym_Color,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_Blend,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Emission,
+      anon_sym_Material,
+      anon_sym_Diffuse,
+      anon_sym_Ambient,
+      anon_sym_Specular,
+      anon_sym_Shininess,
+      anon_sym_SetTexture,
+      anon_sym_combine,
+      anon_sym_Combine,
+      anon_sym_constantColor,
+      anon_sym_ConstantColor,
+      anon_sym_Matrix,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+      sym_identifier,
+  [616] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(17), 1,
+      sym_comment,
+    ACTIONS(346), 4,
+      anon_sym_RBRACE,
+      anon_sym_COMMA,
+      anon_sym_RPAREN,
+      anon_sym_LBRACK,
+    ACTIONS(344), 47,
+      anon_sym_Color,
+      anon_sym_Range,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
       anon_sym_ZClip,
       anon_sym_Blend,
       anon_sym_BlendOp,
@@ -7471,454 +8155,46 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_Shininess,
       anon_sym_SetTexture,
       anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
       anon_sym_BindChannels,
       anon_sym_Stencil,
       anon_sym_CGPROGRAM,
       anon_sym_CGINCLUDE,
       anon_sym_HLSLPROGRAM,
       anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
       anon_sym_UsePass,
       anon_sym_GrabPass,
       anon_sym_LOD,
       sym_identifier,
-  [1197] = 5,
+  [681] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    STATE(16), 1,
-      sym_comment,
-    ACTIONS(306), 2,
-      anon_sym_Blend,
-      anon_sym_One,
-    ACTIONS(304), 40,
-      anon_sym_RBRACE,
-      anon_sym_COMMA,
-      anon_sym_LBRACK,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Zero,
-      anon_sym_SrcColor,
-      anon_sym_SrcAlpha,
-      anon_sym_DstColor,
-      anon_sym_DstAlpha,
-      anon_sym_OneMinusSrcColor,
-      anon_sym_OneMinusSrcAlpha,
-      anon_sym_OneMinusDstColor,
-      anon_sym_OneMinusDstAlpha,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [1253] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    STATE(17), 1,
-      sym_comment,
-    ACTIONS(310), 2,
-      anon_sym_Blend,
-      anon_sym_One,
-    ACTIONS(308), 40,
-      anon_sym_RBRACE,
-      anon_sym_COMMA,
-      anon_sym_LBRACK,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Zero,
-      anon_sym_SrcColor,
-      anon_sym_SrcAlpha,
-      anon_sym_DstColor,
-      anon_sym_DstAlpha,
-      anon_sym_OneMinusSrcColor,
-      anon_sym_OneMinusSrcAlpha,
-      anon_sym_OneMinusDstColor,
-      anon_sym_OneMinusDstAlpha,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [1309] = 17,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(312), 1,
-      anon_sym_RBRACE,
     STATE(18), 1,
       sym_comment,
-    STATE(19), 1,
-      aux_sym_stencil_block_repeat1,
-    STATE(31), 1,
-      sym__stencil_op,
-    STATE(95), 1,
-      sym__stencil_comp,
-    ACTIONS(314), 2,
-      anon_sym_Pass,
-      anon_sym_pass,
-    ACTIONS(318), 2,
-      anon_sym_Comp,
-      anon_sym_comp,
-    ACTIONS(324), 2,
-      anon_sym_Fail,
-      anon_sym_fail,
-    ACTIONS(328), 2,
-      anon_sym_ZFail,
-      anon_sym_zfail,
-    STATE(93), 3,
-      sym__stencil_pass,
-      sym__stencil_fail,
-      sym__stencil_zfail,
-    ACTIONS(320), 4,
-      anon_sym_CompFront,
-      anon_sym_CompBack,
-      anon_sym_compfront,
-      anon_sym_compback,
-    ACTIONS(322), 4,
-      anon_sym_PassFront,
-      anon_sym_PassBack,
-      anon_sym_passfront,
-      anon_sym_passback,
-    ACTIONS(326), 4,
-      anon_sym_FailFront,
-      anon_sym_FailBack,
-      anon_sym_failfront,
-      anon_sym_failback,
-    ACTIONS(330), 4,
-      anon_sym_ZFailFront,
-      anon_sym_ZFailBack,
-      anon_sym_zfailfront,
-      anon_sym_zfailback,
-    ACTIONS(316), 8,
-      anon_sym_Ref,
-      anon_sym_ref,
-      anon_sym_ReadMask,
-      anon_sym_readMask,
-      anon_sym_readmask,
-      anon_sym_WriteMask,
-      anon_sym_writeMask,
-      anon_sym_writemask,
-  [1386] = 17,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(332), 1,
+    ACTIONS(350), 4,
       anon_sym_RBRACE,
-    STATE(19), 1,
-      sym_comment,
-    STATE(20), 1,
-      aux_sym_stencil_block_repeat1,
-    STATE(31), 1,
-      sym__stencil_op,
-    STATE(95), 1,
-      sym__stencil_comp,
-    ACTIONS(314), 2,
-      anon_sym_Pass,
-      anon_sym_pass,
-    ACTIONS(318), 2,
-      anon_sym_Comp,
-      anon_sym_comp,
-    ACTIONS(324), 2,
-      anon_sym_Fail,
-      anon_sym_fail,
-    ACTIONS(328), 2,
-      anon_sym_ZFail,
-      anon_sym_zfail,
-    STATE(93), 3,
-      sym__stencil_pass,
-      sym__stencil_fail,
-      sym__stencil_zfail,
-    ACTIONS(320), 4,
-      anon_sym_CompFront,
-      anon_sym_CompBack,
-      anon_sym_compfront,
-      anon_sym_compback,
-    ACTIONS(322), 4,
-      anon_sym_PassFront,
-      anon_sym_PassBack,
-      anon_sym_passfront,
-      anon_sym_passback,
-    ACTIONS(326), 4,
-      anon_sym_FailFront,
-      anon_sym_FailBack,
-      anon_sym_failfront,
-      anon_sym_failback,
-    ACTIONS(330), 4,
-      anon_sym_ZFailFront,
-      anon_sym_ZFailBack,
-      anon_sym_zfailfront,
-      anon_sym_zfailback,
-    ACTIONS(316), 8,
-      anon_sym_Ref,
-      anon_sym_ref,
-      anon_sym_ReadMask,
-      anon_sym_readMask,
-      anon_sym_readmask,
-      anon_sym_WriteMask,
-      anon_sym_writeMask,
-      anon_sym_writemask,
-  [1463] = 16,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(334), 1,
-      anon_sym_RBRACE,
-    STATE(31), 1,
-      sym__stencil_op,
-    STATE(95), 1,
-      sym__stencil_comp,
-    ACTIONS(336), 2,
-      anon_sym_Pass,
-      anon_sym_pass,
-    ACTIONS(342), 2,
-      anon_sym_Comp,
-      anon_sym_comp,
-    ACTIONS(351), 2,
-      anon_sym_Fail,
-      anon_sym_fail,
-    ACTIONS(357), 2,
-      anon_sym_ZFail,
-      anon_sym_zfail,
-    STATE(20), 2,
-      sym_comment,
-      aux_sym_stencil_block_repeat1,
-    STATE(93), 3,
-      sym__stencil_pass,
-      sym__stencil_fail,
-      sym__stencil_zfail,
-    ACTIONS(345), 4,
-      anon_sym_CompFront,
-      anon_sym_CompBack,
-      anon_sym_compfront,
-      anon_sym_compback,
-    ACTIONS(348), 4,
-      anon_sym_PassFront,
-      anon_sym_PassBack,
-      anon_sym_passfront,
-      anon_sym_passback,
-    ACTIONS(354), 4,
-      anon_sym_FailFront,
-      anon_sym_FailBack,
-      anon_sym_failfront,
-      anon_sym_failback,
-    ACTIONS(360), 4,
-      anon_sym_ZFailFront,
-      anon_sym_ZFailBack,
-      anon_sym_zfailfront,
-      anon_sym_zfailback,
-    ACTIONS(339), 8,
-      anon_sym_Ref,
-      anon_sym_ref,
-      anon_sym_ReadMask,
-      anon_sym_readMask,
-      anon_sym_readmask,
-      anon_sym_WriteMask,
-      anon_sym_writeMask,
-      anon_sym_writemask,
-  [1538] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(365), 1,
-      anon_sym_Blend,
-    STATE(21), 1,
-      sym_comment,
-    ACTIONS(363), 34,
-      anon_sym_RBRACE,
-      anon_sym_Properties,
+      anon_sym_COMMA,
+      anon_sym_RPAREN,
+      anon_sym_LBRACK,
+    ACTIONS(348), 47,
+      anon_sym_Color,
+      anon_sym_Range,
       anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_CustomEditor,
-      anon_sym_Dependency,
-      anon_sym_FallBack,
-      anon_sym_Fallback,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-      anon_sym_Category,
-  [1587] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(369), 1,
-      anon_sym_Blend,
-    STATE(22), 1,
-      sym_comment,
-    ACTIONS(367), 34,
-      anon_sym_RBRACE,
-      anon_sym_Properties,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_CustomEditor,
-      anon_sym_Dependency,
-      anon_sym_FallBack,
-      anon_sym_Fallback,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-      anon_sym_Category,
-  [1636] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(373), 1,
-      anon_sym_Blend,
-    STATE(23), 1,
-      sym_comment,
-    ACTIONS(371), 34,
-      anon_sym_RBRACE,
-      anon_sym_Properties,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_CustomEditor,
-      anon_sym_Dependency,
-      anon_sym_FallBack,
-      anon_sym_Fallback,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-      anon_sym_Category,
-  [1685] = 9,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(375), 1,
-      sym_identifier,
-    ACTIONS(377), 1,
-      anon_sym_RBRACE,
-    ACTIONS(381), 1,
-      anon_sym_DASH,
-    ACTIONS(383), 1,
-      sym_number_literal,
-    STATE(24), 1,
-      sym_comment,
-    STATE(51), 1,
-      sym__number,
-    ACTIONS(379), 29,
-      anon_sym_SubShader,
+      anon_sym_Subshader,
       anon_sym_Pass,
       anon_sym_Name,
       anon_sym_Tags,
       anon_sym_Cull,
       anon_sym_ZWrite,
       anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
       anon_sym_ZClip,
       anon_sym_Blend,
       anon_sym_BlendOp,
@@ -7928,39 +8204,386 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_Conservative,
       anon_sym_Lighting,
       anon_sym_Fog,
+      anon_sym_Mode,
+      anon_sym_Density,
       anon_sym_ColorMaterial,
+      anon_sym_Emission,
       anon_sym_Material,
+      anon_sym_Diffuse,
+      anon_sym_Ambient,
+      anon_sym_Specular,
+      anon_sym_Shininess,
       anon_sym_SetTexture,
       anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
       anon_sym_BindChannels,
       anon_sym_Stencil,
       anon_sym_CGPROGRAM,
       anon_sym_CGINCLUDE,
       anon_sym_HLSLPROGRAM,
       anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
       anon_sym_UsePass,
       anon_sym_GrabPass,
       anon_sym_LOD,
-  [1741] = 5,
+      sym_identifier,
+  [746] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(387), 1,
+    STATE(19), 1,
+      sym_comment,
+    ACTIONS(354), 2,
+      anon_sym_RBRACE,
+      anon_sym_LBRACK,
+    ACTIONS(352), 49,
+      anon_sym_Color,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
       anon_sym_Blend,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Emission,
+      anon_sym_Material,
+      anon_sym_Diffuse,
+      anon_sym_Ambient,
+      anon_sym_Specular,
+      anon_sym_Shininess,
+      anon_sym_SetTexture,
+      anon_sym_combine,
+      anon_sym_Combine,
+      anon_sym_constantColor,
+      anon_sym_ConstantColor,
+      anon_sym_Matrix,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+      sym_identifier,
+  [811] = 10,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(356), 1,
+      sym_identifier,
+    ACTIONS(358), 1,
+      anon_sym_RBRACE,
+    ACTIONS(360), 1,
+      anon_sym_LBRACK,
+    ACTIONS(364), 1,
+      anon_sym_DASH,
+    ACTIONS(366), 1,
+      sym_number_literal,
+    STATE(20), 1,
+      sym_comment,
+    STATE(47), 2,
+      sym__number,
+      sym_property_reference,
+    ACTIONS(362), 38,
+      anon_sym_Color,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_Blend,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [880] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(21), 1,
+      sym_comment,
+    ACTIONS(370), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(368), 42,
+      anon_sym_RBRACE,
+      anon_sym_Properties,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_CustomEditor,
+      anon_sym_Dependency,
+      anon_sym_FallBack,
+      anon_sym_Fallback,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+      anon_sym_Category,
+  [938] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(22), 1,
+      sym_comment,
+    ACTIONS(374), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(372), 42,
+      anon_sym_RBRACE,
+      anon_sym_Properties,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_CustomEditor,
+      anon_sym_Dependency,
+      anon_sym_FallBack,
+      anon_sym_Fallback,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+      anon_sym_Category,
+  [996] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(23), 1,
+      sym_comment,
+    ACTIONS(378), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(376), 42,
+      anon_sym_RBRACE,
+      anon_sym_Properties,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_CustomEditor,
+      anon_sym_Dependency,
+      anon_sym_FallBack,
+      anon_sym_Fallback,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+      anon_sym_Category,
+  [1054] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(24), 1,
+      sym_comment,
+    ACTIONS(382), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(380), 41,
+      ts_builtin_sym_end,
+      anon_sym_Shader,
+      anon_sym_RBRACE,
+      anon_sym_Properties,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_CustomEditor,
+      anon_sym_Dependency,
+      anon_sym_FallBack,
+      anon_sym_Fallback,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+      anon_sym_Category,
+  [1111] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
     STATE(25), 1,
       sym_comment,
-    ACTIONS(385), 33,
+    ACTIONS(386), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(384), 41,
       ts_builtin_sym_end,
       anon_sym_Shader,
       anon_sym_RBRACE,
       anon_sym_Properties,
       anon_sym_SubShader,
+      anon_sym_Subshader,
       anon_sym_Pass,
       anon_sym_Tags,
       anon_sym_Cull,
       anon_sym_ZWrite,
       anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
       anon_sym_ZClip,
       anon_sym_BlendOp,
       anon_sym_ColorMask,
@@ -7973,37 +8596,45 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_Material,
       anon_sym_SetTexture,
       anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
       anon_sym_BindChannels,
       anon_sym_Stencil,
       anon_sym_CGINCLUDE,
       anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLINCLUDE,
       anon_sym_CustomEditor,
       anon_sym_Dependency,
       anon_sym_FallBack,
       anon_sym_Fallback,
       anon_sym_UsePass,
       anon_sym_GrabPass,
+      anon_sym_LOD,
       anon_sym_Category,
-  [1789] = 5,
+  [1168] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(391), 1,
-      anon_sym_Blend,
     STATE(26), 1,
       sym_comment,
-    ACTIONS(389), 33,
-      ts_builtin_sym_end,
-      anon_sym_Shader,
+    ACTIONS(390), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(388), 38,
       anon_sym_RBRACE,
-      anon_sym_Properties,
+      anon_sym_COMMA,
       anon_sym_SubShader,
+      anon_sym_Subshader,
       anon_sym_Pass,
+      anon_sym_Name,
       anon_sym_Tags,
       anon_sym_Cull,
       anon_sym_ZWrite,
       anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
       anon_sym_ZClip,
       anon_sym_BlendOp,
       anon_sym_ColorMask,
@@ -8016,235 +8647,2739 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_Material,
       anon_sym_SetTexture,
       anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
       anon_sym_BindChannels,
       anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
       anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
       anon_sym_HLSLINCLUDE,
-      anon_sym_CustomEditor,
-      anon_sym_Dependency,
-      anon_sym_FallBack,
-      anon_sym_Fallback,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
       anon_sym_UsePass,
       anon_sym_GrabPass,
-      anon_sym_Category,
-  [1837] = 5,
+      anon_sym_LOD,
+  [1222] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     STATE(27), 1,
       sym_comment,
-    ACTIONS(395), 8,
-      anon_sym_Pass,
-      anon_sym_Comp,
-      anon_sym_comp,
-      anon_sym_pass,
-      anon_sym_Fail,
-      anon_sym_fail,
-      anon_sym_ZFail,
-      anon_sym_zfail,
-    ACTIONS(393), 25,
+    ACTIONS(394), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(392), 38,
+      ts_builtin_sym_end,
+      anon_sym_Shader,
       anon_sym_RBRACE,
-      anon_sym_Ref,
-      anon_sym_ref,
-      anon_sym_ReadMask,
-      anon_sym_readMask,
-      anon_sym_readmask,
-      anon_sym_WriteMask,
-      anon_sym_writeMask,
-      anon_sym_writemask,
-      anon_sym_CompFront,
-      anon_sym_CompBack,
-      anon_sym_compfront,
-      anon_sym_compback,
-      anon_sym_PassFront,
-      anon_sym_PassBack,
-      anon_sym_passfront,
-      anon_sym_passback,
-      anon_sym_FailFront,
-      anon_sym_FailBack,
-      anon_sym_failfront,
-      anon_sym_failback,
-      anon_sym_ZFailFront,
-      anon_sym_ZFailBack,
-      anon_sym_zfailfront,
-      anon_sym_zfailback,
-  [1884] = 5,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [1276] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     STATE(28), 1,
       sym_comment,
-    ACTIONS(399), 8,
-      anon_sym_Pass,
-      anon_sym_Comp,
-      anon_sym_comp,
-      anon_sym_pass,
-      anon_sym_Fail,
-      anon_sym_fail,
-      anon_sym_ZFail,
-      anon_sym_zfail,
-    ACTIONS(397), 25,
+    ACTIONS(398), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(396), 38,
+      ts_builtin_sym_end,
+      anon_sym_Shader,
       anon_sym_RBRACE,
-      anon_sym_Ref,
-      anon_sym_ref,
-      anon_sym_ReadMask,
-      anon_sym_readMask,
-      anon_sym_readmask,
-      anon_sym_WriteMask,
-      anon_sym_writeMask,
-      anon_sym_writemask,
-      anon_sym_CompFront,
-      anon_sym_CompBack,
-      anon_sym_compfront,
-      anon_sym_compback,
-      anon_sym_PassFront,
-      anon_sym_PassBack,
-      anon_sym_passfront,
-      anon_sym_passback,
-      anon_sym_FailFront,
-      anon_sym_FailBack,
-      anon_sym_failfront,
-      anon_sym_failback,
-      anon_sym_ZFailFront,
-      anon_sym_ZFailBack,
-      anon_sym_zfailfront,
-      anon_sym_zfailback,
-  [1931] = 5,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [1330] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     STATE(29), 1,
       sym_comment,
-    ACTIONS(403), 8,
-      anon_sym_Pass,
-      anon_sym_Comp,
-      anon_sym_comp,
-      anon_sym_pass,
-      anon_sym_Fail,
-      anon_sym_fail,
-      anon_sym_ZFail,
-      anon_sym_zfail,
-    ACTIONS(401), 25,
+    ACTIONS(402), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(400), 38,
       anon_sym_RBRACE,
-      anon_sym_Ref,
-      anon_sym_ref,
-      anon_sym_ReadMask,
-      anon_sym_readMask,
-      anon_sym_readmask,
-      anon_sym_WriteMask,
-      anon_sym_writeMask,
-      anon_sym_writemask,
-      anon_sym_CompFront,
-      anon_sym_CompBack,
-      anon_sym_compfront,
-      anon_sym_compback,
-      anon_sym_PassFront,
-      anon_sym_PassBack,
-      anon_sym_passfront,
-      anon_sym_passback,
-      anon_sym_FailFront,
-      anon_sym_FailBack,
-      anon_sym_failfront,
-      anon_sym_failback,
-      anon_sym_ZFailFront,
-      anon_sym_ZFailBack,
-      anon_sym_zfailfront,
-      anon_sym_zfailback,
-  [1978] = 5,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+      anon_sym_DQUOTE,
+  [1384] = 6,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
+    ACTIONS(406), 1,
+      anon_sym_COMMA,
     STATE(30), 1,
       sym_comment,
-    ACTIONS(407), 8,
-      anon_sym_Pass,
-      anon_sym_Comp,
-      anon_sym_comp,
-      anon_sym_pass,
-      anon_sym_Fail,
-      anon_sym_fail,
-      anon_sym_ZFail,
-      anon_sym_zfail,
-    ACTIONS(405), 25,
+    ACTIONS(408), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(404), 37,
       anon_sym_RBRACE,
-      anon_sym_Ref,
-      anon_sym_ref,
-      anon_sym_ReadMask,
-      anon_sym_readMask,
-      anon_sym_readmask,
-      anon_sym_WriteMask,
-      anon_sym_writeMask,
-      anon_sym_writemask,
-      anon_sym_CompFront,
-      anon_sym_CompBack,
-      anon_sym_compfront,
-      anon_sym_compback,
-      anon_sym_PassFront,
-      anon_sym_PassBack,
-      anon_sym_passfront,
-      anon_sym_passback,
-      anon_sym_FailFront,
-      anon_sym_FailBack,
-      anon_sym_failfront,
-      anon_sym_failback,
-      anon_sym_ZFailFront,
-      anon_sym_ZFailBack,
-      anon_sym_zfailfront,
-      anon_sym_zfailback,
-  [2025] = 5,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [1440] = 6,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
+    ACTIONS(412), 1,
+      anon_sym_COMMA,
     STATE(31), 1,
       sym_comment,
-    ACTIONS(411), 8,
-      anon_sym_Pass,
-      anon_sym_Comp,
-      anon_sym_comp,
-      anon_sym_pass,
-      anon_sym_Fail,
-      anon_sym_fail,
-      anon_sym_ZFail,
-      anon_sym_zfail,
-    ACTIONS(409), 25,
+    ACTIONS(414), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(410), 37,
       anon_sym_RBRACE,
-      anon_sym_Ref,
-      anon_sym_ref,
-      anon_sym_ReadMask,
-      anon_sym_readMask,
-      anon_sym_readmask,
-      anon_sym_WriteMask,
-      anon_sym_writeMask,
-      anon_sym_writemask,
-      anon_sym_CompFront,
-      anon_sym_CompBack,
-      anon_sym_compfront,
-      anon_sym_compback,
-      anon_sym_PassFront,
-      anon_sym_PassBack,
-      anon_sym_passfront,
-      anon_sym_passback,
-      anon_sym_FailFront,
-      anon_sym_FailBack,
-      anon_sym_failfront,
-      anon_sym_failback,
-      anon_sym_ZFailFront,
-      anon_sym_ZFailBack,
-      anon_sym_zfailfront,
-      anon_sym_zfailback,
-  [2072] = 5,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [1496] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     STATE(32), 1,
       sym_comment,
-    ACTIONS(415), 8,
+    ACTIONS(418), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(416), 38,
+      anon_sym_RBRACE,
+      anon_sym_COMMA,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [1550] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(33), 1,
+      sym_comment,
+    ACTIONS(422), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(420), 38,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+      anon_sym_DQUOTE,
+  [1604] = 6,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(426), 1,
+      anon_sym_COMMA,
+    STATE(34), 1,
+      sym_comment,
+    ACTIONS(428), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(424), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [1660] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(35), 1,
+      sym_comment,
+    ACTIONS(432), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(430), 38,
+      anon_sym_RBRACE,
+      anon_sym_COMMA,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [1714] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(36), 1,
+      sym_comment,
+    ACTIONS(436), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(434), 38,
+      anon_sym_RBRACE,
+      anon_sym_COMMA,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [1768] = 6,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(440), 1,
+      anon_sym_COMMA,
+    STATE(37), 1,
+      sym_comment,
+    ACTIONS(442), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(438), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [1824] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(38), 1,
+      sym_comment,
+    ACTIONS(446), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(444), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [1877] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(39), 1,
+      sym_comment,
+    ACTIONS(450), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(448), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [1930] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(40), 1,
+      sym_comment,
+    ACTIONS(454), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(452), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [1983] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(41), 1,
+      sym_comment,
+    ACTIONS(458), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(456), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [2036] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(42), 1,
+      sym_comment,
+    ACTIONS(462), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(460), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [2089] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(43), 1,
+      sym_comment,
+    ACTIONS(466), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(464), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [2142] = 17,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(468), 1,
+      anon_sym_RBRACE,
+    STATE(44), 1,
+      sym_comment,
+    STATE(50), 1,
+      aux_sym_stencil_block_repeat1,
+    STATE(83), 1,
+      sym__stencil_op,
+    STATE(103), 1,
+      sym__stencil_comp,
+    ACTIONS(470), 2,
+      anon_sym_Pass,
+      anon_sym_pass,
+    ACTIONS(474), 2,
+      anon_sym_Comp,
+      anon_sym_comp,
+    ACTIONS(480), 2,
+      anon_sym_Fail,
+      anon_sym_fail,
+    ACTIONS(484), 2,
+      anon_sym_ZFail,
+      anon_sym_zfail,
+    STATE(105), 3,
+      sym__stencil_pass,
+      sym__stencil_fail,
+      sym__stencil_zfail,
+    ACTIONS(476), 4,
+      anon_sym_CompFront,
+      anon_sym_CompBack,
+      anon_sym_compfront,
+      anon_sym_compback,
+    ACTIONS(478), 4,
+      anon_sym_PassFront,
+      anon_sym_PassBack,
+      anon_sym_passfront,
+      anon_sym_passback,
+    ACTIONS(482), 4,
+      anon_sym_FailFront,
+      anon_sym_FailBack,
+      anon_sym_failfront,
+      anon_sym_failback,
+    ACTIONS(486), 4,
+      anon_sym_ZFailFront,
+      anon_sym_ZFailBack,
+      anon_sym_zfailfront,
+      anon_sym_zfailback,
+    ACTIONS(472), 8,
+      anon_sym_Ref,
+      anon_sym_ref,
+      anon_sym_ReadMask,
+      anon_sym_readMask,
+      anon_sym_readmask,
+      anon_sym_WriteMask,
+      anon_sym_writeMask,
+      anon_sym_writemask,
+  [2219] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(45), 1,
+      sym_comment,
+    ACTIONS(490), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(488), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [2272] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(46), 1,
+      sym_comment,
+    ACTIONS(494), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(492), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [2325] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(47), 1,
+      sym_comment,
+    ACTIONS(498), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(496), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [2378] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(48), 1,
+      sym_comment,
+    ACTIONS(502), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(500), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [2431] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(49), 1,
+      sym_comment,
+    ACTIONS(506), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(504), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [2484] = 17,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(508), 1,
+      anon_sym_RBRACE,
+    STATE(50), 1,
+      sym_comment,
+    STATE(64), 1,
+      aux_sym_stencil_block_repeat1,
+    STATE(83), 1,
+      sym__stencil_op,
+    STATE(103), 1,
+      sym__stencil_comp,
+    ACTIONS(470), 2,
+      anon_sym_Pass,
+      anon_sym_pass,
+    ACTIONS(474), 2,
+      anon_sym_Comp,
+      anon_sym_comp,
+    ACTIONS(480), 2,
+      anon_sym_Fail,
+      anon_sym_fail,
+    ACTIONS(484), 2,
+      anon_sym_ZFail,
+      anon_sym_zfail,
+    STATE(105), 3,
+      sym__stencil_pass,
+      sym__stencil_fail,
+      sym__stencil_zfail,
+    ACTIONS(476), 4,
+      anon_sym_CompFront,
+      anon_sym_CompBack,
+      anon_sym_compfront,
+      anon_sym_compback,
+    ACTIONS(478), 4,
+      anon_sym_PassFront,
+      anon_sym_PassBack,
+      anon_sym_passfront,
+      anon_sym_passback,
+    ACTIONS(482), 4,
+      anon_sym_FailFront,
+      anon_sym_FailBack,
+      anon_sym_failfront,
+      anon_sym_failback,
+    ACTIONS(486), 4,
+      anon_sym_ZFailFront,
+      anon_sym_ZFailBack,
+      anon_sym_zfailfront,
+      anon_sym_zfailback,
+    ACTIONS(472), 8,
+      anon_sym_Ref,
+      anon_sym_ref,
+      anon_sym_ReadMask,
+      anon_sym_readMask,
+      anon_sym_readmask,
+      anon_sym_WriteMask,
+      anon_sym_writeMask,
+      anon_sym_writemask,
+  [2561] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(51), 1,
+      sym_comment,
+    ACTIONS(512), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(510), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [2614] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(52), 1,
+      sym_comment,
+    ACTIONS(516), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(514), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [2667] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(53), 1,
+      sym_comment,
+    ACTIONS(520), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(518), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [2720] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(54), 1,
+      sym_comment,
+    ACTIONS(524), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(522), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [2773] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(55), 1,
+      sym_comment,
+    ACTIONS(528), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(526), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [2826] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(56), 1,
+      sym_comment,
+    ACTIONS(532), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(530), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [2879] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(57), 1,
+      sym_comment,
+    ACTIONS(536), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(534), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [2932] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(58), 1,
+      sym_comment,
+    ACTIONS(540), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(538), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [2985] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(59), 1,
+      sym_comment,
+    ACTIONS(544), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(542), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [3038] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(60), 1,
+      sym_comment,
+    ACTIONS(548), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(546), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [3091] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(61), 1,
+      sym_comment,
+    ACTIONS(552), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(550), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [3144] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(62), 1,
+      sym_comment,
+    ACTIONS(556), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(554), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [3197] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(63), 1,
+      sym_comment,
+    ACTIONS(560), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(558), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [3250] = 16,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(562), 1,
+      anon_sym_RBRACE,
+    STATE(83), 1,
+      sym__stencil_op,
+    STATE(103), 1,
+      sym__stencil_comp,
+    ACTIONS(564), 2,
+      anon_sym_Pass,
+      anon_sym_pass,
+    ACTIONS(570), 2,
+      anon_sym_Comp,
+      anon_sym_comp,
+    ACTIONS(579), 2,
+      anon_sym_Fail,
+      anon_sym_fail,
+    ACTIONS(585), 2,
+      anon_sym_ZFail,
+      anon_sym_zfail,
+    STATE(64), 2,
+      sym_comment,
+      aux_sym_stencil_block_repeat1,
+    STATE(105), 3,
+      sym__stencil_pass,
+      sym__stencil_fail,
+      sym__stencil_zfail,
+    ACTIONS(573), 4,
+      anon_sym_CompFront,
+      anon_sym_CompBack,
+      anon_sym_compfront,
+      anon_sym_compback,
+    ACTIONS(576), 4,
+      anon_sym_PassFront,
+      anon_sym_PassBack,
+      anon_sym_passfront,
+      anon_sym_passback,
+    ACTIONS(582), 4,
+      anon_sym_FailFront,
+      anon_sym_FailBack,
+      anon_sym_failfront,
+      anon_sym_failback,
+    ACTIONS(588), 4,
+      anon_sym_ZFailFront,
+      anon_sym_ZFailBack,
+      anon_sym_zfailfront,
+      anon_sym_zfailback,
+    ACTIONS(567), 8,
+      anon_sym_Ref,
+      anon_sym_ref,
+      anon_sym_ReadMask,
+      anon_sym_readMask,
+      anon_sym_readmask,
+      anon_sym_WriteMask,
+      anon_sym_writeMask,
+      anon_sym_writemask,
+  [3325] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(65), 1,
+      sym_comment,
+    ACTIONS(593), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(591), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [3378] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(66), 1,
+      sym_comment,
+    ACTIONS(597), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(595), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [3431] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(67), 1,
+      sym_comment,
+    ACTIONS(601), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(599), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [3484] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(68), 1,
+      sym_comment,
+    ACTIONS(605), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(603), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [3537] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(69), 1,
+      sym_comment,
+    ACTIONS(609), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(607), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [3590] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(70), 1,
+      sym_comment,
+    ACTIONS(613), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(611), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [3643] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(71), 1,
+      sym_comment,
+    ACTIONS(617), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(615), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [3696] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(72), 1,
+      sym_comment,
+    ACTIONS(621), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(619), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [3749] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(73), 1,
+      sym_comment,
+    ACTIONS(625), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(623), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [3802] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(74), 1,
+      sym_comment,
+    ACTIONS(629), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(627), 37,
+      anon_sym_RBRACE,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [3855] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(75), 1,
+      sym_comment,
+    ACTIONS(633), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(631), 35,
+      anon_sym_RBRACE,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [3906] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(76), 1,
+      sym_comment,
+    ACTIONS(637), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(635), 35,
+      anon_sym_RBRACE,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [3957] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(77), 1,
+      sym_comment,
+    ACTIONS(641), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(639), 35,
+      anon_sym_RBRACE,
+      anon_sym_Pass,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [4008] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(78), 1,
+      sym_comment,
+    ACTIONS(645), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(643), 34,
+      anon_sym_RBRACE,
+      anon_sym_Pass,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [4058] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(79), 1,
+      sym_comment,
+    ACTIONS(649), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(647), 34,
+      anon_sym_RBRACE,
+      anon_sym_Pass,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_LOD,
+  [4108] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(80), 1,
+      sym_comment,
+    ACTIONS(653), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(651), 33,
+      anon_sym_RBRACE,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_LOD,
+      anon_sym_DQUOTE,
+  [4157] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(81), 1,
+      sym_comment,
+    ACTIONS(657), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(655), 32,
+      anon_sym_RBRACE,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_LOD,
+  [4205] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(82), 1,
+      sym_comment,
+    ACTIONS(661), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(659), 32,
+      anon_sym_RBRACE,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_Cull,
+      anon_sym_ZWrite,
+      anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
+      anon_sym_ZClip,
+      anon_sym_BlendOp,
+      anon_sym_ColorMask,
+      anon_sym_Offset,
+      anon_sym_AlphaToMask,
+      anon_sym_Conservative,
+      anon_sym_Lighting,
+      anon_sym_Fog,
+      anon_sym_ColorMaterial,
+      anon_sym_Material,
+      anon_sym_SetTexture,
+      anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
+      anon_sym_BindChannels,
+      anon_sym_Stencil,
+      anon_sym_CGPROGRAM,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLPROGRAM,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLPROGRAM,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_LOD,
+  [4253] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(83), 1,
+      sym_comment,
+    ACTIONS(665), 8,
       anon_sym_Pass,
       anon_sym_Comp,
       anon_sym_comp,
@@ -8253,7 +11388,7 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_fail,
       anon_sym_ZFail,
       anon_sym_zfail,
-    ACTIONS(413), 25,
+    ACTIONS(663), 25,
       anon_sym_RBRACE,
       anon_sym_Ref,
       anon_sym_ref,
@@ -8279,2241 +11414,237 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_ZFailBack,
       anon_sym_zfailfront,
       anon_sym_zfailback,
-  [2119] = 6,
+  [4300] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(419), 1,
-      anon_sym_COMMA,
-    ACTIONS(421), 1,
-      anon_sym_Blend,
-    STATE(33), 1,
-      sym_comment,
-    ACTIONS(417), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [2166] = 6,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(425), 1,
-      anon_sym_COMMA,
-    ACTIONS(427), 1,
-      anon_sym_Blend,
-    STATE(34), 1,
-      sym_comment,
-    ACTIONS(423), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [2213] = 6,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(431), 1,
-      anon_sym_COMMA,
-    ACTIONS(433), 1,
-      anon_sym_Blend,
-    STATE(35), 1,
-      sym_comment,
-    ACTIONS(429), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [2260] = 6,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(437), 1,
-      anon_sym_COMMA,
-    ACTIONS(439), 1,
-      anon_sym_Blend,
-    STATE(36), 1,
-      sym_comment,
-    ACTIONS(435), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [2307] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(443), 1,
-      anon_sym_Blend,
-    STATE(37), 1,
-      sym_comment,
-    ACTIONS(441), 30,
-      ts_builtin_sym_end,
-      anon_sym_Shader,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [2352] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(447), 1,
-      anon_sym_Blend,
-    STATE(38), 1,
-      sym_comment,
-    ACTIONS(445), 30,
-      anon_sym_RBRACE,
-      anon_sym_COMMA,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [2397] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(451), 1,
-      anon_sym_Blend,
-    STATE(39), 1,
-      sym_comment,
-    ACTIONS(449), 30,
-      anon_sym_RBRACE,
-      anon_sym_COMMA,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [2442] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(455), 1,
-      anon_sym_Blend,
-    STATE(40), 1,
-      sym_comment,
-    ACTIONS(453), 30,
-      ts_builtin_sym_end,
-      anon_sym_Shader,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [2487] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(459), 1,
-      anon_sym_Blend,
-    STATE(41), 1,
-      sym_comment,
-    ACTIONS(457), 30,
-      anon_sym_RBRACE,
-      anon_sym_COMMA,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [2532] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(463), 1,
-      anon_sym_Blend,
-    STATE(42), 1,
-      sym_comment,
-    ACTIONS(461), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [2576] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(467), 1,
-      anon_sym_Blend,
-    STATE(43), 1,
-      sym_comment,
-    ACTIONS(465), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [2620] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(471), 1,
-      anon_sym_Blend,
-    STATE(44), 1,
-      sym_comment,
-    ACTIONS(469), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [2664] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(475), 1,
-      anon_sym_Blend,
-    STATE(45), 1,
-      sym_comment,
-    ACTIONS(473), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [2708] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(479), 1,
-      anon_sym_Blend,
-    STATE(46), 1,
-      sym_comment,
-    ACTIONS(477), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [2752] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(483), 1,
-      anon_sym_Blend,
-    STATE(47), 1,
-      sym_comment,
-    ACTIONS(481), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [2796] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(487), 1,
-      anon_sym_Blend,
-    STATE(48), 1,
-      sym_comment,
-    ACTIONS(485), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [2840] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(491), 1,
-      anon_sym_Blend,
-    STATE(49), 1,
-      sym_comment,
-    ACTIONS(489), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [2884] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(495), 1,
-      anon_sym_Blend,
-    STATE(50), 1,
-      sym_comment,
-    ACTIONS(493), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [2928] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(499), 1,
-      anon_sym_Blend,
-    STATE(51), 1,
-      sym_comment,
-    ACTIONS(497), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [2972] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(503), 1,
-      anon_sym_Blend,
-    STATE(52), 1,
-      sym_comment,
-    ACTIONS(501), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [3016] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(507), 1,
-      anon_sym_Blend,
-    STATE(53), 1,
-      sym_comment,
-    ACTIONS(505), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [3060] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(511), 1,
-      anon_sym_Blend,
-    STATE(54), 1,
-      sym_comment,
-    ACTIONS(509), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [3104] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(515), 1,
-      anon_sym_Blend,
-    STATE(55), 1,
-      sym_comment,
-    ACTIONS(513), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [3148] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(519), 1,
-      anon_sym_Blend,
-    STATE(56), 1,
-      sym_comment,
-    ACTIONS(517), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [3192] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(523), 1,
-      anon_sym_Blend,
-    STATE(57), 1,
-      sym_comment,
-    ACTIONS(521), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [3236] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(527), 1,
-      anon_sym_Blend,
-    STATE(58), 1,
-      sym_comment,
-    ACTIONS(525), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [3280] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(531), 1,
-      anon_sym_Blend,
-    STATE(59), 1,
-      sym_comment,
-    ACTIONS(529), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [3324] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(535), 1,
-      anon_sym_Blend,
-    STATE(60), 1,
-      sym_comment,
-    ACTIONS(533), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [3368] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(539), 1,
-      anon_sym_Blend,
-    STATE(61), 1,
-      sym_comment,
-    ACTIONS(537), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [3412] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(543), 1,
-      anon_sym_Blend,
-    STATE(62), 1,
-      sym_comment,
-    ACTIONS(541), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [3456] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(547), 1,
-      anon_sym_Blend,
-    STATE(63), 1,
-      sym_comment,
-    ACTIONS(545), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [3500] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(551), 1,
-      anon_sym_Blend,
-    STATE(64), 1,
-      sym_comment,
-    ACTIONS(549), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [3544] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(555), 1,
-      anon_sym_Blend,
-    STATE(65), 1,
-      sym_comment,
-    ACTIONS(553), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [3588] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(559), 1,
-      anon_sym_Blend,
-    STATE(66), 1,
-      sym_comment,
-    ACTIONS(557), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [3632] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(563), 1,
-      anon_sym_Blend,
-    STATE(67), 1,
-      sym_comment,
-    ACTIONS(561), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [3676] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(567), 1,
-      anon_sym_Blend,
-    STATE(68), 1,
-      sym_comment,
-    ACTIONS(565), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [3720] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(571), 1,
-      anon_sym_Blend,
-    STATE(69), 1,
-      sym_comment,
-    ACTIONS(569), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [3764] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(575), 1,
-      anon_sym_Blend,
-    STATE(70), 1,
-      sym_comment,
-    ACTIONS(573), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [3808] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(579), 1,
-      anon_sym_Blend,
-    STATE(71), 1,
-      sym_comment,
-    ACTIONS(577), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [3852] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(583), 1,
-      anon_sym_Blend,
-    STATE(72), 1,
-      sym_comment,
-    ACTIONS(581), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [3896] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(587), 1,
-      anon_sym_Blend,
-    STATE(73), 1,
-      sym_comment,
-    ACTIONS(585), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [3940] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(591), 1,
-      anon_sym_Blend,
-    STATE(74), 1,
-      sym_comment,
-    ACTIONS(589), 29,
-      anon_sym_RBRACE,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [3984] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(595), 1,
-      anon_sym_Blend,
-    STATE(75), 1,
-      sym_comment,
-    ACTIONS(593), 28,
-      anon_sym_RBRACE,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [4027] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(599), 1,
-      anon_sym_Blend,
-    STATE(76), 1,
-      sym_comment,
-    ACTIONS(597), 28,
-      anon_sym_RBRACE,
-      anon_sym_Pass,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [4070] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(603), 1,
-      anon_sym_Blend,
-    STATE(77), 1,
-      sym_comment,
-    ACTIONS(601), 27,
-      anon_sym_RBRACE,
-      anon_sym_Pass,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [4112] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(607), 1,
-      anon_sym_Blend,
-    STATE(78), 1,
-      sym_comment,
-    ACTIONS(605), 27,
-      anon_sym_RBRACE,
-      anon_sym_Pass,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [4154] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(611), 1,
-      anon_sym_Blend,
-    STATE(79), 1,
-      sym_comment,
-    ACTIONS(609), 27,
-      anon_sym_RBRACE,
-      anon_sym_Pass,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_LOD,
-  [4196] = 7,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    STATE(80), 1,
-      sym_comment,
-    STATE(282), 1,
-      sym_property_type,
-    ACTIONS(617), 2,
-      anon_sym_Range,
-      anon_sym_range,
-    ACTIONS(613), 6,
-      anon_sym_2D,
-      anon_sym_2d,
-      anon_sym_Cube,
-      anon_sym_cube,
-      anon_sym_Int,
-      anon_sym_int,
-    ACTIONS(615), 17,
-      anon_sym_3D,
-      anon_sym_3d,
-      anon_sym_CUBE,
-      anon_sym_CubeArray,
-      anon_sym_cubearray,
-      anon_sym_2DArray,
-      anon_sym_2darray,
-      anon_sym_Color,
-      anon_sym_color,
-      anon_sym_Vector,
-      anon_sym_vector,
-      anon_sym_Float,
-      anon_sym_float,
-      anon_sym_Integer,
-      anon_sym_integer,
-      anon_sym_any,
-      anon_sym_Any,
-  [4240] = 7,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    STATE(81), 1,
-      sym_comment,
-    STATE(270), 1,
-      sym_property_type,
-    ACTIONS(617), 2,
-      anon_sym_Range,
-      anon_sym_range,
-    ACTIONS(613), 6,
-      anon_sym_2D,
-      anon_sym_2d,
-      anon_sym_Cube,
-      anon_sym_cube,
-      anon_sym_Int,
-      anon_sym_int,
-    ACTIONS(615), 17,
-      anon_sym_3D,
-      anon_sym_3d,
-      anon_sym_CUBE,
-      anon_sym_CubeArray,
-      anon_sym_cubearray,
-      anon_sym_2DArray,
-      anon_sym_2darray,
-      anon_sym_Color,
-      anon_sym_color,
-      anon_sym_Vector,
-      anon_sym_vector,
-      anon_sym_Float,
-      anon_sym_float,
-      anon_sym_Integer,
-      anon_sym_integer,
-      anon_sym_any,
-      anon_sym_Any,
-  [4284] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(621), 1,
-      anon_sym_Blend,
-    STATE(82), 1,
-      sym_comment,
-    ACTIONS(619), 24,
-      anon_sym_RBRACE,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-  [4323] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(625), 1,
-      anon_sym_Blend,
-    STATE(83), 1,
-      sym_comment,
-    ACTIONS(623), 24,
-      anon_sym_RBRACE,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-  [4362] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(629), 1,
-      anon_sym_Blend,
     STATE(84), 1,
       sym_comment,
-    ACTIONS(627), 24,
+    ACTIONS(669), 8,
+      anon_sym_Pass,
+      anon_sym_Comp,
+      anon_sym_comp,
+      anon_sym_pass,
+      anon_sym_Fail,
+      anon_sym_fail,
+      anon_sym_ZFail,
+      anon_sym_zfail,
+    ACTIONS(667), 25,
       anon_sym_RBRACE,
-      anon_sym_Name,
-      anon_sym_Tags,
-      anon_sym_Cull,
-      anon_sym_ZWrite,
-      anon_sym_ZTest,
-      anon_sym_ZClip,
-      anon_sym_BlendOp,
-      anon_sym_ColorMask,
-      anon_sym_Offset,
-      anon_sym_AlphaToMask,
-      anon_sym_Conservative,
-      anon_sym_Lighting,
-      anon_sym_Fog,
-      anon_sym_ColorMaterial,
-      anon_sym_Material,
-      anon_sym_SetTexture,
-      anon_sym_AlphaTest,
-      anon_sym_BindChannels,
-      anon_sym_Stencil,
-      anon_sym_CGPROGRAM,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLPROGRAM,
-      anon_sym_HLSLINCLUDE,
-  [4401] = 17,
+      anon_sym_Ref,
+      anon_sym_ref,
+      anon_sym_ReadMask,
+      anon_sym_readMask,
+      anon_sym_readmask,
+      anon_sym_WriteMask,
+      anon_sym_writeMask,
+      anon_sym_writemask,
+      anon_sym_CompFront,
+      anon_sym_CompBack,
+      anon_sym_compfront,
+      anon_sym_compback,
+      anon_sym_PassFront,
+      anon_sym_PassBack,
+      anon_sym_passfront,
+      anon_sym_passback,
+      anon_sym_FailFront,
+      anon_sym_FailBack,
+      anon_sym_failfront,
+      anon_sym_failback,
+      anon_sym_ZFailFront,
+      anon_sym_ZFailBack,
+      anon_sym_zfailfront,
+      anon_sym_zfailback,
+  [4347] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(11), 1,
-      anon_sym_SubShader,
-    ACTIONS(67), 1,
-      anon_sym_UsePass,
-    ACTIONS(69), 1,
-      anon_sym_GrabPass,
-    ACTIONS(631), 1,
-      anon_sym_RBRACE,
-    ACTIONS(633), 1,
-      anon_sym_Properties,
-    ACTIONS(635), 1,
-      anon_sym_CGINCLUDE,
-    ACTIONS(637), 1,
-      anon_sym_HLSLINCLUDE,
-    ACTIONS(639), 1,
-      anon_sym_CustomEditor,
-    ACTIONS(641), 1,
-      anon_sym_Dependency,
-    ACTIONS(645), 1,
-      anon_sym_Category,
     STATE(85), 1,
       sym_comment,
-    STATE(87), 1,
-      aux_sym_shader_body_repeat1,
-    STATE(120), 1,
-      sym__shader_body_item,
-    ACTIONS(643), 2,
-      anon_sym_FallBack,
-      anon_sym_Fallback,
-    STATE(118), 10,
-      sym_properties_block,
-      sym_subshader_block,
-      sym_cg_include,
-      sym_hlsl_include,
-      sym_custom_editor,
-      sym_dependency,
-      sym_fallback,
-      sym_use_pass,
-      sym_grab_pass,
-      sym_category_block,
-  [4463] = 16,
+    ACTIONS(673), 8,
+      anon_sym_Pass,
+      anon_sym_Comp,
+      anon_sym_comp,
+      anon_sym_pass,
+      anon_sym_Fail,
+      anon_sym_fail,
+      anon_sym_ZFail,
+      anon_sym_zfail,
+    ACTIONS(671), 25,
+      anon_sym_RBRACE,
+      anon_sym_Ref,
+      anon_sym_ref,
+      anon_sym_ReadMask,
+      anon_sym_readMask,
+      anon_sym_readmask,
+      anon_sym_WriteMask,
+      anon_sym_writeMask,
+      anon_sym_writemask,
+      anon_sym_CompFront,
+      anon_sym_CompBack,
+      anon_sym_compfront,
+      anon_sym_compback,
+      anon_sym_PassFront,
+      anon_sym_PassBack,
+      anon_sym_passfront,
+      anon_sym_passback,
+      anon_sym_FailFront,
+      anon_sym_FailBack,
+      anon_sym_failfront,
+      anon_sym_failback,
+      anon_sym_ZFailFront,
+      anon_sym_ZFailBack,
+      anon_sym_zfailfront,
+      anon_sym_zfailback,
+  [4394] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(647), 1,
-      anon_sym_RBRACE,
-    ACTIONS(649), 1,
-      anon_sym_Properties,
-    ACTIONS(652), 1,
-      anon_sym_SubShader,
-    ACTIONS(655), 1,
-      anon_sym_CGINCLUDE,
-    ACTIONS(658), 1,
-      anon_sym_HLSLINCLUDE,
-    ACTIONS(661), 1,
-      anon_sym_CustomEditor,
-    ACTIONS(664), 1,
-      anon_sym_Dependency,
-    ACTIONS(670), 1,
-      anon_sym_UsePass,
-    ACTIONS(673), 1,
-      anon_sym_GrabPass,
-    ACTIONS(676), 1,
-      anon_sym_Category,
-    STATE(120), 1,
-      sym__shader_body_item,
-    ACTIONS(667), 2,
-      anon_sym_FallBack,
-      anon_sym_Fallback,
-    STATE(86), 2,
-      sym_comment,
-      aux_sym_shader_body_repeat1,
-    STATE(118), 10,
-      sym_properties_block,
-      sym_subshader_block,
-      sym_cg_include,
-      sym_hlsl_include,
-      sym_custom_editor,
-      sym_dependency,
-      sym_fallback,
-      sym_use_pass,
-      sym_grab_pass,
-      sym_category_block,
-  [4523] = 17,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(11), 1,
-      anon_sym_SubShader,
-    ACTIONS(67), 1,
-      anon_sym_UsePass,
-    ACTIONS(69), 1,
-      anon_sym_GrabPass,
-    ACTIONS(633), 1,
-      anon_sym_Properties,
-    ACTIONS(635), 1,
-      anon_sym_CGINCLUDE,
-    ACTIONS(637), 1,
-      anon_sym_HLSLINCLUDE,
-    ACTIONS(639), 1,
-      anon_sym_CustomEditor,
-    ACTIONS(641), 1,
-      anon_sym_Dependency,
-    ACTIONS(645), 1,
-      anon_sym_Category,
-    ACTIONS(679), 1,
-      anon_sym_RBRACE,
     STATE(86), 1,
-      aux_sym_shader_body_repeat1,
-    STATE(87), 1,
       sym_comment,
-    STATE(120), 1,
-      sym__shader_body_item,
-    ACTIONS(643), 2,
-      anon_sym_FallBack,
-      anon_sym_Fallback,
-    STATE(118), 10,
-      sym_properties_block,
-      sym_subshader_block,
-      sym_cg_include,
-      sym_hlsl_include,
-      sym_custom_editor,
-      sym_dependency,
-      sym_fallback,
-      sym_use_pass,
-      sym_grab_pass,
-      sym_category_block,
-  [4585] = 9,
+    ACTIONS(677), 8,
+      anon_sym_Pass,
+      anon_sym_Comp,
+      anon_sym_comp,
+      anon_sym_pass,
+      anon_sym_Fail,
+      anon_sym_fail,
+      anon_sym_ZFail,
+      anon_sym_zfail,
+    ACTIONS(675), 25,
+      anon_sym_RBRACE,
+      anon_sym_Ref,
+      anon_sym_ref,
+      anon_sym_ReadMask,
+      anon_sym_readMask,
+      anon_sym_readmask,
+      anon_sym_WriteMask,
+      anon_sym_writeMask,
+      anon_sym_writemask,
+      anon_sym_CompFront,
+      anon_sym_CompBack,
+      anon_sym_compfront,
+      anon_sym_compback,
+      anon_sym_PassFront,
+      anon_sym_PassBack,
+      anon_sym_passfront,
+      anon_sym_passback,
+      anon_sym_FailFront,
+      anon_sym_FailBack,
+      anon_sym_failfront,
+      anon_sym_failback,
+      anon_sym_ZFailFront,
+      anon_sym_ZFailBack,
+      anon_sym_zfailfront,
+      anon_sym_zfailback,
+  [4441] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(683), 1,
+    STATE(87), 1,
+      sym_comment,
+    ACTIONS(681), 8,
+      anon_sym_Pass,
+      anon_sym_Comp,
+      anon_sym_comp,
+      anon_sym_pass,
+      anon_sym_Fail,
+      anon_sym_fail,
+      anon_sym_ZFail,
+      anon_sym_zfail,
+    ACTIONS(679), 25,
       anon_sym_RBRACE,
+      anon_sym_Ref,
+      anon_sym_ref,
+      anon_sym_ReadMask,
+      anon_sym_readMask,
+      anon_sym_readmask,
+      anon_sym_WriteMask,
+      anon_sym_writeMask,
+      anon_sym_writemask,
+      anon_sym_CompFront,
+      anon_sym_CompBack,
+      anon_sym_compfront,
+      anon_sym_compback,
+      anon_sym_PassFront,
+      anon_sym_PassBack,
+      anon_sym_passfront,
+      anon_sym_passback,
+      anon_sym_FailFront,
+      anon_sym_FailBack,
+      anon_sym_failfront,
+      anon_sym_failback,
+      anon_sym_ZFailFront,
+      anon_sym_ZFailBack,
+      anon_sym_zfailfront,
+      anon_sym_zfailback,
+  [4488] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
     STATE(88), 1,
       sym_comment,
-    STATE(89), 1,
-      aux_sym__legacy_set_texture_item_repeat1,
-    STATE(92), 1,
-      sym__legacy_combine_value,
-    ACTIONS(687), 3,
-      anon_sym_combine,
-      anon_sym_constantColor,
-      anon_sym_Matrix,
-    ACTIONS(685), 5,
-      anon_sym_COMMA,
-      anon_sym_DASH,
-      anon_sym_STAR,
-      anon_sym_PLUS,
-      sym_number_literal,
-    ACTIONS(681), 12,
-      anon_sym_One,
-      anon_sym_texture,
-      anon_sym_primary,
-      anon_sym_previous,
-      anon_sym_constant,
-      anon_sym_one,
-      anon_sym_alpha,
-      anon_sym_invalpha,
-      anon_sym_double,
-      anon_sym_quad,
-      anon_sym_lerp,
-      sym_identifier,
-  [4630] = 8,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(692), 1,
+    ACTIONS(685), 8,
+      anon_sym_Pass,
+      anon_sym_Comp,
+      anon_sym_comp,
+      anon_sym_pass,
+      anon_sym_Fail,
+      anon_sym_fail,
+      anon_sym_ZFail,
+      anon_sym_zfail,
+    ACTIONS(683), 25,
       anon_sym_RBRACE,
-    STATE(92), 1,
-      sym__legacy_combine_value,
-    STATE(89), 2,
-      sym_comment,
-      aux_sym__legacy_set_texture_item_repeat1,
-    ACTIONS(697), 3,
-      anon_sym_combine,
-      anon_sym_constantColor,
-      anon_sym_Matrix,
-    ACTIONS(694), 5,
-      anon_sym_COMMA,
-      anon_sym_DASH,
-      anon_sym_STAR,
-      anon_sym_PLUS,
-      sym_number_literal,
-    ACTIONS(689), 12,
-      anon_sym_One,
-      anon_sym_texture,
-      anon_sym_primary,
-      anon_sym_previous,
-      anon_sym_constant,
-      anon_sym_one,
-      anon_sym_alpha,
-      anon_sym_invalpha,
-      anon_sym_double,
-      anon_sym_quad,
-      anon_sym_lerp,
-      sym_identifier,
-  [4673] = 5,
+      anon_sym_Ref,
+      anon_sym_ref,
+      anon_sym_ReadMask,
+      anon_sym_readMask,
+      anon_sym_readmask,
+      anon_sym_WriteMask,
+      anon_sym_writeMask,
+      anon_sym_writemask,
+      anon_sym_CompFront,
+      anon_sym_CompBack,
+      anon_sym_compfront,
+      anon_sym_compback,
+      anon_sym_PassFront,
+      anon_sym_PassBack,
+      anon_sym_passfront,
+      anon_sym_passback,
+      anon_sym_FailFront,
+      anon_sym_FailBack,
+      anon_sym_failfront,
+      anon_sym_failback,
+      anon_sym_ZFailFront,
+      anon_sym_ZFailBack,
+      anon_sym_zfailfront,
+      anon_sym_zfailback,
+  [4535] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(701), 1,
-      anon_sym_Blend,
-    STATE(90), 1,
+    STATE(89), 1,
       sym_comment,
-    ACTIONS(699), 20,
+    ACTIONS(689), 2,
+      anon_sym_Color,
+      anon_sym_Blend,
+    ACTIONS(687), 27,
       anon_sym_RBRACE,
       anon_sym_SubShader,
+      anon_sym_Subshader,
       anon_sym_Tags,
       anon_sym_Cull,
       anon_sym_ZWrite,
       anon_sym_ZTest,
+      anon_sym_Ztest,
+      anon_sym_ztest,
+      anon_sym_SeparateSpecular,
       anon_sym_ZClip,
       anon_sym_BlendOp,
       anon_sym_ColorMask,
@@ -10526,27 +11657,79 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_Material,
       anon_sym_SetTexture,
       anon_sym_AlphaTest,
+      anon_sym_Alphatest,
+      anon_sym_alphatest,
       anon_sym_BindChannels,
       anon_sym_Stencil,
-  [4708] = 5,
+      anon_sym_LOD,
+  [4578] = 7,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    STATE(91), 1,
+    STATE(90), 1,
       sym_comment,
-    ACTIONS(705), 6,
+    STATE(289), 1,
+      sym_property_type,
+    ACTIONS(695), 3,
+      anon_sym_Range,
+      anon_sym_range,
+      anon_sym_RANGE,
+    ACTIONS(691), 6,
+      anon_sym_2D,
+      anon_sym_2d,
+      anon_sym_Cube,
+      anon_sym_cube,
+      anon_sym_Int,
+      anon_sym_int,
+    ACTIONS(693), 19,
+      anon_sym_3D,
+      anon_sym_3d,
+      anon_sym_CUBE,
+      anon_sym_CubeArray,
+      anon_sym_cubearray,
+      anon_sym_2DArray,
+      anon_sym_2darray,
+      anon_sym_Color,
+      anon_sym_color,
+      anon_sym_Vector,
+      anon_sym_vector,
+      anon_sym_Float,
+      anon_sym_float,
+      anon_sym_Integer,
+      anon_sym_integer,
+      anon_sym_any,
+      anon_sym_Any,
+      anon_sym_RECT,
+      anon_sym_rect,
+  [4625] = 9,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(700), 1,
       anon_sym_RBRACE,
+    ACTIONS(702), 1,
+      anon_sym_LPAREN,
+    STATE(98), 1,
+      sym__legacy_combine_value,
+    STATE(91), 2,
+      sym_comment,
+      aux_sym__legacy_set_texture_item_repeat1,
+    ACTIONS(705), 5,
       anon_sym_COMMA,
       anon_sym_DASH,
       anon_sym_STAR,
       anon_sym_PLUS,
       sym_number_literal,
-    ACTIONS(703), 15,
-      anon_sym_One,
+    ACTIONS(708), 5,
       anon_sym_combine,
+      anon_sym_Combine,
       anon_sym_constantColor,
+      anon_sym_ConstantColor,
       anon_sym_Matrix,
+    ACTIONS(697), 15,
+      anon_sym_One,
       anon_sym_texture,
       anon_sym_primary,
       anon_sym_previous,
@@ -10557,84 +11740,78 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_double,
       anon_sym_quad,
       anon_sym_lerp,
+      anon_sym_DOUBLE,
+      anon_sym_QUAD,
+      anon_sym_LERP,
       sym_identifier,
-  [4743] = 5,
+  [4676] = 7,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     STATE(92), 1,
       sym_comment,
-    ACTIONS(709), 6,
-      anon_sym_RBRACE,
-      anon_sym_COMMA,
-      anon_sym_DASH,
-      anon_sym_STAR,
-      anon_sym_PLUS,
-      sym_number_literal,
-    ACTIONS(707), 15,
-      anon_sym_One,
-      anon_sym_combine,
-      anon_sym_constantColor,
-      anon_sym_Matrix,
-      anon_sym_texture,
-      anon_sym_primary,
-      anon_sym_previous,
-      anon_sym_constant,
-      anon_sym_one,
-      anon_sym_alpha,
-      anon_sym_invalpha,
-      anon_sym_double,
-      anon_sym_quad,
-      anon_sym_lerp,
-      sym_identifier,
-  [4778] = 6,
+    STATE(302), 1,
+      sym_property_type,
+    ACTIONS(695), 3,
+      anon_sym_Range,
+      anon_sym_range,
+      anon_sym_RANGE,
+    ACTIONS(691), 6,
+      anon_sym_2D,
+      anon_sym_2d,
+      anon_sym_Cube,
+      anon_sym_cube,
+      anon_sym_Int,
+      anon_sym_int,
+    ACTIONS(693), 19,
+      anon_sym_3D,
+      anon_sym_3d,
+      anon_sym_CUBE,
+      anon_sym_CubeArray,
+      anon_sym_cubearray,
+      anon_sym_2DArray,
+      anon_sym_2darray,
+      anon_sym_Color,
+      anon_sym_color,
+      anon_sym_Vector,
+      anon_sym_vector,
+      anon_sym_Float,
+      anon_sym_float,
+      anon_sym_Integer,
+      anon_sym_integer,
+      anon_sym_any,
+      anon_sym_Any,
+      anon_sym_RECT,
+      anon_sym_rect,
+  [4723] = 10,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(711), 1,
-      anon_sym_LBRACK,
+    ACTIONS(712), 1,
+      anon_sym_RBRACE,
+    ACTIONS(714), 1,
+      anon_sym_LPAREN,
+    STATE(91), 1,
+      aux_sym__legacy_set_texture_item_repeat1,
     STATE(93), 1,
       sym_comment,
-    STATE(27), 2,
-      sym_stencil_op_value,
-      sym_property_reference,
-    ACTIONS(713), 16,
-      anon_sym_Zero,
-      anon_sym_Keep,
-      anon_sym_keep,
-      anon_sym_zero,
-      anon_sym_Replace,
-      anon_sym_replace,
-      anon_sym_IncrSat,
-      anon_sym_incrsat,
-      anon_sym_DecrSat,
-      anon_sym_decrsat,
-      anon_sym_Invert,
-      anon_sym_invert,
-      anon_sym_IncrWrap,
-      anon_sym_incrwrap,
-      anon_sym_DecrWrap,
-      anon_sym_decrwrap,
-  [4813] = 7,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    STATE(88), 1,
-      aux_sym__legacy_set_texture_item_repeat1,
-    STATE(92), 1,
+    STATE(98), 1,
       sym__legacy_combine_value,
-    STATE(94), 1,
-      sym_comment,
-    ACTIONS(685), 5,
+    ACTIONS(716), 5,
       anon_sym_COMMA,
       anon_sym_DASH,
       anon_sym_STAR,
       anon_sym_PLUS,
       sym_number_literal,
-    ACTIONS(681), 12,
+    ACTIONS(718), 5,
+      anon_sym_combine,
+      anon_sym_Combine,
+      anon_sym_constantColor,
+      anon_sym_ConstantColor,
+      anon_sym_Matrix,
+    ACTIONS(710), 15,
       anon_sym_One,
       anon_sym_texture,
       anon_sym_primary,
@@ -10646,175 +11823,349 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_double,
       anon_sym_quad,
       anon_sym_lerp,
+      anon_sym_DOUBLE,
+      anon_sym_QUAD,
+      anon_sym_LERP,
       sym_identifier,
-  [4850] = 6,
+  [4776] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(711), 1,
-      anon_sym_LBRACK,
+    STATE(94), 1,
+      sym_comment,
+    ACTIONS(722), 8,
+      anon_sym_RBRACE,
+      anon_sym_LPAREN,
+      anon_sym_COMMA,
+      anon_sym_RPAREN,
+      anon_sym_DASH,
+      anon_sym_STAR,
+      anon_sym_PLUS,
+      sym_number_literal,
+    ACTIONS(720), 20,
+      anon_sym_One,
+      anon_sym_combine,
+      anon_sym_Combine,
+      anon_sym_constantColor,
+      anon_sym_ConstantColor,
+      anon_sym_Matrix,
+      anon_sym_texture,
+      anon_sym_primary,
+      anon_sym_previous,
+      anon_sym_constant,
+      anon_sym_one,
+      anon_sym_alpha,
+      anon_sym_invalpha,
+      anon_sym_double,
+      anon_sym_quad,
+      anon_sym_lerp,
+      anon_sym_DOUBLE,
+      anon_sym_QUAD,
+      anon_sym_LERP,
+      sym_identifier,
+  [4818] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
     STATE(95), 1,
       sym_comment,
-    STATE(29), 2,
-      sym_comparison_func,
-      sym_property_reference,
-    ACTIONS(715), 16,
-      anon_sym_Less,
-      anon_sym_less,
-      anon_sym_Greater,
-      anon_sym_greater,
-      anon_sym_LEqual,
-      anon_sym_lequal,
-      anon_sym_GEqual,
-      anon_sym_gequal,
-      anon_sym_Equal,
-      anon_sym_equal,
-      anon_sym_NotEqual,
-      anon_sym_notequal,
-      anon_sym_Always,
-      anon_sym_always,
-      anon_sym_Never,
-      anon_sym_never,
-  [4885] = 6,
+    ACTIONS(726), 8,
+      anon_sym_RBRACE,
+      anon_sym_LPAREN,
+      anon_sym_COMMA,
+      anon_sym_RPAREN,
+      anon_sym_DASH,
+      anon_sym_STAR,
+      anon_sym_PLUS,
+      sym_number_literal,
+    ACTIONS(724), 20,
+      anon_sym_One,
+      anon_sym_combine,
+      anon_sym_Combine,
+      anon_sym_constantColor,
+      anon_sym_ConstantColor,
+      anon_sym_Matrix,
+      anon_sym_texture,
+      anon_sym_primary,
+      anon_sym_previous,
+      anon_sym_constant,
+      anon_sym_one,
+      anon_sym_alpha,
+      anon_sym_invalpha,
+      anon_sym_double,
+      anon_sym_quad,
+      anon_sym_lerp,
+      anon_sym_DOUBLE,
+      anon_sym_QUAD,
+      anon_sym_LERP,
+      sym_identifier,
+  [4860] = 18,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(711), 1,
-      anon_sym_LBRACK,
+    ACTIONS(73), 1,
+      anon_sym_UsePass,
+    ACTIONS(75), 1,
+      anon_sym_GrabPass,
+    ACTIONS(728), 1,
+      anon_sym_RBRACE,
+    ACTIONS(730), 1,
+      anon_sym_Properties,
+    ACTIONS(732), 1,
+      anon_sym_CGINCLUDE,
+    ACTIONS(734), 1,
+      anon_sym_HLSLINCLUDE,
+    ACTIONS(736), 1,
+      anon_sym_GLSLINCLUDE,
+    ACTIONS(738), 1,
+      anon_sym_CustomEditor,
+    ACTIONS(740), 1,
+      anon_sym_Dependency,
+    ACTIONS(744), 1,
+      anon_sym_Category,
     STATE(96), 1,
       sym_comment,
-    STATE(56), 2,
-      sym_comparison_func,
-      sym_property_reference,
-    ACTIONS(715), 16,
-      anon_sym_Less,
-      anon_sym_less,
-      anon_sym_Greater,
-      anon_sym_greater,
-      anon_sym_LEqual,
-      anon_sym_lequal,
-      anon_sym_GEqual,
-      anon_sym_gequal,
-      anon_sym_Equal,
-      anon_sym_equal,
-      anon_sym_NotEqual,
-      anon_sym_notequal,
-      anon_sym_Always,
-      anon_sym_always,
-      anon_sym_Never,
-      anon_sym_never,
-  [4920] = 4,
+    STATE(97), 1,
+      aux_sym_shader_body_repeat1,
+    STATE(127), 1,
+      sym__shader_body_item,
+    ACTIONS(11), 2,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+    ACTIONS(742), 2,
+      anon_sym_FallBack,
+      anon_sym_Fallback,
+    STATE(129), 11,
+      sym_properties_block,
+      sym_subshader_block,
+      sym_cg_include,
+      sym_hlsl_include,
+      sym_glsl_include,
+      sym_custom_editor,
+      sym_dependency,
+      sym_fallback,
+      sym_use_pass,
+      sym_grab_pass,
+      sym_category_block,
+  [4927] = 17,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    STATE(97), 1,
+    ACTIONS(746), 1,
+      anon_sym_RBRACE,
+    ACTIONS(748), 1,
+      anon_sym_Properties,
+    ACTIONS(754), 1,
+      anon_sym_CGINCLUDE,
+    ACTIONS(757), 1,
+      anon_sym_HLSLINCLUDE,
+    ACTIONS(760), 1,
+      anon_sym_GLSLINCLUDE,
+    ACTIONS(763), 1,
+      anon_sym_CustomEditor,
+    ACTIONS(766), 1,
+      anon_sym_Dependency,
+    ACTIONS(772), 1,
+      anon_sym_UsePass,
+    ACTIONS(775), 1,
+      anon_sym_GrabPass,
+    ACTIONS(778), 1,
+      anon_sym_Category,
+    STATE(127), 1,
+      sym__shader_body_item,
+    ACTIONS(751), 2,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+    ACTIONS(769), 2,
+      anon_sym_FallBack,
+      anon_sym_Fallback,
+    STATE(97), 2,
       sym_comment,
-    ACTIONS(717), 17,
-      anon_sym_LBRACK,
-      anon_sym_Zero,
-      anon_sym_Keep,
-      anon_sym_keep,
-      anon_sym_zero,
-      anon_sym_Replace,
-      anon_sym_replace,
-      anon_sym_IncrSat,
-      anon_sym_incrsat,
-      anon_sym_DecrSat,
-      anon_sym_decrsat,
-      anon_sym_Invert,
-      anon_sym_invert,
-      anon_sym_IncrWrap,
-      anon_sym_incrwrap,
-      anon_sym_DecrWrap,
-      anon_sym_decrwrap,
-  [4949] = 4,
+      aux_sym_shader_body_repeat1,
+    STATE(129), 11,
+      sym_properties_block,
+      sym_subshader_block,
+      sym_cg_include,
+      sym_hlsl_include,
+      sym_glsl_include,
+      sym_custom_editor,
+      sym_dependency,
+      sym_fallback,
+      sym_use_pass,
+      sym_grab_pass,
+      sym_category_block,
+  [4992] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     STATE(98), 1,
       sym_comment,
-    ACTIONS(719), 17,
-      anon_sym_LBRACK,
-      anon_sym_Less,
-      anon_sym_less,
-      anon_sym_Greater,
-      anon_sym_greater,
-      anon_sym_LEqual,
-      anon_sym_lequal,
-      anon_sym_GEqual,
-      anon_sym_gequal,
-      anon_sym_Equal,
-      anon_sym_equal,
-      anon_sym_NotEqual,
-      anon_sym_notequal,
-      anon_sym_Always,
-      anon_sym_always,
-      anon_sym_Never,
-      anon_sym_never,
-  [4978] = 4,
+    ACTIONS(783), 7,
+      anon_sym_RBRACE,
+      anon_sym_LPAREN,
+      anon_sym_COMMA,
+      anon_sym_DASH,
+      anon_sym_STAR,
+      anon_sym_PLUS,
+      sym_number_literal,
+    ACTIONS(781), 20,
+      anon_sym_One,
+      anon_sym_combine,
+      anon_sym_Combine,
+      anon_sym_constantColor,
+      anon_sym_ConstantColor,
+      anon_sym_Matrix,
+      anon_sym_texture,
+      anon_sym_primary,
+      anon_sym_previous,
+      anon_sym_constant,
+      anon_sym_one,
+      anon_sym_alpha,
+      anon_sym_invalpha,
+      anon_sym_double,
+      anon_sym_quad,
+      anon_sym_lerp,
+      anon_sym_DOUBLE,
+      anon_sym_QUAD,
+      anon_sym_LERP,
+      sym_identifier,
+  [5033] = 18,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
+    ACTIONS(73), 1,
+      anon_sym_UsePass,
+    ACTIONS(75), 1,
+      anon_sym_GrabPass,
+    ACTIONS(730), 1,
+      anon_sym_Properties,
+    ACTIONS(732), 1,
+      anon_sym_CGINCLUDE,
+    ACTIONS(734), 1,
+      anon_sym_HLSLINCLUDE,
+    ACTIONS(736), 1,
+      anon_sym_GLSLINCLUDE,
+    ACTIONS(738), 1,
+      anon_sym_CustomEditor,
+    ACTIONS(740), 1,
+      anon_sym_Dependency,
+    ACTIONS(744), 1,
+      anon_sym_Category,
+    ACTIONS(785), 1,
+      anon_sym_RBRACE,
+    STATE(96), 1,
+      aux_sym_shader_body_repeat1,
     STATE(99), 1,
       sym_comment,
-    ACTIONS(721), 17,
-      anon_sym_LBRACK,
-      anon_sym_Zero,
-      anon_sym_Keep,
-      anon_sym_keep,
-      anon_sym_zero,
-      anon_sym_Replace,
-      anon_sym_replace,
-      anon_sym_IncrSat,
-      anon_sym_incrsat,
-      anon_sym_DecrSat,
-      anon_sym_decrsat,
-      anon_sym_Invert,
-      anon_sym_invert,
-      anon_sym_IncrWrap,
-      anon_sym_incrwrap,
-      anon_sym_DecrWrap,
-      anon_sym_decrwrap,
-  [5007] = 4,
+    STATE(127), 1,
+      sym__shader_body_item,
+    ACTIONS(11), 2,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+    ACTIONS(742), 2,
+      anon_sym_FallBack,
+      anon_sym_Fallback,
+    STATE(129), 11,
+      sym_properties_block,
+      sym_subshader_block,
+      sym_cg_include,
+      sym_hlsl_include,
+      sym_glsl_include,
+      sym_custom_editor,
+      sym_dependency,
+      sym_fallback,
+      sym_use_pass,
+      sym_grab_pass,
+      sym_category_block,
+  [5100] = 8,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
+    ACTIONS(714), 1,
+      anon_sym_LPAREN,
+    STATE(93), 1,
+      aux_sym__legacy_set_texture_item_repeat1,
+    STATE(98), 1,
+      sym__legacy_combine_value,
     STATE(100), 1,
       sym_comment,
-    ACTIONS(723), 17,
-      anon_sym_LBRACK,
-      anon_sym_Zero,
-      anon_sym_Keep,
-      anon_sym_keep,
-      anon_sym_zero,
-      anon_sym_Replace,
-      anon_sym_replace,
-      anon_sym_IncrSat,
-      anon_sym_incrsat,
-      anon_sym_DecrSat,
-      anon_sym_decrsat,
-      anon_sym_Invert,
-      anon_sym_invert,
-      anon_sym_IncrWrap,
-      anon_sym_incrwrap,
-      anon_sym_DecrWrap,
-      anon_sym_decrwrap,
-  [5036] = 5,
+    ACTIONS(716), 5,
+      anon_sym_COMMA,
+      anon_sym_DASH,
+      anon_sym_STAR,
+      anon_sym_PLUS,
+      sym_number_literal,
+    ACTIONS(710), 15,
+      anon_sym_One,
+      anon_sym_texture,
+      anon_sym_primary,
+      anon_sym_previous,
+      anon_sym_constant,
+      anon_sym_one,
+      anon_sym_alpha,
+      anon_sym_invalpha,
+      anon_sym_double,
+      anon_sym_quad,
+      anon_sym_lerp,
+      anon_sym_DOUBLE,
+      anon_sym_QUAD,
+      anon_sym_LERP,
+      sym_identifier,
+  [5143] = 7,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    STATE(24), 1,
-      sym_comparison_func,
+    ACTIONS(714), 1,
+      anon_sym_LPAREN,
     STATE(101), 1,
       sym_comment,
-    ACTIONS(715), 16,
+    STATE(328), 1,
+      sym__legacy_combine_value,
+    ACTIONS(716), 5,
+      anon_sym_COMMA,
+      anon_sym_DASH,
+      anon_sym_STAR,
+      anon_sym_PLUS,
+      sym_number_literal,
+    ACTIONS(710), 15,
+      anon_sym_One,
+      anon_sym_texture,
+      anon_sym_primary,
+      anon_sym_previous,
+      anon_sym_constant,
+      anon_sym_one,
+      anon_sym_alpha,
+      anon_sym_invalpha,
+      anon_sym_double,
+      anon_sym_quad,
+      anon_sym_lerp,
+      anon_sym_DOUBLE,
+      anon_sym_QUAD,
+      anon_sym_LERP,
+      sym_identifier,
+  [5183] = 6,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(360), 1,
+      anon_sym_LBRACK,
+    STATE(102), 1,
+      sym_comment,
+    STATE(40), 2,
+      sym_comparison_func,
+      sym_property_reference,
+    ACTIONS(787), 18,
+      anon_sym_Off,
+      anon_sym_off,
       anon_sym_Less,
       anon_sym_less,
       anon_sym_Greater,
@@ -10831,53 +12182,217 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_always,
       anon_sym_Never,
       anon_sym_never,
-  [5067] = 10,
+  [5220] = 6,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(711), 1,
+    ACTIONS(360), 1,
       anon_sym_LBRACK,
-    ACTIONS(725), 1,
-      anon_sym_Off,
-    ACTIONS(727), 1,
-      anon_sym_One,
-    ACTIONS(731), 1,
-      sym_number_literal,
-    STATE(102), 1,
-      sym_comment,
-    STATE(104), 1,
-      sym__blend_value,
-    STATE(16), 2,
-      sym_blend_factor,
-      sym_property_reference,
-    ACTIONS(729), 9,
-      anon_sym_Zero,
-      anon_sym_SrcColor,
-      anon_sym_SrcAlpha,
-      anon_sym_DstColor,
-      anon_sym_DstAlpha,
-      anon_sym_OneMinusSrcColor,
-      anon_sym_OneMinusSrcAlpha,
-      anon_sym_OneMinusDstColor,
-      anon_sym_OneMinusDstAlpha,
-  [5107] = 8,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(711), 1,
-      anon_sym_LBRACK,
-    ACTIONS(727), 1,
-      anon_sym_One,
     STATE(103), 1,
       sym_comment,
+    STATE(86), 2,
+      sym_comparison_func,
+      sym_property_reference,
+    ACTIONS(787), 18,
+      anon_sym_Off,
+      anon_sym_off,
+      anon_sym_Less,
+      anon_sym_less,
+      anon_sym_Greater,
+      anon_sym_greater,
+      anon_sym_LEqual,
+      anon_sym_lequal,
+      anon_sym_GEqual,
+      anon_sym_gequal,
+      anon_sym_Equal,
+      anon_sym_equal,
+      anon_sym_NotEqual,
+      anon_sym_notequal,
+      anon_sym_Always,
+      anon_sym_always,
+      anon_sym_Never,
+      anon_sym_never,
+  [5257] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(20), 1,
+      sym_comparison_func,
+    STATE(104), 1,
+      sym_comment,
+    ACTIONS(787), 18,
+      anon_sym_Off,
+      anon_sym_off,
+      anon_sym_Less,
+      anon_sym_less,
+      anon_sym_Greater,
+      anon_sym_greater,
+      anon_sym_LEqual,
+      anon_sym_lequal,
+      anon_sym_GEqual,
+      anon_sym_gequal,
+      anon_sym_Equal,
+      anon_sym_equal,
+      anon_sym_NotEqual,
+      anon_sym_notequal,
+      anon_sym_Always,
+      anon_sym_always,
+      anon_sym_Never,
+      anon_sym_never,
+  [5290] = 6,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(360), 1,
+      anon_sym_LBRACK,
+    STATE(105), 1,
+      sym_comment,
+    STATE(87), 2,
+      sym_stencil_op_value,
+      sym_property_reference,
+    ACTIONS(789), 16,
+      anon_sym_Zero,
+      anon_sym_Keep,
+      anon_sym_keep,
+      anon_sym_zero,
+      anon_sym_Replace,
+      anon_sym_replace,
+      anon_sym_IncrSat,
+      anon_sym_incrsat,
+      anon_sym_DecrSat,
+      anon_sym_decrsat,
+      anon_sym_Invert,
+      anon_sym_invert,
+      anon_sym_IncrWrap,
+      anon_sym_incrwrap,
+      anon_sym_DecrWrap,
+      anon_sym_decrwrap,
+  [5325] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(106), 1,
+      sym_comment,
+    ACTIONS(791), 19,
+      anon_sym_LBRACK,
+      anon_sym_Off,
+      anon_sym_off,
+      anon_sym_Less,
+      anon_sym_less,
+      anon_sym_Greater,
+      anon_sym_greater,
+      anon_sym_LEqual,
+      anon_sym_lequal,
+      anon_sym_GEqual,
+      anon_sym_gequal,
+      anon_sym_Equal,
+      anon_sym_equal,
+      anon_sym_NotEqual,
+      anon_sym_notequal,
+      anon_sym_Always,
+      anon_sym_always,
+      anon_sym_Never,
+      anon_sym_never,
+  [5356] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
     STATE(107), 1,
+      sym_comment,
+    ACTIONS(793), 17,
+      anon_sym_LBRACK,
+      anon_sym_Zero,
+      anon_sym_Keep,
+      anon_sym_keep,
+      anon_sym_zero,
+      anon_sym_Replace,
+      anon_sym_replace,
+      anon_sym_IncrSat,
+      anon_sym_incrsat,
+      anon_sym_DecrSat,
+      anon_sym_decrsat,
+      anon_sym_Invert,
+      anon_sym_invert,
+      anon_sym_IncrWrap,
+      anon_sym_incrwrap,
+      anon_sym_DecrWrap,
+      anon_sym_decrwrap,
+  [5385] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(108), 1,
+      sym_comment,
+    ACTIONS(795), 17,
+      anon_sym_LBRACK,
+      anon_sym_Zero,
+      anon_sym_Keep,
+      anon_sym_keep,
+      anon_sym_zero,
+      anon_sym_Replace,
+      anon_sym_replace,
+      anon_sym_IncrSat,
+      anon_sym_incrsat,
+      anon_sym_DecrSat,
+      anon_sym_decrsat,
+      anon_sym_Invert,
+      anon_sym_invert,
+      anon_sym_IncrWrap,
+      anon_sym_incrwrap,
+      anon_sym_DecrWrap,
+      anon_sym_decrwrap,
+  [5414] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(109), 1,
+      sym_comment,
+    ACTIONS(797), 17,
+      anon_sym_LBRACK,
+      anon_sym_Zero,
+      anon_sym_Keep,
+      anon_sym_keep,
+      anon_sym_zero,
+      anon_sym_Replace,
+      anon_sym_replace,
+      anon_sym_IncrSat,
+      anon_sym_incrsat,
+      anon_sym_DecrSat,
+      anon_sym_decrsat,
+      anon_sym_Invert,
+      anon_sym_invert,
+      anon_sym_IncrWrap,
+      anon_sym_incrwrap,
+      anon_sym_DecrWrap,
+      anon_sym_decrwrap,
+  [5443] = 10,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(360), 1,
+      anon_sym_LBRACK,
+    ACTIONS(799), 1,
+      anon_sym_Off,
+    ACTIONS(801), 1,
+      anon_sym_One,
+    ACTIONS(805), 1,
+      sym_number_literal,
+    STATE(110), 1,
+      sym_comment,
+    STATE(125), 1,
       sym__blend_value,
-    STATE(16), 2,
+    STATE(15), 2,
       sym_blend_factor,
       sym_property_reference,
-    ACTIONS(729), 9,
+    ACTIONS(803), 9,
       anon_sym_Zero,
       anon_sym_SrcColor,
       anon_sym_SrcAlpha,
@@ -10887,255 +12402,98 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_OneMinusSrcAlpha,
       anon_sym_OneMinusDstColor,
       anon_sym_OneMinusDstAlpha,
-  [5141] = 8,
+  [5483] = 8,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(711), 1,
+    ACTIONS(360), 1,
       anon_sym_LBRACK,
-    ACTIONS(727), 1,
+    ACTIONS(801), 1,
+      anon_sym_One,
+    STATE(68), 1,
+      sym__blend_value,
+    STATE(111), 1,
+      sym_comment,
+    STATE(15), 2,
+      sym_blend_factor,
+      sym_property_reference,
+    ACTIONS(803), 9,
+      anon_sym_Zero,
+      anon_sym_SrcColor,
+      anon_sym_SrcAlpha,
+      anon_sym_DstColor,
+      anon_sym_DstAlpha,
+      anon_sym_OneMinusSrcColor,
+      anon_sym_OneMinusSrcAlpha,
+      anon_sym_OneMinusDstColor,
+      anon_sym_OneMinusDstAlpha,
+  [5517] = 7,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(360), 1,
+      anon_sym_LBRACK,
+    STATE(112), 1,
+      sym_comment,
+    STATE(48), 2,
+      sym_color_mask_value,
+      sym_property_reference,
+    ACTIONS(807), 5,
+      anon_sym_RGBA,
+      anon_sym_A,
+      anon_sym_B,
+      anon_sym_rgba,
+      anon_sym_GBA,
+    ACTIONS(809), 6,
+      anon_sym_RGB,
+      anon_sym_R,
+      anon_sym_G,
+      anon_sym_0,
+      anon_sym_rgb,
+      sym_number_literal,
+  [5549] = 8,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(360), 1,
+      anon_sym_LBRACK,
+    ACTIONS(801), 1,
       anon_sym_One,
     STATE(34), 1,
       sym__blend_value,
-    STATE(104), 1,
-      sym_comment,
-    STATE(16), 2,
-      sym_blend_factor,
-      sym_property_reference,
-    ACTIONS(729), 9,
-      anon_sym_Zero,
-      anon_sym_SrcColor,
-      anon_sym_SrcAlpha,
-      anon_sym_DstColor,
-      anon_sym_DstAlpha,
-      anon_sym_OneMinusSrcColor,
-      anon_sym_OneMinusSrcAlpha,
-      anon_sym_OneMinusDstColor,
-      anon_sym_OneMinusDstAlpha,
-  [5175] = 8,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(711), 1,
-      anon_sym_LBRACK,
-    ACTIONS(727), 1,
-      anon_sym_One,
-    STATE(105), 1,
-      sym_comment,
-    STATE(108), 1,
-      sym__blend_value,
-    STATE(16), 2,
-      sym_blend_factor,
-      sym_property_reference,
-    ACTIONS(729), 9,
-      anon_sym_Zero,
-      anon_sym_SrcColor,
-      anon_sym_SrcAlpha,
-      anon_sym_DstColor,
-      anon_sym_DstAlpha,
-      anon_sym_OneMinusSrcColor,
-      anon_sym_OneMinusSrcAlpha,
-      anon_sym_OneMinusDstColor,
-      anon_sym_OneMinusDstAlpha,
-  [5209] = 8,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(711), 1,
-      anon_sym_LBRACK,
-    ACTIONS(727), 1,
-      anon_sym_One,
-    STATE(70), 1,
-      sym__blend_value,
-    STATE(106), 1,
-      sym_comment,
-    STATE(16), 2,
-      sym_blend_factor,
-      sym_property_reference,
-    ACTIONS(729), 9,
-      anon_sym_Zero,
-      anon_sym_SrcColor,
-      anon_sym_SrcAlpha,
-      anon_sym_DstColor,
-      anon_sym_DstAlpha,
-      anon_sym_OneMinusSrcColor,
-      anon_sym_OneMinusSrcAlpha,
-      anon_sym_OneMinusDstColor,
-      anon_sym_OneMinusDstAlpha,
-  [5243] = 8,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(711), 1,
-      anon_sym_LBRACK,
-    ACTIONS(727), 1,
-      anon_sym_One,
-    STATE(36), 1,
-      sym__blend_value,
-    STATE(107), 1,
-      sym_comment,
-    STATE(16), 2,
-      sym_blend_factor,
-      sym_property_reference,
-    ACTIONS(729), 9,
-      anon_sym_Zero,
-      anon_sym_SrcColor,
-      anon_sym_SrcAlpha,
-      anon_sym_DstColor,
-      anon_sym_DstAlpha,
-      anon_sym_OneMinusSrcColor,
-      anon_sym_OneMinusSrcAlpha,
-      anon_sym_OneMinusDstColor,
-      anon_sym_OneMinusDstAlpha,
-  [5277] = 8,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(711), 1,
-      anon_sym_LBRACK,
-    ACTIONS(727), 1,
-      anon_sym_One,
-    STATE(72), 1,
-      sym__blend_value,
-    STATE(108), 1,
-      sym_comment,
-    STATE(16), 2,
-      sym_blend_factor,
-      sym_property_reference,
-    ACTIONS(729), 9,
-      anon_sym_Zero,
-      anon_sym_SrcColor,
-      anon_sym_SrcAlpha,
-      anon_sym_DstColor,
-      anon_sym_DstAlpha,
-      anon_sym_OneMinusSrcColor,
-      anon_sym_OneMinusSrcAlpha,
-      anon_sym_OneMinusDstColor,
-      anon_sym_OneMinusDstAlpha,
-  [5311] = 8,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(711), 1,
-      anon_sym_LBRACK,
-    ACTIONS(727), 1,
-      anon_sym_One,
-    STATE(106), 1,
-      sym__blend_value,
-    STATE(109), 1,
-      sym_comment,
-    STATE(16), 2,
-      sym_blend_factor,
-      sym_property_reference,
-    ACTIONS(729), 9,
-      anon_sym_Zero,
-      anon_sym_SrcColor,
-      anon_sym_SrcAlpha,
-      anon_sym_DstColor,
-      anon_sym_DstAlpha,
-      anon_sym_OneMinusSrcColor,
-      anon_sym_OneMinusSrcAlpha,
-      anon_sym_OneMinusDstColor,
-      anon_sym_OneMinusDstAlpha,
-  [5345] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    STATE(110), 1,
-      sym_comment,
-    ACTIONS(733), 12,
-      anon_sym_RBRACE,
-      anon_sym_Properties,
-      anon_sym_SubShader,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_CustomEditor,
-      anon_sym_Dependency,
-      anon_sym_FallBack,
-      anon_sym_Fallback,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_Category,
-  [5369] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    STATE(111), 1,
-      sym_comment,
-    ACTIONS(735), 12,
-      anon_sym_RBRACE,
-      anon_sym_Properties,
-      anon_sym_SubShader,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_CustomEditor,
-      anon_sym_Dependency,
-      anon_sym_FallBack,
-      anon_sym_Fallback,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_Category,
-  [5393] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    STATE(112), 1,
-      sym_comment,
-    ACTIONS(737), 12,
-      anon_sym_RBRACE,
-      anon_sym_Properties,
-      anon_sym_SubShader,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_CustomEditor,
-      anon_sym_Dependency,
-      anon_sym_FallBack,
-      anon_sym_Fallback,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_Category,
-  [5417] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
     STATE(113), 1,
       sym_comment,
-    ACTIONS(739), 12,
-      anon_sym_RBRACE,
-      anon_sym_Properties,
-      anon_sym_SubShader,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_CustomEditor,
-      anon_sym_Dependency,
-      anon_sym_FallBack,
-      anon_sym_Fallback,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_Category,
-  [5441] = 4,
+    STATE(15), 2,
+      sym_blend_factor,
+      sym_property_reference,
+    ACTIONS(803), 9,
+      anon_sym_Zero,
+      anon_sym_SrcColor,
+      anon_sym_SrcAlpha,
+      anon_sym_DstColor,
+      anon_sym_DstAlpha,
+      anon_sym_OneMinusSrcColor,
+      anon_sym_OneMinusSrcAlpha,
+      anon_sym_OneMinusDstColor,
+      anon_sym_OneMinusDstAlpha,
+  [5583] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     STATE(114), 1,
       sym_comment,
-    ACTIONS(741), 12,
+    ACTIONS(811), 14,
       anon_sym_RBRACE,
       anon_sym_Properties,
       anon_sym_SubShader,
+      anon_sym_Subshader,
       anon_sym_CGINCLUDE,
       anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLINCLUDE,
       anon_sym_CustomEditor,
       anon_sym_Dependency,
       anon_sym_FallBack,
@@ -11143,19 +12501,21 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_UsePass,
       anon_sym_GrabPass,
       anon_sym_Category,
-  [5465] = 4,
+  [5609] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     STATE(115), 1,
       sym_comment,
-    ACTIONS(743), 12,
+    ACTIONS(813), 14,
       anon_sym_RBRACE,
       anon_sym_Properties,
       anon_sym_SubShader,
+      anon_sym_Subshader,
       anon_sym_CGINCLUDE,
       anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLINCLUDE,
       anon_sym_CustomEditor,
       anon_sym_Dependency,
       anon_sym_FallBack,
@@ -11163,19 +12523,21 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_UsePass,
       anon_sym_GrabPass,
       anon_sym_Category,
-  [5489] = 4,
+  [5635] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     STATE(116), 1,
       sym_comment,
-    ACTIONS(745), 12,
+    ACTIONS(815), 14,
       anon_sym_RBRACE,
       anon_sym_Properties,
       anon_sym_SubShader,
+      anon_sym_Subshader,
       anon_sym_CGINCLUDE,
       anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLINCLUDE,
       anon_sym_CustomEditor,
       anon_sym_Dependency,
       anon_sym_FallBack,
@@ -11183,39 +12545,47 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_UsePass,
       anon_sym_GrabPass,
       anon_sym_Category,
-  [5513] = 4,
+  [5661] = 8,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
+    ACTIONS(360), 1,
+      anon_sym_LBRACK,
+    ACTIONS(801), 1,
+      anon_sym_One,
     STATE(117), 1,
       sym_comment,
-    ACTIONS(747), 12,
-      anon_sym_RBRACE,
-      anon_sym_Properties,
-      anon_sym_SubShader,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_CustomEditor,
-      anon_sym_Dependency,
-      anon_sym_FallBack,
-      anon_sym_Fallback,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_Category,
-  [5537] = 4,
+    STATE(120), 1,
+      sym__blend_value,
+    STATE(15), 2,
+      sym_blend_factor,
+      sym_property_reference,
+    ACTIONS(803), 9,
+      anon_sym_Zero,
+      anon_sym_SrcColor,
+      anon_sym_SrcAlpha,
+      anon_sym_DstColor,
+      anon_sym_DstAlpha,
+      anon_sym_OneMinusSrcColor,
+      anon_sym_OneMinusSrcAlpha,
+      anon_sym_OneMinusDstColor,
+      anon_sym_OneMinusDstAlpha,
+  [5695] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     STATE(118), 1,
       sym_comment,
-    ACTIONS(749), 12,
+    ACTIONS(817), 14,
       anon_sym_RBRACE,
       anon_sym_Properties,
       anon_sym_SubShader,
+      anon_sym_Subshader,
       anon_sym_CGINCLUDE,
       anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLINCLUDE,
       anon_sym_CustomEditor,
       anon_sym_Dependency,
       anon_sym_FallBack,
@@ -11223,19 +12593,21 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_UsePass,
       anon_sym_GrabPass,
       anon_sym_Category,
-  [5561] = 4,
+  [5721] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     STATE(119), 1,
       sym_comment,
-    ACTIONS(751), 12,
+    ACTIONS(819), 14,
       anon_sym_RBRACE,
       anon_sym_Properties,
       anon_sym_SubShader,
+      anon_sym_Subshader,
       anon_sym_CGINCLUDE,
       anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLINCLUDE,
       anon_sym_CustomEditor,
       anon_sym_Dependency,
       anon_sym_FallBack,
@@ -11243,304 +12615,766 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_UsePass,
       anon_sym_GrabPass,
       anon_sym_Category,
-  [5585] = 4,
+  [5747] = 8,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
+    ACTIONS(360), 1,
+      anon_sym_LBRACK,
+    ACTIONS(801), 1,
+      anon_sym_One,
+    STATE(70), 1,
+      sym__blend_value,
     STATE(120), 1,
       sym_comment,
-    ACTIONS(753), 12,
-      anon_sym_RBRACE,
-      anon_sym_Properties,
-      anon_sym_SubShader,
-      anon_sym_CGINCLUDE,
-      anon_sym_HLSLINCLUDE,
-      anon_sym_CustomEditor,
-      anon_sym_Dependency,
-      anon_sym_FallBack,
-      anon_sym_Fallback,
-      anon_sym_UsePass,
-      anon_sym_GrabPass,
-      anon_sym_Category,
-  [5609] = 5,
+    STATE(15), 2,
+      sym_blend_factor,
+      sym_property_reference,
+    ACTIONS(803), 9,
+      anon_sym_Zero,
+      anon_sym_SrcColor,
+      anon_sym_SrcAlpha,
+      anon_sym_DstColor,
+      anon_sym_DstAlpha,
+      anon_sym_OneMinusSrcColor,
+      anon_sym_OneMinusSrcAlpha,
+      anon_sym_OneMinusDstColor,
+      anon_sym_OneMinusDstAlpha,
+  [5781] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     STATE(121), 1,
       sym_comment,
-    ACTIONS(757), 2,
+    ACTIONS(821), 14,
       anon_sym_RBRACE,
-      anon_sym_LBRACK,
-    ACTIONS(755), 9,
-      anon_sym_Emission,
-      anon_sym_Diffuse,
-      anon_sym_Ambient,
-      anon_sym_Specular,
-      anon_sym_Shininess,
-      anon_sym_combine,
-      anon_sym_constantColor,
-      anon_sym_Matrix,
-      sym_identifier,
-  [5634] = 7,
+      anon_sym_Properties,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_CustomEditor,
+      anon_sym_Dependency,
+      anon_sym_FallBack,
+      anon_sym_Fallback,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_Category,
+  [5807] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(711), 1,
-      anon_sym_LBRACK,
     STATE(122), 1,
       sym_comment,
-    STATE(74), 2,
-      sym_color_mask_value,
-      sym_property_reference,
-    ACTIONS(759), 4,
-      anon_sym_RGBA,
-      anon_sym_A,
-      anon_sym_G,
-      anon_sym_B,
-    ACTIONS(761), 4,
-      anon_sym_RGB,
-      anon_sym_R,
-      anon_sym_0,
-      sym_number_literal,
-  [5663] = 5,
+    ACTIONS(823), 14,
+      anon_sym_RBRACE,
+      anon_sym_Properties,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_CustomEditor,
+      anon_sym_Dependency,
+      anon_sym_FallBack,
+      anon_sym_Fallback,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_Category,
+  [5833] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     STATE(123), 1,
       sym_comment,
-    ACTIONS(765), 2,
+    ACTIONS(825), 14,
       anon_sym_RBRACE,
-      anon_sym_LBRACK,
-    ACTIONS(763), 9,
-      anon_sym_Emission,
-      anon_sym_Diffuse,
-      anon_sym_Ambient,
-      anon_sym_Specular,
-      anon_sym_Shininess,
-      anon_sym_combine,
-      anon_sym_constantColor,
-      anon_sym_Matrix,
-      sym_identifier,
-  [5688] = 10,
+      anon_sym_Properties,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_CustomEditor,
+      anon_sym_Dependency,
+      anon_sym_FallBack,
+      anon_sym_Fallback,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_Category,
+  [5859] = 8,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(381), 1,
-      anon_sym_DASH,
-    ACTIONS(767), 1,
-      anon_sym_LPAREN,
-    ACTIONS(769), 1,
-      anon_sym_DQUOTE,
+    ACTIONS(360), 1,
+      anon_sym_LBRACK,
+    ACTIONS(801), 1,
+      anon_sym_One,
+    STATE(113), 1,
+      sym__blend_value,
     STATE(124), 1,
       sym_comment,
-    STATE(200), 1,
-      sym_string_literal,
-    STATE(207), 1,
-      sym__property_default,
-    ACTIONS(383), 2,
-      sym_number_literal,
-      sym_identifier,
-    STATE(208), 3,
-      sym_texture_default,
-      sym_color_default,
-      sym__number,
-  [5722] = 10,
+    STATE(15), 2,
+      sym_blend_factor,
+      sym_property_reference,
+    ACTIONS(803), 9,
+      anon_sym_Zero,
+      anon_sym_SrcColor,
+      anon_sym_SrcAlpha,
+      anon_sym_DstColor,
+      anon_sym_DstAlpha,
+      anon_sym_OneMinusSrcColor,
+      anon_sym_OneMinusSrcAlpha,
+      anon_sym_OneMinusDstColor,
+      anon_sym_OneMinusDstAlpha,
+  [5893] = 8,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(381), 1,
-      anon_sym_DASH,
-    ACTIONS(767), 1,
-      anon_sym_LPAREN,
-    ACTIONS(769), 1,
-      anon_sym_DQUOTE,
+    ACTIONS(360), 1,
+      anon_sym_LBRACK,
+    ACTIONS(801), 1,
+      anon_sym_One,
+    STATE(30), 1,
+      sym__blend_value,
     STATE(125), 1,
       sym_comment,
-    STATE(200), 1,
-      sym_string_literal,
-    STATE(210), 1,
-      sym__property_default,
-    ACTIONS(383), 2,
-      sym_number_literal,
-      sym_identifier,
-    STATE(208), 3,
-      sym_texture_default,
-      sym_color_default,
-      sym__number,
-  [5756] = 10,
+    STATE(15), 2,
+      sym_blend_factor,
+      sym_property_reference,
+    ACTIONS(803), 9,
+      anon_sym_Zero,
+      anon_sym_SrcColor,
+      anon_sym_SrcAlpha,
+      anon_sym_DstColor,
+      anon_sym_DstAlpha,
+      anon_sym_OneMinusSrcColor,
+      anon_sym_OneMinusSrcAlpha,
+      anon_sym_OneMinusDstColor,
+      anon_sym_OneMinusDstAlpha,
+  [5927] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(126), 1,
+      sym_comment,
+    ACTIONS(827), 14,
+      anon_sym_RBRACE,
+      anon_sym_Properties,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_CustomEditor,
+      anon_sym_Dependency,
+      anon_sym_FallBack,
+      anon_sym_Fallback,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_Category,
+  [5953] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(127), 1,
+      sym_comment,
+    ACTIONS(829), 14,
+      anon_sym_RBRACE,
+      anon_sym_Properties,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_CustomEditor,
+      anon_sym_Dependency,
+      anon_sym_FallBack,
+      anon_sym_Fallback,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_Category,
+  [5979] = 8,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(360), 1,
+      anon_sym_LBRACK,
+    ACTIONS(801), 1,
+      anon_sym_One,
+    STATE(111), 1,
+      sym__blend_value,
+    STATE(128), 1,
+      sym_comment,
+    STATE(15), 2,
+      sym_blend_factor,
+      sym_property_reference,
+    ACTIONS(803), 9,
+      anon_sym_Zero,
+      anon_sym_SrcColor,
+      anon_sym_SrcAlpha,
+      anon_sym_DstColor,
+      anon_sym_DstAlpha,
+      anon_sym_OneMinusSrcColor,
+      anon_sym_OneMinusSrcAlpha,
+      anon_sym_OneMinusDstColor,
+      anon_sym_OneMinusDstAlpha,
+  [6013] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(129), 1,
+      sym_comment,
+    ACTIONS(831), 14,
+      anon_sym_RBRACE,
+      anon_sym_Properties,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_CustomEditor,
+      anon_sym_Dependency,
+      anon_sym_FallBack,
+      anon_sym_Fallback,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_Category,
+  [6039] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(130), 1,
+      sym_comment,
+    ACTIONS(833), 14,
+      anon_sym_RBRACE,
+      anon_sym_Properties,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_CGINCLUDE,
+      anon_sym_HLSLINCLUDE,
+      anon_sym_GLSLINCLUDE,
+      anon_sym_CustomEditor,
+      anon_sym_Dependency,
+      anon_sym_FallBack,
+      anon_sym_Fallback,
+      anon_sym_UsePass,
+      anon_sym_GrabPass,
+      anon_sym_Category,
+  [6065] = 7,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(360), 1,
+      anon_sym_LBRACK,
+    STATE(131), 1,
+      sym_comment,
+    STATE(72), 3,
+      sym_on_off,
+      sym_true_false,
+      sym_property_reference,
+    ACTIONS(835), 4,
+      anon_sym_Off,
+      anon_sym_off,
+      anon_sym_On,
+      anon_sym_on,
+    ACTIONS(837), 4,
+      anon_sym_True,
+      anon_sym_False,
+      anon_sym_true,
+      anon_sym_false,
+  [6095] = 10,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     ACTIONS(9), 1,
       anon_sym_Shader,
-    ACTIONS(11), 1,
-      anon_sym_SubShader,
     ACTIONS(13), 1,
       anon_sym_Pass,
-    ACTIONS(771), 1,
+    ACTIONS(839), 1,
       ts_builtin_sym_end,
-    STATE(126), 1,
+    STATE(132), 1,
       sym_comment,
-    STATE(128), 1,
+    STATE(133), 1,
       aux_sym_source_file_repeat1,
-    STATE(197), 1,
+    STATE(186), 1,
       sym__top_level_item,
-    STATE(175), 3,
+    ACTIONS(11), 2,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+    STATE(191), 3,
       sym_shader_definition,
       sym_subshader_block,
       sym_pass_block,
-  [5789] = 6,
+  [6129] = 9,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(711), 1,
-      anon_sym_LBRACK,
-    STATE(127), 1,
+    ACTIONS(841), 1,
+      ts_builtin_sym_end,
+    ACTIONS(843), 1,
+      anon_sym_Shader,
+    ACTIONS(849), 1,
+      anon_sym_Pass,
+    STATE(186), 1,
+      sym__top_level_item,
+    ACTIONS(846), 2,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+    STATE(133), 2,
       sym_comment,
-    STATE(43), 2,
+      aux_sym_source_file_repeat1,
+    STATE(191), 3,
+      sym_shader_definition,
+      sym_subshader_block,
+      sym_pass_block,
+  [6161] = 10,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(364), 1,
+      anon_sym_DASH,
+    ACTIONS(852), 1,
+      anon_sym_LPAREN,
+    ACTIONS(854), 1,
+      anon_sym_DQUOTE,
+    STATE(134), 1,
+      sym_comment,
+    STATE(218), 1,
+      sym_string_literal,
+    STATE(225), 1,
+      sym__property_default,
+    ACTIONS(366), 2,
+      sym_number_literal,
+      sym_identifier,
+    STATE(226), 3,
+      sym_texture_default,
+      sym_color_default,
+      sym__number,
+  [6195] = 10,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(364), 1,
+      anon_sym_DASH,
+    ACTIONS(852), 1,
+      anon_sym_LPAREN,
+    ACTIONS(854), 1,
+      anon_sym_DQUOTE,
+    STATE(135), 1,
+      sym_comment,
+    STATE(218), 1,
+      sym_string_literal,
+    STATE(227), 1,
+      sym__property_default,
+    ACTIONS(366), 2,
+      sym_number_literal,
+      sym_identifier,
+    STATE(226), 3,
+      sym_texture_default,
+      sym_color_default,
+      sym__number,
+  [6229] = 6,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(360), 1,
+      anon_sym_LBRACK,
+    STATE(136), 1,
+      sym_comment,
+    STATE(65), 2,
       sym_cull_mode,
       sym_property_reference,
-    ACTIONS(773), 6,
+    ACTIONS(856), 6,
       anon_sym_Back,
       anon_sym_Front,
       anon_sym_Off,
       anon_sym_back,
       anon_sym_front,
       anon_sym_off,
-  [5814] = 9,
+  [6254] = 8,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(775), 1,
-      ts_builtin_sym_end,
-    ACTIONS(777), 1,
-      anon_sym_Shader,
-    ACTIONS(780), 1,
-      anon_sym_SubShader,
-    ACTIONS(783), 1,
-      anon_sym_Pass,
-    STATE(197), 1,
-      sym__top_level_item,
-    STATE(128), 2,
-      sym_comment,
-      aux_sym_source_file_repeat1,
-    STATE(175), 3,
-      sym_shader_definition,
-      sym_subshader_block,
-      sym_pass_block,
-  [5845] = 7,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(786), 1,
+    ACTIONS(858), 1,
       anon_sym_RBRACE,
-    ACTIONS(791), 1,
+    ACTIONS(862), 1,
       anon_sym_Shininess,
-    STATE(154), 1,
-      sym__legacy_material_item,
-    STATE(129), 2,
+    STATE(137), 1,
       sym_comment,
+    STATE(143), 1,
       aux_sym_legacy_material_block_repeat1,
-    ACTIONS(788), 4,
+    STATE(161), 1,
+      sym__legacy_material_item,
+    ACTIONS(860), 4,
       anon_sym_Emission,
       anon_sym_Diffuse,
       anon_sym_Ambient,
       anon_sym_Specular,
-  [5871] = 8,
+  [6282] = 8,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(794), 1,
+    ACTIONS(864), 1,
       anon_sym_RBRACE,
-    ACTIONS(798), 1,
-      anon_sym_Shininess,
-    STATE(130), 1,
+    ACTIONS(872), 1,
+      anon_sym_Matrix,
+    STATE(168), 1,
+      sym__legacy_set_texture_item,
+    ACTIONS(866), 2,
+      anon_sym_combine,
+      anon_sym_Combine,
+    ACTIONS(869), 2,
+      anon_sym_constantColor,
+      anon_sym_ConstantColor,
+    STATE(138), 2,
       sym_comment,
-    STATE(131), 1,
+      aux_sym_legacy_set_texture_command_repeat1,
+  [6310] = 9,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(875), 1,
+      anon_sym_RBRACE,
+    ACTIONS(877), 1,
+      anon_sym_Name,
+    ACTIONS(880), 1,
+      anon_sym_Tags,
+    ACTIONS(883), 1,
+      anon_sym_DQUOTE,
+    STATE(203), 1,
+      sym_string_literal,
+    STATE(139), 2,
+      sym_comment,
+      aux_sym_grab_pass_repeat1,
+    STATE(197), 2,
+      sym_pass_name,
+      sym_tags_block,
+  [6340] = 10,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(27), 1,
+      anon_sym_Tags,
+    ACTIONS(169), 1,
+      anon_sym_Name,
+    ACTIONS(854), 1,
+      anon_sym_DQUOTE,
+    ACTIONS(886), 1,
+      anon_sym_RBRACE,
+    STATE(139), 1,
+      aux_sym_grab_pass_repeat1,
+    STATE(140), 1,
+      sym_comment,
+    STATE(203), 1,
+      sym_string_literal,
+    STATE(197), 2,
+      sym_pass_name,
+      sym_tags_block,
+  [6372] = 8,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(862), 1,
+      anon_sym_Shininess,
+    ACTIONS(888), 1,
+      anon_sym_RBRACE,
+    STATE(137), 1,
       aux_sym_legacy_material_block_repeat1,
-    STATE(154), 1,
+    STATE(141), 1,
+      sym_comment,
+    STATE(161), 1,
       sym__legacy_material_item,
-    ACTIONS(796), 4,
+    ACTIONS(860), 4,
       anon_sym_Emission,
       anon_sym_Diffuse,
       anon_sym_Ambient,
       anon_sym_Specular,
-  [5899] = 8,
+  [6400] = 9,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(798), 1,
-      anon_sym_Shininess,
-    ACTIONS(800), 1,
+    ACTIONS(890), 1,
       anon_sym_RBRACE,
-    STATE(129), 1,
-      aux_sym_legacy_material_block_repeat1,
-    STATE(131), 1,
+    ACTIONS(896), 1,
+      anon_sym_Matrix,
+    STATE(142), 1,
       sym_comment,
-    STATE(154), 1,
+    STATE(144), 1,
+      aux_sym_legacy_set_texture_command_repeat1,
+    STATE(168), 1,
+      sym__legacy_set_texture_item,
+    ACTIONS(892), 2,
+      anon_sym_combine,
+      anon_sym_Combine,
+    ACTIONS(894), 2,
+      anon_sym_constantColor,
+      anon_sym_ConstantColor,
+  [6430] = 7,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(898), 1,
+      anon_sym_RBRACE,
+    ACTIONS(903), 1,
+      anon_sym_Shininess,
+    STATE(161), 1,
       sym__legacy_material_item,
-    ACTIONS(796), 4,
+    STATE(143), 2,
+      sym_comment,
+      aux_sym_legacy_material_block_repeat1,
+    ACTIONS(900), 4,
       anon_sym_Emission,
       anon_sym_Diffuse,
       anon_sym_Ambient,
       anon_sym_Specular,
-  [5927] = 6,
+  [6456] = 9,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(711), 1,
+    ACTIONS(896), 1,
+      anon_sym_Matrix,
+    ACTIONS(906), 1,
+      anon_sym_RBRACE,
+    STATE(138), 1,
+      aux_sym_legacy_set_texture_command_repeat1,
+    STATE(144), 1,
+      sym_comment,
+    STATE(168), 1,
+      sym__legacy_set_texture_item,
+    ACTIONS(892), 2,
+      anon_sym_combine,
+      anon_sym_Combine,
+    ACTIONS(894), 2,
+      anon_sym_constantColor,
+      anon_sym_ConstantColor,
+  [6486] = 10,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(27), 1,
+      anon_sym_Tags,
+    ACTIONS(169), 1,
+      anon_sym_Name,
+    ACTIONS(854), 1,
+      anon_sym_DQUOTE,
+    ACTIONS(908), 1,
+      anon_sym_RBRACE,
+    STATE(140), 1,
+      aux_sym_grab_pass_repeat1,
+    STATE(145), 1,
+      sym_comment,
+    STATE(203), 1,
+      sym_string_literal,
+    STATE(197), 2,
+      sym_pass_name,
+      sym_tags_block,
+  [6518] = 9,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(854), 1,
+      anon_sym_DQUOTE,
+    ACTIONS(910), 1,
+      sym_identifier,
+    ACTIONS(912), 1,
+      sym_number_literal,
+    STATE(146), 1,
+      sym_comment,
+    STATE(240), 1,
+      sym__attr_arg,
+    STATE(299), 1,
+      sym__attr_args,
+    STATE(239), 2,
+      sym_dotted_identifier,
+      sym_string_literal,
+  [6547] = 6,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(360), 1,
       anon_sym_LBRACK,
-    STATE(132), 1,
+    STATE(147), 1,
       sym_comment,
-    STATE(67), 2,
+    STATE(54), 2,
       sym_on_off,
       sym_property_reference,
-    ACTIONS(802), 4,
+    ACTIONS(835), 4,
       anon_sym_Off,
       anon_sym_off,
       anon_sym_On,
       anon_sym_on,
-  [5950] = 9,
+  [6570] = 10,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(769), 1,
-      anon_sym_DQUOTE,
-    ACTIONS(804), 1,
-      sym_identifier,
-    ACTIONS(806), 1,
+    ACTIONS(914), 1,
+      anon_sym_RBRACE,
+    ACTIONS(916), 1,
+      anon_sym_Color,
+    ACTIONS(918), 1,
+      anon_sym_Range,
+    ACTIONS(920), 1,
+      anon_sym_Mode,
+    ACTIONS(922), 1,
+      anon_sym_Density,
+    STATE(148), 1,
+      sym_comment,
+    STATE(154), 1,
+      aux_sym_legacy_fog_command_repeat1,
+    STATE(187), 1,
+      sym__legacy_fog_item,
+  [6601] = 6,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(360), 1,
+      anon_sym_LBRACK,
+    STATE(149), 1,
+      sym_comment,
+    STATE(53), 2,
+      sym_true_false,
+      sym_property_reference,
+    ACTIONS(837), 4,
+      anon_sym_True,
+      anon_sym_False,
+      anon_sym_true,
+      anon_sym_false,
+  [6624] = 6,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(926), 1,
       sym_number_literal,
-    STATE(133), 1,
+    STATE(37), 1,
+      sym_blend_op,
+    STATE(150), 1,
       sym_comment,
-    STATE(227), 1,
-      sym__attr_arg,
-    STATE(251), 1,
-      sym__attr_args,
-    STATE(226), 2,
-      sym_dotted_identifier,
-      sym_string_literal,
-  [5979] = 4,
+    ACTIONS(924), 5,
+      anon_sym_Add,
+      anon_sym_Sub,
+      anon_sym_RevSub,
+      anon_sym_Min,
+      anon_sym_Max,
+  [6647] = 6,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    STATE(134), 1,
+    ACTIONS(360), 1,
+      anon_sym_LBRACK,
+    STATE(151), 1,
       sym_comment,
-    ACTIONS(808), 7,
+    STATE(39), 2,
+      sym_true_false,
+      sym_property_reference,
+    ACTIONS(837), 4,
+      anon_sym_True,
+      anon_sym_False,
+      anon_sym_true,
+      anon_sym_false,
+  [6670] = 10,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(928), 1,
+      sym_identifier,
+    ACTIONS(930), 1,
+      anon_sym_RBRACE,
+    ACTIONS(932), 1,
+      anon_sym_LBRACK,
+    STATE(152), 1,
+      sym_comment,
+    STATE(157), 1,
+      aux_sym_properties_block_repeat1,
+    STATE(213), 1,
+      aux_sym_property_declaration_repeat1,
+    STATE(223), 1,
+      sym_property_declaration,
+    STATE(245), 1,
+      sym_property_attribute,
+  [6701] = 10,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(916), 1,
+      anon_sym_Color,
+    ACTIONS(918), 1,
+      anon_sym_Range,
+    ACTIONS(920), 1,
+      anon_sym_Mode,
+    ACTIONS(922), 1,
+      anon_sym_Density,
+    ACTIONS(934), 1,
+      anon_sym_RBRACE,
+    STATE(148), 1,
+      aux_sym_legacy_fog_command_repeat1,
+    STATE(153), 1,
+      sym_comment,
+    STATE(187), 1,
+      sym__legacy_fog_item,
+  [6732] = 9,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(936), 1,
+      anon_sym_RBRACE,
+    ACTIONS(938), 1,
+      anon_sym_Color,
+    ACTIONS(941), 1,
+      anon_sym_Range,
+    ACTIONS(944), 1,
+      anon_sym_Mode,
+    ACTIONS(947), 1,
+      anon_sym_Density,
+    STATE(187), 1,
+      sym__legacy_fog_item,
+    STATE(154), 2,
+      sym_comment,
+      aux_sym_legacy_fog_command_repeat1,
+  [6761] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(155), 1,
+      sym_comment,
+    ACTIONS(950), 7,
       anon_sym_color,
       anon_sym_vertex,
       anon_sym_normal,
@@ -11548,2883 +13382,2909 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_texcoord0,
       anon_sym_texcoord1,
       sym_identifier,
-  [5998] = 10,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(810), 1,
-      anon_sym_RBRACE,
-    ACTIONS(812), 1,
-      anon_sym_Color,
-    ACTIONS(814), 1,
-      anon_sym_Range,
-    ACTIONS(816), 1,
-      anon_sym_Mode,
-    ACTIONS(818), 1,
-      anon_sym_Density,
-    STATE(135), 1,
-      sym_comment,
-    STATE(139), 1,
-      aux_sym_legacy_fog_command_repeat1,
-    STATE(166), 1,
-      sym__legacy_fog_item,
-  [6029] = 6,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(711), 1,
-      anon_sym_LBRACK,
-    STATE(136), 1,
-      sym_comment,
-    STATE(54), 2,
-      sym_on_off,
-      sym_property_reference,
-    ACTIONS(802), 4,
-      anon_sym_Off,
-      anon_sym_off,
-      anon_sym_On,
-      anon_sym_on,
-  [6052] = 6,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(711), 1,
-      anon_sym_LBRACK,
-    STATE(137), 1,
-      sym_comment,
-    STATE(59), 2,
-      sym_true_false,
-      sym_property_reference,
-    ACTIONS(820), 4,
-      anon_sym_True,
-      anon_sym_False,
-      anon_sym_true,
-      anon_sym_false,
-  [6075] = 10,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(822), 1,
-      sym_identifier,
-    ACTIONS(824), 1,
-      anon_sym_RBRACE,
-    ACTIONS(826), 1,
-      anon_sym_LBRACK,
-    STATE(138), 1,
-      sym_comment,
-    STATE(142), 1,
-      aux_sym_properties_block_repeat1,
-    STATE(174), 1,
-      aux_sym_property_declaration_repeat1,
-    STATE(203), 1,
-      sym_property_declaration,
-    STATE(218), 1,
-      sym_property_attribute,
-  [6106] = 10,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(812), 1,
-      anon_sym_Color,
-    ACTIONS(814), 1,
-      anon_sym_Range,
-    ACTIONS(816), 1,
-      anon_sym_Mode,
-    ACTIONS(818), 1,
-      anon_sym_Density,
-    ACTIONS(828), 1,
-      anon_sym_RBRACE,
-    STATE(139), 1,
-      sym_comment,
-    STATE(140), 1,
-      aux_sym_legacy_fog_command_repeat1,
-    STATE(166), 1,
-      sym__legacy_fog_item,
-  [6137] = 9,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(830), 1,
-      anon_sym_RBRACE,
-    ACTIONS(832), 1,
-      anon_sym_Color,
-    ACTIONS(835), 1,
-      anon_sym_Range,
-    ACTIONS(838), 1,
-      anon_sym_Mode,
-    ACTIONS(841), 1,
-      anon_sym_Density,
-    STATE(166), 1,
-      sym__legacy_fog_item,
-    STATE(140), 2,
-      sym_comment,
-      aux_sym_legacy_fog_command_repeat1,
-  [6166] = 9,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(769), 1,
-      anon_sym_DQUOTE,
-    ACTIONS(804), 1,
-      sym_identifier,
-    ACTIONS(806), 1,
-      sym_number_literal,
-    STATE(141), 1,
-      sym_comment,
-    STATE(227), 1,
-      sym__attr_arg,
-    STATE(279), 1,
-      sym__attr_args,
-    STATE(226), 2,
-      sym_dotted_identifier,
-      sym_string_literal,
-  [6195] = 9,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(844), 1,
-      sym_identifier,
-    ACTIONS(847), 1,
-      anon_sym_RBRACE,
-    ACTIONS(849), 1,
-      anon_sym_LBRACK,
-    STATE(174), 1,
-      aux_sym_property_declaration_repeat1,
-    STATE(203), 1,
-      sym_property_declaration,
-    STATE(218), 1,
-      sym_property_attribute,
-    STATE(142), 2,
-      sym_comment,
-      aux_sym_properties_block_repeat1,
-  [6224] = 6,
+  [6780] = 9,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     ACTIONS(854), 1,
-      sym_number_literal,
-    STATE(33), 1,
-      sym_blend_op,
-    STATE(143), 1,
-      sym_comment,
-    ACTIONS(852), 5,
-      anon_sym_Add,
-      anon_sym_Sub,
-      anon_sym_RevSub,
-      anon_sym_Min,
-      anon_sym_Max,
-  [6247] = 10,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(822), 1,
+      anon_sym_DQUOTE,
+    ACTIONS(910), 1,
       sym_identifier,
-    ACTIONS(826), 1,
-      anon_sym_LBRACK,
-    ACTIONS(856), 1,
-      anon_sym_RBRACE,
-    STATE(138), 1,
-      aux_sym_properties_block_repeat1,
-    STATE(144), 1,
-      sym_comment,
-    STATE(174), 1,
-      aux_sym_property_declaration_repeat1,
-    STATE(203), 1,
-      sym_property_declaration,
-    STATE(218), 1,
-      sym_property_attribute,
-  [6278] = 6,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(711), 1,
-      anon_sym_LBRACK,
-    STATE(145), 1,
-      sym_comment,
-    STATE(45), 2,
-      sym_true_false,
-      sym_property_reference,
-    ACTIONS(820), 4,
-      anon_sym_True,
-      anon_sym_False,
-      anon_sym_true,
-      anon_sym_false,
-  [6301] = 9,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(858), 1,
-      anon_sym_RBRACE,
-    ACTIONS(860), 1,
-      anon_sym_combine,
-    ACTIONS(862), 1,
-      anon_sym_constantColor,
-    ACTIONS(864), 1,
-      anon_sym_Matrix,
-    STATE(146), 1,
-      sym_comment,
-    STATE(149), 1,
-      aux_sym_legacy_set_texture_command_repeat1,
-    STATE(201), 1,
-      sym__legacy_set_texture_item,
-  [6329] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    STATE(60), 1,
-      sym_blend_op,
-    STATE(147), 1,
-      sym_comment,
-    ACTIONS(852), 5,
-      anon_sym_Add,
-      anon_sym_Sub,
-      anon_sym_RevSub,
-      anon_sym_Min,
-      anon_sym_Max,
-  [6349] = 6,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(868), 1,
-      anon_sym_DOT,
-    STATE(148), 1,
-      sym_comment,
-    STATE(150), 1,
-      aux_sym_dotted_identifier_repeat1,
-    ACTIONS(866), 4,
-      anon_sym_LPAREN,
-      anon_sym_COMMA,
-      anon_sym_RPAREN,
-      anon_sym_RBRACK,
-  [6371] = 9,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(860), 1,
-      anon_sym_combine,
-    ACTIONS(862), 1,
-      anon_sym_constantColor,
-    ACTIONS(864), 1,
-      anon_sym_Matrix,
-    ACTIONS(870), 1,
-      anon_sym_RBRACE,
-    STATE(149), 1,
-      sym_comment,
-    STATE(157), 1,
-      aux_sym_legacy_set_texture_command_repeat1,
-    STATE(201), 1,
-      sym__legacy_set_texture_item,
-  [6399] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(874), 1,
-      anon_sym_DOT,
-    STATE(150), 2,
-      sym_comment,
-      aux_sym_dotted_identifier_repeat1,
-    ACTIONS(872), 4,
-      anon_sym_LPAREN,
-      anon_sym_COMMA,
-      anon_sym_RPAREN,
-      anon_sym_RBRACK,
-  [6419] = 8,
-    ACTIONS(879), 1,
-      anon_sym_DOT,
-    ACTIONS(881), 1,
-      anon_sym_SPACE,
-    ACTIONS(883), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(885), 1,
-      anon_sym_SLASH_STAR,
-    STATE(148), 1,
-      aux_sym_dotted_identifier_repeat1,
-    STATE(151), 1,
-      sym_comment,
-    STATE(189), 1,
-      aux_sym__attr_arg_repeat1,
-    ACTIONS(877), 2,
-      anon_sym_COMMA,
-      anon_sym_RPAREN,
-  [6445] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    STATE(69), 1,
-      sym_blend_op,
-    STATE(152), 1,
-      sym_comment,
-    ACTIONS(852), 5,
-      anon_sym_Add,
-      anon_sym_Sub,
-      anon_sym_RevSub,
-      anon_sym_Min,
-      anon_sym_Max,
-  [6465] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    STATE(35), 1,
-      sym_blend_op,
-    STATE(153), 1,
-      sym_comment,
-    ACTIONS(852), 5,
-      anon_sym_Add,
-      anon_sym_Sub,
-      anon_sym_RevSub,
-      anon_sym_Min,
-      anon_sym_Max,
-  [6485] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    STATE(154), 1,
-      sym_comment,
-    ACTIONS(887), 6,
-      anon_sym_RBRACE,
-      anon_sym_Emission,
-      anon_sym_Diffuse,
-      anon_sym_Ambient,
-      anon_sym_Specular,
-      anon_sym_Shininess,
-  [6503] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    STATE(155), 1,
-      sym_comment,
-    ACTIONS(889), 6,
-      anon_sym_RBRACE,
-      anon_sym_Emission,
-      anon_sym_Diffuse,
-      anon_sym_Ambient,
-      anon_sym_Specular,
-      anon_sym_Shininess,
-  [6521] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
+    ACTIONS(912), 1,
+      sym_number_literal,
     STATE(156), 1,
       sym_comment,
-    ACTIONS(891), 6,
-      anon_sym_RBRACE,
-      anon_sym_Emission,
-      anon_sym_Diffuse,
-      anon_sym_Ambient,
-      anon_sym_Specular,
-      anon_sym_Shininess,
-  [6539] = 8,
+    STATE(240), 1,
+      sym__attr_arg,
+    STATE(268), 1,
+      sym__attr_args,
+    STATE(239), 2,
+      sym_dotted_identifier,
+      sym_string_literal,
+  [6809] = 9,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(893), 1,
+    ACTIONS(952), 1,
+      sym_identifier,
+    ACTIONS(955), 1,
       anon_sym_RBRACE,
-    ACTIONS(895), 1,
-      anon_sym_combine,
-    ACTIONS(898), 1,
-      anon_sym_constantColor,
-    ACTIONS(901), 1,
-      anon_sym_Matrix,
-    STATE(201), 1,
-      sym__legacy_set_texture_item,
+    ACTIONS(957), 1,
+      anon_sym_LBRACK,
+    STATE(213), 1,
+      aux_sym_property_declaration_repeat1,
+    STATE(223), 1,
+      sym_property_declaration,
+    STATE(245), 1,
+      sym_property_attribute,
     STATE(157), 2,
       sym_comment,
-      aux_sym_legacy_set_texture_command_repeat1,
-  [6565] = 7,
+      aux_sym_properties_block_repeat1,
+  [6838] = 10,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(904), 1,
+    ACTIONS(928), 1,
+      sym_identifier,
+    ACTIONS(932), 1,
+      anon_sym_LBRACK,
+    ACTIONS(960), 1,
       anon_sym_RBRACE,
-    ACTIONS(906), 1,
-      anon_sym_DQUOTE,
-    STATE(235), 1,
-      sym_tag_pair,
-    STATE(292), 1,
-      sym_string_literal,
-    STATE(158), 2,
+    STATE(152), 1,
+      aux_sym_properties_block_repeat1,
+    STATE(158), 1,
       sym_comment,
-      aux_sym_tags_block_repeat1,
-  [6588] = 4,
+    STATE(213), 1,
+      aux_sym_property_declaration_repeat1,
+    STATE(223), 1,
+      sym_property_declaration,
+    STATE(245), 1,
+      sym_property_attribute,
+  [6869] = 7,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
+    ACTIONS(360), 1,
+      anon_sym_LBRACK,
+    ACTIONS(364), 1,
+      anon_sym_DASH,
     STATE(159), 1,
       sym_comment,
-    ACTIONS(909), 5,
-      anon_sym_RBRACE,
-      anon_sym_Color,
-      anon_sym_Range,
-      anon_sym_Mode,
-      anon_sym_Density,
-  [6605] = 4,
+    ACTIONS(366), 2,
+      sym_number_literal,
+      sym_identifier,
+    STATE(167), 2,
+      sym__number,
+      sym_property_reference,
+  [6893] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
+    ACTIONS(964), 1,
+      anon_sym_Exp,
     STATE(160), 1,
       sym_comment,
-    ACTIONS(911), 5,
-      anon_sym_RBRACE,
-      anon_sym_Color,
-      anon_sym_Range,
-      anon_sym_Mode,
-      anon_sym_Density,
-  [6622] = 4,
+    ACTIONS(962), 5,
+      anon_sym_Off,
+      anon_sym_off,
+      anon_sym_Global,
+      anon_sym_Linear,
+      anon_sym_Exp2,
+  [6913] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     STATE(161), 1,
       sym_comment,
-    ACTIONS(913), 5,
+    ACTIONS(966), 6,
       anon_sym_RBRACE,
-      anon_sym_Color,
-      anon_sym_Range,
-      anon_sym_Mode,
-      anon_sym_Density,
-  [6639] = 8,
+      anon_sym_Emission,
+      anon_sym_Diffuse,
+      anon_sym_Ambient,
+      anon_sym_Specular,
+      anon_sym_Shininess,
+  [6931] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(769), 1,
-      anon_sym_DQUOTE,
-    ACTIONS(915), 1,
-      anon_sym_RBRACE,
+    STATE(31), 1,
+      sym_blend_op,
     STATE(162), 1,
       sym_comment,
-    STATE(163), 1,
-      aux_sym_tags_block_repeat1,
-    STATE(235), 1,
-      sym_tag_pair,
-    STATE(292), 1,
-      sym_string_literal,
-  [6664] = 8,
+    ACTIONS(924), 5,
+      anon_sym_Add,
+      anon_sym_Sub,
+      anon_sym_RevSub,
+      anon_sym_Min,
+      anon_sym_Max,
+  [6951] = 8,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(769), 1,
-      anon_sym_DQUOTE,
-    ACTIONS(917), 1,
-      anon_sym_RBRACE,
-    STATE(158), 1,
-      aux_sym_tags_block_repeat1,
+    ACTIONS(360), 1,
+      anon_sym_LBRACK,
+    ACTIONS(968), 1,
+      anon_sym_DASH,
+    ACTIONS(970), 1,
+      sym_number_literal,
     STATE(163), 1,
       sym_comment,
-    STATE(235), 1,
-      sym_tag_pair,
-    STATE(292), 1,
-      sym_string_literal,
-  [6689] = 5,
+    STATE(323), 1,
+      sym_signed_value,
+    STATE(35), 2,
+      sym_signed_number,
+      sym_property_reference,
+  [6977] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    STATE(46), 1,
-      sym_on_off,
+    STATE(67), 1,
+      sym_blend_op,
     STATE(164), 1,
       sym_comment,
-    ACTIONS(802), 4,
-      anon_sym_Off,
-      anon_sym_off,
-      anon_sym_On,
-      anon_sym_on,
-  [6708] = 5,
+    ACTIONS(924), 5,
+      anon_sym_Add,
+      anon_sym_Sub,
+      anon_sym_RevSub,
+      anon_sym_Min,
+      anon_sym_Max,
+  [6997] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(921), 1,
-      anon_sym_Exp,
     STATE(165), 1,
       sym_comment,
-    ACTIONS(919), 4,
-      anon_sym_Off,
-      anon_sym_Global,
-      anon_sym_Linear,
-      anon_sym_Exp2,
-  [6727] = 4,
+    ACTIONS(972), 6,
+      anon_sym_RBRACE,
+      anon_sym_Emission,
+      anon_sym_Diffuse,
+      anon_sym_Ambient,
+      anon_sym_Specular,
+      anon_sym_Shininess,
+  [7015] = 6,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
+    ACTIONS(976), 1,
+      anon_sym_DOT,
     STATE(166), 1,
       sym_comment,
-    ACTIONS(923), 5,
-      anon_sym_RBRACE,
-      anon_sym_Color,
-      anon_sym_Range,
-      anon_sym_Mode,
-      anon_sym_Density,
-  [6744] = 4,
+    STATE(169), 1,
+      aux_sym_dotted_identifier_repeat1,
+    ACTIONS(974), 4,
+      anon_sym_LPAREN,
+      anon_sym_COMMA,
+      anon_sym_RPAREN,
+      anon_sym_RBRACK,
+  [7037] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     STATE(167), 1,
       sym_comment,
-    ACTIONS(925), 5,
+    ACTIONS(978), 6,
       anon_sym_RBRACE,
-      anon_sym_Color,
-      anon_sym_Range,
-      anon_sym_Mode,
-      anon_sym_Density,
-  [6761] = 4,
+      anon_sym_Emission,
+      anon_sym_Diffuse,
+      anon_sym_Ambient,
+      anon_sym_Specular,
+      anon_sym_Shininess,
+  [7055] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     STATE(168), 1,
       sym_comment,
-    ACTIONS(872), 5,
-      anon_sym_LPAREN,
-      anon_sym_COMMA,
-      anon_sym_RPAREN,
-      anon_sym_DOT,
-      anon_sym_RBRACK,
-  [6778] = 4,
+    ACTIONS(980), 6,
+      anon_sym_RBRACE,
+      anon_sym_combine,
+      anon_sym_Combine,
+      anon_sym_constantColor,
+      anon_sym_ConstantColor,
+      anon_sym_Matrix,
+  [7073] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    STATE(169), 1,
+    ACTIONS(984), 1,
+      anon_sym_DOT,
+    STATE(169), 2,
       sym_comment,
-    ACTIONS(927), 5,
+      aux_sym_dotted_identifier_repeat1,
+    ACTIONS(982), 4,
+      anon_sym_LPAREN,
+      anon_sym_COMMA,
+      anon_sym_RPAREN,
+      anon_sym_RBRACK,
+  [7093] = 8,
+    ACTIONS(989), 1,
+      anon_sym_DOT,
+    ACTIONS(991), 1,
+      anon_sym_SPACE,
+    ACTIONS(993), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(995), 1,
+      anon_sym_SLASH_STAR,
+    STATE(166), 1,
+      aux_sym_dotted_identifier_repeat1,
+    STATE(170), 1,
+      sym_comment,
+    STATE(204), 1,
+      aux_sym__attr_arg_repeat1,
+    ACTIONS(987), 2,
+      anon_sym_COMMA,
+      anon_sym_RPAREN,
+  [7119] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(171), 1,
+      sym_comment,
+    ACTIONS(997), 6,
+      anon_sym_RBRACE,
+      anon_sym_combine,
+      anon_sym_Combine,
+      anon_sym_constantColor,
+      anon_sym_ConstantColor,
+      anon_sym_Matrix,
+  [7137] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(58), 1,
+      sym_blend_op,
+    STATE(172), 1,
+      sym_comment,
+    ACTIONS(924), 5,
+      anon_sym_Add,
+      anon_sym_Sub,
+      anon_sym_RevSub,
+      anon_sym_Min,
+      anon_sym_Max,
+  [7157] = 8,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(360), 1,
+      anon_sym_LBRACK,
+    ACTIONS(968), 1,
+      anon_sym_DASH,
+    ACTIONS(970), 1,
+      sym_number_literal,
+    STATE(59), 1,
+      sym_signed_value,
+    STATE(173), 1,
+      sym_comment,
+    STATE(35), 2,
+      sym_signed_number,
+      sym_property_reference,
+  [7183] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(174), 1,
+      sym_comment,
+    ACTIONS(999), 6,
+      anon_sym_RBRACE,
+      anon_sym_combine,
+      anon_sym_Combine,
+      anon_sym_constantColor,
+      anon_sym_ConstantColor,
+      anon_sym_Matrix,
+  [7201] = 8,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(854), 1,
+      anon_sym_DQUOTE,
+    ACTIONS(1001), 1,
+      anon_sym_RBRACE,
+    STATE(175), 1,
+      sym_comment,
+    STATE(185), 1,
+      aux_sym_tags_block_repeat1,
+    STATE(244), 1,
+      sym_tag_pair,
+    STATE(258), 1,
+      sym_string_literal,
+  [7226] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(176), 1,
+      sym_comment,
+    ACTIONS(1003), 5,
       anon_sym_RBRACE,
       anon_sym_Color,
       anon_sym_Range,
       anon_sym_Mode,
       anon_sym_Density,
-  [6795] = 6,
+  [7243] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(381), 1,
-      anon_sym_DASH,
-    STATE(167), 1,
-      sym__number,
-    STATE(170), 1,
-      sym_comment,
-    ACTIONS(383), 2,
-      sym_number_literal,
-      sym_identifier,
-  [6815] = 6,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(381), 1,
-      anon_sym_DASH,
-    STATE(171), 1,
-      sym_comment,
-    STATE(249), 1,
-      sym__number,
-    ACTIONS(383), 2,
-      sym_number_literal,
-      sym_identifier,
-  [6835] = 6,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(929), 1,
-      anon_sym_RBRACE,
-    ACTIONS(931), 1,
-      anon_sym_Bind,
-    STATE(229), 1,
-      sym__legacy_bind_channel,
-    STATE(172), 2,
-      sym_comment,
-      aux_sym_legacy_bind_channels_command_repeat1,
-  [6855] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    STATE(173), 1,
-      sym_comment,
-    ACTIONS(934), 4,
-      ts_builtin_sym_end,
-      anon_sym_Shader,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-  [6871] = 7,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(826), 1,
-      anon_sym_LBRACK,
-    ACTIONS(936), 1,
-      sym_identifier,
-    STATE(174), 1,
-      sym_comment,
+    STATE(41), 1,
+      sym_on_off,
     STATE(177), 1,
-      aux_sym_property_declaration_repeat1,
-    STATE(218), 1,
-      sym_property_attribute,
-  [6893] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    STATE(175), 1,
       sym_comment,
-    ACTIONS(938), 4,
-      ts_builtin_sym_end,
-      anon_sym_Shader,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-  [6909] = 6,
+    ACTIONS(835), 4,
+      anon_sym_Off,
+      anon_sym_off,
+      anon_sym_On,
+      anon_sym_on,
+  [7262] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(868), 1,
-      anon_sym_DOT,
-    STATE(148), 1,
-      aux_sym_dotted_identifier_repeat1,
-    STATE(176), 1,
-      sym_comment,
-    ACTIONS(940), 2,
-      anon_sym_LPAREN,
-      anon_sym_RBRACK,
-  [6929] = 6,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(942), 1,
-      sym_identifier,
-    ACTIONS(944), 1,
-      anon_sym_LBRACK,
-    STATE(218), 1,
-      sym_property_attribute,
-    STATE(177), 2,
-      sym_comment,
-      aux_sym_property_declaration_repeat1,
-  [6949] = 7,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(947), 1,
-      anon_sym_RBRACE,
-    ACTIONS(949), 1,
-      anon_sym_Bind,
     STATE(178), 1,
       sym_comment,
-    STATE(188), 1,
-      aux_sym_legacy_bind_channels_command_repeat1,
-    STATE(229), 1,
-      sym__legacy_bind_channel,
-  [6971] = 6,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(381), 1,
-      anon_sym_DASH,
-    STATE(179), 1,
-      sym_comment,
-    STATE(301), 1,
-      sym__number,
-    ACTIONS(383), 2,
-      sym_number_literal,
-      sym_identifier,
-  [6991] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    STATE(180), 1,
-      sym_comment,
-    ACTIONS(951), 4,
+    ACTIONS(1005), 5,
       ts_builtin_sym_end,
       anon_sym_Shader,
       anon_sym_SubShader,
+      anon_sym_Subshader,
       anon_sym_Pass,
-  [7007] = 6,
+  [7279] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(381), 1,
-      anon_sym_DASH,
-    STATE(161), 1,
-      sym__number,
+    STATE(179), 1,
+      sym_comment,
+    ACTIONS(1007), 5,
+      ts_builtin_sym_end,
+      anon_sym_Shader,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+  [7296] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(51), 1,
+      sym_on_off,
+    STATE(180), 1,
+      sym_comment,
+    ACTIONS(835), 4,
+      anon_sym_Off,
+      anon_sym_off,
+      anon_sym_On,
+      anon_sym_on,
+  [7315] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
     STATE(181), 1,
       sym_comment,
-    ACTIONS(383), 2,
-      sym_number_literal,
-      sym_identifier,
-  [7027] = 6,
+    ACTIONS(1009), 5,
+      anon_sym_RBRACE,
+      anon_sym_Color,
+      anon_sym_Range,
+      anon_sym_Mode,
+      anon_sym_Density,
+  [7332] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(381), 1,
-      anon_sym_DASH,
     STATE(182), 1,
       sym_comment,
-    STATE(256), 1,
-      sym__number,
-    ACTIONS(383), 2,
-      sym_number_literal,
-      sym_identifier,
-  [7047] = 6,
+    ACTIONS(1011), 5,
+      ts_builtin_sym_end,
+      anon_sym_Shader,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+  [7349] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(381), 1,
-      anon_sym_DASH,
     STATE(183), 1,
       sym_comment,
-    STATE(242), 1,
-      sym__number,
-    ACTIONS(383), 2,
-      sym_number_literal,
-      sym_identifier,
-  [7067] = 6,
+    ACTIONS(982), 5,
+      anon_sym_LPAREN,
+      anon_sym_COMMA,
+      anon_sym_RPAREN,
+      anon_sym_DOT,
+      anon_sym_RBRACK,
+  [7366] = 7,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(381), 1,
-      anon_sym_DASH,
-    STATE(184), 1,
+    ACTIONS(1013), 1,
+      anon_sym_RBRACE,
+    ACTIONS(1015), 1,
+      anon_sym_DQUOTE,
+    STATE(244), 1,
+      sym_tag_pair,
+    STATE(258), 1,
+      sym_string_literal,
+    STATE(184), 2,
       sym_comment,
-    STATE(257), 1,
-      sym__number,
-    ACTIONS(383), 2,
-      sym_number_literal,
-      sym_identifier,
-  [7087] = 6,
+      aux_sym_tags_block_repeat1,
+  [7389] = 8,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(381), 1,
-      anon_sym_DASH,
-    STATE(155), 1,
-      sym__number,
+    ACTIONS(854), 1,
+      anon_sym_DQUOTE,
+    ACTIONS(1018), 1,
+      anon_sym_RBRACE,
+    STATE(184), 1,
+      aux_sym_tags_block_repeat1,
     STATE(185), 1,
       sym_comment,
-    ACTIONS(383), 2,
-      sym_number_literal,
-      sym_identifier,
-  [7107] = 4,
+    STATE(244), 1,
+      sym_tag_pair,
+    STATE(258), 1,
+      sym_string_literal,
+  [7414] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     STATE(186), 1,
       sym_comment,
-    ACTIONS(953), 4,
+    ACTIONS(1020), 5,
       ts_builtin_sym_end,
       anon_sym_Shader,
       anon_sym_SubShader,
+      anon_sym_Subshader,
       anon_sym_Pass,
-  [7123] = 4,
+  [7431] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     STATE(187), 1,
       sym_comment,
-    ACTIONS(955), 4,
+    ACTIONS(1022), 5,
       anon_sym_RBRACE,
-      anon_sym_combine,
-      anon_sym_constantColor,
-      anon_sym_Matrix,
-  [7139] = 7,
+      anon_sym_Color,
+      anon_sym_Range,
+      anon_sym_Mode,
+      anon_sym_Density,
+  [7448] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(949), 1,
-      anon_sym_Bind,
-    ACTIONS(957), 1,
-      anon_sym_RBRACE,
-    STATE(172), 1,
-      aux_sym_legacy_bind_channels_command_repeat1,
     STATE(188), 1,
       sym_comment,
-    STATE(229), 1,
-      sym__legacy_bind_channel,
-  [7161] = 6,
-    ACTIONS(881), 1,
-      anon_sym_SPACE,
-    ACTIONS(883), 1,
+    ACTIONS(1024), 5,
+      anon_sym_RBRACE,
+      anon_sym_Color,
+      anon_sym_Range,
+      anon_sym_Mode,
+      anon_sym_Density,
+  [7465] = 4,
+    ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
-    ACTIONS(885), 1,
+    ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     STATE(189), 1,
       sym_comment,
-    STATE(193), 1,
-      aux_sym__attr_arg_repeat1,
-    ACTIONS(959), 2,
-      anon_sym_COMMA,
-      anon_sym_RPAREN,
-  [7181] = 7,
+    ACTIONS(1026), 5,
+      anon_sym_RBRACE,
+      anon_sym_Color,
+      anon_sym_Range,
+      anon_sym_Mode,
+      anon_sym_Density,
+  [7482] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(711), 1,
-      anon_sym_LBRACK,
-    ACTIONS(961), 1,
-      sym_number_literal,
-    STATE(30), 1,
-      sym__stencil_value,
-    STATE(32), 1,
-      sym_property_reference,
     STATE(190), 1,
       sym_comment,
-  [7203] = 6,
+    ACTIONS(1028), 5,
+      anon_sym_RBRACE,
+      anon_sym_Color,
+      anon_sym_Range,
+      anon_sym_Mode,
+      anon_sym_Density,
+  [7499] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(381), 1,
-      anon_sym_DASH,
     STATE(191), 1,
       sym_comment,
-    STATE(212), 1,
-      sym__number,
-    ACTIONS(383), 2,
-      sym_number_literal,
-      sym_identifier,
-  [7223] = 6,
+    ACTIONS(1030), 5,
+      ts_builtin_sym_end,
+      anon_sym_Shader,
+      anon_sym_SubShader,
+      anon_sym_Subshader,
+      anon_sym_Pass,
+  [7516] = 6,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(381), 1,
+    ACTIONS(364), 1,
       anon_sym_DASH,
     STATE(192), 1,
       sym_comment,
-    STATE(233), 1,
+    STATE(307), 1,
       sym__number,
-    ACTIONS(383), 2,
+    ACTIONS(366), 2,
       sym_number_literal,
       sym_identifier,
-  [7243] = 5,
-    ACTIONS(883), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(885), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(965), 1,
-      anon_sym_SPACE,
-    ACTIONS(963), 2,
-      anon_sym_COMMA,
-      anon_sym_RPAREN,
-    STATE(193), 2,
-      sym_comment,
-      aux_sym__attr_arg_repeat1,
-  [7261] = 6,
+  [7536] = 7,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(381), 1,
-      anon_sym_DASH,
+    ACTIONS(1032), 1,
+      anon_sym_RBRACE,
+    ACTIONS(1034), 1,
+      anon_sym_Bind,
+    STATE(193), 1,
+      sym_comment,
     STATE(194), 1,
-      sym_comment,
-    STATE(286), 1,
-      sym__number,
-    ACTIONS(383), 2,
-      sym_number_literal,
-      sym_identifier,
-  [7281] = 4,
+      aux_sym_legacy_bind_channels_command_repeat1,
+    STATE(237), 1,
+      sym__legacy_bind_channel,
+  [7558] = 6,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
+    ACTIONS(1036), 1,
+      anon_sym_RBRACE,
+    ACTIONS(1038), 1,
+      anon_sym_Bind,
+    STATE(237), 1,
+      sym__legacy_bind_channel,
+    STATE(194), 2,
+      sym_comment,
+      aux_sym_legacy_bind_channels_command_repeat1,
+  [7578] = 6,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(360), 1,
+      anon_sym_LBRACK,
+    ACTIONS(852), 1,
+      anon_sym_LPAREN,
     STATE(195), 1,
       sym_comment,
-    ACTIONS(968), 4,
-      anon_sym_RBRACE,
-      anon_sym_combine,
-      anon_sym_constantColor,
-      anon_sym_Matrix,
-  [7297] = 6,
+    STATE(171), 2,
+      sym_color_default,
+      sym_property_reference,
+  [7598] = 6,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(381), 1,
+    ACTIONS(364), 1,
       anon_sym_DASH,
     STATE(196), 1,
       sym_comment,
-    STATE(297), 1,
+    STATE(262), 1,
       sym__number,
-    ACTIONS(383), 2,
+    ACTIONS(366), 2,
       sym_number_literal,
       sym_identifier,
-  [7317] = 4,
+  [7618] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     STATE(197), 1,
       sym_comment,
-    ACTIONS(970), 4,
-      ts_builtin_sym_end,
-      anon_sym_Shader,
-      anon_sym_SubShader,
-      anon_sym_Pass,
-  [7333] = 6,
+    ACTIONS(1041), 4,
+      anon_sym_RBRACE,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_DQUOTE,
+  [7634] = 6,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(381), 1,
-      anon_sym_DASH,
-    STATE(198), 1,
-      sym_comment,
-    STATE(298), 1,
-      sym__number,
-    ACTIONS(383), 2,
-      sym_number_literal,
+    ACTIONS(1043), 1,
       sym_identifier,
-  [7353] = 6,
-    ACTIONS(3), 1,
+    ACTIONS(1045), 1,
+      anon_sym_LBRACK,
+    STATE(245), 1,
+      sym_property_attribute,
+    STATE(198), 2,
+      sym_comment,
+      aux_sym_property_declaration_repeat1,
+  [7654] = 6,
+    ACTIONS(991), 1,
+      anon_sym_SPACE,
+    ACTIONS(993), 1,
       anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
+    ACTIONS(995), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(381), 1,
-      anon_sym_DASH,
     STATE(199), 1,
       sym_comment,
-    STATE(299), 1,
-      sym__number,
-    ACTIONS(383), 2,
-      sym_number_literal,
-      sym_identifier,
-  [7373] = 5,
+    STATE(204), 1,
+      aux_sym__attr_arg_repeat1,
+    ACTIONS(1048), 2,
+      anon_sym_COMMA,
+      anon_sym_RPAREN,
+  [7674] = 7,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(974), 1,
-      anon_sym_LBRACE,
+    ACTIONS(360), 1,
+      anon_sym_LBRACK,
+    ACTIONS(1050), 1,
+      sym_number_literal,
+    STATE(84), 1,
+      sym_property_reference,
+    STATE(85), 1,
+      sym__stencil_value,
     STATE(200), 1,
       sym_comment,
-    ACTIONS(972), 3,
-      anon_sym_RBRACE,
-      anon_sym_LBRACK,
-      sym_identifier,
-  [7391] = 4,
+  [7696] = 6,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
+    ACTIONS(854), 1,
+      anon_sym_DQUOTE,
+    STATE(118), 1,
+      sym_string_literal,
     STATE(201), 1,
       sym_comment,
-    ACTIONS(976), 4,
-      anon_sym_RBRACE,
-      anon_sym_combine,
-      anon_sym_constantColor,
-      anon_sym_Matrix,
-  [7407] = 4,
+    ACTIONS(1052), 2,
+      anon_sym_Off,
+      anon_sym_off,
+  [7716] = 6,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
+    ACTIONS(364), 1,
+      anon_sym_DASH,
+    STATE(189), 1,
+      sym__number,
     STATE(202), 1,
       sym_comment,
-    ACTIONS(978), 3,
-      anon_sym_RBRACE,
-      anon_sym_LBRACK,
+    ACTIONS(366), 2,
+      sym_number_literal,
       sym_identifier,
-  [7422] = 4,
+  [7736] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     STATE(203), 1,
       sym_comment,
-    ACTIONS(980), 3,
+    ACTIONS(1054), 4,
       anon_sym_RBRACE,
-      anon_sym_LBRACK,
-      sym_identifier,
-  [7437] = 6,
-    ACTIONS(3), 1,
+      anon_sym_Name,
+      anon_sym_Tags,
+      anon_sym_DQUOTE,
+  [7752] = 6,
+    ACTIONS(991), 1,
+      anon_sym_SPACE,
+    ACTIONS(993), 1,
       anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
+    ACTIONS(995), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(982), 1,
-      anon_sym_DASH,
-    ACTIONS(984), 1,
-      sym_number_literal,
-    STATE(61), 1,
-      sym_signed_number,
     STATE(204), 1,
       sym_comment,
-  [7456] = 5,
-    ACTIONS(883), 1,
+    STATE(210), 1,
+      aux_sym__attr_arg_repeat1,
+    ACTIONS(1056), 2,
+      anon_sym_COMMA,
+      anon_sym_RPAREN,
+  [7772] = 6,
+    ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
-    ACTIONS(885), 1,
+    ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(986), 1,
-      anon_sym_SPACE,
+    ACTIONS(360), 1,
+      anon_sym_LBRACK,
+    ACTIONS(852), 1,
+      anon_sym_LPAREN,
     STATE(205), 1,
       sym_comment,
-    ACTIONS(963), 2,
-      anon_sym_COMMA,
-      anon_sym_RPAREN,
-  [7473] = 6,
+    STATE(43), 2,
+      sym_color_default,
+      sym_property_reference,
+  [7792] = 6,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(982), 1,
+    ACTIONS(364), 1,
       anon_sym_DASH,
-    ACTIONS(984), 1,
-      sym_number_literal,
     STATE(206), 1,
       sym_comment,
-    STATE(283), 1,
-      sym_signed_number,
-  [7492] = 4,
+    STATE(303), 1,
+      sym__number,
+    ACTIONS(366), 2,
+      sym_number_literal,
+      sym_identifier,
+  [7812] = 6,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
+    ACTIONS(364), 1,
+      anon_sym_DASH,
     STATE(207), 1,
       sym_comment,
-    ACTIONS(988), 3,
-      anon_sym_RBRACE,
-      anon_sym_LBRACK,
+    STATE(270), 1,
+      sym__number,
+    ACTIONS(366), 2,
+      sym_number_literal,
       sym_identifier,
-  [7507] = 4,
+  [7832] = 6,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
+    ACTIONS(364), 1,
+      anon_sym_DASH,
     STATE(208), 1,
       sym_comment,
-    ACTIONS(972), 3,
-      anon_sym_RBRACE,
-      anon_sym_LBRACK,
+    STATE(248), 1,
+      sym__number,
+    ACTIONS(366), 2,
+      sym_number_literal,
       sym_identifier,
-  [7522] = 6,
+  [7852] = 6,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(769), 1,
-      anon_sym_DQUOTE,
-    ACTIONS(990), 1,
-      anon_sym_RBRACE,
+    ACTIONS(364), 1,
+      anon_sym_DASH,
+    STATE(181), 1,
+      sym__number,
     STATE(209), 1,
       sym_comment,
-    STATE(305), 1,
-      sym_string_literal,
-  [7541] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    STATE(210), 1,
-      sym_comment,
-    ACTIONS(992), 3,
-      anon_sym_RBRACE,
-      anon_sym_LBRACK,
+    ACTIONS(366), 2,
+      sym_number_literal,
       sym_identifier,
-  [7556] = 6,
+  [7872] = 5,
+    ACTIONS(993), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(995), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1060), 1,
+      anon_sym_SPACE,
+    ACTIONS(1058), 2,
+      anon_sym_COMMA,
+      anon_sym_RPAREN,
+    STATE(210), 2,
+      sym_comment,
+      aux_sym__attr_arg_repeat1,
+  [7890] = 7,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(769), 1,
-      anon_sym_DQUOTE,
-    ACTIONS(994), 1,
-      anon_sym_Off,
-    STATE(112), 1,
-      sym_string_literal,
+    ACTIONS(1034), 1,
+      anon_sym_Bind,
+    ACTIONS(1063), 1,
+      anon_sym_RBRACE,
+    STATE(193), 1,
+      aux_sym_legacy_bind_channels_command_repeat1,
     STATE(211), 1,
       sym_comment,
-  [7575] = 5,
+    STATE(237), 1,
+      sym__legacy_bind_channel,
+  [7912] = 6,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(996), 1,
-      anon_sym_COMMA,
-    ACTIONS(998), 1,
-      anon_sym_RPAREN,
+    ACTIONS(360), 1,
+      anon_sym_LBRACK,
+    ACTIONS(852), 1,
+      anon_sym_LPAREN,
     STATE(212), 1,
       sym_comment,
-  [7591] = 5,
+    STATE(165), 2,
+      sym_color_default,
+      sym_property_reference,
+  [7932] = 7,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(769), 1,
-      anon_sym_DQUOTE,
+    ACTIONS(932), 1,
+      anon_sym_LBRACK,
+    ACTIONS(1065), 1,
+      sym_identifier,
+    STATE(198), 1,
+      aux_sym_property_declaration_repeat1,
     STATE(213), 1,
       sym_comment,
-    STATE(284), 1,
-      sym_string_literal,
-  [7607] = 5,
+    STATE(245), 1,
+      sym_property_attribute,
+  [7954] = 6,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(769), 1,
-      anon_sym_DQUOTE,
+    ACTIONS(364), 1,
+      anon_sym_DASH,
     STATE(214), 1,
       sym_comment,
-    STATE(236), 1,
-      sym_string_literal,
-  [7623] = 4,
+    STATE(273), 1,
+      sym__number,
+    ACTIONS(366), 2,
+      sym_number_literal,
+      sym_identifier,
+  [7974] = 6,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
+    ACTIONS(364), 1,
+      anon_sym_DASH,
     STATE(215), 1,
       sym_comment,
-    ACTIONS(1000), 2,
-      anon_sym_RBRACE,
-      anon_sym_DQUOTE,
-  [7637] = 5,
+    STATE(318), 1,
+      sym__number,
+    ACTIONS(366), 2,
+      sym_number_literal,
+      sym_identifier,
+  [7994] = 6,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(769), 1,
-      anon_sym_DQUOTE,
-    STATE(113), 1,
-      sym_string_literal,
+    ACTIONS(364), 1,
+      anon_sym_DASH,
     STATE(216), 1,
       sym_comment,
-  [7653] = 5,
+    STATE(242), 1,
+      sym__number,
+    ACTIONS(366), 2,
+      sym_number_literal,
+      sym_identifier,
+  [8014] = 6,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(769), 1,
-      anon_sym_DQUOTE,
+    ACTIONS(364), 1,
+      anon_sym_DASH,
     STATE(217), 1,
       sym_comment,
-    STATE(271), 1,
-      sym_string_literal,
-  [7669] = 4,
+    STATE(319), 1,
+      sym__number,
+    ACTIONS(366), 2,
+      sym_number_literal,
+      sym_identifier,
+  [8034] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
+    ACTIONS(1069), 1,
+      anon_sym_LBRACE,
     STATE(218), 1,
       sym_comment,
-    ACTIONS(1002), 2,
+    ACTIONS(1067), 3,
+      anon_sym_RBRACE,
       anon_sym_LBRACK,
       sym_identifier,
-  [7683] = 4,
+  [8052] = 6,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
+    ACTIONS(364), 1,
+      anon_sym_DASH,
     STATE(219), 1,
       sym_comment,
-    ACTIONS(1004), 2,
-      anon_sym_AmbientAndDiffuse,
-      anon_sym_Emission,
-  [7697] = 4,
+    STATE(284), 1,
+      sym__number,
+    ACTIONS(366), 2,
+      sym_number_literal,
+      sym_identifier,
+  [8072] = 6,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
+    ACTIONS(364), 1,
+      anon_sym_DASH,
     STATE(220), 1,
       sym_comment,
-    ACTIONS(1006), 2,
-      anon_sym_LBRACK,
+    STATE(274), 1,
+      sym__number,
+    ACTIONS(366), 2,
+      sym_number_literal,
       sym_identifier,
-  [7711] = 5,
+  [8092] = 6,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(769), 1,
-      anon_sym_DQUOTE,
+    ACTIONS(976), 1,
+      anon_sym_DOT,
+    STATE(166), 1,
+      aux_sym_dotted_identifier_repeat1,
     STATE(221), 1,
       sym_comment,
-    STATE(254), 1,
-      sym_string_literal,
-  [7727] = 5,
+    ACTIONS(1071), 2,
+      anon_sym_LPAREN,
+      anon_sym_RBRACK,
+  [8112] = 6,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(767), 1,
-      anon_sym_LPAREN,
-    STATE(156), 1,
-      sym_color_default,
+    ACTIONS(1073), 1,
+      sym_identifier,
+    ACTIONS(1075), 1,
+      anon_sym_RBRACE,
     STATE(222), 1,
       sym_comment,
-  [7743] = 5,
+    STATE(229), 1,
+      aux_sym_texture_default_repeat1,
+  [8131] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(769), 1,
-      anon_sym_DQUOTE,
-    STATE(83), 1,
-      sym_string_literal,
     STATE(223), 1,
       sym_comment,
-  [7759] = 5,
-    ACTIONS(3), 1,
+    ACTIONS(1077), 3,
+      anon_sym_RBRACE,
+      anon_sym_LBRACK,
+      sym_identifier,
+  [8146] = 5,
+    ACTIONS(993), 1,
       anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
+    ACTIONS(995), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(767), 1,
-      anon_sym_LPAREN,
-    STATE(187), 1,
-      sym_color_default,
+    ACTIONS(1079), 1,
+      anon_sym_SPACE,
     STATE(224), 1,
       sym_comment,
-  [7775] = 4,
+    ACTIONS(1058), 2,
+      anon_sym_COMMA,
+      anon_sym_RPAREN,
+  [8163] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     STATE(225), 1,
       sym_comment,
-    ACTIONS(1008), 2,
+    ACTIONS(1081), 3,
       anon_sym_RBRACE,
-      anon_sym_Bind,
-  [7789] = 4,
+      anon_sym_LBRACK,
+      sym_identifier,
+  [8178] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     STATE(226), 1,
       sym_comment,
-    ACTIONS(1010), 2,
-      anon_sym_COMMA,
-      anon_sym_RPAREN,
-  [7803] = 5,
+    ACTIONS(1067), 3,
+      anon_sym_RBRACE,
+      anon_sym_LBRACK,
+      sym_identifier,
+  [8193] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(1012), 1,
-      anon_sym_COMMA,
-    ACTIONS(1014), 1,
-      anon_sym_RPAREN,
     STATE(227), 1,
       sym_comment,
-  [7819] = 5,
+    ACTIONS(1083), 3,
+      anon_sym_RBRACE,
+      anon_sym_LBRACK,
+      sym_identifier,
+  [8208] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(769), 1,
-      anon_sym_DQUOTE,
     STATE(228), 1,
       sym_comment,
-    STATE(276), 1,
-      sym_string_literal,
-  [7835] = 4,
+    ACTIONS(1085), 3,
+      anon_sym_RBRACE,
+      anon_sym_LBRACK,
+      sym_identifier,
+  [8223] = 6,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
+    ACTIONS(1073), 1,
+      sym_identifier,
+    ACTIONS(1087), 1,
+      anon_sym_RBRACE,
     STATE(229), 1,
       sym_comment,
-    ACTIONS(1016), 2,
-      anon_sym_RBRACE,
-      anon_sym_Bind,
-  [7849] = 5,
+    STATE(231), 1,
+      aux_sym_texture_default_repeat1,
+  [8242] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(769), 1,
+    STATE(230), 1,
+      sym_comment,
+    ACTIONS(1089), 3,
+      anon_sym_RBRACE,
+      anon_sym_LBRACK,
+      sym_identifier,
+  [8257] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1091), 1,
+      sym_identifier,
+    ACTIONS(1094), 1,
+      anon_sym_RBRACE,
+    STATE(231), 2,
+      sym_comment,
+      aux_sym_texture_default_repeat1,
+  [8274] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(854), 1,
+      anon_sym_DQUOTE,
+    STATE(232), 1,
+      sym_comment,
+    STATE(308), 1,
+      sym_string_literal,
+  [8290] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(854), 1,
       anon_sym_DQUOTE,
     STATE(21), 1,
       sym_string_literal,
-    STATE(230), 1,
-      sym_comment,
-  [7865] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    STATE(231), 1,
-      sym_comment,
-    ACTIONS(1018), 2,
-      anon_sym_LBRACK,
-      sym_identifier,
-  [7879] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(769), 1,
-      anon_sym_DQUOTE,
-    STATE(110), 1,
-      sym_string_literal,
-    STATE(232), 1,
-      sym_comment,
-  [7895] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1020), 1,
-      anon_sym_COMMA,
-    ACTIONS(1022), 1,
-      anon_sym_RPAREN,
     STATE(233), 1,
       sym_comment,
-  [7911] = 5,
+  [8306] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(1024), 1,
-      sym_identifier,
+    ACTIONS(854), 1,
+      anon_sym_DQUOTE,
+    STATE(130), 1,
+      sym_string_literal,
     STATE(234), 1,
       sym_comment,
-    STATE(238), 1,
-      sym_dotted_identifier,
-  [7927] = 4,
+  [8322] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
+    ACTIONS(854), 1,
+      anon_sym_DQUOTE,
     STATE(235), 1,
       sym_comment,
-    ACTIONS(1026), 2,
-      anon_sym_RBRACE,
-      anon_sym_DQUOTE,
-  [7941] = 5,
+    STATE(252), 1,
+      sym_string_literal,
+  [8338] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(1028), 1,
-      anon_sym_LBRACE,
-    STATE(186), 1,
-      sym_shader_body,
     STATE(236), 1,
       sym_comment,
-  [7957] = 5,
+    ACTIONS(1096), 2,
+      anon_sym_RBRACE,
+      anon_sym_Bind,
+  [8352] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(769), 1,
-      anon_sym_DQUOTE,
-    STATE(215), 1,
-      sym_string_literal,
     STATE(237), 1,
       sym_comment,
-  [7973] = 5,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1030), 1,
-      anon_sym_LPAREN,
-    ACTIONS(1032), 1,
-      anon_sym_RBRACK,
-    STATE(238), 1,
-      sym_comment,
-  [7989] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1034), 1,
-      anon_sym_RBRACK,
-    STATE(239), 1,
-      sym_comment,
-  [8002] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1036), 1,
-      sym_identifier,
-    STATE(240), 1,
-      sym_comment,
-  [8015] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1038), 1,
-      anon_sym_LBRACK,
-    STATE(241), 1,
-      sym_comment,
-  [8028] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1040), 1,
-      anon_sym_COMMA,
-    STATE(242), 1,
-      sym_comment,
-  [8041] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1042), 1,
-      anon_sym_LBRACK,
-    STATE(243), 1,
-      sym_comment,
-  [8054] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1044), 1,
-      anon_sym_LBRACE,
-    STATE(244), 1,
-      sym_comment,
-  [8067] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1046), 1,
-      anon_sym_LBRACE,
-    STATE(245), 1,
-      sym_comment,
-  [8080] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1048), 1,
-      sym_program_content,
-    STATE(246), 1,
-      sym_comment,
-  [8093] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1050), 1,
-      anon_sym_LBRACE,
-    STATE(247), 1,
-      sym_comment,
-  [8106] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1052), 1,
-      anon_sym_RBRACK,
-    STATE(248), 1,
-      sym_comment,
-  [8119] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1054), 1,
-      anon_sym_COMMA,
-    STATE(249), 1,
-      sym_comment,
-  [8132] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1056), 1,
-      sym_number_literal,
-    STATE(250), 1,
-      sym_comment,
-  [8145] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1058), 1,
-      anon_sym_RPAREN,
-    STATE(251), 1,
-      sym_comment,
-  [8158] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1060), 1,
-      anon_sym_LPAREN,
-    STATE(252), 1,
-      sym_comment,
-  [8171] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1062), 1,
-      anon_sym_LBRACE,
-    STATE(253), 1,
-      sym_comment,
-  [8184] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1064), 1,
-      anon_sym_COMMA,
-    STATE(254), 1,
-      sym_comment,
-  [8197] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1066), 1,
-      anon_sym_LBRACE,
-    STATE(255), 1,
-      sym_comment,
-  [8210] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1068), 1,
-      anon_sym_COMMA,
-    STATE(256), 1,
-      sym_comment,
-  [8223] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1070), 1,
-      anon_sym_COMMA,
-    STATE(257), 1,
-      sym_comment,
-  [8236] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1072), 1,
-      sym_program_content,
-    STATE(258), 1,
-      sym_comment,
-  [8249] = 4,
-    ACTIONS(883), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(885), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1074), 1,
-      aux_sym_comment_token2,
-    STATE(259), 1,
-      sym_comment,
-  [8262] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1076), 1,
-      sym_identifier,
-    STATE(260), 1,
-      sym_comment,
-  [8275] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1078), 1,
-      anon_sym_ENDCG,
-    STATE(261), 1,
-      sym_comment,
-  [8288] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1080), 1,
-      sym_identifier,
-    STATE(262), 1,
-      sym_comment,
-  [8301] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1082), 1,
-      anon_sym_ENDHLSL,
-    STATE(263), 1,
-      sym_comment,
-  [8314] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1084), 1,
-      sym_program_content,
-    STATE(264), 1,
-      sym_comment,
-  [8327] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1086), 1,
-      sym_identifier,
-    STATE(265), 1,
-      sym_comment,
-  [8340] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1088), 1,
-      anon_sym_LBRACE,
-    STATE(266), 1,
-      sym_comment,
-  [8353] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1090), 1,
-      ts_builtin_sym_end,
-    STATE(267), 1,
-      sym_comment,
+    ACTIONS(1098), 2,
+      anon_sym_RBRACE,
+      anon_sym_Bind,
   [8366] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(1092), 1,
+    STATE(238), 1,
+      sym_comment,
+    ACTIONS(1100), 2,
+      anon_sym_AmbientAndDiffuse,
+      anon_sym_Emission,
+  [8380] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(239), 1,
+      sym_comment,
+    ACTIONS(1102), 2,
+      anon_sym_COMMA,
       anon_sym_RPAREN,
-    STATE(268), 1,
-      sym_comment,
-  [8379] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1094), 1,
-      anon_sym_LPAREN,
-    STATE(269), 1,
-      sym_comment,
-  [8392] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1096), 1,
-      anon_sym_RPAREN,
-    STATE(270), 1,
-      sym_comment,
-  [8405] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1098), 1,
-      anon_sym_EQ,
-    STATE(271), 1,
-      sym_comment,
-  [8418] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1100), 1,
-      anon_sym_LBRACE,
-    STATE(272), 1,
-      sym_comment,
-  [8431] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1102), 1,
-      anon_sym_SLASH,
-    STATE(273), 1,
-      sym_comment,
-  [8444] = 4,
+  [8394] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     ACTIONS(1104), 1,
-      anon_sym_ENDHLSL,
-    STATE(274), 1,
+      anon_sym_COMMA,
+    ACTIONS(1106), 1,
+      anon_sym_RPAREN,
+    STATE(240), 1,
       sym_comment,
-  [8457] = 4,
+  [8410] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(1106), 1,
-      anon_sym_RBRACK,
-    STATE(275), 1,
+    ACTIONS(854), 1,
+      anon_sym_DQUOTE,
+    STATE(241), 1,
       sym_comment,
-  [8470] = 4,
+    STATE(276), 1,
+      sym_string_literal,
+  [8426] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     ACTIONS(1108), 1,
       anon_sym_COMMA,
-    STATE(276), 1,
-      sym_comment,
-  [8483] = 4,
-    ACTIONS(883), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(885), 1,
-      anon_sym_SLASH_STAR,
     ACTIONS(1110), 1,
-      aux_sym_string_literal_token1,
-    STATE(277), 1,
+      anon_sym_RPAREN,
+    STATE(242), 1,
       sym_comment,
-  [8496] = 4,
+  [8442] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     ACTIONS(1112), 1,
       anon_sym_LBRACE,
-    STATE(278), 1,
+    STATE(178), 1,
+      sym_shader_body,
+    STATE(243), 1,
       sym_comment,
-  [8509] = 4,
+  [8458] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(1114), 1,
-      anon_sym_RPAREN,
-    STATE(279), 1,
+    STATE(244), 1,
       sym_comment,
-  [8522] = 4,
+    ACTIONS(1114), 2,
+      anon_sym_RBRACE,
+      anon_sym_DQUOTE,
+  [8472] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(1116), 1,
-      anon_sym_LPAREN,
-    STATE(280), 1,
+    STATE(245), 1,
       sym_comment,
-  [8535] = 4,
+    ACTIONS(1116), 2,
+      anon_sym_LBRACK,
+      sym_identifier,
+  [8486] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(1118), 1,
-      anon_sym_EQ,
-    STATE(281), 1,
+    STATE(246), 1,
       sym_comment,
-  [8548] = 4,
+    ACTIONS(1118), 2,
+      anon_sym_LBRACK,
+      sym_identifier,
+  [8500] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(854), 1,
+      anon_sym_DQUOTE,
+    STATE(243), 1,
+      sym_string_literal,
+    STATE(247), 1,
+      sym_comment,
+  [8516] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     ACTIONS(1120), 1,
-      anon_sym_RPAREN,
-    STATE(282), 1,
-      sym_comment,
-  [8561] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
-    ACTIONS(1122), 1,
       anon_sym_COMMA,
-    STATE(283), 1,
+    ACTIONS(1122), 1,
+      anon_sym_RPAREN,
+    STATE(248), 1,
       sym_comment,
-  [8574] = 4,
+  [8532] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     ACTIONS(1124), 1,
-      anon_sym_COMMA,
-    STATE(284), 1,
+      sym_identifier,
+    STATE(249), 1,
       sym_comment,
-  [8587] = 4,
+    STATE(250), 1,
+      sym_dotted_identifier,
+  [8548] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     ACTIONS(1126), 1,
-      anon_sym_LBRACE,
-    STATE(285), 1,
-      sym_comment,
-  [8600] = 4,
-    ACTIONS(3), 1,
-      anon_sym_SLASH_SLASH,
-    ACTIONS(5), 1,
-      anon_sym_SLASH_STAR,
+      anon_sym_LPAREN,
     ACTIONS(1128), 1,
-      anon_sym_COMMA,
-    STATE(286), 1,
+      anon_sym_RBRACK,
+    STATE(250), 1,
       sym_comment,
-  [8613] = 4,
+  [8564] = 5,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(1130), 1,
-      sym_number_literal,
-    STATE(287), 1,
+    ACTIONS(854), 1,
+      anon_sym_DQUOTE,
+    STATE(251), 1,
+      sym_comment,
+    STATE(305), 1,
+      sym_string_literal,
+  [8580] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    STATE(252), 1,
+      sym_comment,
+    ACTIONS(1130), 2,
+      anon_sym_RBRACE,
+      anon_sym_DQUOTE,
+  [8594] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(854), 1,
+      anon_sym_DQUOTE,
+    STATE(80), 1,
+      sym_string_literal,
+    STATE(253), 1,
+      sym_comment,
+  [8610] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(854), 1,
+      anon_sym_DQUOTE,
+    STATE(115), 1,
+      sym_string_literal,
+    STATE(254), 1,
       sym_comment,
   [8626] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(1132), 1,
-      anon_sym_EQ,
-    STATE(288), 1,
+    STATE(255), 1,
       sym_comment,
-  [8639] = 4,
-    ACTIONS(883), 1,
+    ACTIONS(1132), 2,
+      anon_sym_RBRACE,
+      sym_identifier,
+  [8640] = 4,
+    ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
-    ACTIONS(885), 1,
+    ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
-    ACTIONS(1134), 1,
-      aux_sym_comment_token1,
-    STATE(289), 1,
+    STATE(256), 1,
       sym_comment,
-  [8652] = 4,
+    ACTIONS(1134), 2,
+      anon_sym_LBRACK,
+      sym_identifier,
+  [8654] = 5,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(854), 1,
+      anon_sym_DQUOTE,
+    STATE(257), 1,
+      sym_comment,
+    STATE(271), 1,
+      sym_string_literal,
+  [8670] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     ACTIONS(1136), 1,
-      sym_identifier,
-    STATE(290), 1,
+      anon_sym_EQ,
+    STATE(258), 1,
       sym_comment,
-  [8665] = 4,
+  [8683] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     ACTIONS(1138), 1,
-      anon_sym_LBRACE,
-    STATE(291), 1,
+      anon_sym_LBRACK,
+    STATE(259), 1,
       sym_comment,
-  [8678] = 4,
+  [8696] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     ACTIONS(1140), 1,
-      anon_sym_EQ,
-    STATE(292), 1,
+      anon_sym_LBRACE,
+    STATE(260), 1,
       sym_comment,
-  [8691] = 4,
+  [8709] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     ACTIONS(1142), 1,
-      anon_sym_ENDCG,
-    STATE(293), 1,
+      sym_number_literal,
+    STATE(261), 1,
       sym_comment,
-  [8704] = 4,
+  [8722] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     ACTIONS(1144), 1,
-      anon_sym_RBRACK,
-    STATE(294), 1,
+      anon_sym_COMMA,
+    STATE(262), 1,
       sym_comment,
-  [8717] = 4,
+  [8735] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     ACTIONS(1146), 1,
-      anon_sym_LPAREN,
-    STATE(295), 1,
+      ts_builtin_sym_end,
+    STATE(263), 1,
       sym_comment,
-  [8730] = 4,
+  [8748] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     ACTIONS(1148), 1,
       sym_number_literal,
-    STATE(296), 1,
+    STATE(264), 1,
       sym_comment,
-  [8743] = 4,
+  [8761] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     ACTIONS(1150), 1,
-      anon_sym_RPAREN,
-    STATE(297), 1,
+      anon_sym_LBRACE,
+    STATE(265), 1,
       sym_comment,
-  [8756] = 4,
+  [8774] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     ACTIONS(1152), 1,
-      anon_sym_RPAREN,
-    STATE(298), 1,
+      anon_sym_ENDHLSL,
+    STATE(266), 1,
       sym_comment,
-  [8769] = 4,
+  [8787] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     ACTIONS(1154), 1,
-      anon_sym_RPAREN,
-    STATE(299), 1,
+      anon_sym_ENDGLSL,
+    STATE(267), 1,
       sym_comment,
-  [8782] = 4,
+  [8800] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     ACTIONS(1156), 1,
-      anon_sym_RBRACE,
-    STATE(300), 1,
+      anon_sym_RPAREN,
+    STATE(268), 1,
       sym_comment,
-  [8795] = 4,
+  [8813] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     ACTIONS(1158), 1,
-      anon_sym_COMMA,
-    STATE(301), 1,
+      sym_program_content,
+    STATE(269), 1,
       sym_comment,
-  [8808] = 4,
+  [8826] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     ACTIONS(1160), 1,
-      sym_program_content,
-    STATE(302), 1,
+      anon_sym_COMMA,
+    STATE(270), 1,
       sym_comment,
-  [8821] = 4,
+  [8839] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     ACTIONS(1162), 1,
-      anon_sym_DQUOTE,
-    STATE(303), 1,
+      anon_sym_COMMA,
+    STATE(271), 1,
       sym_comment,
-  [8834] = 4,
+  [8852] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     ACTIONS(1164), 1,
-      anon_sym_RPAREN,
-    STATE(304), 1,
+      sym_program_content,
+    STATE(272), 1,
       sym_comment,
-  [8847] = 4,
+  [8865] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     ACTIONS(1166), 1,
-      anon_sym_RBRACE,
-    STATE(305), 1,
+      anon_sym_COMMA,
+    STATE(273), 1,
       sym_comment,
-  [8860] = 4,
+  [8878] = 4,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
     ACTIONS(5), 1,
       anon_sym_SLASH_STAR,
     ACTIONS(1168), 1,
+      anon_sym_COMMA,
+    STATE(274), 1,
+      sym_comment,
+  [8891] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1170), 1,
+      anon_sym_RBRACK,
+    STATE(275), 1,
+      sym_comment,
+  [8904] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1172), 1,
+      anon_sym_EQ,
+    STATE(276), 1,
+      sym_comment,
+  [8917] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1174), 1,
+      anon_sym_RBRACK,
+    STATE(277), 1,
+      sym_comment,
+  [8930] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1176), 1,
+      anon_sym_DQUOTE,
+    STATE(278), 1,
+      sym_comment,
+  [8943] = 4,
+    ACTIONS(993), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(995), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1178), 1,
+      aux_sym_comment_token2,
+    STATE(279), 1,
+      sym_comment,
+  [8956] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1180), 1,
+      sym_identifier,
+    STATE(280), 1,
+      sym_comment,
+  [8969] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1182), 1,
+      anon_sym_LBRACE,
+    STATE(281), 1,
+      sym_comment,
+  [8982] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1184), 1,
+      anon_sym_LBRACE,
+    STATE(282), 1,
+      sym_comment,
+  [8995] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1186), 1,
+      sym_identifier,
+    STATE(283), 1,
+      sym_comment,
+  [9008] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1188), 1,
+      anon_sym_COMMA,
+    STATE(284), 1,
+      sym_comment,
+  [9021] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1190), 1,
+      anon_sym_RBRACK,
+    STATE(285), 1,
+      sym_comment,
+  [9034] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1192), 1,
+      anon_sym_LBRACK,
+    STATE(286), 1,
+      sym_comment,
+  [9047] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1194), 1,
+      anon_sym_RPAREN,
+    STATE(287), 1,
+      sym_comment,
+  [9060] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1196), 1,
+      anon_sym_LPAREN,
+    STATE(288), 1,
+      sym_comment,
+  [9073] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1198), 1,
+      anon_sym_RPAREN,
+    STATE(289), 1,
+      sym_comment,
+  [9086] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1200), 1,
+      anon_sym_LBRACE,
+    STATE(290), 1,
+      sym_comment,
+  [9099] = 4,
+    ACTIONS(993), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(995), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1202), 1,
+      aux_sym_comment_token1,
+    STATE(291), 1,
+      sym_comment,
+  [9112] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1204), 1,
+      sym_identifier,
+    STATE(292), 1,
+      sym_comment,
+  [9125] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1206), 1,
+      sym_identifier,
+    STATE(293), 1,
+      sym_comment,
+  [9138] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1208), 1,
+      anon_sym_LBRACE,
+    STATE(294), 1,
+      sym_comment,
+  [9151] = 4,
+    ACTIONS(993), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(995), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1210), 1,
+      aux_sym_string_literal_token1,
+    STATE(295), 1,
+      sym_comment,
+  [9164] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1212), 1,
+      anon_sym_RBRACK,
+    STATE(296), 1,
+      sym_comment,
+  [9177] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1214), 1,
+      sym_identifier,
+    STATE(297), 1,
+      sym_comment,
+  [9190] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1216), 1,
+      sym_number_literal,
+    STATE(298), 1,
+      sym_comment,
+  [9203] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1218), 1,
+      anon_sym_RPAREN,
+    STATE(299), 1,
+      sym_comment,
+  [9216] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1220), 1,
+      sym_program_content,
+    STATE(300), 1,
+      sym_comment,
+  [9229] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1222), 1,
+      anon_sym_EQ,
+    STATE(301), 1,
+      sym_comment,
+  [9242] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1224), 1,
+      anon_sym_RPAREN,
+    STATE(302), 1,
+      sym_comment,
+  [9255] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1226), 1,
+      anon_sym_RPAREN,
+    STATE(303), 1,
+      sym_comment,
+  [9268] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1228), 1,
+      anon_sym_SLASH,
+    STATE(304), 1,
+      sym_comment,
+  [9281] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1230), 1,
+      anon_sym_COMMA,
+    STATE(305), 1,
+      sym_comment,
+  [9294] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1232), 1,
       anon_sym_LBRACE,
     STATE(306), 1,
       sym_comment,
-  [8873] = 1,
-    ACTIONS(1170), 1,
+  [9307] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1234), 1,
+      anon_sym_COMMA,
+    STATE(307), 1,
+      sym_comment,
+  [9320] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1236), 1,
+      anon_sym_COMMA,
+    STATE(308), 1,
+      sym_comment,
+  [9333] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1238), 1,
+      anon_sym_EQ,
+    STATE(309), 1,
+      sym_comment,
+  [9346] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1240), 1,
+      anon_sym_LPAREN,
+    STATE(310), 1,
+      sym_comment,
+  [9359] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1242), 1,
+      anon_sym_LBRACE,
+    STATE(311), 1,
+      sym_comment,
+  [9372] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1244), 1,
+      anon_sym_LPAREN,
+    STATE(312), 1,
+      sym_comment,
+  [9385] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1246), 1,
+      anon_sym_ENDCG,
+    STATE(313), 1,
+      sym_comment,
+  [9398] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1248), 1,
+      anon_sym_LPAREN,
+    STATE(314), 1,
+      sym_comment,
+  [9411] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1250), 1,
+      sym_program_content,
+    STATE(315), 1,
+      sym_comment,
+  [9424] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1252), 1,
+      anon_sym_ENDHLSL,
+    STATE(316), 1,
+      sym_comment,
+  [9437] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1254), 1,
+      anon_sym_ENDGLSL,
+    STATE(317), 1,
+      sym_comment,
+  [9450] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1256), 1,
+      anon_sym_RPAREN,
+    STATE(318), 1,
+      sym_comment,
+  [9463] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1258), 1,
+      anon_sym_RPAREN,
+    STATE(319), 1,
+      sym_comment,
+  [9476] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1260), 1,
+      sym_program_content,
+    STATE(320), 1,
+      sym_comment,
+  [9489] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1262), 1,
+      sym_program_content,
+    STATE(321), 1,
+      sym_comment,
+  [9502] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1264), 1,
+      anon_sym_RPAREN,
+    STATE(322), 1,
+      sym_comment,
+  [9515] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1266), 1,
+      anon_sym_COMMA,
+    STATE(323), 1,
+      sym_comment,
+  [9528] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1268), 1,
+      anon_sym_LBRACE,
+    STATE(324), 1,
+      sym_comment,
+  [9541] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1270), 1,
+      anon_sym_LBRACE,
+    STATE(325), 1,
+      sym_comment,
+  [9554] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1272), 1,
+      anon_sym_LBRACE,
+    STATE(326), 1,
+      sym_comment,
+  [9567] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1274), 1,
+      anon_sym_ENDCG,
+    STATE(327), 1,
+      sym_comment,
+  [9580] = 4,
+    ACTIONS(3), 1,
+      anon_sym_SLASH_SLASH,
+    ACTIONS(5), 1,
+      anon_sym_SLASH_STAR,
+    ACTIONS(1276), 1,
+      anon_sym_RPAREN,
+    STATE(328), 1,
+      sym_comment,
+  [9593] = 1,
+    ACTIONS(1278), 1,
       ts_builtin_sym_end,
-  [8877] = 1,
-    ACTIONS(1172), 1,
+  [9597] = 1,
+    ACTIONS(1280), 1,
       ts_builtin_sym_end,
 };
 
 static const uint32_t ts_small_parse_table_map[] = {
-  [SMALL_STATE(4)] = 0,
-  [SMALL_STATE(5)] = 127,
-  [SMALL_STATE(6)] = 252,
-  [SMALL_STATE(7)] = 379,
-  [SMALL_STATE(8)] = 494,
-  [SMALL_STATE(9)] = 609,
-  [SMALL_STATE(10)] = 722,
-  [SMALL_STATE(11)] = 824,
-  [SMALL_STATE(12)] = 926,
-  [SMALL_STATE(13)] = 1026,
-  [SMALL_STATE(14)] = 1083,
-  [SMALL_STATE(15)] = 1140,
-  [SMALL_STATE(16)] = 1197,
-  [SMALL_STATE(17)] = 1253,
-  [SMALL_STATE(18)] = 1309,
-  [SMALL_STATE(19)] = 1386,
-  [SMALL_STATE(20)] = 1463,
-  [SMALL_STATE(21)] = 1538,
-  [SMALL_STATE(22)] = 1587,
-  [SMALL_STATE(23)] = 1636,
-  [SMALL_STATE(24)] = 1685,
-  [SMALL_STATE(25)] = 1741,
-  [SMALL_STATE(26)] = 1789,
-  [SMALL_STATE(27)] = 1837,
-  [SMALL_STATE(28)] = 1884,
-  [SMALL_STATE(29)] = 1931,
-  [SMALL_STATE(30)] = 1978,
-  [SMALL_STATE(31)] = 2025,
-  [SMALL_STATE(32)] = 2072,
-  [SMALL_STATE(33)] = 2119,
-  [SMALL_STATE(34)] = 2166,
-  [SMALL_STATE(35)] = 2213,
-  [SMALL_STATE(36)] = 2260,
-  [SMALL_STATE(37)] = 2307,
-  [SMALL_STATE(38)] = 2352,
-  [SMALL_STATE(39)] = 2397,
-  [SMALL_STATE(40)] = 2442,
-  [SMALL_STATE(41)] = 2487,
-  [SMALL_STATE(42)] = 2532,
-  [SMALL_STATE(43)] = 2576,
-  [SMALL_STATE(44)] = 2620,
-  [SMALL_STATE(45)] = 2664,
-  [SMALL_STATE(46)] = 2708,
-  [SMALL_STATE(47)] = 2752,
-  [SMALL_STATE(48)] = 2796,
-  [SMALL_STATE(49)] = 2840,
-  [SMALL_STATE(50)] = 2884,
-  [SMALL_STATE(51)] = 2928,
-  [SMALL_STATE(52)] = 2972,
-  [SMALL_STATE(53)] = 3016,
-  [SMALL_STATE(54)] = 3060,
-  [SMALL_STATE(55)] = 3104,
-  [SMALL_STATE(56)] = 3148,
-  [SMALL_STATE(57)] = 3192,
-  [SMALL_STATE(58)] = 3236,
-  [SMALL_STATE(59)] = 3280,
-  [SMALL_STATE(60)] = 3324,
-  [SMALL_STATE(61)] = 3368,
-  [SMALL_STATE(62)] = 3412,
-  [SMALL_STATE(63)] = 3456,
-  [SMALL_STATE(64)] = 3500,
-  [SMALL_STATE(65)] = 3544,
-  [SMALL_STATE(66)] = 3588,
-  [SMALL_STATE(67)] = 3632,
-  [SMALL_STATE(68)] = 3676,
-  [SMALL_STATE(69)] = 3720,
-  [SMALL_STATE(70)] = 3764,
-  [SMALL_STATE(71)] = 3808,
-  [SMALL_STATE(72)] = 3852,
-  [SMALL_STATE(73)] = 3896,
-  [SMALL_STATE(74)] = 3940,
-  [SMALL_STATE(75)] = 3984,
-  [SMALL_STATE(76)] = 4027,
-  [SMALL_STATE(77)] = 4070,
-  [SMALL_STATE(78)] = 4112,
-  [SMALL_STATE(79)] = 4154,
-  [SMALL_STATE(80)] = 4196,
-  [SMALL_STATE(81)] = 4240,
-  [SMALL_STATE(82)] = 4284,
-  [SMALL_STATE(83)] = 4323,
-  [SMALL_STATE(84)] = 4362,
-  [SMALL_STATE(85)] = 4401,
-  [SMALL_STATE(86)] = 4463,
-  [SMALL_STATE(87)] = 4523,
-  [SMALL_STATE(88)] = 4585,
-  [SMALL_STATE(89)] = 4630,
-  [SMALL_STATE(90)] = 4673,
-  [SMALL_STATE(91)] = 4708,
-  [SMALL_STATE(92)] = 4743,
-  [SMALL_STATE(93)] = 4778,
-  [SMALL_STATE(94)] = 4813,
-  [SMALL_STATE(95)] = 4850,
-  [SMALL_STATE(96)] = 4885,
-  [SMALL_STATE(97)] = 4920,
-  [SMALL_STATE(98)] = 4949,
-  [SMALL_STATE(99)] = 4978,
-  [SMALL_STATE(100)] = 5007,
-  [SMALL_STATE(101)] = 5036,
-  [SMALL_STATE(102)] = 5067,
-  [SMALL_STATE(103)] = 5107,
-  [SMALL_STATE(104)] = 5141,
-  [SMALL_STATE(105)] = 5175,
-  [SMALL_STATE(106)] = 5209,
-  [SMALL_STATE(107)] = 5243,
-  [SMALL_STATE(108)] = 5277,
-  [SMALL_STATE(109)] = 5311,
-  [SMALL_STATE(110)] = 5345,
-  [SMALL_STATE(111)] = 5369,
-  [SMALL_STATE(112)] = 5393,
-  [SMALL_STATE(113)] = 5417,
-  [SMALL_STATE(114)] = 5441,
-  [SMALL_STATE(115)] = 5465,
-  [SMALL_STATE(116)] = 5489,
-  [SMALL_STATE(117)] = 5513,
-  [SMALL_STATE(118)] = 5537,
-  [SMALL_STATE(119)] = 5561,
-  [SMALL_STATE(120)] = 5585,
-  [SMALL_STATE(121)] = 5609,
-  [SMALL_STATE(122)] = 5634,
-  [SMALL_STATE(123)] = 5663,
-  [SMALL_STATE(124)] = 5688,
-  [SMALL_STATE(125)] = 5722,
-  [SMALL_STATE(126)] = 5756,
-  [SMALL_STATE(127)] = 5789,
-  [SMALL_STATE(128)] = 5814,
-  [SMALL_STATE(129)] = 5845,
-  [SMALL_STATE(130)] = 5871,
-  [SMALL_STATE(131)] = 5899,
-  [SMALL_STATE(132)] = 5927,
-  [SMALL_STATE(133)] = 5950,
-  [SMALL_STATE(134)] = 5979,
-  [SMALL_STATE(135)] = 5998,
-  [SMALL_STATE(136)] = 6029,
-  [SMALL_STATE(137)] = 6052,
-  [SMALL_STATE(138)] = 6075,
-  [SMALL_STATE(139)] = 6106,
-  [SMALL_STATE(140)] = 6137,
-  [SMALL_STATE(141)] = 6166,
-  [SMALL_STATE(142)] = 6195,
-  [SMALL_STATE(143)] = 6224,
-  [SMALL_STATE(144)] = 6247,
-  [SMALL_STATE(145)] = 6278,
-  [SMALL_STATE(146)] = 6301,
-  [SMALL_STATE(147)] = 6329,
-  [SMALL_STATE(148)] = 6349,
-  [SMALL_STATE(149)] = 6371,
-  [SMALL_STATE(150)] = 6399,
-  [SMALL_STATE(151)] = 6419,
-  [SMALL_STATE(152)] = 6445,
-  [SMALL_STATE(153)] = 6465,
-  [SMALL_STATE(154)] = 6485,
-  [SMALL_STATE(155)] = 6503,
-  [SMALL_STATE(156)] = 6521,
-  [SMALL_STATE(157)] = 6539,
-  [SMALL_STATE(158)] = 6565,
-  [SMALL_STATE(159)] = 6588,
-  [SMALL_STATE(160)] = 6605,
-  [SMALL_STATE(161)] = 6622,
-  [SMALL_STATE(162)] = 6639,
-  [SMALL_STATE(163)] = 6664,
-  [SMALL_STATE(164)] = 6689,
-  [SMALL_STATE(165)] = 6708,
-  [SMALL_STATE(166)] = 6727,
-  [SMALL_STATE(167)] = 6744,
-  [SMALL_STATE(168)] = 6761,
-  [SMALL_STATE(169)] = 6778,
-  [SMALL_STATE(170)] = 6795,
-  [SMALL_STATE(171)] = 6815,
-  [SMALL_STATE(172)] = 6835,
-  [SMALL_STATE(173)] = 6855,
-  [SMALL_STATE(174)] = 6871,
-  [SMALL_STATE(175)] = 6893,
-  [SMALL_STATE(176)] = 6909,
-  [SMALL_STATE(177)] = 6929,
-  [SMALL_STATE(178)] = 6949,
-  [SMALL_STATE(179)] = 6971,
-  [SMALL_STATE(180)] = 6991,
-  [SMALL_STATE(181)] = 7007,
-  [SMALL_STATE(182)] = 7027,
-  [SMALL_STATE(183)] = 7047,
-  [SMALL_STATE(184)] = 7067,
-  [SMALL_STATE(185)] = 7087,
-  [SMALL_STATE(186)] = 7107,
-  [SMALL_STATE(187)] = 7123,
-  [SMALL_STATE(188)] = 7139,
-  [SMALL_STATE(189)] = 7161,
-  [SMALL_STATE(190)] = 7181,
-  [SMALL_STATE(191)] = 7203,
-  [SMALL_STATE(192)] = 7223,
-  [SMALL_STATE(193)] = 7243,
-  [SMALL_STATE(194)] = 7261,
-  [SMALL_STATE(195)] = 7281,
-  [SMALL_STATE(196)] = 7297,
-  [SMALL_STATE(197)] = 7317,
-  [SMALL_STATE(198)] = 7333,
-  [SMALL_STATE(199)] = 7353,
-  [SMALL_STATE(200)] = 7373,
-  [SMALL_STATE(201)] = 7391,
-  [SMALL_STATE(202)] = 7407,
-  [SMALL_STATE(203)] = 7422,
-  [SMALL_STATE(204)] = 7437,
-  [SMALL_STATE(205)] = 7456,
-  [SMALL_STATE(206)] = 7473,
-  [SMALL_STATE(207)] = 7492,
-  [SMALL_STATE(208)] = 7507,
-  [SMALL_STATE(209)] = 7522,
-  [SMALL_STATE(210)] = 7541,
-  [SMALL_STATE(211)] = 7556,
-  [SMALL_STATE(212)] = 7575,
-  [SMALL_STATE(213)] = 7591,
-  [SMALL_STATE(214)] = 7607,
-  [SMALL_STATE(215)] = 7623,
-  [SMALL_STATE(216)] = 7637,
-  [SMALL_STATE(217)] = 7653,
-  [SMALL_STATE(218)] = 7669,
-  [SMALL_STATE(219)] = 7683,
-  [SMALL_STATE(220)] = 7697,
-  [SMALL_STATE(221)] = 7711,
-  [SMALL_STATE(222)] = 7727,
-  [SMALL_STATE(223)] = 7743,
-  [SMALL_STATE(224)] = 7759,
-  [SMALL_STATE(225)] = 7775,
-  [SMALL_STATE(226)] = 7789,
-  [SMALL_STATE(227)] = 7803,
-  [SMALL_STATE(228)] = 7819,
-  [SMALL_STATE(229)] = 7835,
-  [SMALL_STATE(230)] = 7849,
-  [SMALL_STATE(231)] = 7865,
-  [SMALL_STATE(232)] = 7879,
-  [SMALL_STATE(233)] = 7895,
-  [SMALL_STATE(234)] = 7911,
-  [SMALL_STATE(235)] = 7927,
-  [SMALL_STATE(236)] = 7941,
-  [SMALL_STATE(237)] = 7957,
-  [SMALL_STATE(238)] = 7973,
-  [SMALL_STATE(239)] = 7989,
-  [SMALL_STATE(240)] = 8002,
-  [SMALL_STATE(241)] = 8015,
-  [SMALL_STATE(242)] = 8028,
-  [SMALL_STATE(243)] = 8041,
-  [SMALL_STATE(244)] = 8054,
-  [SMALL_STATE(245)] = 8067,
-  [SMALL_STATE(246)] = 8080,
-  [SMALL_STATE(247)] = 8093,
-  [SMALL_STATE(248)] = 8106,
-  [SMALL_STATE(249)] = 8119,
-  [SMALL_STATE(250)] = 8132,
-  [SMALL_STATE(251)] = 8145,
-  [SMALL_STATE(252)] = 8158,
-  [SMALL_STATE(253)] = 8171,
-  [SMALL_STATE(254)] = 8184,
-  [SMALL_STATE(255)] = 8197,
-  [SMALL_STATE(256)] = 8210,
-  [SMALL_STATE(257)] = 8223,
-  [SMALL_STATE(258)] = 8236,
-  [SMALL_STATE(259)] = 8249,
-  [SMALL_STATE(260)] = 8262,
-  [SMALL_STATE(261)] = 8275,
-  [SMALL_STATE(262)] = 8288,
-  [SMALL_STATE(263)] = 8301,
-  [SMALL_STATE(264)] = 8314,
-  [SMALL_STATE(265)] = 8327,
-  [SMALL_STATE(266)] = 8340,
-  [SMALL_STATE(267)] = 8353,
-  [SMALL_STATE(268)] = 8366,
-  [SMALL_STATE(269)] = 8379,
-  [SMALL_STATE(270)] = 8392,
-  [SMALL_STATE(271)] = 8405,
-  [SMALL_STATE(272)] = 8418,
-  [SMALL_STATE(273)] = 8431,
-  [SMALL_STATE(274)] = 8444,
-  [SMALL_STATE(275)] = 8457,
-  [SMALL_STATE(276)] = 8470,
-  [SMALL_STATE(277)] = 8483,
-  [SMALL_STATE(278)] = 8496,
-  [SMALL_STATE(279)] = 8509,
-  [SMALL_STATE(280)] = 8522,
-  [SMALL_STATE(281)] = 8535,
-  [SMALL_STATE(282)] = 8548,
-  [SMALL_STATE(283)] = 8561,
-  [SMALL_STATE(284)] = 8574,
-  [SMALL_STATE(285)] = 8587,
-  [SMALL_STATE(286)] = 8600,
-  [SMALL_STATE(287)] = 8613,
-  [SMALL_STATE(288)] = 8626,
-  [SMALL_STATE(289)] = 8639,
-  [SMALL_STATE(290)] = 8652,
-  [SMALL_STATE(291)] = 8665,
-  [SMALL_STATE(292)] = 8678,
-  [SMALL_STATE(293)] = 8691,
-  [SMALL_STATE(294)] = 8704,
-  [SMALL_STATE(295)] = 8717,
-  [SMALL_STATE(296)] = 8730,
-  [SMALL_STATE(297)] = 8743,
-  [SMALL_STATE(298)] = 8756,
-  [SMALL_STATE(299)] = 8769,
-  [SMALL_STATE(300)] = 8782,
-  [SMALL_STATE(301)] = 8795,
-  [SMALL_STATE(302)] = 8808,
-  [SMALL_STATE(303)] = 8821,
-  [SMALL_STATE(304)] = 8834,
-  [SMALL_STATE(305)] = 8847,
-  [SMALL_STATE(306)] = 8860,
-  [SMALL_STATE(307)] = 8873,
-  [SMALL_STATE(308)] = 8877,
+  [SMALL_STATE(10)] = 0,
+  [SMALL_STATE(11)] = 119,
+  [SMALL_STATE(12)] = 238,
+  [SMALL_STATE(13)] = 355,
+  [SMALL_STATE(14)] = 421,
+  [SMALL_STATE(15)] = 486,
+  [SMALL_STATE(16)] = 551,
+  [SMALL_STATE(17)] = 616,
+  [SMALL_STATE(18)] = 681,
+  [SMALL_STATE(19)] = 746,
+  [SMALL_STATE(20)] = 811,
+  [SMALL_STATE(21)] = 880,
+  [SMALL_STATE(22)] = 938,
+  [SMALL_STATE(23)] = 996,
+  [SMALL_STATE(24)] = 1054,
+  [SMALL_STATE(25)] = 1111,
+  [SMALL_STATE(26)] = 1168,
+  [SMALL_STATE(27)] = 1222,
+  [SMALL_STATE(28)] = 1276,
+  [SMALL_STATE(29)] = 1330,
+  [SMALL_STATE(30)] = 1384,
+  [SMALL_STATE(31)] = 1440,
+  [SMALL_STATE(32)] = 1496,
+  [SMALL_STATE(33)] = 1550,
+  [SMALL_STATE(34)] = 1604,
+  [SMALL_STATE(35)] = 1660,
+  [SMALL_STATE(36)] = 1714,
+  [SMALL_STATE(37)] = 1768,
+  [SMALL_STATE(38)] = 1824,
+  [SMALL_STATE(39)] = 1877,
+  [SMALL_STATE(40)] = 1930,
+  [SMALL_STATE(41)] = 1983,
+  [SMALL_STATE(42)] = 2036,
+  [SMALL_STATE(43)] = 2089,
+  [SMALL_STATE(44)] = 2142,
+  [SMALL_STATE(45)] = 2219,
+  [SMALL_STATE(46)] = 2272,
+  [SMALL_STATE(47)] = 2325,
+  [SMALL_STATE(48)] = 2378,
+  [SMALL_STATE(49)] = 2431,
+  [SMALL_STATE(50)] = 2484,
+  [SMALL_STATE(51)] = 2561,
+  [SMALL_STATE(52)] = 2614,
+  [SMALL_STATE(53)] = 2667,
+  [SMALL_STATE(54)] = 2720,
+  [SMALL_STATE(55)] = 2773,
+  [SMALL_STATE(56)] = 2826,
+  [SMALL_STATE(57)] = 2879,
+  [SMALL_STATE(58)] = 2932,
+  [SMALL_STATE(59)] = 2985,
+  [SMALL_STATE(60)] = 3038,
+  [SMALL_STATE(61)] = 3091,
+  [SMALL_STATE(62)] = 3144,
+  [SMALL_STATE(63)] = 3197,
+  [SMALL_STATE(64)] = 3250,
+  [SMALL_STATE(65)] = 3325,
+  [SMALL_STATE(66)] = 3378,
+  [SMALL_STATE(67)] = 3431,
+  [SMALL_STATE(68)] = 3484,
+  [SMALL_STATE(69)] = 3537,
+  [SMALL_STATE(70)] = 3590,
+  [SMALL_STATE(71)] = 3643,
+  [SMALL_STATE(72)] = 3696,
+  [SMALL_STATE(73)] = 3749,
+  [SMALL_STATE(74)] = 3802,
+  [SMALL_STATE(75)] = 3855,
+  [SMALL_STATE(76)] = 3906,
+  [SMALL_STATE(77)] = 3957,
+  [SMALL_STATE(78)] = 4008,
+  [SMALL_STATE(79)] = 4058,
+  [SMALL_STATE(80)] = 4108,
+  [SMALL_STATE(81)] = 4157,
+  [SMALL_STATE(82)] = 4205,
+  [SMALL_STATE(83)] = 4253,
+  [SMALL_STATE(84)] = 4300,
+  [SMALL_STATE(85)] = 4347,
+  [SMALL_STATE(86)] = 4394,
+  [SMALL_STATE(87)] = 4441,
+  [SMALL_STATE(88)] = 4488,
+  [SMALL_STATE(89)] = 4535,
+  [SMALL_STATE(90)] = 4578,
+  [SMALL_STATE(91)] = 4625,
+  [SMALL_STATE(92)] = 4676,
+  [SMALL_STATE(93)] = 4723,
+  [SMALL_STATE(94)] = 4776,
+  [SMALL_STATE(95)] = 4818,
+  [SMALL_STATE(96)] = 4860,
+  [SMALL_STATE(97)] = 4927,
+  [SMALL_STATE(98)] = 4992,
+  [SMALL_STATE(99)] = 5033,
+  [SMALL_STATE(100)] = 5100,
+  [SMALL_STATE(101)] = 5143,
+  [SMALL_STATE(102)] = 5183,
+  [SMALL_STATE(103)] = 5220,
+  [SMALL_STATE(104)] = 5257,
+  [SMALL_STATE(105)] = 5290,
+  [SMALL_STATE(106)] = 5325,
+  [SMALL_STATE(107)] = 5356,
+  [SMALL_STATE(108)] = 5385,
+  [SMALL_STATE(109)] = 5414,
+  [SMALL_STATE(110)] = 5443,
+  [SMALL_STATE(111)] = 5483,
+  [SMALL_STATE(112)] = 5517,
+  [SMALL_STATE(113)] = 5549,
+  [SMALL_STATE(114)] = 5583,
+  [SMALL_STATE(115)] = 5609,
+  [SMALL_STATE(116)] = 5635,
+  [SMALL_STATE(117)] = 5661,
+  [SMALL_STATE(118)] = 5695,
+  [SMALL_STATE(119)] = 5721,
+  [SMALL_STATE(120)] = 5747,
+  [SMALL_STATE(121)] = 5781,
+  [SMALL_STATE(122)] = 5807,
+  [SMALL_STATE(123)] = 5833,
+  [SMALL_STATE(124)] = 5859,
+  [SMALL_STATE(125)] = 5893,
+  [SMALL_STATE(126)] = 5927,
+  [SMALL_STATE(127)] = 5953,
+  [SMALL_STATE(128)] = 5979,
+  [SMALL_STATE(129)] = 6013,
+  [SMALL_STATE(130)] = 6039,
+  [SMALL_STATE(131)] = 6065,
+  [SMALL_STATE(132)] = 6095,
+  [SMALL_STATE(133)] = 6129,
+  [SMALL_STATE(134)] = 6161,
+  [SMALL_STATE(135)] = 6195,
+  [SMALL_STATE(136)] = 6229,
+  [SMALL_STATE(137)] = 6254,
+  [SMALL_STATE(138)] = 6282,
+  [SMALL_STATE(139)] = 6310,
+  [SMALL_STATE(140)] = 6340,
+  [SMALL_STATE(141)] = 6372,
+  [SMALL_STATE(142)] = 6400,
+  [SMALL_STATE(143)] = 6430,
+  [SMALL_STATE(144)] = 6456,
+  [SMALL_STATE(145)] = 6486,
+  [SMALL_STATE(146)] = 6518,
+  [SMALL_STATE(147)] = 6547,
+  [SMALL_STATE(148)] = 6570,
+  [SMALL_STATE(149)] = 6601,
+  [SMALL_STATE(150)] = 6624,
+  [SMALL_STATE(151)] = 6647,
+  [SMALL_STATE(152)] = 6670,
+  [SMALL_STATE(153)] = 6701,
+  [SMALL_STATE(154)] = 6732,
+  [SMALL_STATE(155)] = 6761,
+  [SMALL_STATE(156)] = 6780,
+  [SMALL_STATE(157)] = 6809,
+  [SMALL_STATE(158)] = 6838,
+  [SMALL_STATE(159)] = 6869,
+  [SMALL_STATE(160)] = 6893,
+  [SMALL_STATE(161)] = 6913,
+  [SMALL_STATE(162)] = 6931,
+  [SMALL_STATE(163)] = 6951,
+  [SMALL_STATE(164)] = 6977,
+  [SMALL_STATE(165)] = 6997,
+  [SMALL_STATE(166)] = 7015,
+  [SMALL_STATE(167)] = 7037,
+  [SMALL_STATE(168)] = 7055,
+  [SMALL_STATE(169)] = 7073,
+  [SMALL_STATE(170)] = 7093,
+  [SMALL_STATE(171)] = 7119,
+  [SMALL_STATE(172)] = 7137,
+  [SMALL_STATE(173)] = 7157,
+  [SMALL_STATE(174)] = 7183,
+  [SMALL_STATE(175)] = 7201,
+  [SMALL_STATE(176)] = 7226,
+  [SMALL_STATE(177)] = 7243,
+  [SMALL_STATE(178)] = 7262,
+  [SMALL_STATE(179)] = 7279,
+  [SMALL_STATE(180)] = 7296,
+  [SMALL_STATE(181)] = 7315,
+  [SMALL_STATE(182)] = 7332,
+  [SMALL_STATE(183)] = 7349,
+  [SMALL_STATE(184)] = 7366,
+  [SMALL_STATE(185)] = 7389,
+  [SMALL_STATE(186)] = 7414,
+  [SMALL_STATE(187)] = 7431,
+  [SMALL_STATE(188)] = 7448,
+  [SMALL_STATE(189)] = 7465,
+  [SMALL_STATE(190)] = 7482,
+  [SMALL_STATE(191)] = 7499,
+  [SMALL_STATE(192)] = 7516,
+  [SMALL_STATE(193)] = 7536,
+  [SMALL_STATE(194)] = 7558,
+  [SMALL_STATE(195)] = 7578,
+  [SMALL_STATE(196)] = 7598,
+  [SMALL_STATE(197)] = 7618,
+  [SMALL_STATE(198)] = 7634,
+  [SMALL_STATE(199)] = 7654,
+  [SMALL_STATE(200)] = 7674,
+  [SMALL_STATE(201)] = 7696,
+  [SMALL_STATE(202)] = 7716,
+  [SMALL_STATE(203)] = 7736,
+  [SMALL_STATE(204)] = 7752,
+  [SMALL_STATE(205)] = 7772,
+  [SMALL_STATE(206)] = 7792,
+  [SMALL_STATE(207)] = 7812,
+  [SMALL_STATE(208)] = 7832,
+  [SMALL_STATE(209)] = 7852,
+  [SMALL_STATE(210)] = 7872,
+  [SMALL_STATE(211)] = 7890,
+  [SMALL_STATE(212)] = 7912,
+  [SMALL_STATE(213)] = 7932,
+  [SMALL_STATE(214)] = 7954,
+  [SMALL_STATE(215)] = 7974,
+  [SMALL_STATE(216)] = 7994,
+  [SMALL_STATE(217)] = 8014,
+  [SMALL_STATE(218)] = 8034,
+  [SMALL_STATE(219)] = 8052,
+  [SMALL_STATE(220)] = 8072,
+  [SMALL_STATE(221)] = 8092,
+  [SMALL_STATE(222)] = 8112,
+  [SMALL_STATE(223)] = 8131,
+  [SMALL_STATE(224)] = 8146,
+  [SMALL_STATE(225)] = 8163,
+  [SMALL_STATE(226)] = 8178,
+  [SMALL_STATE(227)] = 8193,
+  [SMALL_STATE(228)] = 8208,
+  [SMALL_STATE(229)] = 8223,
+  [SMALL_STATE(230)] = 8242,
+  [SMALL_STATE(231)] = 8257,
+  [SMALL_STATE(232)] = 8274,
+  [SMALL_STATE(233)] = 8290,
+  [SMALL_STATE(234)] = 8306,
+  [SMALL_STATE(235)] = 8322,
+  [SMALL_STATE(236)] = 8338,
+  [SMALL_STATE(237)] = 8352,
+  [SMALL_STATE(238)] = 8366,
+  [SMALL_STATE(239)] = 8380,
+  [SMALL_STATE(240)] = 8394,
+  [SMALL_STATE(241)] = 8410,
+  [SMALL_STATE(242)] = 8426,
+  [SMALL_STATE(243)] = 8442,
+  [SMALL_STATE(244)] = 8458,
+  [SMALL_STATE(245)] = 8472,
+  [SMALL_STATE(246)] = 8486,
+  [SMALL_STATE(247)] = 8500,
+  [SMALL_STATE(248)] = 8516,
+  [SMALL_STATE(249)] = 8532,
+  [SMALL_STATE(250)] = 8548,
+  [SMALL_STATE(251)] = 8564,
+  [SMALL_STATE(252)] = 8580,
+  [SMALL_STATE(253)] = 8594,
+  [SMALL_STATE(254)] = 8610,
+  [SMALL_STATE(255)] = 8626,
+  [SMALL_STATE(256)] = 8640,
+  [SMALL_STATE(257)] = 8654,
+  [SMALL_STATE(258)] = 8670,
+  [SMALL_STATE(259)] = 8683,
+  [SMALL_STATE(260)] = 8696,
+  [SMALL_STATE(261)] = 8709,
+  [SMALL_STATE(262)] = 8722,
+  [SMALL_STATE(263)] = 8735,
+  [SMALL_STATE(264)] = 8748,
+  [SMALL_STATE(265)] = 8761,
+  [SMALL_STATE(266)] = 8774,
+  [SMALL_STATE(267)] = 8787,
+  [SMALL_STATE(268)] = 8800,
+  [SMALL_STATE(269)] = 8813,
+  [SMALL_STATE(270)] = 8826,
+  [SMALL_STATE(271)] = 8839,
+  [SMALL_STATE(272)] = 8852,
+  [SMALL_STATE(273)] = 8865,
+  [SMALL_STATE(274)] = 8878,
+  [SMALL_STATE(275)] = 8891,
+  [SMALL_STATE(276)] = 8904,
+  [SMALL_STATE(277)] = 8917,
+  [SMALL_STATE(278)] = 8930,
+  [SMALL_STATE(279)] = 8943,
+  [SMALL_STATE(280)] = 8956,
+  [SMALL_STATE(281)] = 8969,
+  [SMALL_STATE(282)] = 8982,
+  [SMALL_STATE(283)] = 8995,
+  [SMALL_STATE(284)] = 9008,
+  [SMALL_STATE(285)] = 9021,
+  [SMALL_STATE(286)] = 9034,
+  [SMALL_STATE(287)] = 9047,
+  [SMALL_STATE(288)] = 9060,
+  [SMALL_STATE(289)] = 9073,
+  [SMALL_STATE(290)] = 9086,
+  [SMALL_STATE(291)] = 9099,
+  [SMALL_STATE(292)] = 9112,
+  [SMALL_STATE(293)] = 9125,
+  [SMALL_STATE(294)] = 9138,
+  [SMALL_STATE(295)] = 9151,
+  [SMALL_STATE(296)] = 9164,
+  [SMALL_STATE(297)] = 9177,
+  [SMALL_STATE(298)] = 9190,
+  [SMALL_STATE(299)] = 9203,
+  [SMALL_STATE(300)] = 9216,
+  [SMALL_STATE(301)] = 9229,
+  [SMALL_STATE(302)] = 9242,
+  [SMALL_STATE(303)] = 9255,
+  [SMALL_STATE(304)] = 9268,
+  [SMALL_STATE(305)] = 9281,
+  [SMALL_STATE(306)] = 9294,
+  [SMALL_STATE(307)] = 9307,
+  [SMALL_STATE(308)] = 9320,
+  [SMALL_STATE(309)] = 9333,
+  [SMALL_STATE(310)] = 9346,
+  [SMALL_STATE(311)] = 9359,
+  [SMALL_STATE(312)] = 9372,
+  [SMALL_STATE(313)] = 9385,
+  [SMALL_STATE(314)] = 9398,
+  [SMALL_STATE(315)] = 9411,
+  [SMALL_STATE(316)] = 9424,
+  [SMALL_STATE(317)] = 9437,
+  [SMALL_STATE(318)] = 9450,
+  [SMALL_STATE(319)] = 9463,
+  [SMALL_STATE(320)] = 9476,
+  [SMALL_STATE(321)] = 9489,
+  [SMALL_STATE(322)] = 9502,
+  [SMALL_STATE(323)] = 9515,
+  [SMALL_STATE(324)] = 9528,
+  [SMALL_STATE(325)] = 9541,
+  [SMALL_STATE(326)] = 9554,
+  [SMALL_STATE(327)] = 9567,
+  [SMALL_STATE(328)] = 9580,
+  [SMALL_STATE(329)] = 9593,
+  [SMALL_STATE(330)] = 9597,
 };
 
 static const TSParseActionEntry ts_parse_actions[] = {
   [0] = {.entry = {.count = 0, .reusable = false}},
   [1] = {.entry = {.count = 1, .reusable = false}}, RECOVER(),
-  [3] = {.entry = {.count = 1, .reusable = true}}, SHIFT(289),
-  [5] = {.entry = {.count = 1, .reusable = true}}, SHIFT(259),
+  [3] = {.entry = {.count = 1, .reusable = true}}, SHIFT(291),
+  [5] = {.entry = {.count = 1, .reusable = true}}, SHIFT(279),
   [7] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_source_file, 0, 0, 0),
-  [9] = {.entry = {.count = 1, .reusable = true}}, SHIFT(214),
-  [11] = {.entry = {.count = 1, .reusable = true}}, SHIFT(245),
-  [13] = {.entry = {.count = 1, .reusable = true}}, SHIFT(266),
+  [9] = {.entry = {.count = 1, .reusable = true}}, SHIFT(247),
+  [11] = {.entry = {.count = 1, .reusable = true}}, SHIFT(311),
+  [13] = {.entry = {.count = 1, .reusable = true}}, SHIFT(294),
   [15] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_property_reference, 3, 0, 0),
   [17] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_property_reference, 3, 0, 0),
   [19] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_comparison_func, 1, 0, 0),
   [21] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_comparison_func, 1, 0, 0),
-  [23] = {.entry = {.count = 1, .reusable = true}}, SHIFT(26),
-  [25] = {.entry = {.count = 1, .reusable = true}}, SHIFT(247),
-  [27] = {.entry = {.count = 1, .reusable = true}}, SHIFT(127),
+  [23] = {.entry = {.count = 1, .reusable = true}}, SHIFT(24),
+  [25] = {.entry = {.count = 1, .reusable = false}}, SHIFT(205),
+  [27] = {.entry = {.count = 1, .reusable = true}}, SHIFT(290),
   [29] = {.entry = {.count = 1, .reusable = true}}, SHIFT(136),
-  [31] = {.entry = {.count = 1, .reusable = true}}, SHIFT(96),
-  [33] = {.entry = {.count = 1, .reusable = true}}, SHIFT(137),
-  [35] = {.entry = {.count = 1, .reusable = false}}, SHIFT(102),
-  [37] = {.entry = {.count = 1, .reusable = true}}, SHIFT(143),
-  [39] = {.entry = {.count = 1, .reusable = true}}, SHIFT(122),
-  [41] = {.entry = {.count = 1, .reusable = true}}, SHIFT(206),
-  [43] = {.entry = {.count = 1, .reusable = true}}, SHIFT(132),
-  [45] = {.entry = {.count = 1, .reusable = true}}, SHIFT(145),
-  [47] = {.entry = {.count = 1, .reusable = true}}, SHIFT(164),
-  [49] = {.entry = {.count = 1, .reusable = true}}, SHIFT(285),
-  [51] = {.entry = {.count = 1, .reusable = true}}, SHIFT(219),
-  [53] = {.entry = {.count = 1, .reusable = true}}, SHIFT(291),
-  [55] = {.entry = {.count = 1, .reusable = true}}, SHIFT(241),
-  [57] = {.entry = {.count = 1, .reusable = true}}, SHIFT(101),
-  [59] = {.entry = {.count = 1, .reusable = true}}, SHIFT(253),
-  [61] = {.entry = {.count = 1, .reusable = true}}, SHIFT(255),
-  [63] = {.entry = {.count = 1, .reusable = true}}, SHIFT(258),
-  [65] = {.entry = {.count = 1, .reusable = true}}, SHIFT(264),
-  [67] = {.entry = {.count = 1, .reusable = true}}, SHIFT(230),
-  [69] = {.entry = {.count = 1, .reusable = true}}, SHIFT(306),
-  [71] = {.entry = {.count = 1, .reusable = true}}, SHIFT(287),
-  [73] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0),
-  [75] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(266),
-  [78] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(247),
-  [81] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(127),
-  [84] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(136),
-  [87] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(96),
-  [90] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(137),
-  [93] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(102),
-  [96] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(143),
-  [99] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(122),
-  [102] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(206),
-  [105] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(132),
-  [108] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(145),
-  [111] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(164),
-  [114] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(285),
-  [117] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(219),
-  [120] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(291),
-  [123] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(241),
-  [126] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(101),
-  [129] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(253),
-  [132] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(255),
-  [135] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(258),
-  [138] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(264),
-  [141] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(230),
-  [144] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(306),
-  [147] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(287),
-  [150] = {.entry = {.count = 1, .reusable = true}}, SHIFT(25),
-  [152] = {.entry = {.count = 1, .reusable = true}}, SHIFT(40),
-  [154] = {.entry = {.count = 1, .reusable = true}}, SHIFT(223),
-  [156] = {.entry = {.count = 1, .reusable = true}}, SHIFT(37),
-  [158] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0),
-  [160] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(223),
-  [163] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(247),
-  [166] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(127),
-  [169] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(136),
-  [172] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(96),
-  [175] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(137),
-  [178] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(102),
-  [181] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(143),
-  [184] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(122),
-  [187] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(206),
-  [190] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(132),
-  [193] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(145),
-  [196] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(164),
-  [199] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(285),
-  [202] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(219),
-  [205] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(291),
-  [208] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(241),
-  [211] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(101),
-  [214] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(253),
-  [217] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(255),
-  [220] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(258),
-  [223] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(264),
-  [226] = {.entry = {.count = 1, .reusable = true}}, SHIFT(111),
-  [228] = {.entry = {.count = 1, .reusable = true}}, SHIFT(117),
-  [230] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0),
-  [232] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(245),
-  [235] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(247),
-  [238] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(127),
-  [241] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(136),
-  [244] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(96),
-  [247] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(137),
-  [250] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(102),
-  [253] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(143),
-  [256] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(122),
-  [259] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(206),
-  [262] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(132),
-  [265] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(145),
-  [268] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(164),
-  [271] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(285),
-  [274] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(219),
-  [277] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(291),
-  [280] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(241),
-  [283] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(101),
-  [286] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(253),
-  [289] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(255),
-  [292] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_string_literal, 3, 0, 2),
-  [294] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_string_literal, 3, 0, 2),
-  [296] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__number, 2, 0, 0),
-  [298] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__number, 2, 0, 0),
-  [300] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__number, 1, 0, 0),
-  [302] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__number, 1, 0, 0),
-  [304] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__blend_value, 1, 0, 0),
-  [306] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__blend_value, 1, 0, 0),
-  [308] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_blend_factor, 1, 0, 0),
-  [310] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_blend_factor, 1, 0, 0),
-  [312] = {.entry = {.count = 1, .reusable = true}}, SHIFT(53),
-  [314] = {.entry = {.count = 1, .reusable = false}}, SHIFT(97),
-  [316] = {.entry = {.count = 1, .reusable = true}}, SHIFT(190),
-  [318] = {.entry = {.count = 1, .reusable = false}}, SHIFT(98),
-  [320] = {.entry = {.count = 1, .reusable = true}}, SHIFT(98),
-  [322] = {.entry = {.count = 1, .reusable = true}}, SHIFT(97),
-  [324] = {.entry = {.count = 1, .reusable = false}}, SHIFT(99),
-  [326] = {.entry = {.count = 1, .reusable = true}}, SHIFT(99),
-  [328] = {.entry = {.count = 1, .reusable = false}}, SHIFT(100),
-  [330] = {.entry = {.count = 1, .reusable = true}}, SHIFT(100),
-  [332] = {.entry = {.count = 1, .reusable = true}}, SHIFT(66),
-  [334] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_stencil_block_repeat1, 2, 0, 34),
-  [336] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_stencil_block_repeat1, 2, 0, 34), SHIFT_REPEAT(97),
-  [339] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_stencil_block_repeat1, 2, 0, 34), SHIFT_REPEAT(190),
-  [342] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_stencil_block_repeat1, 2, 0, 34), SHIFT_REPEAT(98),
-  [345] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_stencil_block_repeat1, 2, 0, 34), SHIFT_REPEAT(98),
-  [348] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_stencil_block_repeat1, 2, 0, 34), SHIFT_REPEAT(97),
-  [351] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_stencil_block_repeat1, 2, 0, 34), SHIFT_REPEAT(99),
-  [354] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_stencil_block_repeat1, 2, 0, 34), SHIFT_REPEAT(99),
-  [357] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_stencil_block_repeat1, 2, 0, 34), SHIFT_REPEAT(100),
-  [360] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_stencil_block_repeat1, 2, 0, 34), SHIFT_REPEAT(100),
-  [363] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_use_pass, 2, 0, 7),
-  [365] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_use_pass, 2, 0, 7),
-  [367] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_grab_pass, 3, 0, 0),
-  [369] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_grab_pass, 3, 0, 0),
-  [371] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_grab_pass, 4, 0, 35),
-  [373] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_grab_pass, 4, 0, 35),
-  [375] = {.entry = {.count = 1, .reusable = false}}, SHIFT(15),
-  [377] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_legacy_alpha_test_command, 2, 0, 4),
-  [379] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_legacy_alpha_test_command, 2, 0, 4),
-  [381] = {.entry = {.count = 1, .reusable = true}}, SHIFT(250),
-  [383] = {.entry = {.count = 1, .reusable = true}}, SHIFT(15),
-  [385] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_subshader_block, 3, 0, 0),
-  [387] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_subshader_block, 3, 0, 0),
-  [389] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_subshader_block, 4, 0, 0),
-  [391] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_subshader_block, 4, 0, 0),
-  [393] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__stencil_op, 2, 0, 32),
-  [395] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__stencil_op, 2, 0, 32),
-  [397] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_stencil_op_value, 1, 0, 0),
-  [399] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_stencil_op_value, 1, 0, 0),
-  [401] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__stencil_op, 2, 0, 31),
-  [403] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__stencil_op, 2, 0, 31),
-  [405] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__stencil_op, 2, 0, 8),
-  [407] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__stencil_op, 2, 0, 8),
-  [409] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_stencil_block_repeat1, 1, 0, 17),
-  [411] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym_stencil_block_repeat1, 1, 0, 17),
-  [413] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__stencil_value, 1, 0, 0),
-  [415] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__stencil_value, 1, 0, 0),
-  [417] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_blend_op_command, 2, 0, 5),
-  [419] = {.entry = {.count = 1, .reusable = true}}, SHIFT(147),
-  [421] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_blend_op_command, 2, 0, 5),
-  [423] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_blend_command, 3, 0, 11),
-  [425] = {.entry = {.count = 1, .reusable = true}}, SHIFT(109),
-  [427] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_blend_command, 3, 0, 11),
-  [429] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_blend_op_command, 3, 0, 12),
-  [431] = {.entry = {.count = 1, .reusable = true}}, SHIFT(152),
-  [433] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_blend_op_command, 3, 0, 12),
-  [435] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_blend_command, 4, 0, 21),
-  [437] = {.entry = {.count = 1, .reusable = true}}, SHIFT(105),
-  [439] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_blend_command, 4, 0, 21),
-  [441] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_pass_block, 4, 0, 0),
-  [443] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_pass_block, 4, 0, 0),
-  [445] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_signed_number, 1, 0, 0),
-  [447] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_signed_number, 1, 0, 0),
-  [449] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_signed_number, 2, 0, 0),
-  [451] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_signed_number, 2, 0, 0),
-  [453] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_pass_block, 3, 0, 0),
-  [455] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_pass_block, 3, 0, 0),
-  [457] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_blend_op, 1, 0, 0),
-  [459] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_blend_op, 1, 0, 0),
-  [461] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_color_mask_value, 1, 0, 0),
-  [463] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_color_mask_value, 1, 0, 0),
-  [465] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_cull_command, 2, 0, 3),
-  [467] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_cull_command, 2, 0, 3),
-  [469] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_tags_block, 3, 0, 0),
-  [471] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_tags_block, 3, 0, 0),
-  [473] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_conservative_command, 2, 0, 3),
-  [475] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_conservative_command, 2, 0, 3),
-  [477] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_legacy_lighting_command, 2, 0, 3),
-  [479] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_legacy_lighting_command, 2, 0, 3),
-  [481] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_legacy_color_material_command, 2, 0, 3),
-  [483] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_legacy_color_material_command, 2, 0, 3),
-  [485] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_legacy_fog_command, 3, 0, 0),
-  [487] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_legacy_fog_command, 3, 0, 0),
-  [489] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_legacy_material_block, 3, 0, 0),
-  [491] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_legacy_material_block, 3, 0, 0),
-  [493] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_on_off, 1, 0, 0),
-  [495] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_on_off, 1, 0, 0),
-  [497] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_legacy_alpha_test_command, 3, 0, 15),
-  [499] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_legacy_alpha_test_command, 3, 0, 15),
-  [501] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_legacy_bind_channels_command, 3, 0, 0),
-  [503] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_legacy_bind_channels_command, 3, 0, 0),
-  [505] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_stencil_block, 3, 0, 0),
-  [507] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_stencil_block, 3, 0, 0),
-  [509] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_zwrite_command, 2, 0, 3),
-  [511] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_zwrite_command, 2, 0, 3),
-  [513] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__render_state, 1, 0, 0),
-  [515] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__render_state, 1, 0, 0),
-  [517] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_ztest_command, 2, 0, 4),
-  [519] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_ztest_command, 2, 0, 4),
-  [521] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_tags_block, 4, 0, 0),
-  [523] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_tags_block, 4, 0, 0),
-  [525] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_true_false, 1, 0, 0),
-  [527] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_true_false, 1, 0, 0),
-  [529] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_zclip_command, 2, 0, 3),
-  [531] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_zclip_command, 2, 0, 3),
-  [533] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_blend_op_command, 4, 0, 22),
-  [535] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_blend_op_command, 4, 0, 22),
-  [537] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_offset_command, 4, 0, 23),
-  [539] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_offset_command, 4, 0, 23),
-  [541] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_legacy_fog_command, 4, 0, 24),
-  [543] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_legacy_fog_command, 4, 0, 24),
-  [545] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_legacy_material_block, 4, 0, 27),
-  [547] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_legacy_material_block, 4, 0, 27),
-  [549] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_blend_off_command, 2, 0, 0),
-  [551] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_blend_off_command, 2, 0, 0),
-  [553] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_legacy_bind_channels_command, 4, 0, 29),
-  [555] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_legacy_bind_channels_command, 4, 0, 29),
-  [557] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_stencil_block, 4, 0, 33),
-  [559] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_stencil_block, 4, 0, 33),
-  [561] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_alpha_to_mask_command, 2, 0, 3),
-  [563] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_alpha_to_mask_command, 2, 0, 3),
-  [565] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_cull_mode, 1, 0, 0),
-  [567] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_cull_mode, 1, 0, 0),
-  [569] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_blend_op_command, 5, 0, 38),
-  [571] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_blend_op_command, 5, 0, 38),
-  [573] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_blend_command, 6, 0, 39),
-  [575] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_blend_command, 6, 0, 39),
-  [577] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_legacy_set_texture_command, 6, 0, 0),
-  [579] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_legacy_set_texture_command, 6, 0, 0),
-  [581] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_blend_command, 7, 0, 42),
-  [583] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_blend_command, 7, 0, 42),
-  [585] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_legacy_set_texture_command, 7, 0, 43),
-  [587] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_legacy_set_texture_command, 7, 0, 43),
-  [589] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_color_mask_command, 2, 0, 6),
-  [591] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_color_mask_command, 2, 0, 6),
-  [593] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_hlsl_program_block, 3, 0, 19),
-  [595] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_hlsl_program_block, 3, 0, 19),
-  [597] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_cg_program_block, 3, 0, 18),
-  [599] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_cg_program_block, 3, 0, 18),
-  [601] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__subshader_body_item, 1, 0, 0),
-  [603] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__subshader_body_item, 1, 0, 0),
-  [605] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 1, 0, 0),
-  [607] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym_subshader_block_repeat1, 1, 0, 0),
-  [609] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_lod, 2, 0, 8),
-  [611] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_lod, 2, 0, 8),
-  [613] = {.entry = {.count = 1, .reusable = false}}, SHIFT(268),
-  [615] = {.entry = {.count = 1, .reusable = true}}, SHIFT(268),
-  [617] = {.entry = {.count = 1, .reusable = true}}, SHIFT(269),
-  [619] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 1, 0, 0),
-  [621] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym_pass_block_repeat1, 1, 0, 0),
-  [623] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_pass_name, 2, 0, 0),
-  [625] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_pass_name, 2, 0, 0),
-  [627] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__pass_body_item, 1, 0, 0),
-  [629] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__pass_body_item, 1, 0, 0),
-  [631] = {.entry = {.count = 1, .reusable = true}}, SHIFT(180),
-  [633] = {.entry = {.count = 1, .reusable = true}}, SHIFT(278),
-  [635] = {.entry = {.count = 1, .reusable = true}}, SHIFT(302),
-  [637] = {.entry = {.count = 1, .reusable = true}}, SHIFT(246),
-  [639] = {.entry = {.count = 1, .reusable = true}}, SHIFT(216),
-  [641] = {.entry = {.count = 1, .reusable = true}}, SHIFT(217),
-  [643] = {.entry = {.count = 1, .reusable = true}}, SHIFT(211),
-  [645] = {.entry = {.count = 1, .reusable = true}}, SHIFT(244),
-  [647] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_shader_body_repeat1, 2, 0, 0),
-  [649] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_shader_body_repeat1, 2, 0, 0), SHIFT_REPEAT(278),
-  [652] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_shader_body_repeat1, 2, 0, 0), SHIFT_REPEAT(245),
-  [655] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_shader_body_repeat1, 2, 0, 0), SHIFT_REPEAT(302),
-  [658] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_shader_body_repeat1, 2, 0, 0), SHIFT_REPEAT(246),
-  [661] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_shader_body_repeat1, 2, 0, 0), SHIFT_REPEAT(216),
-  [664] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_shader_body_repeat1, 2, 0, 0), SHIFT_REPEAT(217),
-  [667] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_shader_body_repeat1, 2, 0, 0), SHIFT_REPEAT(211),
-  [670] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_shader_body_repeat1, 2, 0, 0), SHIFT_REPEAT(230),
-  [673] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_shader_body_repeat1, 2, 0, 0), SHIFT_REPEAT(306),
-  [676] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_shader_body_repeat1, 2, 0, 0), SHIFT_REPEAT(244),
-  [679] = {.entry = {.count = 1, .reusable = true}}, SHIFT(173),
-  [681] = {.entry = {.count = 1, .reusable = false}}, SHIFT(91),
-  [683] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__legacy_set_texture_item, 2, 0, 0),
-  [685] = {.entry = {.count = 1, .reusable = true}}, SHIFT(91),
-  [687] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__legacy_set_texture_item, 2, 0, 0),
-  [689] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym__legacy_set_texture_item_repeat1, 2, 0, 0), SHIFT_REPEAT(91),
-  [692] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym__legacy_set_texture_item_repeat1, 2, 0, 0),
-  [694] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym__legacy_set_texture_item_repeat1, 2, 0, 0), SHIFT_REPEAT(91),
-  [697] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym__legacy_set_texture_item_repeat1, 2, 0, 0),
-  [699] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 1, 0, 0),
-  [701] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym_category_block_repeat1, 1, 0, 0),
-  [703] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__legacy_combine_value, 1, 0, 0),
-  [705] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__legacy_combine_value, 1, 0, 0),
-  [707] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym__legacy_set_texture_item_repeat1, 1, 0, 0),
-  [709] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym__legacy_set_texture_item_repeat1, 1, 0, 0),
-  [711] = {.entry = {.count = 1, .reusable = true}}, SHIFT(290),
-  [713] = {.entry = {.count = 1, .reusable = true}}, SHIFT(28),
-  [715] = {.entry = {.count = 1, .reusable = true}}, SHIFT(3),
-  [717] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__stencil_pass, 1, 0, 0),
-  [719] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__stencil_comp, 1, 0, 0),
-  [721] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__stencil_fail, 1, 0, 0),
-  [723] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__stencil_zfail, 1, 0, 0),
-  [725] = {.entry = {.count = 1, .reusable = true}}, SHIFT(64),
-  [727] = {.entry = {.count = 1, .reusable = false}}, SHIFT(17),
-  [729] = {.entry = {.count = 1, .reusable = true}}, SHIFT(17),
-  [731] = {.entry = {.count = 1, .reusable = true}}, SHIFT(103),
-  [733] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_dependency, 4, 0, 36),
-  [735] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_category_block, 4, 0, 0),
-  [737] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_fallback, 2, 0, 10),
-  [739] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_custom_editor, 2, 0, 9),
-  [741] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_cg_include, 3, 0, 0),
-  [743] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_properties_block, 3, 0, 0),
-  [745] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_hlsl_include, 3, 0, 20),
-  [747] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_category_block, 3, 0, 0),
-  [749] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__shader_body_item, 1, 0, 0),
-  [751] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_properties_block, 4, 0, 0),
-  [753] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_shader_body_repeat1, 1, 0, 0),
-  [755] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_color_default, 7, 0, 0),
-  [757] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_color_default, 7, 0, 0),
-  [759] = {.entry = {.count = 1, .reusable = true}}, SHIFT(42),
-  [761] = {.entry = {.count = 1, .reusable = false}}, SHIFT(42),
-  [763] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_color_default, 9, 0, 0),
-  [765] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_color_default, 9, 0, 0),
-  [767] = {.entry = {.count = 1, .reusable = true}}, SHIFT(171),
-  [769] = {.entry = {.count = 1, .reusable = true}}, SHIFT(277),
-  [771] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_source_file, 1, 0, 0),
-  [773] = {.entry = {.count = 1, .reusable = true}}, SHIFT(68),
-  [775] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_source_file_repeat1, 2, 0, 0),
-  [777] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_source_file_repeat1, 2, 0, 0), SHIFT_REPEAT(214),
-  [780] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_source_file_repeat1, 2, 0, 0), SHIFT_REPEAT(245),
-  [783] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_source_file_repeat1, 2, 0, 0), SHIFT_REPEAT(266),
-  [786] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_legacy_material_block_repeat1, 2, 0, 28),
-  [788] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_legacy_material_block_repeat1, 2, 0, 28), SHIFT_REPEAT(222),
-  [791] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_legacy_material_block_repeat1, 2, 0, 28), SHIFT_REPEAT(185),
-  [794] = {.entry = {.count = 1, .reusable = true}}, SHIFT(49),
-  [796] = {.entry = {.count = 1, .reusable = true}}, SHIFT(222),
-  [798] = {.entry = {.count = 1, .reusable = true}}, SHIFT(185),
-  [800] = {.entry = {.count = 1, .reusable = true}}, SHIFT(63),
-  [802] = {.entry = {.count = 1, .reusable = true}}, SHIFT(50),
-  [804] = {.entry = {.count = 1, .reusable = true}}, SHIFT(151),
-  [806] = {.entry = {.count = 1, .reusable = true}}, SHIFT(226),
-  [808] = {.entry = {.count = 1, .reusable = false}}, SHIFT(225),
-  [810] = {.entry = {.count = 1, .reusable = true}}, SHIFT(48),
-  [812] = {.entry = {.count = 1, .reusable = true}}, SHIFT(295),
-  [814] = {.entry = {.count = 1, .reusable = true}}, SHIFT(179),
-  [816] = {.entry = {.count = 1, .reusable = true}}, SHIFT(165),
-  [818] = {.entry = {.count = 1, .reusable = true}}, SHIFT(181),
-  [820] = {.entry = {.count = 1, .reusable = true}}, SHIFT(58),
-  [822] = {.entry = {.count = 1, .reusable = true}}, SHIFT(252),
-  [824] = {.entry = {.count = 1, .reusable = true}}, SHIFT(119),
-  [826] = {.entry = {.count = 1, .reusable = true}}, SHIFT(234),
-  [828] = {.entry = {.count = 1, .reusable = true}}, SHIFT(62),
-  [830] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_legacy_fog_command_repeat1, 2, 0, 25),
-  [832] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_legacy_fog_command_repeat1, 2, 0, 25), SHIFT_REPEAT(295),
-  [835] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_legacy_fog_command_repeat1, 2, 0, 25), SHIFT_REPEAT(179),
-  [838] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_legacy_fog_command_repeat1, 2, 0, 25), SHIFT_REPEAT(165),
-  [841] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_legacy_fog_command_repeat1, 2, 0, 25), SHIFT_REPEAT(181),
-  [844] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_properties_block_repeat1, 2, 0, 0), SHIFT_REPEAT(252),
-  [847] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_properties_block_repeat1, 2, 0, 0),
-  [849] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_properties_block_repeat1, 2, 0, 0), SHIFT_REPEAT(234),
-  [852] = {.entry = {.count = 1, .reusable = true}}, SHIFT(41),
-  [854] = {.entry = {.count = 1, .reusable = true}}, SHIFT(153),
-  [856] = {.entry = {.count = 1, .reusable = true}}, SHIFT(115),
-  [858] = {.entry = {.count = 1, .reusable = true}}, SHIFT(71),
-  [860] = {.entry = {.count = 1, .reusable = true}}, SHIFT(94),
-  [862] = {.entry = {.count = 1, .reusable = true}}, SHIFT(224),
-  [864] = {.entry = {.count = 1, .reusable = true}}, SHIFT(243),
-  [866] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_dotted_identifier, 2, 0, 0),
-  [868] = {.entry = {.count = 1, .reusable = true}}, SHIFT(260),
-  [870] = {.entry = {.count = 1, .reusable = true}}, SHIFT(73),
-  [872] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_dotted_identifier_repeat1, 2, 0, 0),
-  [874] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_dotted_identifier_repeat1, 2, 0, 0), SHIFT_REPEAT(260),
-  [877] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_dotted_identifier, 1, 0, 0),
-  [879] = {.entry = {.count = 1, .reusable = false}}, SHIFT(260),
-  [881] = {.entry = {.count = 1, .reusable = true}}, SHIFT(265),
-  [883] = {.entry = {.count = 1, .reusable = false}}, SHIFT(289),
-  [885] = {.entry = {.count = 1, .reusable = false}}, SHIFT(259),
-  [887] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_legacy_material_block_repeat1, 1, 0, 14),
-  [889] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__legacy_material_item, 2, 0, 8),
-  [891] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__legacy_material_item, 2, 0, 26),
-  [893] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_legacy_set_texture_command_repeat1, 2, 0, 44),
-  [895] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_legacy_set_texture_command_repeat1, 2, 0, 44), SHIFT_REPEAT(94),
-  [898] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_legacy_set_texture_command_repeat1, 2, 0, 44), SHIFT_REPEAT(224),
-  [901] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_legacy_set_texture_command_repeat1, 2, 0, 44), SHIFT_REPEAT(243),
-  [904] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_tags_block_repeat1, 2, 0, 0),
-  [906] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_tags_block_repeat1, 2, 0, 0), SHIFT_REPEAT(277),
-  [909] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__legacy_fog_item, 10, 0, 0),
-  [911] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__legacy_fog_item, 2, 0, 3),
-  [913] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__legacy_fog_item, 2, 0, 0),
-  [915] = {.entry = {.count = 1, .reusable = true}}, SHIFT(44),
-  [917] = {.entry = {.count = 1, .reusable = true}}, SHIFT(57),
-  [919] = {.entry = {.count = 1, .reusable = true}}, SHIFT(160),
-  [921] = {.entry = {.count = 1, .reusable = false}}, SHIFT(160),
-  [923] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_legacy_fog_command_repeat1, 1, 0, 13),
-  [925] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__legacy_fog_item, 4, 0, 0),
-  [927] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__legacy_fog_item, 8, 0, 0),
-  [929] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_legacy_bind_channels_command_repeat1, 2, 0, 30),
-  [931] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_legacy_bind_channels_command_repeat1, 2, 0, 30), SHIFT_REPEAT(228),
-  [934] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_shader_body, 3, 0, 0),
-  [936] = {.entry = {.count = 1, .reusable = true}}, SHIFT(280),
-  [938] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__top_level_item, 1, 0, 0),
-  [940] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_dotted_identifier, 1, 0, 0),
-  [942] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_property_declaration_repeat1, 2, 0, 0),
-  [944] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_property_declaration_repeat1, 2, 0, 0), SHIFT_REPEAT(234),
-  [947] = {.entry = {.count = 1, .reusable = true}}, SHIFT(52),
-  [949] = {.entry = {.count = 1, .reusable = true}}, SHIFT(228),
-  [951] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_shader_body, 2, 0, 0),
-  [953] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_shader_definition, 3, 0, 1),
-  [955] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__legacy_set_texture_item, 2, 0, 26),
-  [957] = {.entry = {.count = 1, .reusable = true}}, SHIFT(65),
-  [959] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__attr_arg, 2, 0, 0),
-  [961] = {.entry = {.count = 1, .reusable = true}}, SHIFT(32),
-  [963] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym__attr_arg_repeat1, 2, 0, 0),
-  [965] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym__attr_arg_repeat1, 2, 0, 0), SHIFT_REPEAT(265),
-  [968] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__legacy_set_texture_item, 4, 0, 0),
-  [970] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_source_file_repeat1, 1, 0, 0),
-  [972] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__property_default, 1, 0, 0),
-  [974] = {.entry = {.count = 1, .reusable = true}}, SHIFT(300),
-  [976] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_legacy_set_texture_command_repeat1, 1, 0, 40),
-  [978] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_texture_default, 3, 0, 0),
-  [980] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_properties_block_repeat1, 1, 0, 0),
-  [982] = {.entry = {.count = 1, .reusable = true}}, SHIFT(296),
-  [984] = {.entry = {.count = 1, .reusable = true}}, SHIFT(38),
-  [986] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym__attr_arg_repeat1, 2, 0, 0),
-  [988] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_property_declaration, 8, 0, 46),
-  [990] = {.entry = {.count = 1, .reusable = true}}, SHIFT(22),
-  [992] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_property_declaration, 9, 0, 47),
-  [994] = {.entry = {.count = 1, .reusable = true}}, SHIFT(112),
-  [996] = {.entry = {.count = 1, .reusable = true}}, SHIFT(196),
-  [998] = {.entry = {.count = 1, .reusable = true}}, SHIFT(169),
-  [1000] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_tag_pair, 3, 0, 37),
-  [1002] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_property_declaration_repeat1, 1, 0, 0),
-  [1004] = {.entry = {.count = 1, .reusable = true}}, SHIFT(47),
-  [1006] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_property_attribute, 3, 0, 0),
-  [1008] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__legacy_bind_channel, 4, 0, 41),
-  [1010] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__attr_arg, 1, 0, 0),
-  [1012] = {.entry = {.count = 1, .reusable = true}}, SHIFT(141),
-  [1014] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__attr_args, 1, 0, 0),
-  [1016] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_legacy_bind_channels_command_repeat1, 1, 0, 16),
-  [1018] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_property_attribute, 6, 0, 45),
-  [1020] = {.entry = {.count = 1, .reusable = true}}, SHIFT(198),
-  [1022] = {.entry = {.count = 1, .reusable = true}}, SHIFT(121),
-  [1024] = {.entry = {.count = 1, .reusable = true}}, SHIFT(176),
-  [1026] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_tags_block_repeat1, 1, 0, 0),
-  [1028] = {.entry = {.count = 1, .reusable = true}}, SHIFT(85),
-  [1030] = {.entry = {.count = 1, .reusable = true}}, SHIFT(133),
-  [1032] = {.entry = {.count = 1, .reusable = true}}, SHIFT(220),
-  [1034] = {.entry = {.count = 1, .reusable = true}}, SHIFT(231),
-  [1036] = {.entry = {.count = 1, .reusable = true}}, SHIFT(248),
-  [1038] = {.entry = {.count = 1, .reusable = true}}, SHIFT(240),
-  [1040] = {.entry = {.count = 1, .reusable = true}}, SHIFT(182),
-  [1042] = {.entry = {.count = 1, .reusable = true}}, SHIFT(262),
-  [1044] = {.entry = {.count = 1, .reusable = true}}, SHIFT(11),
-  [1046] = {.entry = {.count = 1, .reusable = true}}, SHIFT(6),
-  [1048] = {.entry = {.count = 1, .reusable = true}}, SHIFT(263),
-  [1050] = {.entry = {.count = 1, .reusable = true}}, SHIFT(162),
-  [1052] = {.entry = {.count = 1, .reusable = true}}, SHIFT(272),
-  [1054] = {.entry = {.count = 1, .reusable = true}}, SHIFT(184),
-  [1056] = {.entry = {.count = 1, .reusable = true}}, SHIFT(14),
-  [1058] = {.entry = {.count = 1, .reusable = true}}, SHIFT(239),
-  [1060] = {.entry = {.count = 1, .reusable = true}}, SHIFT(213),
-  [1062] = {.entry = {.count = 1, .reusable = true}}, SHIFT(178),
-  [1064] = {.entry = {.count = 1, .reusable = true}}, SHIFT(80),
-  [1066] = {.entry = {.count = 1, .reusable = true}}, SHIFT(18),
-  [1068] = {.entry = {.count = 1, .reusable = true}}, SHIFT(191),
-  [1070] = {.entry = {.count = 1, .reusable = true}}, SHIFT(192),
-  [1072] = {.entry = {.count = 1, .reusable = true}}, SHIFT(293),
-  [1074] = {.entry = {.count = 1, .reusable = false}}, SHIFT(273),
-  [1076] = {.entry = {.count = 1, .reusable = true}}, SHIFT(168),
-  [1078] = {.entry = {.count = 1, .reusable = true}}, SHIFT(114),
-  [1080] = {.entry = {.count = 1, .reusable = true}}, SHIFT(275),
-  [1082] = {.entry = {.count = 1, .reusable = true}}, SHIFT(116),
-  [1084] = {.entry = {.count = 1, .reusable = true}}, SHIFT(274),
-  [1086] = {.entry = {.count = 1, .reusable = true}}, SHIFT(205),
-  [1088] = {.entry = {.count = 1, .reusable = true}}, SHIFT(7),
-  [1090] = {.entry = {.count = 1, .reusable = true}},  ACCEPT_INPUT(),
-  [1092] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_property_type, 1, 0, 0),
-  [1094] = {.entry = {.count = 1, .reusable = true}}, SHIFT(194),
-  [1096] = {.entry = {.count = 1, .reusable = true}}, SHIFT(281),
-  [1098] = {.entry = {.count = 1, .reusable = true}}, SHIFT(232),
-  [1100] = {.entry = {.count = 1, .reusable = true}}, SHIFT(146),
-  [1102] = {.entry = {.count = 1, .reusable = false}}, SHIFT(308),
-  [1104] = {.entry = {.count = 1, .reusable = true}}, SHIFT(75),
-  [1106] = {.entry = {.count = 1, .reusable = true}}, SHIFT(195),
-  [1108] = {.entry = {.count = 1, .reusable = true}}, SHIFT(134),
-  [1110] = {.entry = {.count = 1, .reusable = false}}, SHIFT(303),
-  [1112] = {.entry = {.count = 1, .reusable = true}}, SHIFT(144),
-  [1114] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__attr_args, 3, 0, 0),
-  [1116] = {.entry = {.count = 1, .reusable = true}}, SHIFT(221),
-  [1118] = {.entry = {.count = 1, .reusable = true}}, SHIFT(124),
-  [1120] = {.entry = {.count = 1, .reusable = true}}, SHIFT(288),
-  [1122] = {.entry = {.count = 1, .reusable = true}}, SHIFT(204),
-  [1124] = {.entry = {.count = 1, .reusable = true}}, SHIFT(81),
-  [1126] = {.entry = {.count = 1, .reusable = true}}, SHIFT(135),
-  [1128] = {.entry = {.count = 1, .reusable = true}}, SHIFT(199),
-  [1130] = {.entry = {.count = 1, .reusable = true}}, SHIFT(79),
-  [1132] = {.entry = {.count = 1, .reusable = true}}, SHIFT(125),
-  [1134] = {.entry = {.count = 1, .reusable = false}}, SHIFT(307),
-  [1136] = {.entry = {.count = 1, .reusable = true}}, SHIFT(294),
-  [1138] = {.entry = {.count = 1, .reusable = true}}, SHIFT(130),
-  [1140] = {.entry = {.count = 1, .reusable = true}}, SHIFT(237),
-  [1142] = {.entry = {.count = 1, .reusable = true}}, SHIFT(76),
-  [1144] = {.entry = {.count = 1, .reusable = true}}, SHIFT(2),
-  [1146] = {.entry = {.count = 1, .reusable = true}}, SHIFT(183),
-  [1148] = {.entry = {.count = 1, .reusable = true}}, SHIFT(39),
-  [1150] = {.entry = {.count = 1, .reusable = true}}, SHIFT(159),
-  [1152] = {.entry = {.count = 1, .reusable = true}}, SHIFT(123),
-  [1154] = {.entry = {.count = 1, .reusable = true}}, SHIFT(304),
-  [1156] = {.entry = {.count = 1, .reusable = true}}, SHIFT(202),
-  [1158] = {.entry = {.count = 1, .reusable = true}}, SHIFT(170),
-  [1160] = {.entry = {.count = 1, .reusable = true}}, SHIFT(261),
-  [1162] = {.entry = {.count = 1, .reusable = true}}, SHIFT(13),
-  [1164] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_property_type, 6, 0, 0),
-  [1166] = {.entry = {.count = 1, .reusable = true}}, SHIFT(23),
-  [1168] = {.entry = {.count = 1, .reusable = true}}, SHIFT(209),
-  [1170] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_comment, 2, 0, 0),
-  [1172] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_comment, 3, 0, 0),
+  [31] = {.entry = {.count = 1, .reusable = true}}, SHIFT(147),
+  [33] = {.entry = {.count = 1, .reusable = true}}, SHIFT(102),
+  [35] = {.entry = {.count = 1, .reusable = true}}, SHIFT(180),
+  [37] = {.entry = {.count = 1, .reusable = true}}, SHIFT(149),
+  [39] = {.entry = {.count = 1, .reusable = false}}, SHIFT(110),
+  [41] = {.entry = {.count = 1, .reusable = true}}, SHIFT(150),
+  [43] = {.entry = {.count = 1, .reusable = true}}, SHIFT(112),
+  [45] = {.entry = {.count = 1, .reusable = true}}, SHIFT(163),
+  [47] = {.entry = {.count = 1, .reusable = true}}, SHIFT(131),
+  [49] = {.entry = {.count = 1, .reusable = true}}, SHIFT(151),
+  [51] = {.entry = {.count = 1, .reusable = true}}, SHIFT(177),
+  [53] = {.entry = {.count = 1, .reusable = true}}, SHIFT(265),
+  [55] = {.entry = {.count = 1, .reusable = true}}, SHIFT(238),
+  [57] = {.entry = {.count = 1, .reusable = true}}, SHIFT(281),
+  [59] = {.entry = {.count = 1, .reusable = true}}, SHIFT(286),
+  [61] = {.entry = {.count = 1, .reusable = true}}, SHIFT(104),
+  [63] = {.entry = {.count = 1, .reusable = true}}, SHIFT(324),
+  [65] = {.entry = {.count = 1, .reusable = true}}, SHIFT(326),
+  [67] = {.entry = {.count = 1, .reusable = true}}, SHIFT(272),
+  [69] = {.entry = {.count = 1, .reusable = true}}, SHIFT(300),
+  [71] = {.entry = {.count = 1, .reusable = true}}, SHIFT(315),
+  [73] = {.entry = {.count = 1, .reusable = true}}, SHIFT(233),
+  [75] = {.entry = {.count = 1, .reusable = true}}, SHIFT(260),
+  [77] = {.entry = {.count = 1, .reusable = true}}, SHIFT(264),
+  [79] = {.entry = {.count = 1, .reusable = true}}, SHIFT(25),
+  [81] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0),
+  [83] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(205),
+  [86] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(294),
+  [89] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(290),
+  [92] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(136),
+  [95] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(147),
+  [98] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(102),
+  [101] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(180),
+  [104] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(149),
+  [107] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(110),
+  [110] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(150),
+  [113] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(112),
+  [116] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(163),
+  [119] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(131),
+  [122] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(151),
+  [125] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(177),
+  [128] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(265),
+  [131] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(238),
+  [134] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(281),
+  [137] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(286),
+  [140] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(104),
+  [143] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(324),
+  [146] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(326),
+  [149] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(272),
+  [152] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(300),
+  [155] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(315),
+  [158] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(233),
+  [161] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(260),
+  [164] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 2, 0, 0), SHIFT_REPEAT(264),
+  [167] = {.entry = {.count = 1, .reusable = true}}, SHIFT(27),
+  [169] = {.entry = {.count = 1, .reusable = true}}, SHIFT(253),
+  [171] = {.entry = {.count = 1, .reusable = true}}, SHIFT(28),
+  [173] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0),
+  [175] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(205),
+  [178] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(253),
+  [181] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(290),
+  [184] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(136),
+  [187] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(147),
+  [190] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(102),
+  [193] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(180),
+  [196] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(149),
+  [199] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(110),
+  [202] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(150),
+  [205] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(112),
+  [208] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(163),
+  [211] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(131),
+  [214] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(151),
+  [217] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(177),
+  [220] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(265),
+  [223] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(238),
+  [226] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(281),
+  [229] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(286),
+  [232] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(104),
+  [235] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(324),
+  [238] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(326),
+  [241] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(272),
+  [244] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(300),
+  [247] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(315),
+  [250] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 2, 0, 0), SHIFT_REPEAT(264),
+  [253] = {.entry = {.count = 1, .reusable = true}}, SHIFT(116),
+  [255] = {.entry = {.count = 1, .reusable = true}}, SHIFT(123),
+  [257] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0),
+  [259] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(205),
+  [262] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(311),
+  [265] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(290),
+  [268] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(136),
+  [271] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(147),
+  [274] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(102),
+  [277] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(180),
+  [280] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(149),
+  [283] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(110),
+  [286] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(150),
+  [289] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(112),
+  [292] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(163),
+  [295] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(131),
+  [298] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(151),
+  [301] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(177),
+  [304] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(265),
+  [307] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(238),
+  [310] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(281),
+  [313] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(286),
+  [316] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(104),
+  [319] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(324),
+  [322] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(326),
+  [325] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 2, 0, 0), SHIFT_REPEAT(264),
+  [328] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_string_literal, 3, 0, 2),
+  [330] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_string_literal, 3, 0, 2),
+  [332] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_blend_factor, 1, 0, 0),
+  [334] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_blend_factor, 1, 0, 0),
+  [336] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__blend_value, 1, 0, 0),
+  [338] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__blend_value, 1, 0, 0),
+  [340] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_color_default, 9, 0, 0),
+  [342] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_color_default, 9, 0, 0),
+  [344] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__number, 1, 0, 0),
+  [346] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__number, 1, 0, 0),
+  [348] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__number, 2, 0, 0),
+  [350] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__number, 2, 0, 0),
+  [352] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_color_default, 7, 0, 0),
+  [354] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_color_default, 7, 0, 0),
+  [356] = {.entry = {.count = 1, .reusable = false}}, SHIFT(17),
+  [358] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_legacy_alpha_test_command, 2, 0, 5),
+  [360] = {.entry = {.count = 1, .reusable = true}}, SHIFT(293),
+  [362] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_legacy_alpha_test_command, 2, 0, 5),
+  [364] = {.entry = {.count = 1, .reusable = true}}, SHIFT(261),
+  [366] = {.entry = {.count = 1, .reusable = true}}, SHIFT(17),
+  [368] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_use_pass, 2, 0, 8),
+  [370] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_use_pass, 2, 0, 8),
+  [372] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_grab_pass, 3, 0, 0),
+  [374] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_grab_pass, 3, 0, 0),
+  [376] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_grab_pass, 4, 0, 38),
+  [378] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_grab_pass, 4, 0, 38),
+  [380] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_subshader_block, 4, 0, 0),
+  [382] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_subshader_block, 4, 0, 0),
+  [384] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_subshader_block, 3, 0, 0),
+  [386] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_subshader_block, 3, 0, 0),
+  [388] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_signed_number, 1, 0, 0),
+  [390] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_signed_number, 1, 0, 0),
+  [392] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_pass_block, 4, 0, 0),
+  [394] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_pass_block, 4, 0, 0),
+  [396] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_pass_block, 3, 0, 0),
+  [398] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_pass_block, 3, 0, 0),
+  [400] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_tags_block, 3, 0, 0),
+  [402] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_tags_block, 3, 0, 0),
+  [404] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_blend_command, 3, 0, 12),
+  [406] = {.entry = {.count = 1, .reusable = true}}, SHIFT(128),
+  [408] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_blend_command, 3, 0, 12),
+  [410] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_blend_op_command, 3, 0, 13),
+  [412] = {.entry = {.count = 1, .reusable = true}}, SHIFT(164),
+  [414] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_blend_op_command, 3, 0, 13),
+  [416] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_signed_number, 2, 0, 0),
+  [418] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_signed_number, 2, 0, 0),
+  [420] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_tags_block, 4, 0, 0),
+  [422] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_tags_block, 4, 0, 0),
+  [424] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_blend_command, 4, 0, 25),
+  [426] = {.entry = {.count = 1, .reusable = true}}, SHIFT(117),
+  [428] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_blend_command, 4, 0, 25),
+  [430] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_signed_value, 1, 0, 0),
+  [432] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_signed_value, 1, 0, 0),
+  [434] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_blend_op, 1, 0, 0),
+  [436] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_blend_op, 1, 0, 0),
+  [438] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_blend_op_command, 2, 0, 6),
+  [440] = {.entry = {.count = 1, .reusable = true}}, SHIFT(172),
+  [442] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_blend_op_command, 2, 0, 6),
+  [444] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_legacy_bind_channels_command, 3, 0, 0),
+  [446] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_legacy_bind_channels_command, 3, 0, 0),
+  [448] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_conservative_command, 2, 0, 4),
+  [450] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_conservative_command, 2, 0, 4),
+  [452] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_ztest_command, 2, 0, 5),
+  [454] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_ztest_command, 2, 0, 5),
+  [456] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_legacy_lighting_command, 2, 0, 4),
+  [458] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_legacy_lighting_command, 2, 0, 4),
+  [460] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_legacy_color_material_command, 2, 0, 4),
+  [462] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_legacy_color_material_command, 2, 0, 4),
+  [464] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_legacy_color_command, 2, 0, 3),
+  [466] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_legacy_color_command, 2, 0, 3),
+  [468] = {.entry = {.count = 1, .reusable = true}}, SHIFT(49),
+  [470] = {.entry = {.count = 1, .reusable = false}}, SHIFT(108),
+  [472] = {.entry = {.count = 1, .reusable = true}}, SHIFT(200),
+  [474] = {.entry = {.count = 1, .reusable = false}}, SHIFT(106),
+  [476] = {.entry = {.count = 1, .reusable = true}}, SHIFT(106),
+  [478] = {.entry = {.count = 1, .reusable = true}}, SHIFT(108),
+  [480] = {.entry = {.count = 1, .reusable = false}}, SHIFT(109),
+  [482] = {.entry = {.count = 1, .reusable = true}}, SHIFT(109),
+  [484] = {.entry = {.count = 1, .reusable = false}}, SHIFT(107),
+  [486] = {.entry = {.count = 1, .reusable = true}}, SHIFT(107),
+  [488] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_legacy_fog_command, 3, 0, 0),
+  [490] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_legacy_fog_command, 3, 0, 0),
+  [492] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_legacy_material_block, 3, 0, 0),
+  [494] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_legacy_material_block, 3, 0, 0),
+  [496] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_legacy_alpha_test_command, 3, 0, 16),
+  [498] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_legacy_alpha_test_command, 3, 0, 16),
+  [500] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_color_mask_command, 2, 0, 7),
+  [502] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_color_mask_command, 2, 0, 7),
+  [504] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_stencil_block, 3, 0, 0),
+  [506] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_stencil_block, 3, 0, 0),
+  [508] = {.entry = {.count = 1, .reusable = true}}, SHIFT(63),
+  [510] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_separate_specular_command, 2, 0, 4),
+  [512] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_separate_specular_command, 2, 0, 4),
+  [514] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_true_false, 1, 0, 0),
+  [516] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_true_false, 1, 0, 0),
+  [518] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_zclip_command, 2, 0, 4),
+  [520] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_zclip_command, 2, 0, 4),
+  [522] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_zwrite_command, 2, 0, 4),
+  [524] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_zwrite_command, 2, 0, 4),
+  [526] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__render_state, 1, 0, 0),
+  [528] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__render_state, 1, 0, 0),
+  [530] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_cull_mode, 1, 0, 0),
+  [532] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_cull_mode, 1, 0, 0),
+  [534] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_lod, 2, 0, 9),
+  [536] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_lod, 2, 0, 9),
+  [538] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_blend_op_command, 4, 0, 26),
+  [540] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_blend_op_command, 4, 0, 26),
+  [542] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_offset_command, 4, 0, 27),
+  [544] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_offset_command, 4, 0, 27),
+  [546] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_legacy_fog_command, 4, 0, 28),
+  [548] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_legacy_fog_command, 4, 0, 28),
+  [550] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_legacy_material_block, 4, 0, 30),
+  [552] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_legacy_material_block, 4, 0, 30),
+  [554] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_legacy_bind_channels_command, 4, 0, 32),
+  [556] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_legacy_bind_channels_command, 4, 0, 32),
+  [558] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_stencil_block, 4, 0, 36),
+  [560] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_stencil_block, 4, 0, 36),
+  [562] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_stencil_block_repeat1, 2, 0, 37),
+  [564] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_stencil_block_repeat1, 2, 0, 37), SHIFT_REPEAT(108),
+  [567] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_stencil_block_repeat1, 2, 0, 37), SHIFT_REPEAT(200),
+  [570] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_stencil_block_repeat1, 2, 0, 37), SHIFT_REPEAT(106),
+  [573] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_stencil_block_repeat1, 2, 0, 37), SHIFT_REPEAT(106),
+  [576] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_stencil_block_repeat1, 2, 0, 37), SHIFT_REPEAT(108),
+  [579] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_stencil_block_repeat1, 2, 0, 37), SHIFT_REPEAT(109),
+  [582] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_stencil_block_repeat1, 2, 0, 37), SHIFT_REPEAT(109),
+  [585] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_stencil_block_repeat1, 2, 0, 37), SHIFT_REPEAT(107),
+  [588] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_stencil_block_repeat1, 2, 0, 37), SHIFT_REPEAT(107),
+  [591] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_cull_command, 2, 0, 4),
+  [593] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_cull_command, 2, 0, 4),
+  [595] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_on_off, 1, 0, 0),
+  [597] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_on_off, 1, 0, 0),
+  [599] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_blend_op_command, 5, 0, 42),
+  [601] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_blend_op_command, 5, 0, 42),
+  [603] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_blend_command, 6, 0, 43),
+  [605] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_blend_command, 6, 0, 43),
+  [607] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_legacy_set_texture_command, 6, 0, 0),
+  [609] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_legacy_set_texture_command, 6, 0, 0),
+  [611] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_blend_command, 7, 0, 46),
+  [613] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_blend_command, 7, 0, 46),
+  [615] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_legacy_set_texture_command, 7, 0, 47),
+  [617] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_legacy_set_texture_command, 7, 0, 47),
+  [619] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_alpha_to_mask_command, 2, 0, 4),
+  [621] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_alpha_to_mask_command, 2, 0, 4),
+  [623] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_color_mask_value, 1, 0, 0),
+  [625] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_color_mask_value, 1, 0, 0),
+  [627] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_blend_off_command, 2, 0, 0),
+  [629] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_blend_off_command, 2, 0, 0),
+  [631] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_hlsl_program_block, 3, 0, 20),
+  [633] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_hlsl_program_block, 3, 0, 20),
+  [635] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_cg_program_block, 3, 0, 19),
+  [637] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_cg_program_block, 3, 0, 19),
+  [639] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_glsl_program_block, 3, 0, 21),
+  [641] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_glsl_program_block, 3, 0, 21),
+  [643] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_subshader_block_repeat1, 1, 0, 0),
+  [645] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym_subshader_block_repeat1, 1, 0, 0),
+  [647] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__subshader_body_item, 1, 0, 0),
+  [649] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__subshader_body_item, 1, 0, 0),
+  [651] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_pass_name, 2, 0, 0),
+  [653] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_pass_name, 2, 0, 0),
+  [655] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__pass_body_item, 1, 0, 0),
+  [657] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__pass_body_item, 1, 0, 0),
+  [659] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_pass_block_repeat1, 1, 0, 0),
+  [661] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym_pass_block_repeat1, 1, 0, 0),
+  [663] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_stencil_block_repeat1, 1, 0, 18),
+  [665] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym_stencil_block_repeat1, 1, 0, 18),
+  [667] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__stencil_value, 1, 0, 0),
+  [669] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__stencil_value, 1, 0, 0),
+  [671] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__stencil_op, 2, 0, 9),
+  [673] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__stencil_op, 2, 0, 9),
+  [675] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__stencil_op, 2, 0, 34),
+  [677] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__stencil_op, 2, 0, 34),
+  [679] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__stencil_op, 2, 0, 35),
+  [681] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__stencil_op, 2, 0, 35),
+  [683] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_stencil_op_value, 1, 0, 0),
+  [685] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_stencil_op_value, 1, 0, 0),
+  [687] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_category_block_repeat1, 1, 0, 0),
+  [689] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym_category_block_repeat1, 1, 0, 0),
+  [691] = {.entry = {.count = 1, .reusable = false}}, SHIFT(287),
+  [693] = {.entry = {.count = 1, .reusable = true}}, SHIFT(287),
+  [695] = {.entry = {.count = 1, .reusable = true}}, SHIFT(288),
+  [697] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym__legacy_set_texture_item_repeat1, 2, 0, 0), SHIFT_REPEAT(95),
+  [700] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym__legacy_set_texture_item_repeat1, 2, 0, 0),
+  [702] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym__legacy_set_texture_item_repeat1, 2, 0, 0), SHIFT_REPEAT(101),
+  [705] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym__legacy_set_texture_item_repeat1, 2, 0, 0), SHIFT_REPEAT(95),
+  [708] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym__legacy_set_texture_item_repeat1, 2, 0, 0),
+  [710] = {.entry = {.count = 1, .reusable = false}}, SHIFT(95),
+  [712] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__legacy_set_texture_item, 2, 0, 0),
+  [714] = {.entry = {.count = 1, .reusable = true}}, SHIFT(101),
+  [716] = {.entry = {.count = 1, .reusable = true}}, SHIFT(95),
+  [718] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__legacy_set_texture_item, 2, 0, 0),
+  [720] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__legacy_combine_value, 3, 0, 0),
+  [722] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__legacy_combine_value, 3, 0, 0),
+  [724] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__legacy_combine_value, 1, 0, 0),
+  [726] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__legacy_combine_value, 1, 0, 0),
+  [728] = {.entry = {.count = 1, .reusable = true}}, SHIFT(182),
+  [730] = {.entry = {.count = 1, .reusable = true}}, SHIFT(325),
+  [732] = {.entry = {.count = 1, .reusable = true}}, SHIFT(269),
+  [734] = {.entry = {.count = 1, .reusable = true}}, SHIFT(320),
+  [736] = {.entry = {.count = 1, .reusable = true}}, SHIFT(321),
+  [738] = {.entry = {.count = 1, .reusable = true}}, SHIFT(234),
+  [740] = {.entry = {.count = 1, .reusable = true}}, SHIFT(241),
+  [742] = {.entry = {.count = 1, .reusable = true}}, SHIFT(201),
+  [744] = {.entry = {.count = 1, .reusable = true}}, SHIFT(282),
+  [746] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_shader_body_repeat1, 2, 0, 0),
+  [748] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_shader_body_repeat1, 2, 0, 0), SHIFT_REPEAT(325),
+  [751] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_shader_body_repeat1, 2, 0, 0), SHIFT_REPEAT(311),
+  [754] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_shader_body_repeat1, 2, 0, 0), SHIFT_REPEAT(269),
+  [757] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_shader_body_repeat1, 2, 0, 0), SHIFT_REPEAT(320),
+  [760] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_shader_body_repeat1, 2, 0, 0), SHIFT_REPEAT(321),
+  [763] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_shader_body_repeat1, 2, 0, 0), SHIFT_REPEAT(234),
+  [766] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_shader_body_repeat1, 2, 0, 0), SHIFT_REPEAT(241),
+  [769] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_shader_body_repeat1, 2, 0, 0), SHIFT_REPEAT(201),
+  [772] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_shader_body_repeat1, 2, 0, 0), SHIFT_REPEAT(233),
+  [775] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_shader_body_repeat1, 2, 0, 0), SHIFT_REPEAT(260),
+  [778] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_shader_body_repeat1, 2, 0, 0), SHIFT_REPEAT(282),
+  [781] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym__legacy_set_texture_item_repeat1, 1, 0, 0),
+  [783] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym__legacy_set_texture_item_repeat1, 1, 0, 0),
+  [785] = {.entry = {.count = 1, .reusable = true}}, SHIFT(179),
+  [787] = {.entry = {.count = 1, .reusable = true}}, SHIFT(3),
+  [789] = {.entry = {.count = 1, .reusable = true}}, SHIFT(88),
+  [791] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__stencil_comp, 1, 0, 0),
+  [793] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__stencil_zfail, 1, 0, 0),
+  [795] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__stencil_pass, 1, 0, 0),
+  [797] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__stencil_fail, 1, 0, 0),
+  [799] = {.entry = {.count = 1, .reusable = true}}, SHIFT(74),
+  [801] = {.entry = {.count = 1, .reusable = false}}, SHIFT(14),
+  [803] = {.entry = {.count = 1, .reusable = true}}, SHIFT(14),
+  [805] = {.entry = {.count = 1, .reusable = true}}, SHIFT(124),
+  [807] = {.entry = {.count = 1, .reusable = true}}, SHIFT(73),
+  [809] = {.entry = {.count = 1, .reusable = false}}, SHIFT(73),
+  [811] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_properties_block, 4, 0, 0),
+  [813] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_dependency, 4, 0, 40),
+  [815] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_category_block, 4, 0, 0),
+  [817] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_fallback, 2, 0, 11),
+  [819] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_cg_include, 3, 0, 0),
+  [821] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_hlsl_include, 3, 0, 23),
+  [823] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_glsl_include, 3, 0, 24),
+  [825] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_category_block, 3, 0, 0),
+  [827] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_properties_block, 3, 0, 0),
+  [829] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_shader_body_repeat1, 1, 0, 0),
+  [831] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__shader_body_item, 1, 0, 0),
+  [833] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_custom_editor, 2, 0, 10),
+  [835] = {.entry = {.count = 1, .reusable = true}}, SHIFT(66),
+  [837] = {.entry = {.count = 1, .reusable = true}}, SHIFT(52),
+  [839] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_source_file, 1, 0, 0),
+  [841] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_source_file_repeat1, 2, 0, 0),
+  [843] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_source_file_repeat1, 2, 0, 0), SHIFT_REPEAT(247),
+  [846] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_source_file_repeat1, 2, 0, 0), SHIFT_REPEAT(311),
+  [849] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_source_file_repeat1, 2, 0, 0), SHIFT_REPEAT(294),
+  [852] = {.entry = {.count = 1, .reusable = true}}, SHIFT(214),
+  [854] = {.entry = {.count = 1, .reusable = true}}, SHIFT(295),
+  [856] = {.entry = {.count = 1, .reusable = true}}, SHIFT(56),
+  [858] = {.entry = {.count = 1, .reusable = true}}, SHIFT(61),
+  [860] = {.entry = {.count = 1, .reusable = true}}, SHIFT(212),
+  [862] = {.entry = {.count = 1, .reusable = true}}, SHIFT(159),
+  [864] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_legacy_set_texture_command_repeat1, 2, 0, 48),
+  [866] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_legacy_set_texture_command_repeat1, 2, 0, 48), SHIFT_REPEAT(100),
+  [869] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_legacy_set_texture_command_repeat1, 2, 0, 48), SHIFT_REPEAT(195),
+  [872] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_legacy_set_texture_command_repeat1, 2, 0, 48), SHIFT_REPEAT(259),
+  [875] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_grab_pass_repeat1, 2, 0, 39),
+  [877] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_grab_pass_repeat1, 2, 0, 39), SHIFT_REPEAT(253),
+  [880] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_grab_pass_repeat1, 2, 0, 39), SHIFT_REPEAT(290),
+  [883] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_grab_pass_repeat1, 2, 0, 39), SHIFT_REPEAT(295),
+  [886] = {.entry = {.count = 1, .reusable = true}}, SHIFT(23),
+  [888] = {.entry = {.count = 1, .reusable = true}}, SHIFT(46),
+  [890] = {.entry = {.count = 1, .reusable = true}}, SHIFT(69),
+  [892] = {.entry = {.count = 1, .reusable = true}}, SHIFT(100),
+  [894] = {.entry = {.count = 1, .reusable = true}}, SHIFT(195),
+  [896] = {.entry = {.count = 1, .reusable = true}}, SHIFT(259),
+  [898] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_legacy_material_block_repeat1, 2, 0, 31),
+  [900] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_legacy_material_block_repeat1, 2, 0, 31), SHIFT_REPEAT(212),
+  [903] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_legacy_material_block_repeat1, 2, 0, 31), SHIFT_REPEAT(159),
+  [906] = {.entry = {.count = 1, .reusable = true}}, SHIFT(71),
+  [908] = {.entry = {.count = 1, .reusable = true}}, SHIFT(22),
+  [910] = {.entry = {.count = 1, .reusable = true}}, SHIFT(170),
+  [912] = {.entry = {.count = 1, .reusable = true}}, SHIFT(199),
+  [914] = {.entry = {.count = 1, .reusable = true}}, SHIFT(60),
+  [916] = {.entry = {.count = 1, .reusable = true}}, SHIFT(310),
+  [918] = {.entry = {.count = 1, .reusable = true}}, SHIFT(219),
+  [920] = {.entry = {.count = 1, .reusable = true}}, SHIFT(160),
+  [922] = {.entry = {.count = 1, .reusable = true}}, SHIFT(202),
+  [924] = {.entry = {.count = 1, .reusable = true}}, SHIFT(36),
+  [926] = {.entry = {.count = 1, .reusable = true}}, SHIFT(162),
+  [928] = {.entry = {.count = 1, .reusable = true}}, SHIFT(312),
+  [930] = {.entry = {.count = 1, .reusable = true}}, SHIFT(114),
+  [932] = {.entry = {.count = 1, .reusable = true}}, SHIFT(249),
+  [934] = {.entry = {.count = 1, .reusable = true}}, SHIFT(45),
+  [936] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_legacy_fog_command_repeat1, 2, 0, 29),
+  [938] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_legacy_fog_command_repeat1, 2, 0, 29), SHIFT_REPEAT(310),
+  [941] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_legacy_fog_command_repeat1, 2, 0, 29), SHIFT_REPEAT(219),
+  [944] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_legacy_fog_command_repeat1, 2, 0, 29), SHIFT_REPEAT(160),
+  [947] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_legacy_fog_command_repeat1, 2, 0, 29), SHIFT_REPEAT(202),
+  [950] = {.entry = {.count = 1, .reusable = false}}, SHIFT(236),
+  [952] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_properties_block_repeat1, 2, 0, 0), SHIFT_REPEAT(312),
+  [955] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_properties_block_repeat1, 2, 0, 0),
+  [957] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_properties_block_repeat1, 2, 0, 0), SHIFT_REPEAT(249),
+  [960] = {.entry = {.count = 1, .reusable = true}}, SHIFT(126),
+  [962] = {.entry = {.count = 1, .reusable = true}}, SHIFT(188),
+  [964] = {.entry = {.count = 1, .reusable = false}}, SHIFT(188),
+  [966] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_legacy_material_block_repeat1, 1, 0, 15),
+  [968] = {.entry = {.count = 1, .reusable = true}}, SHIFT(298),
+  [970] = {.entry = {.count = 1, .reusable = true}}, SHIFT(26),
+  [972] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__legacy_material_item, 2, 0, 3),
+  [974] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_dotted_identifier, 2, 0, 0),
+  [976] = {.entry = {.count = 1, .reusable = true}}, SHIFT(297),
+  [978] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__legacy_material_item, 2, 0, 9),
+  [980] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_legacy_set_texture_command_repeat1, 1, 0, 44),
+  [982] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_dotted_identifier_repeat1, 2, 0, 0),
+  [984] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_dotted_identifier_repeat1, 2, 0, 0), SHIFT_REPEAT(297),
+  [987] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_dotted_identifier, 1, 0, 0),
+  [989] = {.entry = {.count = 1, .reusable = false}}, SHIFT(297),
+  [991] = {.entry = {.count = 1, .reusable = true}}, SHIFT(283),
+  [993] = {.entry = {.count = 1, .reusable = false}}, SHIFT(291),
+  [995] = {.entry = {.count = 1, .reusable = false}}, SHIFT(279),
+  [997] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__legacy_set_texture_item, 2, 0, 3),
+  [999] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__legacy_set_texture_item, 4, 0, 0),
+  [1001] = {.entry = {.count = 1, .reusable = true}}, SHIFT(29),
+  [1003] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__legacy_fog_item, 10, 0, 0),
+  [1005] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_shader_definition, 3, 0, 1),
+  [1007] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_shader_body, 2, 0, 0),
+  [1009] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__legacy_fog_item, 4, 0, 0),
+  [1011] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_shader_body, 3, 0, 0),
+  [1013] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_tags_block_repeat1, 2, 0, 0),
+  [1015] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_tags_block_repeat1, 2, 0, 0), SHIFT_REPEAT(295),
+  [1018] = {.entry = {.count = 1, .reusable = true}}, SHIFT(33),
+  [1020] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_source_file_repeat1, 1, 0, 0),
+  [1022] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_legacy_fog_command_repeat1, 1, 0, 14),
+  [1024] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__legacy_fog_item, 2, 0, 4),
+  [1026] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__legacy_fog_item, 2, 0, 0),
+  [1028] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__legacy_fog_item, 8, 0, 0),
+  [1030] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__top_level_item, 1, 0, 0),
+  [1032] = {.entry = {.count = 1, .reusable = true}}, SHIFT(62),
+  [1034] = {.entry = {.count = 1, .reusable = true}}, SHIFT(232),
+  [1036] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_legacy_bind_channels_command_repeat1, 2, 0, 33),
+  [1038] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_legacy_bind_channels_command_repeat1, 2, 0, 33), SHIFT_REPEAT(232),
+  [1041] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_grab_pass_repeat1, 1, 0, 0),
+  [1043] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_property_declaration_repeat1, 2, 0, 0),
+  [1045] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_property_declaration_repeat1, 2, 0, 0), SHIFT_REPEAT(249),
+  [1048] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__attr_arg, 1, 0, 0),
+  [1050] = {.entry = {.count = 1, .reusable = true}}, SHIFT(84),
+  [1052] = {.entry = {.count = 1, .reusable = true}}, SHIFT(118),
+  [1054] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_grab_pass_repeat1, 1, 0, 22),
+  [1056] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__attr_arg, 2, 0, 0),
+  [1058] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym__attr_arg_repeat1, 2, 0, 0),
+  [1060] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym__attr_arg_repeat1, 2, 0, 0), SHIFT_REPEAT(283),
+  [1063] = {.entry = {.count = 1, .reusable = true}}, SHIFT(38),
+  [1065] = {.entry = {.count = 1, .reusable = true}}, SHIFT(314),
+  [1067] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__property_default, 1, 0, 0),
+  [1069] = {.entry = {.count = 1, .reusable = true}}, SHIFT(222),
+  [1071] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_dotted_identifier, 1, 0, 0),
+  [1073] = {.entry = {.count = 1, .reusable = true}}, SHIFT(255),
+  [1075] = {.entry = {.count = 1, .reusable = true}}, SHIFT(228),
+  [1077] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_properties_block_repeat1, 1, 0, 0),
+  [1079] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym__attr_arg_repeat1, 2, 0, 0),
+  [1081] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_property_declaration, 8, 0, 50),
+  [1083] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_property_declaration, 9, 0, 51),
+  [1085] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_texture_default, 3, 0, 0),
+  [1087] = {.entry = {.count = 1, .reusable = true}}, SHIFT(230),
+  [1089] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_texture_default, 4, 0, 0),
+  [1091] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_texture_default_repeat1, 2, 0, 0), SHIFT_REPEAT(255),
+  [1094] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_texture_default_repeat1, 2, 0, 0),
+  [1096] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__legacy_bind_channel, 4, 0, 45),
+  [1098] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_legacy_bind_channels_command_repeat1, 1, 0, 17),
+  [1100] = {.entry = {.count = 1, .reusable = true}}, SHIFT(42),
+  [1102] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__attr_arg, 1, 0, 0),
+  [1104] = {.entry = {.count = 1, .reusable = true}}, SHIFT(146),
+  [1106] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__attr_args, 1, 0, 0),
+  [1108] = {.entry = {.count = 1, .reusable = true}}, SHIFT(206),
+  [1110] = {.entry = {.count = 1, .reusable = true}}, SHIFT(19),
+  [1112] = {.entry = {.count = 1, .reusable = true}}, SHIFT(99),
+  [1114] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_tags_block_repeat1, 1, 0, 0),
+  [1116] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_property_declaration_repeat1, 1, 0, 0),
+  [1118] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_property_attribute, 6, 0, 49),
+  [1120] = {.entry = {.count = 1, .reusable = true}}, SHIFT(215),
+  [1122] = {.entry = {.count = 1, .reusable = true}}, SHIFT(190),
+  [1124] = {.entry = {.count = 1, .reusable = true}}, SHIFT(221),
+  [1126] = {.entry = {.count = 1, .reusable = true}}, SHIFT(156),
+  [1128] = {.entry = {.count = 1, .reusable = true}}, SHIFT(256),
+  [1130] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_tag_pair, 3, 0, 41),
+  [1132] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_texture_default_repeat1, 1, 0, 0),
+  [1134] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_property_attribute, 3, 0, 0),
+  [1136] = {.entry = {.count = 1, .reusable = true}}, SHIFT(235),
+  [1138] = {.entry = {.count = 1, .reusable = true}}, SHIFT(280),
+  [1140] = {.entry = {.count = 1, .reusable = true}}, SHIFT(145),
+  [1142] = {.entry = {.count = 1, .reusable = true}}, SHIFT(18),
+  [1144] = {.entry = {.count = 1, .reusable = true}}, SHIFT(216),
+  [1146] = {.entry = {.count = 1, .reusable = true}},  ACCEPT_INPUT(),
+  [1148] = {.entry = {.count = 1, .reusable = true}}, SHIFT(57),
+  [1150] = {.entry = {.count = 1, .reusable = true}}, SHIFT(153),
+  [1152] = {.entry = {.count = 1, .reusable = true}}, SHIFT(121),
+  [1154] = {.entry = {.count = 1, .reusable = true}}, SHIFT(122),
+  [1156] = {.entry = {.count = 1, .reusable = true}}, SHIFT(285),
+  [1158] = {.entry = {.count = 1, .reusable = true}}, SHIFT(327),
+  [1160] = {.entry = {.count = 1, .reusable = true}}, SHIFT(220),
+  [1162] = {.entry = {.count = 1, .reusable = true}}, SHIFT(92),
+  [1164] = {.entry = {.count = 1, .reusable = true}}, SHIFT(313),
+  [1166] = {.entry = {.count = 1, .reusable = true}}, SHIFT(196),
+  [1168] = {.entry = {.count = 1, .reusable = true}}, SHIFT(208),
+  [1170] = {.entry = {.count = 1, .reusable = true}}, SHIFT(2),
+  [1172] = {.entry = {.count = 1, .reusable = true}}, SHIFT(254),
+  [1174] = {.entry = {.count = 1, .reusable = true}}, SHIFT(306),
+  [1176] = {.entry = {.count = 1, .reusable = true}}, SHIFT(13),
+  [1178] = {.entry = {.count = 1, .reusable = false}}, SHIFT(304),
+  [1180] = {.entry = {.count = 1, .reusable = true}}, SHIFT(296),
+  [1182] = {.entry = {.count = 1, .reusable = true}}, SHIFT(141),
+  [1184] = {.entry = {.count = 1, .reusable = true}}, SHIFT(11),
+  [1186] = {.entry = {.count = 1, .reusable = true}}, SHIFT(224),
+  [1188] = {.entry = {.count = 1, .reusable = true}}, SHIFT(209),
+  [1190] = {.entry = {.count = 1, .reusable = true}}, SHIFT(246),
+  [1192] = {.entry = {.count = 1, .reusable = true}}, SHIFT(292),
+  [1194] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_property_type, 1, 0, 0),
+  [1196] = {.entry = {.count = 1, .reusable = true}}, SHIFT(192),
+  [1198] = {.entry = {.count = 1, .reusable = true}}, SHIFT(301),
+  [1200] = {.entry = {.count = 1, .reusable = true}}, SHIFT(175),
+  [1202] = {.entry = {.count = 1, .reusable = false}}, SHIFT(329),
+  [1204] = {.entry = {.count = 1, .reusable = true}}, SHIFT(277),
+  [1206] = {.entry = {.count = 1, .reusable = true}}, SHIFT(275),
+  [1208] = {.entry = {.count = 1, .reusable = true}}, SHIFT(8),
+  [1210] = {.entry = {.count = 1, .reusable = false}}, SHIFT(278),
+  [1212] = {.entry = {.count = 1, .reusable = true}}, SHIFT(174),
+  [1214] = {.entry = {.count = 1, .reusable = true}}, SHIFT(183),
+  [1216] = {.entry = {.count = 1, .reusable = true}}, SHIFT(32),
+  [1218] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__attr_args, 3, 0, 0),
+  [1220] = {.entry = {.count = 1, .reusable = true}}, SHIFT(316),
+  [1222] = {.entry = {.count = 1, .reusable = true}}, SHIFT(134),
+  [1224] = {.entry = {.count = 1, .reusable = true}}, SHIFT(309),
+  [1226] = {.entry = {.count = 1, .reusable = true}}, SHIFT(16),
+  [1228] = {.entry = {.count = 1, .reusable = false}}, SHIFT(330),
+  [1230] = {.entry = {.count = 1, .reusable = true}}, SHIFT(90),
+  [1232] = {.entry = {.count = 1, .reusable = true}}, SHIFT(142),
+  [1234] = {.entry = {.count = 1, .reusable = true}}, SHIFT(217),
+  [1236] = {.entry = {.count = 1, .reusable = true}}, SHIFT(155),
+  [1238] = {.entry = {.count = 1, .reusable = true}}, SHIFT(135),
+  [1240] = {.entry = {.count = 1, .reusable = true}}, SHIFT(207),
+  [1242] = {.entry = {.count = 1, .reusable = true}}, SHIFT(5),
+  [1244] = {.entry = {.count = 1, .reusable = true}}, SHIFT(251),
+  [1246] = {.entry = {.count = 1, .reusable = true}}, SHIFT(76),
+  [1248] = {.entry = {.count = 1, .reusable = true}}, SHIFT(257),
+  [1250] = {.entry = {.count = 1, .reusable = true}}, SHIFT(317),
+  [1252] = {.entry = {.count = 1, .reusable = true}}, SHIFT(75),
+  [1254] = {.entry = {.count = 1, .reusable = true}}, SHIFT(77),
+  [1256] = {.entry = {.count = 1, .reusable = true}}, SHIFT(176),
+  [1258] = {.entry = {.count = 1, .reusable = true}}, SHIFT(322),
+  [1260] = {.entry = {.count = 1, .reusable = true}}, SHIFT(266),
+  [1262] = {.entry = {.count = 1, .reusable = true}}, SHIFT(267),
+  [1264] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_property_type, 6, 0, 0),
+  [1266] = {.entry = {.count = 1, .reusable = true}}, SHIFT(173),
+  [1268] = {.entry = {.count = 1, .reusable = true}}, SHIFT(211),
+  [1270] = {.entry = {.count = 1, .reusable = true}}, SHIFT(158),
+  [1272] = {.entry = {.count = 1, .reusable = true}}, SHIFT(44),
+  [1274] = {.entry = {.count = 1, .reusable = true}}, SHIFT(119),
+  [1276] = {.entry = {.count = 1, .reusable = true}}, SHIFT(94),
+  [1278] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_comment, 2, 0, 0),
+  [1280] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_comment, 3, 0, 0),
 };
 
 enum ts_external_scanner_symbol_identifiers {
