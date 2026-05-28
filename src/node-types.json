@@ -158,6 +158,10 @@
           {
             "type": "blend_op",
             "named": true
+          },
+          {
+            "type": "property_reference",
+            "named": true
           }
         ]
       },
@@ -167,6 +171,10 @@
         "types": [
           {
             "type": "blend_op",
+            "named": true
+          },
+          {
+            "type": "property_reference",
             "named": true
           }
         ]
@@ -1876,6 +1884,10 @@
     "named": false
   },
   {
+    "type": "*/",
+    "named": false
+  },
+  {
     "type": "+",
     "named": false
   },
@@ -1889,10 +1901,6 @@
   },
   {
     "type": ".",
-    "named": false
-  },
-  {
-    "type": "/",
     "named": false
   },
   {
@@ -2341,6 +2349,10 @@
   },
   {
     "type": "RECT",
+    "named": false
+  },
+  {
+    "type": "RG",
     "named": false
   },
   {

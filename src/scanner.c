@@ -4,7 +4,44 @@
 
 enum TokenType {
     PROGRAM_CONTENT,
+    BLOCK_COMMENT_CONTENT,
 };
+
+/// 扫描块注释内容（/* 和 */ 之间），支持嵌套的 /* */。
+/// 调用时 lexer 位于 /* 之后的内容起始处。
+/// 找到匹配的 */ 后，mark_end 标记在 */ 之前，lexer 停在 * 处。
+static bool scan_block_comment_content(TSLexer *lexer) {
+    int nesting = 1;
+
+    while (nesting > 0) {
+        if (lexer->eof(lexer)) {
+            return false;
+        }
+
+        // 标记当前位置作为 token 备用结束点
+        lexer->mark_end(lexer);
+
+        if (lexer->lookahead == '*') {
+            lexer->advance(lexer, false);
+            if (lexer->lookahead == '/') {
+                // 找到 */ — 不前进，让 grammar 的 '*/' 从当前位置（*）开始匹配
+                nesting--;
+            }
+            // 注意：如果 */ 成立，lexer 停在 * 之后（即 / 处），
+            // 但 mark_end 已在上方标记在 * 之前，token 结束位置正确。
+        } else if (lexer->lookahead == '/') {
+            lexer->advance(lexer, false);
+            if (lexer->lookahead == '*') {
+                lexer->advance(lexer, false);
+                nesting++;
+            }
+        } else {
+            lexer->advance(lexer, false);
+        }
+    }
+
+    return true;
+}
 
 /// 扫描 CGPROGRAM/HLSLPROGRAM/GLSLPROGRAM 块内容，直到遇到 ENDCG / ENDHLSL / ENDGLSL 为止。
 /// 与 C 的 raw string 类似，内容作为一个完整 token 返回（供语言注入使用）。
@@ -85,6 +122,11 @@ bool tree_sitter_shaderlab_external_scanner_scan(
     if (valid_symbols[PROGRAM_CONTENT]) {
         lexer->result_symbol = PROGRAM_CONTENT;
         return scan_program_content(lexer);
+    }
+
+    if (valid_symbols[BLOCK_COMMENT_CONTENT]) {
+        lexer->result_symbol = BLOCK_COMMENT_CONTENT;
+        return scan_block_comment_content(lexer);
     }
 
     return false;

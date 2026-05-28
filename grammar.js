@@ -7,6 +7,7 @@ module.exports = grammar({
 
     externals: $ => [
         $.program_content,
+        $._block_comment_content,
     ],
 
     extras: $ => [
@@ -234,12 +235,12 @@ module.exports = grammar({
         blend_op_command: $ => seq(
             'BlendOp',
             optional(field('index', $.number_literal)),
-            field('op_color', $.blend_op),
-            optional(seq(',', field('op_alpha', $.blend_op))),
+            field('op_color', choice($.blend_op, $.property_reference)),
+            optional(seq(',', field('op_alpha', choice($.blend_op, $.property_reference)))),
         ),
 
         color_mask_command: $ => seq('ColorMask', field('mask', choice($.color_mask_value, $.property_reference))),
-        color_mask_value: $ => choice('RGBA', 'RGB', 'A', 'R', 'G', 'B', '0', 'rgba', 'rgb', 'GBA', $.number_literal),
+        color_mask_value: $ => choice('RGBA', 'RGB', 'A', 'R', 'G', 'B', '0', 'rgba', 'rgb', 'GBA', 'RG', $.number_literal),
 
         offset_command: $ => seq('Offset', field('factor', $.signed_value), ',', field('units', $.signed_value)),
         signed_number: $ => choice($.number_literal, seq('-', $.number_literal)),
@@ -443,7 +444,7 @@ module.exports = grammar({
         // =============================================
         comment: $ => choice(
             seq('//', /.*/),
-            seq('/*', /[^*]*\*+([^/*][^*]*\*+)*/, '/'),
+            seq('/*', $._block_comment_content, '*/'),
         ),
 
         string_literal: $ => seq('"', field('content', alias(/[^"]*/, $.string_content)), '"'),
