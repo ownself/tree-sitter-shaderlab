@@ -33,18 +33,36 @@ If your first target is Neovim users, you can use this repository directly witho
 Example configuration:
 
 ```lua
-local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-
-parser_config.shaderlab = {
-  install_info = {
-    url = "https://github.com/ownself/tree-sitter-shaderlab",
-    files = { "src/parser.c", "src/scanner.c" },
-    branch = "main",
+vim.filetype.add({
+  extension = {
+    shader = "shader",
   },
-  filetype = "shader",
-}
+})
 
-vim.treesitter.language.register("shaderlab", "shader")
+local function register_shaderlab_parser()
+  local parsers = require("nvim-treesitter.parsers")
+  parsers.shaderlab = {
+    install_info = {
+      url = "https://github.com/ownself/tree-sitter-shaderlab",
+      files = { "src/parser.c", "src/scanner.c" },
+      branch = "main",
+      queries = "queries",
+    },
+    filetype = "shader",
+  }
+
+  vim.treesitter.language.register("shaderlab", "shader")
+end
+
+register_shaderlab_parser()
+
+vim.api.nvim_create_autocmd("User", {
+  pattern = "TSUpdate",
+  -- Re-register after TSUpdate because nvim-treesitter may reload and clear custom parser entries.
+  callback = register_shaderlab_parser,
+})
+
+require("nvim-treesitter").install({ "shaderlab", "hlsl" })
 ```
 
 ### HLSL parser
@@ -114,18 +132,36 @@ Unity ShaderLab 的 Tree-sitter 语法。
 示例配置：
 
 ```lua
-local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-
-parser_config.shaderlab = {
-  install_info = {
-    url = "https://github.com/ownself/tree-sitter-shaderlab",
-    files = { "src/parser.c", "src/scanner.c" },
-    branch = "main",
+vim.filetype.add({
+  extension = {
+    shader = "shader",
   },
-  filetype = "shader",
-}
+})
 
-vim.treesitter.language.register("shaderlab", "shader")
+local function register_shaderlab_parser()
+  local parsers = require("nvim-treesitter.parsers")
+  parsers.shaderlab = {
+    install_info = {
+      url = "https://github.com/ownself/tree-sitter-shaderlab",
+      files = { "src/parser.c", "src/scanner.c" },
+      branch = "main",
+      queries = "queries",
+    },
+    filetype = "shader",
+  }
+
+  vim.treesitter.language.register("shaderlab", "shader")
+end
+
+register_shaderlab_parser()
+
+vim.api.nvim_create_autocmd("User", {
+  pattern = "TSUpdate",
+  -- 在 TSUpdate 后重新注册，因为 nvim-treesitter 可能会重新加载并清掉自定义 parser 条目。
+  callback = register_shaderlab_parser,
+})
+
+require("nvim-treesitter").install({ "shaderlab", "hlsl" })
 ```
 
 ### 关于 HLSL parser
