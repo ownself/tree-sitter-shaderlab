@@ -13,17 +13,14 @@
   "metadata": {
     "version": "0.1.0",
     "license": "MIT",
-    "description": "Unity ShaderLab grammar for tree-sitter",
+    "description": "Tree-sitter grammar for Unity ShaderLab with HLSL injection support",
     "links": {
-      "repository": ""
+      "repository": "https://github.com/ownself/tree-sitter-shaderlab"
     }
   },
   "bindings": {
     "c": true,
-    "go": true,
     "node": true,
-    "python": true,
-    "rust": true,
-    "swift": true
+    "rust": true
   }
 }

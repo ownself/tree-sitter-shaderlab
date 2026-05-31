@@ -1,14 +1,17 @@
 {
   "name": "tree-sitter-shaderlab",
   "version": "0.1.0",
-  "description": "Unity ShaderLab grammar for tree-sitter",
+  "description": "Tree-sitter grammar for Unity ShaderLab with HLSL injection support",
   "main": "bindings/node",
   "types": "bindings/node",
   "keywords": [
+    "tree-sitter",
     "parser",
     "shaderlab",
     "unity",
-    "shader"
+    "shader",
+    "hlsl",
+    "neovim"
   ],
   "files": [
     "grammar.js",
@@ -18,7 +21,7 @@
     "queries/*",
     "src/**"
   ],
-  "author": "",
+  "author": "ownself",
   "license": "MIT",
   "dependencies": {
     "node-addon-api": "^8.2.1",
@@ -36,6 +39,10 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/ownself/tree-sitter-shaderlab.git"
+  },
+  "homepage": "https://github.com/ownself/tree-sitter-shaderlab",
+  "bugs": {
+    "url": "https://github.com/ownself/tree-sitter-shaderlab/issues"
   }
 }
